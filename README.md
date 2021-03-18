@@ -1,45 +1,224 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<img src="static/images/text-logo.PNG">
 
-Welcome Stuart Saint,
+Welcome to my data-centric development milestone project. For this project I chose to create 
+[pintbaby](https://www.pintbaby.herokuapp.com/), a website that allows users to add and review pubs around the world.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
 
-## Gitpod Reminders
+## User Experience
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Styling
 
-`python3 -m http.server`
+- A [Balsamiq](https://www.balsamiq.com/) wireframe for this project is included in the repository, with 
+[desktop/tablet](planning/wireframes/desktop.pdf) and [mobile](planning/wireframes/mobile.pdf) versions.
 
-A blue button should appear to click: *Make Public*,
+I used the following hex colours, selected using [Pixlr](https://www.pixlr.com/). Most of the colours were originally 
+based on photographs contained with the [Snug Project](https://thesnugproject.com/) calendar, and then tweaked to best 
+suit a website:
 
-Another blue button should appear to click: *Open Browser*.
+ - #4A463A and #443E32 are medium browns used on icons;
+ - #3B382E is a dark brown used as a replacement for any blacks used in stylised text against coloured backgrounds to 
+ give a slightly warmer feel;
+ - #CBBF85 is a cream used as the background on some smaller elements;
+ - #C34040 is a red that I've used on buttons to delete and remove items;
+ - #CFB53B is a officially called [old gold](https://en.wikipedia.org/wiki/Old_gold) and is the main colour for focussed and
+ active elements. I have been wanting to use this for some time as it is the traditional colour used in the home jerseys of 
+ [Wolverhampton Wanderers](https://www.wolves.co.uk/).
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Fonts and Icons
 
-A blue button should appear to click: *Make Public*,
+[Spectral](https://fonts.google.com/specimen/Spectral) is a serif font with plenty of space and clarity. I wanted to utilise 
+serifs mainly for the vintage, old-fashioned feel they give, like the best Irish pubs. This font is used  for the majority 
+of text within the project outside of headings.
 
-Another blue button should appear to click: *Open Browser*.
+After listening to plenty of [Pet Sounds](https://en.wikipedia.org/wiki/Pet_Sounds) during the early stages of the project, 
+I wanted to use the iconic [Cooper Black](https://en.wikipedia.org/wiki/Cooper_Black) that features on that record. It is 
+a proprietary font, so [Fraunces](https://fonts.google.com/specimen/Fraunces) was a great replacement. Again, it is 
+definitely a vintage font, in keeping with the idea that so many great pubs and bars in the world have a time-worn, 
+lived-in, nostalgic feel.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The icons I used within this project are all sources from [Font Awesome](https://fontawesome.com/)'s free package.
 
-## Updates Since The Instructional Video
+I overwrote the Materialize styling of the cards to increase the border-radius, I wanted each review to resemble the 
+shape of cardboard beer mats, especially the 
+[collectible beer mats](https://cartophilic-info-exch.blogspot.com/2015/11/fosters-lager-scottish-courage-sporting_14.html)
+that used to be found in pubs.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Responsiveness
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+In terms of look and feel, the site is similar across all browsers. The tablet and desktop views are almost identical
+but for a few alignment changes, while mobile devices always drop into col-12 formatting. For mobile devices, I have 
+included Materialize's default sidenav bar, which was much easier to set up than Bootstrap's mobile menu options. I have 
+also tended to use jQuery to change descriptive buttons it icon-based buttons for smaller devices. A full responsiveness
+testing procedure can be found within the [testing log](planning/testing/TESTING.md).
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### User Stories
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+Testing for each of the below user stories is included within the [testing log](planning/testing/TESTING.md).
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+As a user I want to...
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+  1. ... ;
+  2. ... ;
+  3. ... .
+  4. ... ;
+  5. ... ;
+  6. ... ;
+  7. ... .
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+As an admin, I want to
+  1. ... ;
+  2. ... ;
+  3. ... ;
+  4. ... .
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
---------
+## Features
 
-Happy coding!
+### Existing Features
+
+
+
+### Features to Implement
+
+
+
+
+## Technologies Used
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+    - HTML is the language used to display and structure information on any website.
+
+- [CSS3](https://en.wikipedia.org/wiki/CSS3)
+    - Cascading Style Sheets is the language used to style HTML content.
+
+- [Materialize](https://materializecss.com/)
+    - Materialize's grid framework helped me bring my initial wireframe ideas to life.
+
+- [Javascript](https://www.javascript.com/)
+    - The language that makes the web interactive.
+
+- [jQuery](https://jquery.com/)
+    - An open-source Javascript library that simplifies interactive web design. In this case it is the key to utilising
+    some of Materialize's key features.
+
+- [Font Awesome](https://fontawesome.com/)
+    - Font Awesome's free package provides a comprehensive icon suite that is fully customisable in CSS.
+    
+- [Google Fonts](https://fonts.google.com/)
+    - Google's free service provided countless fonts to help your project stand out.
+
+- [Gitpod](https://www.gitpod.io/)
+    - A software development editor perfect for personal or collaborative use.
+
+- [GitHub](https://www.github.com/)
+    - The world's leading code-hosting platform, and the location of the core code that the project is built upon.
+
+- [Heroku](https://www.heroku.com/)
+    - A cloud platform for hosting scaleable apps in a variety of programming languages.
+
+- [Balsamiq](https://www.balsamiq.com/)
+    - An intuitive drafting tool that enables visual planning during a project's infancy.
+
+- [Pixlr](https://www.pixlr.com/)
+    - Pixlr is a great free software package that enabled me to quickly pick out hex colors and edit images. I have been
+    using this for all sorts of things for about five years and it is somehow still free-to-use.
+
+- [Favicon.io](https://favicon.io/)
+    - A quick and easy tool to create favicons for display in the address bar.
+
+- [Amazon Web Services](#)
+    - A non-relational database in which all data submitted by users is stored, and also where the skeleton of the project's
+    data structure was first mapped out.
+
+- [Django](https://www.djangoproject.com/)
+    - Django is an open-source Python framework that  is designed for quick launches.
+
+
+## Testing
+
+I have included a [testing log](planning/testing/TESTING.md) within the repository.
+
+I tested this project primarily on Firefox but also Chrome and Edge, taking advantage of the screen size options to test 
+using iPad, Samsung Galaxy and Kindle Fire. I also tested the site on my own Huawei device, as well as passing the initial 
+site on to some friends for UI feedback and some rudimentary data entry testing.
+
+
+## Deployment
+
+I used [GitHub](https://www.github.com/) as the code host for this project, and [GitPod](https://www.gitpod.io/) to write 
+it, using just a single branch. stuff about [Heroku](https://www.heroku.com/). The actual data is stored within 
+a [MongoDB](https://www.mongodb.com/) cluster, and four sub-collections (see the Data Architecture section below).
+
+### Cloning the GitHub repository
+
+Assuming you already have Git [installed](https://git-scm.com/download/), anybody can clone this repository by following 
+these steps:
+
+1. Open the command prompt/terminal on your machine;
+2. Type the command 'cd' followed by the directory you wish to store the repository in;
+3. Go to the top of the [GitHub repository](https://github.com/kiehozero/pintbaby/) and click the green 'Code' drop-down 
+button;
+4. Copy the [link provided](https://github.com/kiehozero/pintbaby.git);
+5. Return to the Command Prompt and type 'git clone' followed by the copied address.
+
+For an in-depth guide to cloning repositories, click 
+[here](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/), from which the steps above were taken.
+
+### Django
+
+### Heroku
+
+I deployed this project to Heroku using the following method:
+
+1. After setting up a [Heroku](https://www.heroku.com/) account and creating a new app, head back to your terminal
+and set up a requirements.txt file that automatically updates when you import a library. Instead of using the 
+regular 'touch' command, enter 'pip3 freeze -- local > requirements.txt' into the terminal and press enter;
+2. Run the 'python app.py > Procfile' command to create a file that Heroku will use to run your app automatically, 
+as opposed to you using the python3 app.py command each time you open Gitpod;
+3. Push both the Procfile and requirements.txt to your repository;
+4. In the Heroku app settings, click the Connect to GitHub button and select the repository you wish for Heroku to
+connect to. Click the Config Variables button and select the Reveal option, and enter the items that were added to
+your env.py file line-by-line. Since you added it to .gitignore, Heroku will not be able to see it in the GitHub
+repository.
+5. Once the connection is confirmed, scroll down to the bottom and click the Enable Automatic Deployment button.
+6. After a couple of minutes select the Open App button, and you will now have a hosted URL for the project. Unlike
+Gitpod or any other IDE, this app will only update when you push changes to your repository.
+
+### Amazon Web Services
+
+>>> S3, IAM
+
+### Python Libraries
+
+This project is built on the [Django](https://www.djangoproject.com/) framework. A number of libraries were installed
+to complete this project:
+
+- [django-allauth](https://pypi.org/project/django-allauth/) is an authentication and account management library;
+
+
+## Database Architecture
+
+
+
+
+## Credits
+
+### Content
+
+- Some of the authentication requirements were copied directly from the django-allauth 
+[documentation](https://django-allauth.readthedocs.io/en/latest/installation.html)
+
+### Tutorials
+
+- [Code Institute](https://www.codeinstitute.net/)'s Boutique Ado project gave me a good structure to work from, 
+as well as the foundations for Django;
+
+
+### Media
+
+
+
+### Acknowledgements
+
+- My partner for letting me eternally bounce ideas of myself and my mentor Precious for helping me structure and prioritise
+my project work.
