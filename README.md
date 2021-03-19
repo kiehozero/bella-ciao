@@ -114,6 +114,9 @@ As an admin, I want to
 - [Django](https://www.djangoproject.com/)
     - Django is an open-source Python framework that  is designed for quick launches.
 
+- [DBDiagram](https://dbdiagram.io/)
+    - >>>
+
 
 ## Testing
 
