@@ -1,7 +1,7 @@
-<img src="static/images/text-logo.PNG">
+<img src="#">
 
-Welcome to my data-centric development milestone project. For this project I chose to create 
-[pintbaby](https://www.pintbaby.herokuapp.com/), a website that allows users to add and review pubs around the world.
+Welcome to my full-stack development milestone project. For this project I chose to create 
+[Bella Ciao](#), an online store for a fictional coffee chain based at various locations in Limerick, Ireland.
 
 
 ## User Experience
@@ -11,45 +11,26 @@ Welcome to my data-centric development milestone project. For this project I cho
 - A [Balsamiq](https://www.balsamiq.com/) wireframe for this project is included in the repository, with 
 [desktop/tablet](planning/wireframes/desktop.pdf) and [mobile](planning/wireframes/mobile.pdf) versions.
 
-I used the following hex colours, selected using [Pixlr](https://www.pixlr.com/). Most of the colours were originally 
-based on photographs contained with the [Snug Project](https://thesnugproject.com/) calendar, and then tweaked to best 
-suit a website:
+I used the following hex colours, selected using [Pixlr](https://www.pixlr.com/)
 
- - #4A463A and #443E32 are medium browns used on icons;
- - #3B382E is a dark brown used as a replacement for any blacks used in stylised text against coloured backgrounds to 
- give a slightly warmer feel;
- - #CBBF85 is a cream used as the background on some smaller elements;
- - #C34040 is a red that I've used on buttons to delete and remove items;
- - #CFB53B is a officially called [old gold](https://en.wikipedia.org/wiki/Old_gold) and is the main colour for focussed and
- active elements. I have been wanting to use this for some time as it is the traditional colour used in the home jerseys of 
- [Wolverhampton Wanderers](https://www.wolves.co.uk/).
+- 
+- 
+- 
 
 ### Fonts and Icons
 
-[Spectral](https://fonts.google.com/specimen/Spectral) is a serif font with plenty of space and clarity. I wanted to utilise 
-serifs mainly for the vintage, old-fashioned feel they give, like the best Irish pubs. This font is used  for the majority 
-of text within the project outside of headings.
-
-After listening to plenty of [Pet Sounds](https://en.wikipedia.org/wiki/Pet_Sounds) during the early stages of the project, 
-I wanted to use the iconic [Cooper Black](https://en.wikipedia.org/wiki/Cooper_Black) that features on that record. It is 
-a proprietary font, so [Fraunces](https://fonts.google.com/specimen/Fraunces) was a great replacement. Again, it is 
-definitely a vintage font, in keeping with the idea that so many great pubs and bars in the world have a time-worn, 
-lived-in, nostalgic feel.
+- Fonts
 
 The icons I used within this project are all sources from [Font Awesome](https://fontawesome.com/)'s free package.
 
-I overwrote the Materialize styling of the cards to increase the border-radius, I wanted each review to resemble the 
-shape of cardboard beer mats, especially the 
-[collectible beer mats](https://cartophilic-info-exch.blogspot.com/2015/11/fosters-lager-scottish-courage-sporting_14.html)
-that used to be found in pubs.
 
 ### Responsiveness
 
-In terms of look and feel, the site is similar across all browsers. The tablet and desktop views are almost identical
+<<< In terms of look and feel, the site is similar across all browsers. The tablet and desktop views are almost identical
 but for a few alignment changes, while mobile devices always drop into col-12 formatting. For mobile devices, I have 
 included Materialize's default sidenav bar, which was much easier to set up than Bootstrap's mobile menu options. I have 
 also tended to use jQuery to change descriptive buttons it icon-based buttons for smaller devices. A full responsiveness
-testing procedure can be found within the [testing log](planning/testing/TESTING.md).
+testing procedure can be found within the [testing log](planning/testing/TESTING.md). >>>
 
 ### User Stories
 
