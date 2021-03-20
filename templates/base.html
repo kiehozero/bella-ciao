@@ -6,12 +6,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bella Ciao Ciao Ciao</title>
+    <title>{% block extratitle %}{% endblock %}Bella Ciao Ciao Ciao</title>
 
+    {% block defaultcss %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    {% endblock %}
+
+    {% block extracss %}
+    {% endblock %}
+
+    {% block extrajs %}
+    {% endblock %}
 </head>
 <body>
-    
+    <header></header>
+
+    {% if messages %}
+    <div class="messages-container"></div>
+    {% endif %}
+
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block defaultjs %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    {% endblock %}
+
+    {% block postloadjs %}
+    {% endblock %}
+
 </body>
 </html>
