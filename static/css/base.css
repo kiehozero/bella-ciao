@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Montserrat&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    background: url(#) no-repeat center center fixed;
+    background-size: cover;
+    color: #100f10;
+    font-family: 'Arvo';
+}
+
+
+/* Navigation */
+
+.sidebar {
+    background-color: #003b19;
+    height: 100vh;
+}
+
+.sidebar .row a {
+    color:#e1e1e1;
+}
+
+
+/* Responsiveness */

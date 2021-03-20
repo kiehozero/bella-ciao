@@ -10,6 +10,9 @@
 
     {% block defaultcss %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extracss %}
@@ -19,7 +22,39 @@
     {% endblock %}
 </head>
 <body>
-    <header></header>
+    <div class="row">
+
+    <!-- Navigation Sidebar -->
+    <!-- Add mobile side nav for JS-->
+    <div class="col s2 sidebar" style="background-color: #003b19; height: 100vh;">
+        <img max-width="100%" src="https://www.rabbitohs.com.au/client/dist/logos/rabbitohs-badge-light.svg?bust=202103101">
+        <hr>
+        <!-- Needs to be vertically aligned -->
+        <div class="row">
+            <a href="{% url 'home' %}">Home</a>
+        </div>
+        <div class="row left-align">
+            <a href="#">Locations</a>
+        </div>
+        <div class="row left-align">
+            <a href="#">Sign In</a>
+        </div>
+        <div class="row left-align">
+            <a href="#">Register</a>
+        </div>
+        <div class="row left-align">
+            <a href="#">Online Store</a>
+        </div>
+        <div class="row left-align">
+            <a href="#">My Account</a>
+        </div>
+        <div class="row left-align">
+            <a href="#">Sign Out</a>
+        </div>
+        <!--Social Media at bottom of screen -->
+    </div>
+
+    </div>
 
     {% if messages %}
     <div class="messages-container"></div>
