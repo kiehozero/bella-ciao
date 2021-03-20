@@ -24,47 +24,50 @@
 <body>
     <div class="row">
 
-    <!-- Navigation Sidebar -->
-    <!-- Add mobile side nav for JS-->
-    <div class="col s2 sidebar" style="background-color: #003b19; height: 100vh;">
-        <img max-width="100%" src="https://www.rabbitohs.com.au/client/dist/logos/rabbitohs-badge-light.svg?bust=202103101">
-        <hr>
-        <!-- Needs to be vertically aligned -->
-        <div class="row">
-            <a href="{% url 'home' %}">Home</a>
+        <!-- Navigation Sidebar -->
+        <!-- Add mobile side nav for JS-->
+        <div class="col m2 sidebar" style="background-color: #003b19; height: 100vh;">
+            <img max-width="100%" src="https://www.rabbitohs.com.au/client/dist/logos/rabbitohs-badge-light.svg?bust=202103101">
+            <hr>
+            <!-- Needs to be vertically aligned -->
+            <div class="row">
+                <a href="{% url 'home' %}">Home</a>
+            </div>
+            <div class="row left-align">
+                <a href="#">Locations</a>
+            </div>
+            <div class="row left-align">
+                <a href="#">Sign In</a>
+            </div>
+            <div class="row left-align">
+                <a href="#">Register</a>
+            </div>
+            <div class="row left-align">
+                <a href="#">Online Store</a>
+            </div>
+            <div class="row left-align">
+                <a href="#">My Account</a>
+            </div>
+            <div class="row left-align">
+                <a href="#">Sign Out</a>
+            </div>
+            <!--Social Media at bottom of screen -->
         </div>
-        <div class="row left-align">
-            <a href="#">Locations</a>
+
+        <div class="col s10 page-header">
+            {% if messages %}
+            <div class="messages-container">
+                <!-- Change to the usual toasts/modals-->
+            </div>
+            {% endif %}
+
+            {% block page_header %}
+            {% endblock %}
+
+            {% block content %}
+            {% endblock %}
         </div>
-        <div class="row left-align">
-            <a href="#">Sign In</a>
-        </div>
-        <div class="row left-align">
-            <a href="#">Register</a>
-        </div>
-        <div class="row left-align">
-            <a href="#">Online Store</a>
-        </div>
-        <div class="row left-align">
-            <a href="#">My Account</a>
-        </div>
-        <div class="row left-align">
-            <a href="#">Sign Out</a>
-        </div>
-        <!--Social Media at bottom of screen -->
     </div>
-
-    </div>
-
-    {% if messages %}
-    <div class="messages-container"></div>
-    {% endif %}
-
-    {% block page_header %}
-    {% endblock %}
-
-    {% block content %}
-    {% endblock %}
 
     {% block defaultjs %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

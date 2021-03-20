@@ -24,4 +24,14 @@ body {
 }
 
 
+/* Headers */
+
+.page-header {
+    background-color: #5a3203;
+    color: #e1e1e1;
+}
+
+/* Footers */
+
+
 /* Responsiveness */
