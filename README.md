@@ -196,6 +196,7 @@ to complete this project:
 
 - [Code Institute](https://www.codeinstitute.net/)'s Boutique Ado project gave me a good structure to work from, 
 as well as the foundations for Django;
+- Favicon guide - https://learndjango.com/tutorials/django-favicon-tutorial
 
 
 ### Media
