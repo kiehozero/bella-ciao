@@ -27,6 +27,10 @@ body {
     font-size: 1.5em;
 }
 
+.sidebar #site-logo img {
+    max-width: 100%;
+}
+
 
 /* Headers */
 

@@ -24,10 +24,7 @@
     {% endblock %}
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 </head>
 <body>
     <div class="row">
@@ -35,8 +32,8 @@
         <!-- Navigation Sidebar -->
         <!-- Add mobile side nav for JS-->
         <div class="col m2 sidebar">
-            <div class="text-white">
-                <img src="#">
+            <div id="site-logo">
+                <img src="{{ MEDIA_URL }}cbc-text.png">
             </div>
             <hr>
             <!-- Needs to be vertically aligned -->
