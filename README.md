@@ -48,7 +48,7 @@ As a user I want to...
 
 As an admin, I want to
   1. add a new product;
-  2. ... ;
+  2. delete a product;
   3. ... ;
   4. ... .
 
