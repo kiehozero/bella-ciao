@@ -38,16 +38,16 @@ Testing for each of the below user stories is included within the [testing log](
 
 As a user I want to...
 
-  1. ... ;
-  2. ... ;
-  3. ... .
-  4. ... ;
-  5. ... ;
-  6. ... ;
+  1. order an item for collection;
+  2. order an item for pick-up;
+  3. start a subscription.
+  4. cancel a subscription;
+  5. edit my profile information;
+  6. see my loyalty points;
   7. ... .
 
 As an admin, I want to
-  1. ... ;
+  1. add a new product;
   2. ... ;
   3. ... ;
   4. ... .

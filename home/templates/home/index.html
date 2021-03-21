@@ -2,16 +2,55 @@
 {% load static %}
 
 {% block extratitle %}
-Home | 
+Home |
 {% endblock %}
 
 {% block page_header %}
 <!-- just here for colour and font testing at the moment -->
-<h1>BELLA CIAO</h1>
-<h3>Limerick</h3>
-<h3>Luimneach</h3>
+<h1>CAFE BELLA CIAO</h1>
+<h5>Barista-made coffee poured in the heart of Limerick city</h5>
 
 {% endblock %}
 
 {% block content %}
+
+<div class="row">
+    <div class="col s12 m4 offset-m1">
+        <div class="card index-card">
+            <div class="card-content">
+                <span class="card-title">Card Title</span>
+                <p>Order a delicious coffee made by one of our professional baristas for delivery or collection.</p>
+            </div>
+            <div class="card-action">
+                <a href="#">Order Now!</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m4 offset-m1">
+        <div class="card index-card">
+            <div class="card-content">
+                <span class="card-title">Card Title</span>
+                <p>Sign up for our subscription to get unlimited coffee for a flat monthly fee.</p>
+            </div>
+            <div class="card-action">
+                <a href="#">Subscribe Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m4 offset-m1">
+        <div class="card index-card">
+            <div class="card-content">
+                <span class="card-title">Card Title</span>
+                <p>Create an account to get every tenth coffee free from any store.</p>
+            </div>
+            <div class="card-action">
+                <a href="#">Register</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 {% endblock %}

@@ -23,6 +23,10 @@ body {
     color:#e1e1e1;
 }
 
+.nav-option {
+    font-size: 1.5em;
+}
+
 
 /* Headers */
 
@@ -31,7 +35,27 @@ body {
     color: #e1e1e1;
 }
 
+
 /* Footers */
+
+
+/* Index */
+
+.index-card,
+.index-card .card-content {
+    background-color: #e1e1e1;
+    color: #100f10;
+}
+
+.card.index-card .card-action {
+    background-color: #003b19;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color: #e1e1e1;
+}
+
+
 
 
 /* Responsiveness */
