@@ -8,19 +8,32 @@ body {
     background: url(#) no-repeat center center fixed;
     background-size: cover;
     color: #100f10;
-    font-family: 'Arvo';
+    font-family: 'Montserrat';
 }
 
+h1, h2, h3, h4, h5, h6 {
+    /* only use Arvo where it is necessary */
+    font-family: 'Arvo';
+}
 
 /* Navigation */
 
 .sidebar {
     background-color: #003b19;
-    height: 100vh;
+    display: flex;
+    height: 100%;
+    position: fixed;
+    width: 16.6%;
+    z-index: 1;
 }
 
 .sidebar .row a {
     color:#e1e1e1;
+}
+
+.sidebar-icon {
+    font-size: 2em;
+    padding-top: 1em;
 }
 
 .nav-option {
@@ -31,6 +44,17 @@ body {
     max-width: 100%;
 }
 
+.social-icon {
+    color: #e1e1e1;
+    font-size: 1.5em;
+    padding-top: 1.5em;
+}
+
+/* Main */
+
+main {
+    offset: 11.5rem;
+}
 
 /* Headers */
 
@@ -44,6 +68,15 @@ body {
 
 
 /* Index */
+
+.landing-header {
+    background: url('https://www.dromoland.ie/wp-content/uploads/2019/01/sl-limerick-city.jpg') no-repeat fixed center;
+    color: #e1e1e1;
+}
+
+.row .col.landing-box {
+    padding: 0 0 10rem 0;
+}
 
 .index-card,
 .index-card .card-content {

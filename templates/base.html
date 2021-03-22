@@ -27,21 +27,32 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 </head>
 <body>
-    <div class="row">
+    <header class="sidebar">
 
         <!-- Navigation Sidebar -->
-        <!-- Add mobile side nav for JS-->
-        <div class="col m2 sidebar">
+        <div class="center-align">
             <div id="site-logo">
-                <img src="{{ MEDIA_URL }}cbc-text.png">
+                <a href="{% url 'home' %}">
+                    <img src="{{ MEDIA_URL }}cbc-text.png">
+                </a>
             </div>
-            <hr>
+
+            <div class="row nav-option center-align">
+                <!-- if user loop, if signed in send to account link, if signed out send to registration -->
+                <a href="#">
+                    <i class="far fa-user-circle sidebar-icon"></i>
+                </a>
+                <a href="#">
+                    <i class="fas fa-shopping-cart sidebar-icon"></i>
+                </a>
+            </div>
+
             <!-- Needs to be vertically aligned -->
             <div class="row nav-option">
-                <a href="{% url 'home' %}">Home</a>
+                <a href="#">Locations</a>
             </div>
             <div class="row nav-option">
-                <a href="#">Locations</a>
+                <a href="#">Online Store</a>
             </div>
             <div class="row nav-option">
                 <a href="#">Sign In</a>
@@ -50,31 +61,68 @@
                 <a href="#">Register</a>
             </div>
             <div class="row nav-option">
-                <a href="#">Online Store</a>
-            </div>
-            <div class="row nav-option">
-                <a href="#">My Account</a>
-            </div>
-            <div class="row nav-option">
                 <a href="#">Sign Out</a>
             </div>
-            <!--Social Media at bottom of screen -->
-        </div>
-
-        <div class="col s10 page-header">
-            {% if messages %}
-            <div class="messages-container">
-                <!-- Change to the usual toasts/modals-->
+            <!--Social Media -->
+            <div>
+                <a href="#">
+                    <i class="fab fa-facebook-f social-icon"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-instagram social-icon"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-twitter social-icon"></i>
+                </a>
+                <a href="#">
+                    <i class="far fa-envelope social-icon"></i>
+                </a>
             </div>
-            {% endif %}
-
-            {% block page_header %}
-            {% endblock %}
-
-            {% block content %}
-            {% endblock %}
         </div>
-    </div>
+    </header>
+
+        <!-- Add mobile side nav for JS-->
+
+        <!-- User Prompts -->
+        {% if messages %}
+        <div class="row">
+            <div class="col s10 page-header">
+                <div class="messages-container">
+                <!-- Change to the usual toasts/modals-->
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col d-sm-none m2">
+                <!-- Sits behind sidenav (can be turned off for mobile sidenav) -->
+            </div>
+            <div class="col s12 m10">
+                {% block page_header %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <!-- Page Content -->
+
+        <main>
+            <div class="row">
+                <div class="col d-sm-none m2">
+                    <!-- Is d-sm-none a valid Materialize tag or is it a Bootstrap hangover? -->
+                    <!-- Sits behind sidenav (can be turned off for mobile sidenav) -->
+                </div>
+                <div class="col s12 m10">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <!-- Empty at the moment -->
+        </footer>
+
 
     {% block defaultjs %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
