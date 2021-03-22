@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +25,12 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 </head>
+
 <body>
+    <!-- Navigation Sidebar -->
     <header class="sidebar">
 
-        <!-- Navigation Sidebar -->
+        <!-- Logo -->
         <div class="center-align">
             <div id="site-logo">
                 <a href="{% url 'home' %}">
@@ -37,13 +38,35 @@
                 </a>
             </div>
 
-            <div class="row nav-option center-align">
-                <!-- if user loop, if signed in send to account link, if signed out send to registration -->
-                <a href="#">
-                    <i class="far fa-user-circle sidebar-icon"></i>
+        <!-- Navigation Elements and Basket -->
+            <div class="row nav-option">
+                <!-- Redirects to user profile if logged in, login page if not -->
+                {% if request.user.is_authenticated %}
+                <a href="#" class="account-auth">
+                    <i class="far fa-user-circle account-icon-auth"></i> {{ user }}
                 </a>
-                <a href="#">
-                    <i class="fas fa-shopping-cart sidebar-icon"></i>
+                {% else %}
+                <a href="{% url 'account_login' %}">
+                    <i class="far fa-user-circle account-icon"></i>
+                </a>
+                {% endif %}
+            </div>
+
+            <div class="row nav-option">
+                <!-- Shopping cart logic taken from Code Institute Boutique Ado project -->
+                <a class="{% if grand_total %}basket-full{% else %}basket-empty{% endif %}" href="#">
+                    <div>
+                        <div>
+                            <i class="fas fa-shopping-cart sh-cart-icon"></i>
+                        </div>
+                        <p>
+                            {% if grand_total %}
+                                €{{ grand_total|floatformat:2 }}
+                            {% else %}
+                                €0.00
+                            {% endif %}
+                        </p>
+                    </div>
                 </a>
             </div>
 
@@ -54,29 +77,45 @@
             <div class="row nav-option">
                 <a href="#">Online Store</a>
             </div>
+            {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                <div class="row nav-option">
+                    <a href="#">Administration</a>
+                </div>
+                {% endif %}
             <div class="row nav-option">
-                <a href="#">Sign In</a>
+                <a href="{% url 'account_logout' %}">Sign Out</a>
+            </div>
+            {% else %}
+            <div class="row nav-option">
+                <a href="{% url 'account_login' %}">Sign In</a>
             </div>
             <div class="row nav-option">
-                <a href="#">Register</a>
+                <a href="{% url 'account_signup' %}">Register</a>
             </div>
-            <div class="row nav-option">
-                <a href="#">Sign Out</a>
-            </div>
+            {% endif %}
             <!--Social Media -->
-            <div>
-                <a href="#">
-                    <i class="fab fa-facebook-f social-icon"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-instagram social-icon"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-twitter social-icon"></i>
-                </a>
-                <a href="#">
-                    <i class="far fa-envelope social-icon"></i>
-                </a>
+            <div class="row">
+                <div class="col s2 offset-s1">
+                    <a href="https://www.facebook.com/">
+                        <i class="fab fa-facebook-f social-icon"></i>
+                    </a>
+                </div>
+                <div class="col s2">
+                    <a href="https://www.instagram.com/">
+                        <i class="fab fa-instagram social-icon"></i>
+                    </a>
+                </div>
+                <div class="col s2">
+                    <a href="http://www.twitter.com/">
+                        <i class="fab fa-twitter social-icon"></i>
+                    </a>
+               </div>
+                <div class="col s2">
+                    <a href="#">
+                        <i class="far fa-envelope social-icon"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -120,7 +159,48 @@
         </main>
 
         <footer>
-            <!-- Empty at the moment -->
+            <div class="row">
+                <div class="col d-sm-none m2">
+                    <!-- Is d-sm-none a valid Materialize tag or is it a Bootstrap hangover? -->
+                    <!-- Sits behind sidenav (can be turned off for mobile sidenav) -->
+                </div>
+                <div class="col s12 m10">
+                    <div class="row store-select">
+                        <div class="col m3">
+                            <h5>CBC Mercato</h5>
+                            <p>The Milk Market</p>
+                            <p>Cornmarket Row</p>
+                            <p>V94 R602</p>
+                            <p>061 999 112</p>
+                            <a class="btn btn-small waves-effect waves-003b19">Order Now</a>
+                        </div>
+                        <div class="col m3">
+                            <h5>CBC Mezzaluna</h5>
+                            <p>Crescent Shopping Centre</p>
+                            <p>Dooradoyle Road</p>
+                            <p>V94 E81C</p>
+                            <p>061 999 112</p>
+                            <a class="btn btn-small waves-effect waves-003b19">Order Now</a>
+                        </div>
+                        <div class="col m3">
+                            <h5>CBC Riviera</h5>
+                            <p>Harvey's Quay</p>
+                            <p>Bedford Road</p>
+                            <p>V94 KHD6</p>
+                            <p>061 999 112</p>
+                            <a class="btn btn-small waves-effect waves-003b19">Order Now</a>
+                        </div>
+                        <div class="col m3">
+                            <h5>CBC Ovest</h5>
+                            <p>Jetland Shopping Centre</p>
+                            <p>Ennis Road</p>
+                            <p>V94 DN22</p>
+                            <p>061 999 112</p>
+                            <a class="btn btn-small waves-effect waves-003b19">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
 
 

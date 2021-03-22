@@ -194,9 +194,10 @@ to complete this project:
 
 ### Tutorials
 
-- [Code Institute](https://www.codeinstitute.net/)'s Boutique Ado project gave me a good structure to work from, 
-as well as the foundations for Django;
-- Favicon guide - https://learndjango.com/tutorials/django-favicon-tutorial
+- [Code Institute](https://www.codeinstitute.net/)'s [Boutique Ado](https://github.com/ckz8780/boutique_ado_v1) project 
+gave me a good structure to work from, as well as the foundations for using Django;
+- Setting up favicons was slightly different in Django then just sticking them in the project root, luckily 
+[this](https://learndjango.com/tutorials/django-favicon-tutorial) made this another painless transition.
 
 
 ### Media
