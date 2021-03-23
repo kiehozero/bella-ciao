@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block extratitle %}{% endblock %}Bella Ciao Ciao Ciao</title>
+    <title>{% block extratitle %}{% endblock %}Cafe Bella Ciao</title>
 
     {% block defaultcss %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -122,7 +122,7 @@
 
         <ul class="sidenav center-align" id="mobile-snav">
             <!-- Logo -->
-            <li id="site-logo" class="nav-option">
+            <li id="mob-logo" class="nav-option">
                 <a href="{% url 'home' %}">
                     <img src="{{ MEDIA_URL }}cbc-text.png">
                 </a>
@@ -182,22 +182,22 @@
             <!--Social Media -->
             <li class="row nav-option">
                 <!-- hover over icons is fine, hover over anchors is weird -->
-                <div class="col s2 offset-s1">
+                <div class="col s3">
                     <a href="https://www.facebook.com/" target="_blank">
                         <i class="fab fa-facebook-f social-icon"></i>
                     </a>
                 </div>
-                <div class="col s2">
+                <div class="col s3">
                     <a href="https://www.instagram.com/" target="_blank">
                         <i class="fab fa-instagram social-icon"></i>
                     </a>
                 </div>
-                <div class="col s2">
+                <div class="col s3">
                     <a href="http://www.twitter.com/" target="_blank">
                         <i class="fab fa-twitter social-icon"></i>
                     </a>
                 </div>
-                <div class="col s2">
+                <div class="col s3">
                     <a href="#">
                         <i class="far fa-envelope social-icon"></i>
                     </a>
@@ -207,9 +207,9 @@
 
     </header>
 
-    <!-- button to open sidenav -->
+    <!-- button to open sidenav - Materialize floating action button -->
     <div class="trigger-display">
-        <a href="#" data-target="mobile-snav" class="sidenav-trigger">
+        <a href="#" data-target="mobile-snav" class="sidenav-trigger btn-floating btn-large waves-effect waves-light">
             <i class="fas fa-angle-down"></i>
         </a>
     </div>

@@ -8,4 +8,6 @@ $ symbol is an undefined variable */
 $(document).ready(function(){
     /* initialises mobile side navigation bar */
     $('.sidenav').sidenav();
+    /* initialises floating button to open side nav bar */
+    $('.fixed-action-btn').floatingActionButton();
 });

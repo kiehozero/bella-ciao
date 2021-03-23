@@ -207,8 +207,29 @@ main {
 
     .trigger-display a i {
         color: #e1e1e1;
-        font-size: 5rem;
+        font-size: 3rem;
     }
+
+    /* all items below containing sidenav are overwrites of default Materialize parameters */
+    .sidenav {
+        background-color: #003b19;
+}
+
+    .sidenav li>a {
+        color: #e1e1e1;
+        font-size: 1.5em;
+        font-weight: 600;
+        height: 20%;
+}
+
+    .sidenav li>a>i {
+        color: #e1e1e1;
+        float: none;
+    }
+
+    .sidenav #mob-logo img {
+        max-width: 100%;
+}
 
     .hidden-spacer {
         /* sits behind sidebar on larger screens */
