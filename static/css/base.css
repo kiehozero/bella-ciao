@@ -100,12 +100,7 @@ nav ul a {
     color:#003b19;
 }
 
-.sidenav {
-    /* Materialize tag for collapsible sidenav on mobile view */
-    display: none;
-}
-
-.trigger-display {
+.sidenav-trigger {
     /* only available on smaller devices - see media queries at bottom */
     display: none;
 }
@@ -195,20 +190,20 @@ main {
         display: none;
     }
 
-    .trigger-display {
+    .sidenav-trigger {
+        /* display and position allow trigger to sit on top of any
+        headers without interfering with the layout below the trigger */
         background-color: #003b19;
-        display: inline-block;
+        display: inline;
+        position: absolute;
+        text-align: center;
+        width: 20%;
         z-index: 1;
     }
 
     .trigger-display a i {
         color: #e1e1e1;
-        font-size: 2rem;
-    }
-
-    .sidenav {
-        /* overrides default Materialize parameters */
-        z-index: 2;
+        font-size: 5rem;
     }
 
     .hidden-spacer {
