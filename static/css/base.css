@@ -162,7 +162,8 @@ main {
     color: #100f10;
 }
 
-.card-title {
+.card .card-image .card-title {
+    /* Overwrites default Materialize parameters */
     color: #e1e1e1;
 }
 
@@ -187,6 +188,7 @@ main {
 }
 
 @media (max-width: 992px) {
+    /* Alternative navigation parameters for smaller screens */
     .sidebar {
         /* static sidebar is replaced with pullout version on mobile and tablet */
         /* can the sidebar be triggered by a button in jQuery rather than writing
@@ -203,6 +205,12 @@ main {
         text-align: center;
         width: 20%;
         z-index: 1;
+    }
+
+    .sidenav-trigger {
+        /* pushes button in from screen edges */
+        margin-left: 5%;
+        margin-top: 5%;
     }
 
     .trigger-display a i {
