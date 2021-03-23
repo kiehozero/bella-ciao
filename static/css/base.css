@@ -162,6 +162,10 @@ main {
     color: #100f10;
 }
 
+.card-title {
+    color: #e1e1e1;
+}
+
 .card.index-card .card-action {
     background-color: #003b19;
 }

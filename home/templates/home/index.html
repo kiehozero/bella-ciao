@@ -21,81 +21,99 @@ Home |
 
 <!-- Default Materialize card format -->
 <div class="container">
-<div class="row">
+    <div class="row">
 
-    <div class="col s12 m4">
-        <div class="card index-card">
-            <div class="card-content">
-                <h4 class="card-title">Order Online</h4>
-                <p>Delicious coffee prepared our professional baristas for delivery or collection.</p>
-            </div>
-            <div class="card-action">
-                <a href="#">Order Now</a>
+        <div class="col s12 m4">
+            <div class="card index-card">
+                <div class="card-image">
+                    <img src="{{ MEDIA_URL }}coffee-order.png">
+                    <h4 class="card-title">Order Online</h4>
+                </div>
+                <div class="card-content">
+                    <p>Delicious coffee prepared our professional baristas for delivery or collection.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">Order Now</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col s12 m4">
-        <div class="card index-card">
-            <div class="card-content">
-                <h4 class="card-title">Go Unlimited</h4>
-                <p>Sign up for our subscription to get unlimited coffee for a flat monthly fee.</p>
-            </div>
-            <div class="card-action">
-                <a href="#">Subscribe Today</a>
+        <div class="col s12 m4">
+            <div class="card index-card">
+                <div class="card-image">
+                    <img src="{{ MEDIA_URL }}coffee-lots.png">
+                    <h4 class="card-title">Go Unlimited</h4>
+                </div>
+                <div class="card-content">
+                    <p>Sign up for our subscription to get unlimited coffee for a flat monthly fee.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">Subscribe Today</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col s12 m4">
-        <div class="card index-card">
-            <div class="card-content">
-                <h4 class="card-title">Delivery</h4>
-                <p>Create an account for express checkout and home delivery options.</p>
-            </div>
-            <div class="card-action">
-                <a href="{% url 'account_signup' %}">Register</a>
+        <div class="col s12 m4">
+            <div class="card index-card">
+                <div class="card-image">
+                    <img src="{{ MEDIA_URL }}coffee-bike.png">
+                    <h4 class="card-title">Delivery</h4>
+                </div>
+                <div class="card-content">
+                    <p>Create an account for express checkout and home delivery options.</p>
+                </div>
+                <div class="card-action">
+                    <a href="{% url 'account_signup' %}">Register</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col s12 m4">
-        <div class="card index-card">
-            <div class="card-content">
-                <h4 class="card-title">Get Rewards</h4>
-                <p>Create an account to get every tenth coffee free from any of our stores.</p>
-            </div>
-            <div class="card-action">
-                <a href="{% url 'account_signup' %}">Register</a>
+        <div class="col s12 m4">
+            <div class="card index-card">
+                <div class="card-image">
+                    <img src="{{ MEDIA_URL }}coffee-loyalty.png">
+                    <h4 class="card-title">Get Rewards</h4>
+                </div>
+                <div class="card-content">
+                    <p>Create an account to get every tenth coffee free from any of our stores.</p>
+                </div>
+                <div class="card-action">
+                    <a href="{% url 'account_signup' %}">Register</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col s12 m4">
-        <div class="card index-card">
-            <div class="card-content">
-                <h4 class="card-title">Get Rewards</h4>
-                <p>Create an account to get every tenth coffee free from any of our stores.</p>
-            </div>
-            <div class="card-action">
-                <a href="{% url 'account_signup' %}">Register</a>
+        <div class="col s12 m4">
+            <div class="card index-card">
+                <div class="card-image">
+                    <img src="{{ MEDIA_URL }}barista-pour.png">
+                    <h4 class="card-title">Masterclasses</h4>
+                </div>
+                <div class="card-content">
+                    <p>Subscribe today for free access to monthly tasting sessions and masterclasses.</p>
+                </div>
+                <div class="card-action">
+                    <a href="{% url 'account_signup' %}">Subscribe</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col s12 m4">
-        <div class="card index-card">
-            <div class="card-content">
-                <h4 class="card-title">Get Rewards</h4>
-                <p>Create an account to get every tenth coffee free from any of our stores.</p>
-            </div>
-            <div class="card-action">
-                <a href="{% url 'account_signup' %}">Register</a>
+        <div class="col s12 m4">
+            <div class="card index-card">
+                <div class="card-image">
+                    <img src="{{ MEDIA_URL }}coffee-take.png">
+                    <h4 class="card-title">Get Rewards</h4>
+                </div>
+                <div class="card-content">
+                    <p>Create an account to get every tenth coffee free from any of our stores.</p>
+                </div>
+                <div class="card-action">
+                    <a href="{% url 'account_signup' %}">Register</a>
+                </div>
             </div>
         </div>
-    </div>
 
-</div>
+    </div>
 </div>
 
 {% endblock %}
