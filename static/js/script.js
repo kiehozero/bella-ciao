@@ -10,4 +10,6 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
     /* initialises floating button to open side nav bar */
     $('.fixed-action-btn').floatingActionButton();
+    /* initialises dropdown elements */
+    $('.dropdown-trigger').dropdown();
 });
