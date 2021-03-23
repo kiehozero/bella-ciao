@@ -16,6 +16,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Arvo';
 }
 
+
 /* Navigation */
 
 .sidebar {
@@ -81,11 +82,22 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 0.5em;
 }
 
+.sidenav {
+    /* Materialize tag for collapsible sidenav on mobile view */
+    display: none;
+}
+
+.trigger-display {
+    /* only available on smaller devices - see media queries at bottom */
+    display: none;
+}
+
 /* Main */
 
 main {
     offset: 11.5rem;
 }
+
 
 /* Headers */
 
@@ -148,3 +160,41 @@ main {
 
 
 /* Responsiveness */
+
+@media (min-width: 1200px) {
+    .container {
+        /* taken from CI Boutique Ado, this overrides the default
+        Materialize class on the largest screen sizes */
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        /* static sidebar is replaced with pullout version on mobile and tablet */
+        /* can the sidebar be triggered by a button in jQuery rather than writing
+        two different sidebars? */
+        display: none;
+    }
+
+    .trigger-display {
+        background-color: #003b19;
+        display: inline-block;
+        z-index: 1;
+    }
+
+    .trigger-display a i {
+        color: #e1e1e1;
+        font-size: 2rem;
+    }
+
+    .sidenav {
+        /* overrides default Materialize parameters */
+        z-index: 2;
+    }
+
+    .hidden-spacer {
+        /* sits behind sidebar on larger screens */
+        display: none;
+    }
+}

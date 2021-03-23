@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-compatible" content="ie=edge">
@@ -23,193 +24,297 @@
     {% endblock %}
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" />
 </head>
 
 <body>
     <!-- Navigation Sidebar -->
     <header class="sidebar">
+        <nav style="background-color: rgba(255, 255, 255, 0)">
+            <!-- Logo -->
+            <div class="desknav center-align">
+                <div id="site-logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{{ MEDIA_URL }}cbc-text.png">
+                    </a>
+                </div>
 
-        <!-- Logo -->
-        <div class="center-align">
-            <div id="site-logo">
-                <a href="{% url 'home' %}">
-                    <img src="{{ MEDIA_URL }}cbc-text.png">
-                </a>
-            </div>
+                <!-- Navigation Elements and Basket -->
+                <div class="row nav-option">
+                    <!-- Redirects to user profile if logged in, login page if not -->
+                    {% if request.user.is_authenticated %}
+                    <a href="#" class="account-auth">
+                        <i class="far fa-user-circle account-icon-auth"></i> {{ user }}
+                    </a>
+                    {% else %}
+                    <a href="{% url 'account_login' %}">
+                        <i class="far fa-user-circle account-icon"></i>
+                    </a>
+                    {% endif %}
+                </div>
 
-        <!-- Navigation Elements and Basket -->
-            <div class="row nav-option">
-                <!-- Redirects to user profile if logged in, login page if not -->
-                {% if request.user.is_authenticated %}
-                <a href="#" class="account-auth">
-                    <i class="far fa-user-circle account-icon-auth"></i> {{ user }}
-                </a>
-                {% else %}
-                <a href="{% url 'account_login' %}">
-                    <i class="far fa-user-circle account-icon"></i>
-                </a>
-                {% endif %}
-            </div>
-
-            <div class="row nav-option">
-                <!-- Shopping cart logic taken from Code Institute Boutique Ado project -->
-                <a class="{% if grand_total %}basket-full{% else %}basket-empty{% endif %}" href="#">
-                    <div>
+                <div class="row nav-option">
+                    <!-- Shopping cart logic taken from Code Institute Boutique Ado project -->
+                    <a class="{% if grand_total %}basket-full{% else %}basket-empty{% endif %}" href="#">
                         <div>
-                            <i class="fas fa-shopping-cart sh-cart-icon"></i>
-                        </div>
-                        <p>
-                            {% if grand_total %}
+                            <div>
+                                <i class="fas fa-shopping-cart sh-cart-icon"></i>
+                            </div>
+                            <p>
+                                {% if grand_total %}
                                 €{{ grand_total|floatformat:2 }}
-                            {% else %}
+                                {% else %}
                                 €0.00
-                            {% endif %}
-                        </p>
-                    </div>
-                </a>
-            </div>
+                                {% endif %}
+                            </p>
+                        </div>
+                    </a>
+                </div>
 
-            <!-- Needs to be vertically aligned -->
-            <div class="row nav-option">
-                <a href="#">Locations</a>
-            </div>
-            <div class="row nav-option">
-                <a href="#">Online Store</a>
-            </div>
-            {% if request.user.is_authenticated %}
+                <!-- Needs to be vertically aligned -->
+                <div class="row nav-option">
+                    <a href="#">Locations</a>
+                </div>
+                <div class="row nav-option">
+                    <a href="#">Online Store</a>
+                </div>
+                {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                 <div class="row nav-option">
                     <a href="#">Administration</a>
                 </div>
                 {% endif %}
-            <div class="row nav-option">
-                <a href="{% url 'account_logout' %}">Sign Out</a>
-            </div>
-            {% else %}
-            <div class="row nav-option">
-                <a href="{% url 'account_login' %}">Sign In</a>
-            </div>
-            <div class="row nav-option">
-                <a href="{% url 'account_signup' %}">Register</a>
-            </div>
-            {% endif %}
-            <!--Social Media -->
-            <div class="row">
-                <div class="col s2 offset-s1">
-                    <a href="https://www.facebook.com/">
-                        <i class="fab fa-facebook-f social-icon"></i>
-                    </a>
+                <div class="row nav-option">
+                    <a href="{% url 'account_logout' %}">Sign Out</a>
                 </div>
-                <div class="col s2">
-                    <a href="https://www.instagram.com/">
-                        <i class="fab fa-instagram social-icon"></i>
-                    </a>
+                {% else %}
+                <div class="row nav-option">
+                    <a href="{% url 'account_login' %}">Sign In</a>
                 </div>
-                <div class="col s2">
-                    <a href="http://www.twitter.com/">
-                        <i class="fab fa-twitter social-icon"></i>
-                    </a>
-               </div>
-                <div class="col s2">
-                    <a href="#">
-                        <i class="far fa-envelope social-icon"></i>
-                    </a>
+                <div class="row nav-option">
+                    <a href="{% url 'account_signup' %}">Register</a>
                 </div>
-            </div>
-        </div>
-    </header>
+                {% endif %}
 
-        <!-- Add mobile side nav for JS-->
-
-        <!-- User Prompts -->
-        {% if messages %}
-        <div class="row">
-            <div class="col s10 page-header">
-                <div class="messages-container">
-                <!-- Change to the usual toasts/modals-->
-                </div>
-            </div>
-        </div>
-        {% endif %}
-
-        <div class="row">
-            <div class="col d-sm-none m2">
-                <!-- Sits behind sidenav (can be turned off for mobile sidenav) -->
-            </div>
-            <div class="col s12 m10">
-                {% block page_header %}
-                {% endblock %}
-            </div>
-        </div>
-
-        <!-- Page Content -->
-
-        <main>
-            <div class="row">
-                <div class="col d-sm-none m2">
-                    <!-- Is d-sm-none a valid Materialize tag or is it a Bootstrap hangover? -->
-                    <!-- Sits behind sidenav (can be turned off for mobile sidenav) -->
-                </div>
-                <div class="col s12 m10">
-                {% block content %}
-                {% endblock %}
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            <div class="row">
-                <div class="col d-sm-none m2">
-                    <!-- Is d-sm-none a valid Materialize tag or is it a Bootstrap hangover? -->
-                    <!-- Sits behind sidenav (can be turned off for mobile sidenav) -->
-                </div>
-                <div class="col s12 m10">
-                    <div class="row store-select">
-                        <div class="col m3">
-                            <h5>CBC Mercato</h5>
-                            <p>The Milk Market</p>
-                            <p>Cornmarket Row</p>
-                            <p>V94 R602</p>
-                            <p>061 999 112</p>
-                            <a class="btn btn-small waves-effect waves-003b19">Order Now</a>
-                        </div>
-                        <div class="col m3">
-                            <h5>CBC Mezzaluna</h5>
-                            <p>Crescent Shopping Centre</p>
-                            <p>Dooradoyle Road</p>
-                            <p>V94 E81C</p>
-                            <p>061 999 112</p>
-                            <a class="btn btn-small waves-effect waves-003b19">Order Now</a>
-                        </div>
-                        <div class="col m3">
-                            <h5>CBC Riviera</h5>
-                            <p>Harvey's Quay</p>
-                            <p>Bedford Road</p>
-                            <p>V94 KHD6</p>
-                            <p>061 999 112</p>
-                            <a class="btn btn-small waves-effect waves-003b19">Order Now</a>
-                        </div>
-                        <div class="col m3">
-                            <h5>CBC Ovest</h5>
-                            <p>Jetland Shopping Centre</p>
-                            <p>Ennis Road</p>
-                            <p>V94 DN22</p>
-                            <p>061 999 112</p>
-                            <a class="btn btn-small waves-effect waves-003b19">Order Now</a>
-                        </div>
+                <!--Social Media -->
+                <div class="row">
+                    <div class="col s2 offset-s1">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <i class="fab fa-facebook-f social-icon"></i>
+                        </a>
+                    </div>
+                    <div class="col s2">
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <i class="fab fa-instagram social-icon"></i>
+                        </a>
+                    </div>
+                    <div class="col s2">
+                        <a href="http://www.twitter.com/" target="_blank">
+                            <i class="fab fa-twitter social-icon"></i>
+                        </a>
+                    </div>
+                    <div class="col s2">
+                        <a href="#">
+                            <i class="far fa-envelope social-icon"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </footer>
+
+            <!-- Materialize mobile side navigation bar -->
+            <!-- requires JQ init once -->
+
+            <ul class="sidenav-overlay center-align" id="mobile-snav">
+                <div id="site-logo-mob">
+                    <a href="{% url 'home' %}">
+                        <img src="{{ MEDIA_URL }}cbc-text.png">
+                    </a>
+                </div>
+
+                <div class="sidenav-trigger">
+                    <!-- button to close -->
+                    <a href="#" data-target="mobile-snav">
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                </div>
+
+                <!-- Navigation Elements and Basket -->
+                <div class="row nav-option">
+                    <!-- Redirects to user profile if logged in, login page if not -->
+                    {% if request.user.is_authenticated %}
+                    <a href="#" class="account-auth">
+                        <i class="far fa-user-circle account-icon-auth"></i> {{ user }}
+                    </a>
+                    {% else %}
+                    <a href="{% url 'account_login' %}">
+                        <i class="far fa-user-circle account-icon"></i>
+                    </a>
+                    {% endif %}
+                </div>
+
+                <div class="row nav-option">
+                    <!-- Shopping cart logic taken from Code Institute Boutique Ado project -->
+                    <a class="{% if grand_total %}basket-full{% else %}basket-empty{% endif %}" href="#">
+                        <div>
+                            <div>
+                                <i class="fas fa-shopping-cart sh-cart-icon"></i>
+                            </div>
+                            <p>
+                                {% if grand_total %}
+                                €{{ grand_total|floatformat:2 }}
+                                {% else %}
+                                €0.00
+                                {% endif %}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Displays the Admin panel if the user is an admin -->
+                {% if request.user.is_superuser %}
+                <li>
+                    <a href="#">Administration</a>
+                </li>
+                {% endif %}
+
+                <!-- Displays the Log Out link for signed in users, but displays 
+        the Log In and Register links for guests -->
+                {% if request.user.is_authenticated %}
+                <li>
+                    <a href="{% url 'account_logout' %}">Sign Out</a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'account_login' %}">Sign In</a>
+                </li>
+                <li>
+                    <a href="{% url 'account_signup' %}">Register</a>
+                </li>
+                {% endif %}
+                <li>
+                    <a href="{% url 'home' %}" class="nav-option">Home</a>
+                </li>
+                <!-- Social Media -->
+                <li>
+                    <div class="col s2 offset-s1">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <i class="fab fa-facebook-f social-icon"></i>
+                        </a>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <i class="fab fa-twitter social-icon"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <i class="fab fa-instagram social-icon"></i>
+                        </a>
+                        <a href="#">
+                            <i class="far fa-envelope social-icon"></i>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- button to open sidenav -->
+    <div class="trigger-display">
+        <a href="#" data-target="mobile-snav" class="sidenav-trigger">
+            <i class="fas fa-angle-down"></i>
+        </a>
+    </div>
+
+    <!-- User Prompts -->
+    {% if messages %}
+    <div class="row">
+        <div class="col s10 page-header">
+            <div class="messages-container">
+                <!-- Change to the usual toasts/modals-->
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col d-sm-none m2">
+            <!-- Sits behind sidenav (can be turned off for mobile sidenav) -->
+        </div>
+        <div class="col s12 m10">
+            {% block page_header %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <!-- Page Content -->
+
+    <main>
+        <div class="row">
+            <div class="col d-sm-none m2">
+                <!-- Is d-sm-none a valid Materialize tag or is it a Bootstrap hangover? -->
+                <!-- Sits behind sidenav (can be turned off for mobile sidenav) -->
+            </div>
+            <div class="col s12 m10">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="row">
+            <div class="col l2 hidden-spacer">
+                <!-- Sits behind sidenav on l and xl screens -->
+            </div>
+            <div class="col s12 l10">
+                <div class="row store-select">
+                    <div class="col s3">
+                        <h5>CBC Mercato</h5>
+                        <p>The Milk Market</p>
+                        <p>Cornmarket Row</p>
+                        <p>V94 R602</p>
+                        <p>061 999 112</p>
+                        <a class="btn btn-small waves-effect waves-003b19 order-button">Order Now</a>
+                    </div>
+                    <div class="col s3">
+                        <h5>CBC Mezzaluna</h5>
+                        <p>Crescent Shopping Centre</p>
+                        <p>Dooradoyle Road</p>
+                        <p>V94 E81C</p>
+                        <p>061 999 112</p>
+                        <a class="btn btn-small waves-effect waves-003b19 order-button">Order Now</a>
+                    </div>
+                    <div class="col s3">
+                        <h5>CBC Riviera</h5>
+                        <p>Harvey's Quay</p>
+                        <p>Bedford Road</p>
+                        <p>V94 KHD6</p>
+                        <p>061 999 112</p>
+                        <a class="btn btn-small waves-effect waves-003b19 order-button">Order Now</a>
+                    </div>
+                    <div class="col s3">
+                        <h5>CBC Ovest</h5>
+                        <p>Jetland Shopping Centre</p>
+                        <p>Ennis Road</p>
+                        <p>V94 DN22</p>
+                        <p>061 999 112</p>
+                        <a class="btn btn-small waves-effect waves-003b19 order-button">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     {% block defaultjs %}
+    <script
+		src="https://code.jquery.com/jquery-3.5.1.min.js"
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
     {% endblock %}
 
     {% block postloadjs %}
     {% endblock %}
 
 </body>
+
 </html>

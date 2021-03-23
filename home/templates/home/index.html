@@ -20,6 +20,7 @@ Home |
 {% block content %}
 
 <!-- Default Materialize card format -->
+<div class="container">
 <div class="row">
 
     <div class="col s12 m4">
@@ -46,7 +47,6 @@ Home |
         </div>
     </div>
 
-
     <div class="col s12 m4">
         <div class="card index-card">
             <div class="card-content">
@@ -54,7 +54,7 @@ Home |
                 <p>Create an account for express checkout and home delivery options.</p>
             </div>
             <div class="card-action">
-                <a href="#">Register</a>
+                <a href="{% url 'account_signup' %}">Register</a>
             </div>
         </div>
     </div>
@@ -66,7 +66,7 @@ Home |
                 <p>Create an account to get every tenth coffee free from any of our stores.</p>
             </div>
             <div class="card-action">
-                <a href="#">Register</a>
+                <a href="{% url 'account_signup' %}">Register</a>
             </div>
         </div>
     </div>
@@ -78,7 +78,7 @@ Home |
                 <p>Create an account to get every tenth coffee free from any of our stores.</p>
             </div>
             <div class="card-action">
-                <a href="#">Register</a>
+                <a href="{% url 'account_signup' %}">Register</a>
             </div>
         </div>
     </div>
@@ -90,11 +90,12 @@ Home |
                 <p>Create an account to get every tenth coffee free from any of our stores.</p>
             </div>
             <div class="card-action">
-                <a href="#">Register</a>
+                <a href="{% url 'account_signup' %}">Register</a>
             </div>
         </div>
     </div>
 
+</div>
 </div>
 
 {% endblock %}
