@@ -19,25 +19,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navigation */
 
+nav.mat-override {
+    background-color: rgba(255, 255, 255, 0);
+    height: 0;
+    line-height: 0;
+}
 .sidebar {
     /* change this to a gradient colouring similar to pintbaby */
     background-color: #003b19;
     display: flex;
     height: 100%;
     position: fixed;
-    width: 16.6%;
+    width: 16.7%;
     z-index: 1;
 }
 
-.sidebar .row:hover,
-.social-icon:hover {
-    /* To fix: text colour not changing on hover, will need jQuery fix, at which point
-    you can move all of the hover styling into a JS file instead of sitting in here */
-    background-color: #e1e1e1;
-    color: #003b19;
-}
-
-.sidebar .row a:hover {
+nav ul a:hover {
     background-color: #e1e1e1;
     color: #003b19;
     font-weight: 800;
@@ -47,17 +44,33 @@ h1, h2, h3, h4, h5, h6 {
     color:#e1e1e1;
 }
 
-.nav-option {
+li.nav-option {
     font-weight: 600;
+    line-height: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     text-transform: uppercase;
+    width: 100%;
 }
 
-.account-icon,
+nav ul a {
+    /* overrides default Materialize parameters */
+    color: #e1e1e1;
+    padding: 0 0 0 0;
+}
+
+.fa, .far, .fas {
+    /* overrides default Font Awesome parameters */
+    line-height: 0em;
+}
+
+.account-icon {
+    font-size: 1em;
+}
+
 .sh-cart-icon {
-    /* account icon is replaced by account-icon-auth
-    and account username upon authentification */
     font-size: 2em;
 }
 
@@ -80,6 +93,11 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 0.5em;
     padding-right: 0.5em;
     padding-top: 0.5em;
+}
+
+.social-icon:hover {
+    background-color: #e1e1e1;
+    color:#003b19;
 }
 
 .sidenav {

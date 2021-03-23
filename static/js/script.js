@@ -9,9 +9,3 @@ $(document).ready(function(){
     /* initialises mobile side navigation bar */
     $('.sidenav').sidenav();
 });
-
-if ($(window).width() < 992) {
-    $('.trigger-display a').click(function() {
-        $('#mobile-snav').toggle();
-    });
-}
