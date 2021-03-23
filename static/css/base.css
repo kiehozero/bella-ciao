@@ -243,4 +243,8 @@ main {
         /* sits behind sidebar on larger screens */
         display: none;
     }
+
+    .social-icon {
+        font-size: 2em;
+    }
 }

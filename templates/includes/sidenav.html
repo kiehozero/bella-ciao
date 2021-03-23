@@ -1,0 +1,84 @@
+<ul class="sidenav center-align" id="mobile-snav">
+    <!-- Logo -->
+    <li id="mob-logo" class="nav-option">
+        <a href="{% url 'home' %}">
+            <img src="{{ MEDIA_URL }}cbc-text.png">
+        </a>
+    </li>
+
+    <!-- Shopping cart - logic taken from Code Institute Boutique Ado project -->
+    <li class="{% if grand_total %}basket-full{% else %}basket-empty{% endif %} nav-option">
+        <a href="#">
+            <i class="fas fa-shopping-cart sh-cart-icon"></i>&nbsp;&nbsp;
+            {% if grand_total %}
+            €{{ grand_total|floatformat:2 }}
+            {% else %}
+            €0.00
+            {% endif %}
+        </a>
+    </li>
+
+    <li class="nav-option">
+        <a href="#">Online Store</a>
+    </li>
+
+    <!-- User Profile -->
+    <li class="nav-option">
+        <!-- Redirects to user profile if logged in, login page if not -->
+        {% if request.user.is_authenticated %}
+        <a href="#">
+            <i class="far fa-user-circle account-icon"></i>&nbsp;&nbsp;{{ user }}
+        </a>
+        {% else %}
+        <a href="{% url 'account_login' %}">
+            Sign In
+        </a>
+        {% endif %}
+    </li>
+
+    <!-- User-conditional nav elements -->
+    {% if request.user.is_authenticated %}
+    {% if request.user.is_superuser %}
+    <li class="nav-option">
+        <a href="#">Administration</a>
+    </li>
+    {% endif %}
+    <li class="nav-option">
+        <a href="{% url 'account_logout' %}">Sign Out</a>
+    </li>
+    {% else %}
+    <li class="nav-option">
+        <a href="{% url 'account_signup' %}">Register</a>
+    </li>
+    {% endif %}
+
+    <!-- Other nav elements -->
+    <li class="nav-option">
+        <a href="#">Locations</a>
+    </li>
+
+    <!--Social Media -->
+    <li class="row nav-option">
+        <!-- hover over icons is fine, hover over anchors is weird -->
+        <div class="col s3">
+            <a href="https://www.facebook.com/" target="_blank">
+                <i class="fab fa-facebook-f social-icon"></i>
+            </a>
+        </div>
+        <div class="col s3">
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="fab fa-instagram social-icon"></i>
+            </a>
+        </div>
+        <div class="col s3">
+            <a href="http://www.twitter.com/" target="_blank">
+                <i class="fab fa-twitter social-icon"></i>
+            </a>
+        </div>
+        <div class="col s3">
+            <a href="#">
+                <i class="far fa-envelope social-icon"></i>
+            </a>
+        </div>
+    </li>
+</ul>
