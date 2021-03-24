@@ -21,62 +21,62 @@
     }, 
     {"pk": 3, "model": "products.product", "fields": 
         {"sku": "41157", 
-            "name": "", 
-            "description": "#", 
-            "price": 2.00, 
-            "category": 2, 
+            "name": "Xocolatl", 
+            "description": "Everybody's guilty pleasure, our signature hot chocolate uses the finest Oaxacan cacao beans from a Fair Trade and Rainforest Council-certified supplier.", 
+            "price": 3.00, 
+            "category": 3, 
             "image_url": "#", 
-            "image": "earl-grey.png"
+            "image": "xocolatl.png"
         }
     }, 
     {"pk": 4, "model": "products.product", "fields": 
         {"sku": "41158", 
-            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
-            "description": "#", 
-            "price": 2.00, 
-            "category": 2, 
+            "name": "VLT", 
+            "description": "A new take on a classic sandwich, our VLT switches bacon and mayonnaise for an award-winning grilled tofu and Hellmann's vegan mayonnaise.", 
+            "price": 5.00, 
+            "category": 4, 
             "image_url": "#", 
-            "image": "earl-grey.png"
+            "image": "blt.png"
         }
     }, 
     {"pk": 5, "model": "products.product", "fields": 
         {"sku": "41159", 
-            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
-            "description": "#", 
-            "price": 2.00, 
-            "category": 2, 
+            "name": "Seabrook's Crisps", 
+            "description": "One of our baristas swears that these are the best crisps out there, a big claim in the land of Tayto but we're inclined to agree!", 
+            "price": 1.35, 
+            "category": 5, 
             "image_url": "#", 
-            "image": "earl-grey.png"
+            "image": "seabrook.png"
         }
     }, 
     {"pk": 6, "model": "products.product", "fields": 
         {"sku": "41160", 
-            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
+            "name": "Croissant", 
             "description": "#", 
-            "price": 2.00, 
-            "category": 2, 
+            "price": 1.50, 
+            "category": 6, 
             "image_url": "#", 
-            "image": "earl-grey.png"
+            "image": "croissant.png"
         }
     }, 
     {"pk": 7, "model": "products.product", "fields": 
         {"sku": "41161", 
-            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
-            "description": "#", 
-            "price": 2.00, 
-            "category": 2, 
+            "name": "Yerba Mate Gourd and Bombilla", 
+            "description": "Popular among South American football stars like Lionel Messi and Luis Suarez, yerba mate is the ultimate energy kick. Handmade in Argentina.", 
+            "price": 15.00, 
+            "category": 7, 
             "image_url": "#", 
-            "image": "earl-grey.png"
+            "image": "yerba-set.png"
         }
     }, 
     {"pk": 8, "model": "products.product", "fields": 
         {"sku": "41162", 
-            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
-            "description": "#", 
-            "price": 2.00, 
-            "category": 2, 
+            "name": "Machiatto", 
+            "description": "Roughly translated as 'marked' or 'spotted', machiattos add a dash of milk to the traditional espresso.", 
+            "price": 3.50, 
+            "category": 1, 
             "image_url": "#", 
-            "image": "earl-grey.png"
+            "image": "machiatto.png"
         }
     }, 
     {"pk": 9, "model": "products.product", "fields": 
@@ -84,40 +84,19 @@
             "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
             "description": "#", 
             "price": 2.00, 
-            "category": 2, 
+            "category": 5, 
             "image_url": "#", 
             "image": "earl-grey.png"
         }
     }, 
     {"pk": 10, "model": "products.product", "fields": 
         {"sku": "41164", 
-            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
-            "description": "#", 
-            "price": 2.00, 
-            "category": 2, 
+            "name": "Vegan Fillet Roll", 
+            "description": "A staple of the Irish pallette, we couldn't sell hot food without offering a chicken fillet roll. Of course we wanted to twist the concept, and we scoured Europe to find the best vegan fillet out there.", 
+            "price": 4.00, 
+            "category": 4, 
             "image_url": "#", 
-            "image": "earl-grey.png"
-        }
-    }, 
-    {"pk": 11, "model": "products.product", "fields": 
-        {"sku": "41165", 
-            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
-            "description": "#", 
-            "price": 2.00, 
-            "category": 2, 
-            "image_url": "#", 
-            "image": "earl-grey.png"
-        }
-    }
-    , 
-    {"pk": 12, "model": "products.product", "fields": 
-        {"sku": "41166", 
-            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
-            "description": "#", 
-            "price": 2.00, 
-            "category": 2, 
-            "image_url": "#", 
-            "image": "earl-grey.png"
+            "image": "vfr.png"
         }
     }
 ]
