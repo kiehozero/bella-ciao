@@ -1,0 +1,123 @@
+[
+    {"pk": 1, "model": "products.product", "fields": 
+        {"sku": "41155", 
+            "name": "Americano", 
+            "description": "What everyone means when they just want a coffee. Allegedly named after American soldiers fighting in Italy, who would dilute an espresso with hot water, the Americano has become the standard coffee in English-speaking countries.", 
+            "price": 3.20, 
+            "category": 1, 
+            "image_url": "#", 
+            "image": "americano.png"
+        }
+    }, 
+    {"pk": 2, "model": "products.product", "fields": 
+        {"sku": "41156", 
+            "name": "Earl Grey Tea", 
+            "description": "A black tea infused with bergamot, Earl Grey is a popular blend named for a 19th century British prime minster.", 
+            "price": 2.00, 
+            "category": 2, 
+            "image_url": "#", 
+            "image": "earl-grey.png"
+        }
+    }, 
+    {"pk": 3, "model": "products.product", "fields": 
+        {"sku": "41157", 
+            "name": "", 
+            "description": "#", 
+            "price": 2.00, 
+            "category": 2, 
+            "image_url": "#", 
+            "image": "earl-grey.png"
+        }
+    }, 
+    {"pk": 4, "model": "products.product", "fields": 
+        {"sku": "41158", 
+            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
+            "description": "#", 
+            "price": 2.00, 
+            "category": 2, 
+            "image_url": "#", 
+            "image": "earl-grey.png"
+        }
+    }, 
+    {"pk": 5, "model": "products.product", "fields": 
+        {"sku": "41159", 
+            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
+            "description": "#", 
+            "price": 2.00, 
+            "category": 2, 
+            "image_url": "#", 
+            "image": "earl-grey.png"
+        }
+    }, 
+    {"pk": 6, "model": "products.product", "fields": 
+        {"sku": "41160", 
+            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
+            "description": "#", 
+            "price": 2.00, 
+            "category": 2, 
+            "image_url": "#", 
+            "image": "earl-grey.png"
+        }
+    }, 
+    {"pk": 7, "model": "products.product", "fields": 
+        {"sku": "41161", 
+            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
+            "description": "#", 
+            "price": 2.00, 
+            "category": 2, 
+            "image_url": "#", 
+            "image": "earl-grey.png"
+        }
+    }, 
+    {"pk": 8, "model": "products.product", "fields": 
+        {"sku": "41162", 
+            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
+            "description": "#", 
+            "price": 2.00, 
+            "category": 2, 
+            "image_url": "#", 
+            "image": "earl-grey.png"
+        }
+    }, 
+    {"pk": 9, "model": "products.product", "fields": 
+        {"sku": "41163", 
+            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
+            "description": "#", 
+            "price": 2.00, 
+            "category": 2, 
+            "image_url": "#", 
+            "image": "earl-grey.png"
+        }
+    }, 
+    {"pk": 10, "model": "products.product", "fields": 
+        {"sku": "41164", 
+            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
+            "description": "#", 
+            "price": 2.00, 
+            "category": 2, 
+            "image_url": "#", 
+            "image": "earl-grey.png"
+        }
+    }, 
+    {"pk": 11, "model": "products.product", "fields": 
+        {"sku": "41165", 
+            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
+            "description": "#", 
+            "price": 2.00, 
+            "category": 2, 
+            "image_url": "#", 
+            "image": "earl-grey.png"
+        }
+    }
+    , 
+    {"pk": 12, "model": "products.product", "fields": 
+        {"sku": "41166", 
+            "name": "Liz Claiborne Audra Classic Fit Straight Leg Pants", 
+            "description": "#", 
+            "price": 2.00, 
+            "category": 2, 
+            "image_url": "#", 
+            "image": "earl-grey.png"
+        }
+    }
+]

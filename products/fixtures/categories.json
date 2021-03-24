@@ -1,0 +1,23 @@
+[
+{"pk": 1, "model": "products.category", "fields": 
+    {"name": "coffee", "render_name": "Coffee"}
+}, 
+{"pk": 2, "model": "products.category", "fields": 
+    {"name": "tea", "render_name": "Tea"}
+}, 
+{"pk": 3, "model": "products.category", "fields": 
+    {"name": "hot_chocolate", "render_name": "Hot Chocolate"}
+}, 
+{"pk": 4, "model": "products.category", "fields": 
+    {"name": "sandwiches", "render_name": "Sandwiches"}
+}, 
+{"pk": 5, "model": "products.category", "fields": 
+    {"name": "snacks", "render_name": "Snacks"}
+}, 
+{"pk": 6, "model": "products.category", "fields": 
+    {"name": "desserts", "render_name": "Desserts"}
+}, 
+{"pk": 7, "model": "products.category", "fields": 
+    {"name": "merchandise", "render_name": "Merchandise"}
+}
+]
