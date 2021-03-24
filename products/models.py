@@ -14,6 +14,11 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    # metaclass here overrides the default Django
+    # behaviour of just adding an 's' to the model name
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     category = models.ForeignKey(
         'Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
