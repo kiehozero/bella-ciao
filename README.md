@@ -19,15 +19,16 @@ Ireland, and to do so I used the following hex colours, selected using [Pixlr](h
 [flag of Italy](https://en.wikipedia.org/wiki/Flag_of_Italy#Description) before a constitutional change in 2006. 
 This is the first shade used in the background of the navigation element on larger devices, and the only
 shade used on smaller device navigation elements;
-- #2f5f43 - Using [Color Hex](https://www.color-hex.com/), I start experimenting with various tints and shades of
+- #2f5f43 - Using , I start experimenting with various tints and shades of
 green to have a slightly richer colour to make buttons stand out. This green is found on smaller elements either as
 a background or text against a background of the following colour;
 - #f0eee9 - officially called [Cloud Dancer](https://www.pantone.com/color-finder/11-4201-TCX), before 2006 this was
 the official colour of the central band of the Italian flag. The [new colour](https://www.pantone.com/color-finder/11-0601-TCX) 
 is much brighter and tended to stand out too much when used as a background, so I defaulted to the older version.
-- #3b0022 - Rather than use the official red, I opted to use Color Hex again to identify a red shade that best complemented the greens
-already selected. This red jumped out as providing a dark contrast against items with a white background.
-- #100f10 - 
+- #3b0022 - Rather than use the official red, I used [Color Hex](https://www.color-hex.com/) to identify a red shade 
+that best complemented the greens already selected. This red jumped out as providing a dark contrast against items with 
+a white background.
+- #100f10 - >>>
 
 ### Fonts and Icons
 

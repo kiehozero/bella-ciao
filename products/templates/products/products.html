@@ -24,8 +24,8 @@ Products |
 
         {% for product in products %}
 
-        <div class="col s12 l3">
-            <div class="card">
+        <div class="col s12 l4">
+            <div class="card shop-card">
                 <div class="card-image">
                     <img src="{{ product.image.url }}" alt="{{ product.name }}">
                     <span class="card-title">{{ product.name }}</span>
@@ -33,13 +33,11 @@ Products |
                 <div class="card-content">
                     <p>{{ product.description }}</p>
                 </div>
-                <div class="card-action">
-                    <div>{{ product.price }}</div>
-                    <div>
-                        <a href="#">
-                            <i class="fas fa-cart-plus"></i>
-                        </a>
-                    </div>
+                <div class="card-action text-white">
+                    €{{ product.price }}
+                    <a href="#" class="float-right">
+                        <i class="fas fa-cart-plus"></i>
+                    </a>
                 </div>
             </div>
         </div>

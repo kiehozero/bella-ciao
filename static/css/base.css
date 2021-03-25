@@ -17,6 +17,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* Pallette */
+
+.back-green {
+    background-color: #008763;
+}
+
+.back-red {
+    background-color: #3b0022;
+}
+
+.back-white {
+    background-color: #f0eee9;
+}
+
+.text-green {
+    color: #008763;
+}
+
+.text-red {
+    color: #3b0022;
+}
+
+.text-white {
+    color: #f0eee9;
+}
+
+.text-black {
+    color: #100f10;
+}
+
 /* Navigation */
 
 nav.mat-override {
@@ -24,6 +54,7 @@ nav.mat-override {
     height: 0;
     line-height: 0;
 }
+
 .sidebar {
     /* change this to a gradient colouring similar to pintbaby */
     background-image: linear-gradient(to bottom, #008763,#3b0022);
@@ -105,6 +136,7 @@ nav ul a {
     display: none;
 }
 
+
 /* Main */
 
 main {
@@ -165,7 +197,8 @@ main {
     color: #f0eee9;
 }
 
-.card.index-card .card-action {
+.card.index-card .card-action,
+.card.shop-card .card-action {
     background-color: #008763;
 }
 
