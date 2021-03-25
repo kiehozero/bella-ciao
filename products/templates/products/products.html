@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extratitle %}
+Products |
+{% endblock %}
+
+{% block page_header %}
+<!-- just here for colour and font testing at the moment -->
+<div class="row landing-header">
+    <div class="col s12 landing-box">
+        <h5>Barista-made coffee poured in the heart of Limerick city</h5>
+        <h5>Doirt caife de dhéantús Barista i gcroílár Luimneach</h5>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<!-- Default Materialize card format -->
+<div class="container">
+    <div class="row">
+
+        {% for product in products %}
+
+        <div class="col s12 l3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <span class="card-title">{{ product.name }}</span>
+                </div>
+                <div class="card-content">
+                    <p>{{ product.description }}</p>
+                </div>
+                <div class="card-action">
+                    <div>{{ product.price }}</div>
+                    <div>
+                        <a href="#">
+                            <i class="fas fa-cart-plus"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}
