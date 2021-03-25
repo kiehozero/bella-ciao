@@ -11,15 +11,30 @@ Welcome to my full-stack development milestone project. For this project I chose
 - A [Balsamiq](https://www.balsamiq.com/) wireframe for this project is included in the repository, with 
 [desktop/tablet](planning/wireframes/desktop.pdf) and [mobile](planning/wireframes/mobile.pdf) versions.
 
-I used the following hex colours, selected using [Pixlr](https://www.pixlr.com/)
+In colour selection I wanted to portray that the staff at the store have an authentic connection to both Italy and 
+Ireland, and to do so I used the following hex colours, selected using [Pixlr](https://www.pixlr.com/).
 
-- 
-- 
-- 
+- #008763 - The natural place to start was the colour green, present on both national flags. Officially called 
+[Golf Green](https://www.pantone.com/color-finder/18-5642-TCX), this green was used on the 
+[flag of Italy](https://en.wikipedia.org/wiki/Flag_of_Italy#Description) before a constitutional change in 2006. 
+This is the first shade used in the background of the navigation element on larger devices, and the only
+shade used on smaller device navigation elements;
+- #2f5f43 - Using [Color Hex](https://www.color-hex.com/), I start experimenting with various tints and shades of
+green to have a slightly richer colour to make buttons stand out. This green is found on smaller elements either as
+a background or text against a background of the following colour;
+- #f0eee9 - officially called [Cloud Dancer](https://www.pantone.com/color-finder/11-4201-TCX), before 2006 this was
+the official colour of the central band of the Italian flag. The [new colour](https://www.pantone.com/color-finder/11-0601-TCX) 
+is much brighter and tended to stand out too much when used as a background, so I defaulted to the older version.
+- #3b0022 - Rather than use the official red, I opted to use Color Hex again to identify a red shade that best complemented the greens
+already selected. This red jumped out as providing a dark contrast against items with a white background.
+- #100f10 - 
 
 ### Fonts and Icons
 
-- Fonts
+- [Arvo](https://fonts.google.com/specimen/Arvo) - 
+- [Montserrat](https://fonts.google.com/specimen/Montserrat) - luckily Google Fonts contains a handy tool which shows commonly-selected fonts against each other, so once I
+had selected Arvo I decided to pick out Montserrat as a lightweight font to display non-header elements or larger blocks of
+text.
 
 The icons I used within this project are all sources from [Font Awesome](https://fontawesome.com/)'s free package.
 
@@ -48,9 +63,10 @@ As a user I want to...
 
 As an admin, I want to
   1. add a new product;
-  2. delete a product;
-  3. ... ;
-  4. ... .
+  2. update a product;
+  3. delete a product;
+  4. add a new product category;
+  4. update a category;
 
 
 ## Features
@@ -101,8 +117,13 @@ As an admin, I want to
     - An intuitive drafting tool that enables visual planning during a project's infancy.
 
 - [Pixlr](https://www.pixlr.com/)
-    - Pixlr is a great free software package that enabled me to quickly pick out hex colors and edit images. I have been
-    using this for all sorts of things for about five years and it is somehow still free-to-use.
+    - Pixlr is a great free software package that enabled me to quickly edit images and create logos. Pixlr has both free and
+    premium versions of the software, but I've never had a task that the free version couldn't handle, and it is really easy
+    to learn.
+
+- [Color Hex](https://www.color-hex.com/)
+    - This was a fantastic tool which takes an existing colour and recommends complementary colours. Another free piece
+    of software that I wish I had discovered a long time ago.
 
 - [Favicon.io](https://favicon.io/)
     - A quick and easy tool to create favicons for display in the address bar.
