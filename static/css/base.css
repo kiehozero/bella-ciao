@@ -46,7 +46,7 @@ nav ul a:hover {
 
 li.nav-option {
     font-weight: 600;
-    line-height: 2em;
+    line-height: 1.25em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     padding-top: 0.5em;
@@ -140,6 +140,7 @@ main {
     color: #008763;
     font-weight: 600;
 }
+
 
 /* Index */
 
@@ -246,8 +247,16 @@ main {
     }
 
     /* Footer */
-    .address-el {
-        /* removes postal address elements from mobile footer */
-        display: none;
+
+    .mob-footer-header {
+        /* replicates a h5 without displaying as a block */
+        display: inline;
+        font-family: 'Arvo';
+        font-size: 1.64rem;
+        font-weight: 400;
+    }
+
+    div.row.store-select {
+        padding: 10px;
     }
 }
