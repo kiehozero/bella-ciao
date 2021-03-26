@@ -10,7 +10,7 @@ def all_products(request):
     query = None
 
     if request.GET:
-        if 'search' in request.GET['search']:
+        if 'search' in request.GET:
             query = request.GET['search']
             if not query:
                 messages.error(
