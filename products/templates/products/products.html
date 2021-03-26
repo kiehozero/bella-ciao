@@ -27,17 +27,24 @@ Products |
         <div class="col s12 l4">
             <div class="card shop-card">
                 <div class="card-image">
+                    {% if product.image %}
                     <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                    <span class="card-title">{{ product.name }}</span>
+                    {% else %}
+                    <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}">
+                    {% endif %}
                 </div>
                 <div class="card-content">
-                    <p>{{ product.description }}</p>
+                    <h6>
+                        <a href="{% url 'view_product' product.id %}" class="text-red">{{ product.name }}</a>
+                    </h6>
                 </div>
-                <div class="card-action text-white">
-                    €{{ product.price }}
-                    <a href="#" class="float-right">
+                <div class="card-action text-white right" style="width: 50%;">
+                    <a href="#">
                         <i class="fas fa-cart-plus"></i>
                     </a>
+                </div>
+                <div class="card-action text-white left" style="width: 50%;">
+                    €{{ product.price }}
                 </div>
             </div>
         </div>

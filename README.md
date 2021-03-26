@@ -1,4 +1,4 @@
-<img src="#">
+<img src="media/banner-text.png">
 
 Welcome to my full-stack development milestone project. For this project I chose to create 
 [Bella Ciao](#), an online store for a fictional coffee chain based at various locations in Limerick, Ireland.

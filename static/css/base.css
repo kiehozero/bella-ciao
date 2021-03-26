@@ -5,7 +5,6 @@ html {
 }
 
 body {
-    background: url(#) no-repeat center center fixed;
     background-size: cover;
     color: #100f10;
     font-family: 'Montserrat';
@@ -116,6 +115,10 @@ nav ul a {
     max-width: 100%;
 }
 
+nav ul #site-logo a:hover {
+    background-color: transparent;
+}
+
 .social-icon {
     color: #f0eee9;
     font-size: 1.5em;
@@ -205,6 +208,21 @@ main {
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: #f0eee9;
     font-weight: 600;
+}
+
+/* Product - move to css file inside products folder */
+
+.product-header {    
+    background-color: #3b0022;
+    height: 20vh;
+}
+
+.product-header h5 {
+    color: #f0eee9;
+}
+
+.product-image {
+    width: 100%;
 }
 
 

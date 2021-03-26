@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extratitle %}
+{{ product.name }} |
+{% endblock %}
+
+{% block page_header %}
+<!-- just here for colour and font testing at the moment -->
+<div class="row product-header">
+    <h5>{{ product.name }}</h5>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<!-- Default Materialize card format -->
+<div class="container">
+    <div class="row">
+
+        <div class="col s12 l6">
+            {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+            {% else %}
+            <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}" class="product-image">
+            {% endif %}
+        </div>
+
+        <div class="col s12 l6">
+            <!-- Add link to take back to products page filtered by this category -->
+            <a href="#">
+                {{ product.category }}
+            </a>
+            <div>
+                {{ product.description }}
+            </div>
+            <div class="card-action text-white right" style="width: 50%;">
+                <a href="#">
+                    <i class="fas fa-cart-plus"></i>
+                </a>
+            </div>
+            <div class="card-action text-white left" style="width: 50%;">
+                €{{ product.price }}
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
