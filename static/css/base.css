@@ -231,15 +231,19 @@ main {
 }
 
 .btn#searchButton,
-.btn#searchReset {
+.btn#searchReset,
+.btn-small.filter-button {
     /* needs work to space properly on all devices, plus icons to replace text on smaller devices */
     font-family: 'Montserrat';
+    font-weight: 600;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .btn#searchButton:hover,
-.btn#searchButton:focus {
+.btn#searchButton:focus,
+.btn-small.filter-button:hover,
+.btn-small.filter-button:focus {
     background-color: #f0eee9;
     color: #008763;
 }

@@ -20,12 +20,34 @@ Products |
 <!-- Default Materialize card format -->
 <div class="container">
 
-    <div class="row center-align text-black">
-        Category shortcuts here
+   
+    <div class="row center-align">
+        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=coffee">
+            Coffee
+        </a>
+        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=tea">
+            Tea
+        </a>
+        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=hot_chocolate">
+            Hot Chocolate
+        </a>
+        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=sandwiches">
+            Sandwiches
+        </a>
+        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=snacks">
+            Snacks
+        </a>
+        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=desserts">
+            Desserts
+        </a>
+        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=merchandise">
+            Merchandise
+        </a>
     </div>
+    
 
     <!-- Search box taken from Code Institute task manager tutorial -->
-    <div class="row center-align text-black">
+    <div class="row center-align text-red">
         <div class="col s12 m8 offset-m1">
             <form method="GET" action="{% url 'products' %}">
                 <div class="row valign-wrapper">
