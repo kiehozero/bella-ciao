@@ -213,18 +213,39 @@ main {
 /* Product - move to css file inside products folder */
 
 .product-header {    
-    background-color: #3b0022;
-    height: 20vh;
+    height: 10vh;
+    padding-right: 20px;
+    padding-top: 20px;
 }
 
-.product-header h5 {
-    color: #f0eee9;
+.product-header h4 {
+    margin-top: 0px;
 }
 
 .product-image {
     width: 100%;
 }
 
+.btn#searchButton,
+.btn#searchReset {
+    /* needs work to space properly on all devices, plus icons to replace text on smaller devices */
+    font-family: 'Montserrat';
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn#searchButton:hover,
+.btn#searchButton:focus {
+    background-color: #f0eee9;
+    color: #008763;
+}
+
+.btn#searchReset:hover,
+.btn#searchReset:focus {
+    /* needs amending after click */
+    background-color: #f0eee9;
+    color: #3b0022;
+}
 
 /* Responsiveness */
 

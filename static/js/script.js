@@ -13,3 +13,10 @@ $(document).ready(function(){
     /* initialises dropdown elements */
     $('.dropdown-trigger').dropdown();
 });
+
+/* Tablet and Mobile Only */
+
+if ($(window).width() < 1280) {
+    $("#searchButton").html("<i class='fas fa-search' aria-label='Search Products'></i>");
+    $("#searchReset").html("<i class='fas fa-power-off' aria-label='Reset Search Criteria'></i>");
+};
