@@ -46,6 +46,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #100f10;
 }
 
+/* need a more pastel red for warning and error icons */
+/* end of project, go through the CSS below and replace any tags 
+below that are just colour options with above pallette tags in HTML */
+
 /* Navigation */
 
 nav.mat-override {
