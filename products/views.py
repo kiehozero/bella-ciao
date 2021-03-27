@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 from .models import Product, Category
 
@@ -55,6 +56,8 @@ def all_products(request):
         'current_categories': categories,
         'current_sort': current_sort,
     }
+
+    print(context)
 
     return render(request, 'products/products.html', context)
 

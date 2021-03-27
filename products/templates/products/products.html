@@ -22,48 +22,49 @@ Products |
 
     <!-- Preset product filters -->
     <div class="row center-align">
-        <a class="waves-effect waves-light btn-small filter-button {% if current_categories != None %}back-white text-green{% else %}back-green text-white{% endif %}"
+        <a class="waves-effect waves-light btn-small filter-button
+        {% if current_categories == None %} back-white text-green{% else %} back-green text-white{% endif %}"
         href="{% url 'products' %}">
             All
         </a>
-        <a class="waves-effect waves-light btn-small filter-button 
-        {% if current_categories != coffee %}back-white text-green{% else %}back-green text-white{% endif %}"
+        <a class="waves-effect waves-light btn-small filter-button
+        {% if current_categories != 'coffee' %} back-green text-white{% else %} back-white text-green{% endif %}"
             href="{% url 'products' %}?category=coffee">
             Coffee
         </a>
-        <a class="waves-effect waves-light btn-small filter-button 
-        {% if current_categories != tea %}back-white text-green{% else %}back-green text-white{% endif %}"
+        <a class="waves-effect waves-light btn-small filter-button
+        {% if current_categories != 'tea' %} back-green text-white{% else %} back-white text-green{% endif %}"
             href="{% url 'products' %}?category=tea">
             Tea
         </a>
-        <a class="waves-effect waves-light btn-small filter-button 
-        {% if current_categories != hot_chocolate %}back-white text-green{% else %}back-green text-white{% endif %}"
+        <a class="waves-effect waves-light btn-small filter-button
+        {% if current_categories != 'hot_chocolate' %} back-green text-white{% else %} back-white text-green{% endif %}"
             href="{% url 'products' %}?category=hot_chocolate">
             Hot Chocolate
         </a>
-        <a class="waves-effect waves-light btn-small filter-button 
-        {% if current_categories != 'sandwiches' %}back-green text-white{% else %}back-green text-white{% endif %}"
+        <a class="waves-effect waves-light btn-small filter-button
+        {% if current_categories != 'sandwiches' %} back-green text-white{% else %} back-white text-green{% endif %}"
             href="{% url 'products' %}?category=sandwiches">
             Sandwiches
         </a>
-        <a class="waves-effect waves-light btn-small filter-button 
-        {% if current_categories != snacks %}back-white text-green{% else %}back-green text-white{% endif %}"
+        <a class="waves-effect waves-light btn-small filter-button
+        {% if current_categories != 'snacks' %} back-green text-white{% else %} back-white text-green{% endif %}"
             href="{% url 'products' %}?category=snacks">
             Snacks
         </a>
-        <a class="waves-effect waves-light btn-small filter-button 
-        {% if current_categories != desserts %}back-white text-green{% else %}back-green text-white{% endif %}"
+        <a class="waves-effect waves-light btn-small filter-button
+        {% if current_categories != 'desserts' %} back-green text-white{% else %} back-white text-green{% endif %}"
             href="{% url 'products' %}?category=desserts">
             Desserts
         </a>
-        <a class="waves-effect waves-light btn-small filter-button 
-        {% if current_categories != merchandise %}back-white text-green{% else %}back-green text-white{% endif %}"
+        <a class="waves-effect waves-light btn-small filter-button
+        {% if current_categories != 'merchandise' %} back-green text-white{% else %} back-white text-green{% endif %}"
             href="{% url 'products' %}?category=merchandise">
             Merchandise
         </a>
     </div>
 
-    <!-- Search box taken from Code Institute task manager tutorial -->
+    <!-- Search box and counter taken from Code Institute task manager tutorial -->
     <div class="row center-align text-red">
         <div class="col s12 l8">
             <form method="GET" action="{% url 'products' %}">
@@ -95,14 +96,14 @@ Products |
                 <small class="text-red">Sort by:&nbsp;&nbsp;</small>
                 <a href="{% url 'products' %}?sort=price&direction=asc"
                     class="btn-small filter-button waves-effect waves-light {% if current_sort == 'price_asc' %}back-white text-green{% else %}back-green text-white{% endif %}">
-                    <i class="fas fa-euro-sign text-white"></i>
-                </a>
-                <a href="{% url 'products' %}?sort=name&direction=desc"
-                    class="btn-small filter-button waves-effect waves-light {% if current_sort == 'name_desc' %}back-white text-green{% else %}back-green text-white{% endif %}">
-                    <i class="fas fa-sort-alpha-down"></i>
+                    <i class="fas fa-euro-sign"></i>
                 </a>
                 <a href="{% url 'products' %}?sort=name&direction=asc"
                     class="btn-small filter-button waves-effect waves-light {% if current_sort == 'name_asc' %}back-white text-green{% else %}back-green text-white{% endif %}">
+                    <i class="fas fa-sort-alpha-down"></i>
+                </a>
+                <a href="{% url 'products' %}?sort=name&direction=desc"
+                    class="btn-small filter-button waves-effect waves-light {% if current_sort == 'name_desc' %}back-white text-green{% else %}back-green text-white{% endif %}">
                     <i class="fas fa-sort-alpha-up-alt"></i>
                 </a>
             </div>
@@ -111,10 +112,9 @@ Products |
     
     {% if search_term or current_categories or current_sort != 'None_None' %}
     <div class="row center-align">
-        <!-- Need to pass a search result counter here? -->
         <span>
             <small>
-                {{products|length }} items found{% if search_term %} for {{ search_term }}{% endif %}
+                {{products|length }} items found{% if search_term %} for {{ search_term }}{% endif %}{% if current_categories %} in {{ categories }} category.{% endif %}
             </small>
         </span>
     </div>
