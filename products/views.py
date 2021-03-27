@@ -61,8 +61,6 @@ def all_products(request):
         'cat_list': cat_list,
     }
 
-    print(context)
-
     return render(request, 'products/products.html', context)
 
 
