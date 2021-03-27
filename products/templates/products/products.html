@@ -6,6 +6,7 @@ Products |
 {% endblock %}
 
 {% block page_header %}
+
 <!-- just here for colour and font testing at the moment -->
 <div class="row landing-header">
     <div class="col s12 landing-box">
@@ -17,11 +18,13 @@ Products |
 
 {% block content %}
 
-<!-- Default Materialize card format -->
 <div class="container">
 
-   
+    <!-- Preset product filters -->
     <div class="row center-align">
+        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}">
+            All
+        </a>
         <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=coffee">
             Coffee
         </a>
@@ -45,7 +48,6 @@ Products |
         </a>
     </div>
     
-
     <!-- Search box taken from Code Institute task manager tutorial -->
     <div class="row center-align text-red">
         <div class="col s12 m8 offset-m1">
@@ -64,7 +66,7 @@ Products |
                         <button type="submit" class="btn search-button text-white back-green" id="searchButton">
                             Search
                         </button>
-                        <a href="#" class="btn search-button text-white back-red" id="searchReset">
+                        <a href="{% url 'products' %}" class="btn search-button text-white back-red" id="searchReset">
                             Reset
                         </a>
                     </div>
@@ -74,6 +76,7 @@ Products |
         </div>
     </div>
 
+    <!-- Default Materialize card format -->
     <div class="row">
 
         {% for product in products %}
