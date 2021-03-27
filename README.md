@@ -56,18 +56,24 @@ As a user I want to...
 
   1. order an item for collection;
   2. order an item for pick-up;
-  3. start a subscription.
-  4. cancel a subscription;
-  5. edit my profile information;
-  6. see my loyalty points;
-  7. ... .
+  3. modify the size, quantity or variety of product I order;
+  4. read more information about a product;
+  5. filter or sort products by category or a search term of my choice;
+  6. start a subscription.
+  7. cancel a subscription;
+  8. create an account;
+  9. edit my profile information;
+  10. see my loyalty points;
+  11. view my current shopping cart;
+  12. view my order history;
 
 As an admin, I want to
   1. add a new product;
   2. update a product;
   3. delete a product;
   4. add a new product category;
-  4. update a category;
+  5. update a category;
+  6. view all orders;
 
 
 ## Features
