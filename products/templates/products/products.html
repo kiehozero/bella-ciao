@@ -10,7 +10,7 @@ Products |
 <!-- just here for colour and font testing at the moment -->
 <div class="row landing-header">
     <div class="col s12 landing-box">
-        <h5>Barista-made coffee poured in the heart of Limerick city</h5>
+        <h5 class="text-white">Barista-made coffee poured in the heart of Limerick city</h5>
     </div>
 </div>
 
@@ -22,51 +22,67 @@ Products |
 
     <!-- Preset product filters -->
     <div class="row center-align">
-        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}">
+        <a class="waves-effect waves-light btn-small filter-button {% if current_categories != None %}back-white text-green{% else %}back-green text-white{% endif %}"
+        href="{% url 'products' %}">
             All
         </a>
-        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=coffee">
+        <a class="waves-effect waves-light btn-small filter-button 
+        {% if current_categories != coffee %}back-white text-green{% else %}back-green text-white{% endif %}"
+            href="{% url 'products' %}?category=coffee">
             Coffee
         </a>
-        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=tea">
+        <a class="waves-effect waves-light btn-small filter-button 
+        {% if current_categories != tea %}back-white text-green{% else %}back-green text-white{% endif %}"
+            href="{% url 'products' %}?category=tea">
             Tea
         </a>
-        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=hot_chocolate">
+        <a class="waves-effect waves-light btn-small filter-button 
+        {% if current_categories != hot_chocolate %}back-white text-green{% else %}back-green text-white{% endif %}"
+            href="{% url 'products' %}?category=hot_chocolate">
             Hot Chocolate
         </a>
-        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=sandwiches">
+        <a class="waves-effect waves-light btn-small filter-button 
+        {% if current_categories != 'sandwiches' %}back-green text-white{% else %}back-green text-white{% endif %}"
+            href="{% url 'products' %}?category=sandwiches">
             Sandwiches
         </a>
-        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=snacks">
+        <a class="waves-effect waves-light btn-small filter-button 
+        {% if current_categories != snacks %}back-white text-green{% else %}back-green text-white{% endif %}"
+            href="{% url 'products' %}?category=snacks">
             Snacks
         </a>
-        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=desserts">
+        <a class="waves-effect waves-light btn-small filter-button 
+        {% if current_categories != desserts %}back-white text-green{% else %}back-green text-white{% endif %}"
+            href="{% url 'products' %}?category=desserts">
             Desserts
         </a>
-        <a class="waves-effect waves-light btn-small filter-button back-green text-white" href="{% url 'products' %}?category=merchandise">
+        <a class="waves-effect waves-light btn-small filter-button 
+        {% if current_categories != merchandise %}back-white text-green{% else %}back-green text-white{% endif %}"
+            href="{% url 'products' %}?category=merchandise">
             Merchandise
         </a>
     </div>
-    
+
     <!-- Search box taken from Code Institute task manager tutorial -->
     <div class="row center-align text-red">
-        <div class="col s12 l10 offset-l1">
+        <div class="col s12 l8">
             <form method="GET" action="{% url 'products' %}">
                 <div class="row valign-wrapper center-align">
 
                     <!-- Search Box -->
                     <div class="input-field col s12 l8">
-                        <input name="search" minlength="3"
-                            class="validate" type="text" required>
+                        <input name="search" minlength="3" class="validate" type="text" required>
                         <label for="search">Search</label>
                     </div>
 
                     <!-- Buttons -->
                     <div class="col s12 l4">
-                        <button type="submit" class="btn search-button text-white back-green" id="searchButton">
+                        <button type="submit" class="btn search-button text-white back-green waves-effect waves-light"
+                            id="searchButton">
                             Search
                         </button>
-                        <a href="{% url 'products' %}" class="btn search-button text-white back-red" id="searchReset">
+                        <a href="{% url 'products' %}"
+                            class="btn search-button text-white back-red waves-effect waves-light" id="searchReset">
                             Reset
                         </a>
                     </div>
@@ -74,18 +90,46 @@ Products |
                 </div>
             </form>
         </div>
+        <div class="col s12 l4 valign-wrapper">
+            <div class="row center-align">
+                <small class="text-red">Sort by:&nbsp;&nbsp;</small>
+                <a href="{% url 'products' %}?sort=price&direction=asc"
+                    class="btn-small filter-button waves-effect waves-light {% if current_sort == 'price_asc' %}back-white text-green{% else %}back-green text-white{% endif %}">
+                    <i class="fas fa-euro-sign text-white"></i>
+                </a>
+                <a href="{% url 'products' %}?sort=name&direction=desc"
+                    class="btn-small filter-button waves-effect waves-light {% if current_sort == 'name_desc' %}back-white text-green{% else %}back-green text-white{% endif %}">
+                    <i class="fas fa-sort-alpha-down"></i>
+                </a>
+                <a href="{% url 'products' %}?sort=name&direction=asc"
+                    class="btn-small filter-button waves-effect waves-light {% if current_sort == 'name_asc' %}back-white text-green{% else %}back-green text-white{% endif %}">
+                    <i class="fas fa-sort-alpha-up-alt"></i>
+                </a>
+            </div>
+        </div>
     </div>
+    
+    {% if search_term or current_categories or current_sort != 'None_None' %}
+    <div class="row center-align">
+        <!-- Need to pass a search result counter here? -->
+        <span>
+            <small>
+                {{products|length }} items found{% if search_term %} for {{ search_term }}{% endif %}
+            </small>
+        </span>
+    </div>
+    {% endif %}
 
     <!-- Default Materialize card format -->
     <div class="row">
 
         {% for product in products %}
-
+        
         <div class="col s12 l4">
             <div class="card shop-card">
                 <div class="card-image">
                     {% if product.image %}
-                    <a href="{{ product.image.url }}" target="_blank">
+                    <a href="{% url 'view_product' product.id %}">
                         <!-- change to modal -->
                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
                     </a>

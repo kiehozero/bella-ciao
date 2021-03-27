@@ -33,12 +33,11 @@ a white background.
 ### Fonts and Icons
 
 - [Arvo](https://fonts.google.com/specimen/Arvo) - 
-- [Montserrat](https://fonts.google.com/specimen/Montserrat) - luckily Google Fonts contains a handy tool which shows commonly-selected fonts against each other, so once I
-had selected Arvo I decided to pick out Montserrat as a lightweight font to display non-header elements or larger blocks of
-text.
+- [Montserrat](https://fonts.google.com/specimen/Montserrat) - luckily Google Fonts contains a handy tool which shows 
+commonly-selected fonts against each other, so once I had selected Arvo I decided to pick out Montserrat as a lightweight 
+font to display non-header elements or larger blocks of text.
 
 The icons I used within this project are all sources from [Font Awesome](https://fontawesome.com/)'s free package.
-
 
 ### Responsiveness
 

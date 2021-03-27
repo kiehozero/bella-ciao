@@ -14,6 +14,9 @@ $(document).ready(function(){
     $('.dropdown-trigger').dropdown();
 });
 
+/* Navbar - need to add mouseenter and mouseleaves on li.nav-option
+    and li.nav-option a to highlight whole box when insider */
+
 /* Tablet and Mobile Only */
 
 if ($(window).width() < 1280) {

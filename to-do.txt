@@ -1,0 +1,4 @@
+Housekeeping
+
+- add aria tags for all icons
+- all alt tags for all imgs

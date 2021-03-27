@@ -246,6 +246,23 @@ main {
     color: #3b0022;
 }
 
+/* View Product */
+
+.breadcrumb {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.breadcrumb:before {
+    content: none;
+}
+
+.breadcrumb:last-child {
+    /* Overwrites default Materialize parameters */
+    color: #008763;
+    font-weight: 800;
+}
+
 
 /* Responsiveness */
 

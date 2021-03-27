@@ -17,6 +17,16 @@
 
 <!-- Default Materialize card format -->
 <div class="container">
+
+    <div class="row">
+        <!-- Need to mess around with this to make it look good -->
+        <a href="{% url 'products' %}"
+            class="breadcrumb text-green">All</a>
+        <i class="fas fa-angle-right text-green"></i>
+        <a href="{% url 'products' %}?category={{ product.category }}"
+            class="breadcrumb text-green">{{ product.category.render_name }}</a>
+    </div>
+    
     <div class="row">
 
         <div class="col s12 l5">
@@ -51,11 +61,6 @@
 
     </div>
 
-    <div class="row">
-        <div class="col s6 offset-s6">
-            <a href="#" class="text-red">View more from {{ product.category }}</a>
-        </div>
-    </div>
 </div>
 
 {% endblock %}
