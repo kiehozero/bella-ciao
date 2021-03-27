@@ -8,8 +8,10 @@ from .models import Product, Category
 def all_products(request):
     """ Display all items """
     products = Product.objects.all()
-    # below defined as none so the page doesn't error out on load
+    # Bugfix #1: use cat_list to extract category name before it enters
+    # QuerySet, then use this to highlight category name upon use as filter
     categories = None
+    cat_list = None
     query = None
     sort = None
     direction = None
@@ -31,6 +33,7 @@ def all_products(request):
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
+            cat_list = categories[0]
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
@@ -55,6 +58,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sort': current_sort,
+        'cat_list': cat_list,
     }
 
     print(context)

@@ -28,37 +28,37 @@ Products |
             All
         </a>
         <a class="waves-effect waves-light btn-small filter-button
-        {% if current_categories != 'coffee' %} back-green text-white{% else %} back-white text-green{% endif %}"
+        {% if 'coffee' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
             href="{% url 'products' %}?category=coffee">
             Coffee
         </a>
         <a class="waves-effect waves-light btn-small filter-button
-        {% if current_categories != 'tea' %} back-green text-white{% else %} back-white text-green{% endif %}"
+        {% if 'tea' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
             href="{% url 'products' %}?category=tea">
             Tea
         </a>
         <a class="waves-effect waves-light btn-small filter-button
-        {% if current_categories != 'hot_chocolate' %} back-green text-white{% else %} back-white text-green{% endif %}"
+        {% if 'hot_chocolate' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
             href="{% url 'products' %}?category=hot_chocolate">
             Hot Chocolate
         </a>
         <a class="waves-effect waves-light btn-small filter-button
-        {% if current_categories != 'sandwiches' %} back-green text-white{% else %} back-white text-green{% endif %}"
+        {% if 'sandwiches' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
             href="{% url 'products' %}?category=sandwiches">
             Sandwiches
         </a>
         <a class="waves-effect waves-light btn-small filter-button
-        {% if current_categories != 'snacks' %} back-green text-white{% else %} back-white text-green{% endif %}"
+        {% if 'snacks' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
             href="{% url 'products' %}?category=snacks">
             Snacks
         </a>
         <a class="waves-effect waves-light btn-small filter-button
-        {% if current_categories != 'desserts' %} back-green text-white{% else %} back-white text-green{% endif %}"
+        {% if 'desserts' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
             href="{% url 'products' %}?category=desserts">
             Desserts
         </a>
         <a class="waves-effect waves-light btn-small filter-button
-        {% if current_categories != 'merchandise' %} back-green text-white{% else %} back-white text-green{% endif %}"
+        {% if 'merchandise' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
             href="{% url 'products' %}?category=merchandise">
             Merchandise
         </a>
@@ -114,7 +114,8 @@ Products |
     <div class="row center-align">
         <span>
             <small>
-                {{products|length }} items found{% if search_term %} for {{ search_term }}{% endif %}{% if current_categories %} in {{ categories }} category.{% endif %}
+                <!-- needs to switch to category.render_name somehow -->
+                {{products|length }} items found{% if search_term %} for {{ search_term }}{% endif %}{% if current_categories %} in {{ cat_list }} category.{% endif %}
             </small>
         </span>
     </div>
