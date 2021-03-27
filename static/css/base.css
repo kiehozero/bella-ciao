@@ -53,13 +53,13 @@ below that are just colour options with above pallette tags in HTML */
 /* Navigation */
 
 nav.mat-override {
+    /* Overwrites default Materialize parameters */
     background-color: rgba(255, 255, 255, 0);
     height: 0;
     line-height: 0;
 }
 
 .sidebar {
-    /* change this to a gradient colouring similar to pintbaby */
     background-image: linear-gradient(to bottom, #008763,#3b0022);
     display: flex;
     height: 100%;
@@ -75,6 +75,7 @@ nav ul a:hover {
 }
 
 .sidebar .row a {
+    /* Overwrites default Materialize parameters */
     color:#f0eee9;
 }
 
@@ -90,13 +91,13 @@ li.nav-option {
 }
 
 nav ul a {
-    /* overrides default Materialize parameters */
+    /* Overwrites default Materialize parameters */
     color: #f0eee9;
     padding: 0 0 0 0;
 }
 
 .fa, .far, .fas {
-    /* overrides default Font Awesome parameters */
+    /* Overwrites default Font Awesome parameters */
     line-height: 0em;
 }
 
@@ -124,7 +125,6 @@ nav ul #site-logo a:hover {
 }
 
 .social-icon {
-    color: #f0eee9;
     font-size: 1.5em;
     word-spacing: 0.75em;
     padding-bottom: 0.5em;  
@@ -151,13 +151,6 @@ main {
 }
 
 
-/* Headers */
-
-.page-header {
-    color: #f0eee9;
-}
-
-
 /* Footers */
 
 .row.store-select {
@@ -165,16 +158,14 @@ main {
 }
 
 .store-select {
-    background-color: #3b0022;
     bottom: 0;
-    color: #f0eee9;
     height: 20%;
     padding-bottom: 20px;
     text-align: center;
 }
 
 .btn.btn-small {
-    /* overrides default Materialize styling */
+    /* Overwrites default Materialize parameters */
     background-color: #f0eee9;
     color: #008763;
     font-weight: 600;
@@ -185,18 +176,11 @@ main {
 
 .landing-header {
     background: url('https://www.dromoland.ie/wp-content/uploads/2019/01/sl-limerick-city.jpg') no-repeat fixed center;
-    color: #f0eee9;
     height: 40vh;
 }
 
 .row .col.landing-box {
     text-align: right;
-}
-
-.index-card,
-.index-card .card-content {
-    background-color: #f0eee9;
-    color: #100f10;
 }
 
 .card .card-image .card-title {
@@ -206,6 +190,7 @@ main {
 
 .card.index-card .card-action,
 .card.shop-card .card-action {
+    /* Overwrites default Materialize parameters */
     background-color: #008763;
 }
 
@@ -261,6 +246,7 @@ main {
     color: #3b0022;
 }
 
+
 /* Responsiveness */
 
 @media (min-width: 1200px) {
@@ -283,7 +269,6 @@ main {
     .sidenav-trigger {
         /* display and position allow trigger to sit on top of any
         headers without interfering with the layout below the trigger */
-        background-color: #008763;
         display: inline;
         position: absolute;
         text-align: center;
@@ -298,16 +283,13 @@ main {
     }
 
     .trigger-display a i {
-        color: #f0eee9;
         font-size: 3rem;
     }
 
     /* all items below containing sidenav are overwrites of default Materialize parameters */
-    .sidenav {
-        background-color: #008763;
-}
 
     .sidenav li>a {
+        /* Overwrites default Materialize parameters */
         color: #f0eee9;
         font-size: 1.5em;
         font-weight: 600;
@@ -315,6 +297,7 @@ main {
 }
 
     .sidenav li>a>i {
+        /* Overwrites default Materialize parameters */
         color: #f0eee9;
         float: none;
     }

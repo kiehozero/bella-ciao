@@ -50,19 +50,19 @@ Products |
     
     <!-- Search box taken from Code Institute task manager tutorial -->
     <div class="row center-align text-red">
-        <div class="col s12 m8 offset-m1">
+        <div class="col s12 l10 offset-l1">
             <form method="GET" action="{% url 'products' %}">
-                <div class="row valign-wrapper">
+                <div class="row valign-wrapper center-align">
 
                     <!-- Search Box -->
-                    <div class="input-field col s12 offset-s1 offset-m4">
+                    <div class="input-field col s12 l8">
                         <input name="search" minlength="3"
                             class="validate" type="text" required>
                         <label for="search">Search</label>
                     </div>
 
                     <!-- Buttons -->
-                    <div class="col s12">
+                    <div class="col s12 l4">
                         <button type="submit" class="btn search-button text-white back-green" id="searchButton">
                             Search
                         </button>
