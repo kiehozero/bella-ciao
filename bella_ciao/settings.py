@@ -75,12 +75,14 @@ TEMPLATES = [
             'context_processors': [
                 # 'request' CP is required for allauth to function and
                 # allows django and allauth to access http requests
-                # ''media' CP is required to connect the media folder
+                # 'media' CP is required to connect the media folder
+                # carts.contexts allows bag to be accessible across entire app
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'cart.contexts.cart_contents',
             ],
         },
     },
@@ -162,3 +164,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+FREE_DELIVERY_THRESHOLD = 40
+STANDARD_DELIVERY_PERCENTAGE = 10
