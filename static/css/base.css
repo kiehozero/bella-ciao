@@ -272,6 +272,15 @@ main {
 }
 
 
+/* Cart - move to static file in */
+
+.cart-header {    
+    height: 10vh;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+
 /* Responsiveness */
 
 @media (min-width: 1200px) {

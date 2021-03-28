@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extratitle %}
+My Cart |
+{% endblock %}
+
+{% block page_header %}
+<div class="row cart-header back-green">
+    <h4 class="text-white right">My Cart</h4>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col s12 l10">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 l10">
+                {% if cart_items %}
+                <table class="highlight">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+                {% else %}
+                Your cart is empty.
+                
+                <a href="{% url 'products' %}" class="text-green"> Click here</a> to browse our range.
+                {% endif %}
+            </div>
+        </div>
+</div>
+
+{% endblock %}
