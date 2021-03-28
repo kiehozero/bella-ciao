@@ -12,6 +12,8 @@ $(document).ready(function(){
     $('.fixed-action-btn').floatingActionButton();
     /* initialises dropdown elements */
     $('.dropdown-trigger').dropdown();
+    /* intialises back-to-top button */
+    $('.fixed-action-btn').floatingActionButton();
 });
 
 /* Navbar - need to add mouseenter and mouseleaves on li.nav-option

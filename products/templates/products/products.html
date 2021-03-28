@@ -176,8 +176,25 @@ Products |
         {% endfor %}
 
     </div>
+
+</div>
+
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large back-green text-white" id="backToTop">
+        <i class="fas fa-angle-double-up"></i>
+    </a>
 </div>
 
 {% endblock %}
 
 <!-- need a new footer for this page, having the order buttons at the bottom is confusing -->
+
+{% block postloadjs %}
+{{ block.super }}
+<!-- idea taken from Boutique Ado -->
+<script type="text/javascript">
+    $('#backToTop').click(function() {
+        window.scrollTo(0,0)
+    })
+</script>
+{% endblock %}
