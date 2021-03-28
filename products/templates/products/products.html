@@ -24,9 +24,10 @@ Products |
     <div class="row center-align">
         <a class="waves-effect waves-light btn-small filter-button
         {% if current_categories == None %} back-white text-green{% else %} back-green text-white{% endif %}"
-        href="{% url 'products' %}">
+            href="{% url 'products' %}">
             All
         </a>
+        <!-- Bugfix #1: Category selection highlighting -->
         <a class="waves-effect waves-light btn-small filter-button
         {% if 'coffee' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
             href="{% url 'products' %}?category=coffee">
@@ -72,6 +73,8 @@ Products |
 
                     <!-- Search Box -->
                     <div class="input-field col s12 l8">
+                        <!-- Not functioning with sort buttons, does the search item just need adding to if statement
+                        in HTML below (see bugfix #2 note) -->
                         <input name="search" minlength="3" class="validate" type="text" required>
                         <label for="search">Search</label>
                     </div>
@@ -96,28 +99,42 @@ Products |
         <div class="col s12 l4 valign-wrapper">
             <div class="row center-align">
                 <small class="text-red">Sort by:&nbsp;&nbsp;</small>
-                <a href="{% url 'products' %}?sort=price&direction=asc"
+                <!-- Bugfix #2: Category sorting -->
+                <a href="{% if cat_list == None %}
+                             {% url 'products' %}?sort=price&direction=asc
+                         {% else %}
+                             {% url 'products' %}?category={{ cat_list }}&sort=price&direction=asc
+                         {% endif %}"
                     class="btn-small filter-button waves-effect waves-light {% if current_sort == 'price_asc' %}back-white text-green{% else %}back-green text-white{% endif %}">
                     <i class="fas fa-euro-sign"></i>
                 </a>
-                <a href="{% url 'products' %}?sort=name&direction=asc"
+                <a href="{% if cat_list == None %}
+                             {% url 'products' %}?sort=price&direction=asc
+                         {% else %}
+                             {% url 'products' %}?category={{ cat_list }}&sort=name&direction=asc
+                         {% endif %}"
                     class="btn-small filter-button waves-effect waves-light {% if current_sort == 'name_asc' %}back-white text-green{% else %}back-green text-white{% endif %}">
                     <i class="fas fa-sort-alpha-down"></i>
                 </a>
-                <a href="{% url 'products' %}?sort=name&direction=desc"
+                <a href="{% if cat_list == None %}
+                             {% url 'products' %}?sort=price&direction=asc
+                         {% else %}
+                             {% url 'products' %}?category={{ cat_list }}&sort=name&direction=desc
+                         {% endif %}"
                     class="btn-small filter-button waves-effect waves-light {% if current_sort == 'name_desc' %}back-white text-green{% else %}back-green text-white{% endif %}">
                     <i class="fas fa-sort-alpha-up-alt"></i>
                 </a>
             </div>
         </div>
     </div>
-    
+
     {% if search_term or current_categories or current_sort != 'None_None' %}
     <div class="row center-align">
         <span>
             <small>
                 <!-- needs to switch to category.render_name somehow -->
-                {{products|length }} items found{% if search_term %} for {{ search_term }}{% endif %}{% if current_categories %} in {{ cat_list }} category.{% endif %}
+                {{products|length }} items found{% if search_term %} for
+                {{ search_term }}{% endif %}{% if current_categories %} in {{ cat_list }} category.{% endif %}
             </small>
         </span>
     </div>
@@ -127,7 +144,7 @@ Products |
     <div class="row">
 
         {% for product in products %}
-        
+
         <div class="col s12 l4">
             <div class="card shop-card">
                 <div class="card-image">
