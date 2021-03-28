@@ -24,11 +24,30 @@ My Cart |
                 <table class="highlight">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
                         </tr>
                     </thead>
+                    <tbody>
+                    {% for item in cart_items %}
+                    <tr>
+                        <td>
+                            item.name
+                        </td>
+                        <td>
+                            item.price
+                        </td>
+                        <td>
+                            item.quantity
+                        </td>
+                        <td>
+                            item.subtotal
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
                 </table>
                 {% else %}
                 Your cart is empty.
