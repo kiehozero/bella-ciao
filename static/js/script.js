@@ -6,14 +6,17 @@
 $ symbol is an undefined variable */
 
 $(document).ready(function(){
-    /* initialises mobile side navigation bar */
+    /* initialises... */
+    /* ... mobile side navigation bar */
     $('.sidenav').sidenav();
-    /* initialises floating button to open side nav bar */
+    /* ... floating button to open side nav bar */
     $('.fixed-action-btn').floatingActionButton();
-    /* initialises dropdown elements */
+    /* ... dropdown elements */
     $('.dropdown-trigger').dropdown();
-    /* intialises back-to-top button */
+    /* ... back-to-top button */
     $('.fixed-action-btn').floatingActionButton();
+    /* ... customisation drop-downs */
+    $('select').formSelect();
 });
 
 /* Navbar - need to add mouseenter and mouseleaves on li.nav-option

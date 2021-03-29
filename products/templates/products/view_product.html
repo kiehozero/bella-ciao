@@ -71,9 +71,8 @@
                     {% if product.flavours %}
                     <div class="col s12 l4 input-field text-green">
                         <p>Flavour:</p>
-                        {% if product.category_name == snacks %}
+                        {% if product.category_name == 'snacks' %}
                         <select name="flavour_select" id="id_flavour_select">
-                            <option value="ch-on">Salted Caramel Sauce</option>
                             <option value="sa-vi">Salt and Vinegar</option>
                             <option value="re-sa" selected>Ready Salted</option>
                         </select>
