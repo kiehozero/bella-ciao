@@ -13,49 +13,84 @@ My Cart |
 
 {% block content %}
 <div class="container">
-        <div class="row">
-            <div class="col s12 l10">
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12 l10">
-                {% if cart_items %}
-                <table class="highlight">
-                    <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Subtotal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+    <div class="row">
+        <div class="col s12 l10 offset-l1">
+            {% if cart_items %}
+            <table class="highlight">
+                <thead>
+                    <tr>
+                        <th class="hide-on-med-and-down">
+                            <!-- blank -->
+                        </th>
+                        <th>Code</th>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
                     {% for item in cart_items %}
                     <tr>
-                        <td>
-                            item.name
+                        <td class="hide-on-med-and-down">
+                            <img src="{{ item.product.image.url }}" style="height: 10vh;">
                         </td>
                         <td>
-                            item.price
+                            {{ item.product.sku }}
                         </td>
                         <td>
-                            item.quantity
+                            {{ item.product.name }}
                         </td>
                         <td>
-                            item.subtotal
+                            €{{ item.product.price }}
+                        </td>
+                        <td>
+                            {{ item.quantity }}
+                        </td>
+                        <td>
+                            €{{ item.product.price }} * {{ item.quantity }}
                         </td>
                     </tr>
                     {% endfor %}
-                    </tbody>
-                </table>
-                {% else %}
-                Your cart is empty.
-                
-                <a href="{% url 'products' %}" class="text-green"> Click here</a> to browse our range.
-                {% endif %}
+                    <tr>
+                        <td class="hide-on-med-and-down"></td>
+                        <td class="hide-on-med-and-down"></td>
+                        <td class="hide-on-med-and-down"></td>
+                        <td colspan="2" class="cart-total">Subtotal:</td>
+                        <td>€{{ total|floatformat:2 }}</td>
+                    </tr>
+                    <tr>
+                        <td class="hide-on-med-and-down"></td>
+                        <td class="hide-on-med-and-down"></td>
+                        <td class="hide-on-med-and-down"></td>
+                        <td colspan="2" class="cart-total">Delivery:</td>
+                        <td>€{{ delivery|floatformat:2 }}</td>
+                    </tr>
+                    <tr>
+                        <td class="hide-on-med-and-down"></td>
+                        <td class="hide-on-med-and-down"></td>
+                        <td class="hide-on-med-and-down"></td>
+                        <td colspan="2" class="cart-total">Total: </td>
+                        <td>€{{ grand_total|floatformat:2 }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row">
+                <div class="col s12 m5 l3 offset-m1">
+                    <button class="btn-large waves-effect text-white back-green">Back to Store</button>
+                </div>
+                <div class="col s12 m5 l3 offset-m1">
+                    <button class="btn-large waves-effect text-white back-green">Checkout</button>
+                </div>
             </div>
+            {% else %}
+            Your cart is empty.
+
+            <a href="{% url 'products' %}" class="text-green"> Click here</a> to browse our range.
+            {% endif %}
         </div>
+    </div>
 </div>
 
 {% endblock %}

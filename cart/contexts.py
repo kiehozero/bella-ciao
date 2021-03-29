@@ -1,11 +1,26 @@
 from decimal import Decimal
 from django.conf import settings
+from django.shortcuts import get_object_or_404
+
+from products.models import Product
+
 
 def cart_contents(request):
-
-    bag_items = []
+    cart_items = []
     total = 0
     product_count = 0
+    cart = request.session.get('cart', {})
+
+    # this the loop that adds up the quantity and value of items in the cart
+    for item_id, quantity in cart.items():
+        product = get_object_or_404(Product, pk=item_id)
+        total += quantity * product.price
+        product_count += quantity
+        cart_items.append({
+            'item_id': item_id,
+            'quantity': quantity,
+            'product': product,
+        })
 
     # replicate below logic to tell customer how many coffees they have
     # until a free one and then also to create a free coffee button for
@@ -20,9 +35,10 @@ def cart_contents(request):
 
     grand_total = delivery + total
     context = {
-        'bag_items': bag_items,
+        'cart_items': cart_items,
         'total': total,
         'product_count': product_count,
+        'cart': cart,
         'delivery': delivery,
         'free_delivery_delta': free_delivery_delta,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,

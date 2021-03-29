@@ -10,8 +10,8 @@
             </li>
 
             <!-- Shopping cart - logic taken from Code Institute Boutique Ado project -->
-            <li class="{% if grand_total %}basket-full{% else %}basket-empty{% endif %} nav-option">
-                <a href="{% url 'view_cart' %}">
+            <li class="nav-option">
+                <a href="{% url 'view_cart' %}" class="{% if grand_total %}cart-full{% else %}cart-empty{% endif %}">
                     <i class="fas fa-shopping-cart sh-cart-icon"></i>&nbsp;&nbsp;
                     {% if grand_total %}
                     €{{ grand_total|floatformat:2 }}

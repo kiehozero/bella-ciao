@@ -109,9 +109,9 @@ nav ul a {
     font-size: 2em;
 }
 
-.basket-full {
-    /* basket-full replaces basket-empty upon
-    items being added to the customer's basket */
+nav ul a.cart-full {
+    /* cart-full replaces cart-empty upon
+    items being added to the customer's cart */
     color: #ceca03;
     font-weight: 800;
 }
@@ -348,6 +348,18 @@ main {
     .social-icon {
         font-size: 2em;
     }
+
+
+    /* Cart */
+
+    .sidenav li>a.cart-full,
+    .sidenav li>a.cart-full i {
+    /* cart-full replaces cart-empty upon
+    items being added to the customer's cart */
+    color: #ceca03;
+    font-weight: 800;
+}
+
 
     /* Footer */
 
