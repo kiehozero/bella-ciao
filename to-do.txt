@@ -14,3 +14,4 @@ of a selected item to zero
 - want to add more than just size as a custom option, is there a way of adding multiple items to items_by_size without a ton
 of nested ifs? Obvious solution seems to be to add each size as a different product but I want to push the logic a bit rather
 than following the tutorial like most people
+- VAT display? Add VAT category to each item, populate and then use to calculate total tax in card-total elements?
