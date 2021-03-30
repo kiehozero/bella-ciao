@@ -15,19 +15,38 @@ def cart_contents(request):
     # this the loop that adds up the quantity and value of items in the cart
     # need to include a calc that gets product
     # loyalty and adds free item if present
-    for item_id, quantity in cart.items():
-        product = get_object_or_404(Product, pk=item_id)
-        total += quantity * product.price
-        subtotal = quantity * product.price
-        if product.loyalty is True:
-            loyalty_stamps += 1
-        product_count += quantity
-        cart_items.append({
-            'item_id': item_id,
-            'quantity': quantity,
-            'product': product,
-            'subtotal': subtotal,
-        })
+    for item_id, item_data in cart.items():
+        # if the item is not customisable, item_data
+        # will simply be an integer for quantity ordered
+        if isinstance(item_data, int):
+            product = get_object_or_404(Product, pk=item_id)
+            total += item_data * product.price
+            subtotal = item_data * product.price
+            if product.loyalty is True:
+                loyalty_stamps += 1
+            product_count += item_data
+            cart_items.append({
+                'item_id': item_id,
+                'quantity': item_data,
+                'product': product,
+                'subtotal': subtotal,
+            })
+        else:
+            # if it customisable each option needs to be iterated to
+            # check for combinations of each customisable option
+            product = get_object_or_404(Product, pk=item_id)
+            for size, quantity in item_data['items_by_size'].items():
+                total += quantity * product.price
+                # add subtotal here
+                if product.loyalty is True:
+                    loyalty_stamps += 1
+                product_count += quantity
+                cart_items.append({
+                    'item_id': item_id,
+                    'quantity': item_data,
+                    'product': product,
+                    'size': size,
+                })
 
     # replicate below logic to tell customer how many coffees they have
     # until a free one and then also to create a free coffee button for

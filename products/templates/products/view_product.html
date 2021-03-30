@@ -72,12 +72,12 @@
                     <div class="col s12 l4 input-field text-green">
                         <p>Flavour:</p>
                         {% if product.category_name == 'snacks' %}
-                        <select name="flavour_select" id="id_flavour_select">
+                        <select name="product_flavour" id="id_flavour_select">
                             <option value="sa-vi">Salt and Vinegar</option>
                             <option value="re-sa" selected>Ready Salted</option>
                         </select>
                         {% else %}
-                        <select name="flavour_select" id="id_flavour_select">
+                        <select name="product_flavour" id="id_flavour_select">
                             <option value="caramel">Salted Caramel Sauce</option>
                             <option value="hazelnut">Hazelnut Syrup</option>
                             <option value="vanilla">Vanilla Syrup</option>
@@ -89,8 +89,8 @@
 
                     {% if product.milks %}
                     <div class="col s12 l4 text-green">
-                        <p>Size:</p>
-                        <select name="milk_select" id="id_milk_select">
+                        <p>Milk:</p>
+                        <select name="product_milk" id="id_milk_select">
                             <option value="almond">Almond</option>
                             <option value="coconut">Coconut</option>
                             <option value="dairy" selected>Dairy</option>
