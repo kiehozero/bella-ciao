@@ -13,8 +13,6 @@ def cart_contents(request):
     cart = request.session.get('cart', {})
 
     # this the loop that adds up the quantity and value of items in the cart
-    # need to include a calc that gets product
-    # loyalty and adds free item if present
     for item_id, item_data in cart.items():
         # if the item is not customisable, item_data
         # will simply be an integer for quantity ordered
@@ -53,7 +51,8 @@ def cart_contents(request):
     # eligible users that subtracts eligible items from the subtotal
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+        delivery = round(
+            total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100), 1)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
         delivery = 0
