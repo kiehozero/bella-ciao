@@ -17,15 +17,12 @@ My Cart |
         <div class="col s12 l10 offset-l1">
             {% if cart_items %}
 
-            {{ cart_items }}
-
             <table class="highlight">
                 <thead>
                     <tr>
                         <th class="hide-on-med-and-down">
                             <!-- blank -->
                         </th>
-                        <th>Code</th>
                         <th>Item</th>
                         <th>Price</th>
                         <th>Quantity</th>
@@ -37,9 +34,6 @@ My Cart |
                     <tr>
                         <td class="hide-on-med-and-down">
                             <img src="{{ item.product.image.url }}" style="height: 10vh;">
-                        </td>
-                        <td>
-                            {{ item.product.sku }}
                         </td>
                         <td>
                             {{ item.product.name }}
@@ -58,22 +52,19 @@ My Cart |
                     <tr>
                         <td class="hide-on-med-and-down"></td>
                         <td class="hide-on-med-and-down"></td>
-                        <td class="hide-on-med-and-down"></td>
-                        <td colspan="2" class="cart-total">Subtotal:</td>
+                        <td colspan="1" class="cart-total">Subtotal:</td>
                         <td>€{{ total|floatformat:2 }}</td>
                     </tr>
                     <tr>
                         <td class="hide-on-med-and-down"></td>
                         <td class="hide-on-med-and-down"></td>
-                        <td class="hide-on-med-and-down"></td>
-                        <td colspan="2" class="cart-total">Delivery:</td>
+                        <td colspan="1" class="cart-total">Delivery:</td>
                         <td>€{{ delivery|floatformat:2 }}</td>
                     </tr>
                     <tr>
                         <td class="hide-on-med-and-down"></td>
                         <td class="hide-on-med-and-down"></td>
-                        <td class="hide-on-med-and-down"></td>
-                        <td colspan="2" class="cart-total">Total: </td>
+                        <td colspan="1" class="cart-total">Total: </td>
                         <td>€{{ grand_total|floatformat:2 }}</td>
                     </tr>
                     <tr>
