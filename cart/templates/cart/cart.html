@@ -5,6 +5,10 @@
 My Cart |
 {% endblock %}
 
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'cart/css/cart.css' %}">
+{% endblock %}
+
 {% block page_header %}
 <div class="row cart-header back-green">
     <h4 class="text-white right">My Cart</h4>
@@ -23,33 +27,34 @@ My Cart |
                         <th class="hide-on-med-and-down">
                             <!-- blank -->
                         </th>
-                        <th>Item</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Subtotal</th>
+                        <th colspan="2">Item</th>
+                        <th colspan="1">Quantity</th>
+                        <th colspan="1">Price</th>
+                        <th colspan="1">Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for item in cart_items %}
                     <tr>
-                        <td class="hide-on-med-and-down">
+                        <td colspan="1" class="hide-on-med-and-down">
                             <img src="{{ item.product.image.url }}" style="height: 10vh;">
                         </td>
-                        <td>
+                        <td colspan="2">
                             {{ item.product.name }}
                         </td>
-                        <td>
-                            €{{ item.product.price }}
-                        </td>
-                        <td>
+                        <td colspan="1">
                             {{ item.quantity }}
                         </td>
-                        <td>
+                        <td colspan="1">
+                            €{{ item.product.price }}
+                        </td>
+                        <td colspan="1">
                             €{{ item.subtotal }}
                         </td>
                     </tr>
                     {% endfor %}
                     <tr>
+                        <td class="hide-on-med-and-down"></td>
                         <td class="hide-on-med-and-down"></td>
                         <td class="hide-on-med-and-down"></td>
                         <td colspan="1" class="cart-total">Subtotal:</td>
@@ -58,24 +63,26 @@ My Cart |
                     <tr>
                         <td class="hide-on-med-and-down"></td>
                         <td class="hide-on-med-and-down"></td>
+                        <td class="hide-on-med-and-down"></td>
                         <td colspan="1" class="cart-total">Delivery:</td>
                         <td>€{{ delivery|floatformat:2 }}</td>
                     </tr>
                     <tr>
                         <td class="hide-on-med-and-down"></td>
                         <td class="hide-on-med-and-down"></td>
+                        <td class="hide-on-med-and-down"></td>
                         <td colspan="1" class="cart-total">Total: </td>
                         <td>€{{ grand_total|floatformat:2 }}</td>
                     </tr>
                     <tr>
-                        <td colspan="5">
+                        <td colspan="6" class="center-align">
                             <i class="fas fa-award"></i>&nbsp;&nbsp;You'll earn {{ loyalty_stamps }} stamps in this transaction.
                         </td>
                     </tr>
                 </tbody>
             </table>
 
-            <div class="row">
+            <div class="row center-align">
                 <div class="col s12 m8 offset-m2">
                     <button class="btn-large waves-effect back-green">
                         <a href="#" class="text-white">Back to Store</a>
@@ -94,4 +101,9 @@ My Cart |
     </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+    <script type="text/javascript" src="{% static 'cart/js/cart.js' %}"></script>
 {% endblock %}

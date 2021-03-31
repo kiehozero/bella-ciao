@@ -35,7 +35,7 @@ def cart_contents(request):
             product = get_object_or_404(Product, pk=item_id)
             for size, quantity in item_data['items_by_size'].items():
                 total += quantity * product.price
-                # add subtotal here
+                # subtotal to go here
                 if product.loyalty is True:
                     loyalty_stamps += 1
                 product_count += quantity

@@ -1,0 +1,17 @@
+.cart-header {    
+    height: 10vh;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+
+@media (max-width: 992px) {
+
+    .sidenav li>a.cart-full,
+    .sidenav li>a.cart-full i {
+        /* cart-full replaces cart-empty upon
+        items being added to the customer's cart */
+        color: #ceca03;
+        font-weight: 800;
+    }
+}
