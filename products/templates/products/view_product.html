@@ -49,11 +49,14 @@
             <div>
                 {{ product.description }}
             </div>
+
             <br>
             <br>
             <div class="text-red left">
                 €{{ product.price }}
             </div>
+            <br>
+            <br>
 
             <!-- Idea for customisable item dropdowns taken from Boutique Ado project -->
 
@@ -117,7 +120,8 @@
                             </button>
                         </div>
                         <div class="col s6">
-                            <input class="qty-select" type="number" name="quantity" value="1" min="1" max="99"
+                            <!-- needs validation message if user types number out of range -->
+                            <input class="qty-select" type="number" name="quantity" value="1" min="1" max="49"
                                 data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                         </div>
                         <div class="col s3"></div>
