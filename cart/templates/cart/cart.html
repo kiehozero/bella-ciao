@@ -31,6 +31,8 @@ My Cart |
                         <th colspan="1">Quantity</th>
                         <th colspan="1">Price</th>
                         <th colspan="1">Subtotal</th>
+                        <th colspan="1">Update</th>
+                        <th colspan="1">Remove</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,14 +44,47 @@ My Cart |
                         <td colspan="2">
                             {{ item.product.name }}
                         </td>
+
+                        <!-- Quantity selector -->
+                        <!-- Same code as in product_detail, this is taken from the Boutique Ado project -->
                         <td colspan="1">
-                            {{ item.quantity }}
+                            <form method="POST" action="" class="update-form">
+                                {% csrf_token %}
+                                <div class="center-align qty-panel">
+                                    <div class="col s3">
+                                        <button class="btn-small waves-effect text-white back-green decrease-qty"
+                                            data-item_id="{{ item.item_id }}" id="decrease-qty_{{ item.item_id }}">
+                                            <i class="fas fa-minus fa-sm"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col s6">
+                                        <!-- needs validation message if user types number out of range -->
+                                        <input class="qty-select" type="number" name="quantity" value="{{ item.quantity }}" 
+                                            min="1" max="49" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                    </div>
+                                    <div class="col s3"></div>
+                                    <button class="btn-small waves-effect text-white back-green increase-qty"
+                                        data-item_id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}">
+                                        <i class="fas fa-plus fa-sm"></i>                                    </button>
+                                </div>
+                                {% if item.product.sizable %}
+                                    <input type="hidden" name="product_size" value="{{ item.size }}">
+                                {% endif %}
+                            </form>
                         </td>
                         <td colspan="1">
                             €{{ item.product.price }}
                         </td>
                         <td colspan="1">
                             €{{ item.subtotal }}
+                        </td>
+                        <td colspan="1">
+                            <a href="update-item text-green">Update</a>
+                        </td>
+                        <td colspan="1">
+                            <a class="btn-small remove-item back-red" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
+                                <i class="far fa-trash-alt text-white"></i>
+                            </a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -76,7 +111,8 @@ My Cart |
                     </tr>
                     <tr>
                         <td colspan="6" class="center-align">
-                            <i class="fas fa-award"></i>&nbsp;&nbsp;You'll earn {{ loyalty_stamps }} stamps in this transaction.
+                            <i class="fas fa-award"></i>&nbsp;&nbsp;You'll earn {{ loyalty_stamps }} stamps in this
+                            transaction.
                         </td>
                     </tr>
                 </tbody>
@@ -105,5 +141,6 @@ My Cart |
 
 {% block postloadjs %}
 {{ block.super }}
-    <script type="text/javascript" src="{% static 'cart/js/cart.js' %}"></script>
+<script type="text/javascript" src="{% static 'cart/js/cart.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/quantitySelect.js' %}"></script>
 {% endblock %}

@@ -41,7 +41,8 @@ def cart_contents(request):
                 product_count += quantity
                 cart_items.append({
                     'item_id': item_id,
-                    'quantity': item_data,
+                    'quantity': quantity,
+                    # try working with flavour and milk here now that quantity doesn't match item_data anymore
                     'product': product,
                     'size': size,
                 })

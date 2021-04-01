@@ -4,6 +4,29 @@
     padding-top: 20px;
 }
 
+input.qty-select {
+    text-align: center;
+}
+
+
+/* Buttons (Overwriting default Materialize parameters */
+
+.btn-small.decrease-qty,
+.btn-small.increase-qty,
+.btn-small.remove-item {
+    font-size: 0.75rem;
+    height: 2rem;
+    line-height: 2rem;
+    padding: 0 0 0 0;
+    width: 2rem;
+}
+
+.btn-small.decrease-qty i,
+.btn-small.increase-qty i {
+    font-size: 0.75rem;
+}
+
+/* Responsiveness */
 
 @media (max-width: 992px) {
 
@@ -14,4 +37,6 @@
         color: #ceca03;
         font-weight: 800;
     }
+
+    
 }
