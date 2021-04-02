@@ -47,8 +47,9 @@ My Cart |
 
                         <!-- Quantity selector -->
                         <!-- Same code as in product_detail, this is taken from the Boutique Ado project -->
-                        <td colspan="1">
-                            <form method="POST" action="" class="update-form">
+                        <!-- action="{% url 'update_cart' item.item_id %}" -->
+                        <td colspan="1" class="form-container">
+                            <form method="POST" action="{% url 'update_cart' item.item_id %}" class="update-form">
                                 {% csrf_token %}
                                 <div class="center-align qty-panel">
                                     <div class="col s3">
@@ -65,7 +66,8 @@ My Cart |
                                     <div class="col s3"></div>
                                     <button class="btn-small waves-effect text-white back-green increase-qty"
                                         data-item_id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}">
-                                        <i class="fas fa-plus fa-sm"></i>                                    </button>
+                                        <i class="fas fa-plus fa-sm"></i>
+                                    </button>
                                 </div>
                                 {% if item.product.sizable %}
                                     <input type="hidden" name="product_size" value="{{ item.size }}">
@@ -79,7 +81,7 @@ My Cart |
                             €{{ item.subtotal }}
                         </td>
                         <td colspan="1">
-                            <a href="update-item text-green">Update</a>
+                            <a class="update-item text-green">Update</a>
                         </td>
                         <td colspan="1">
                             <a class="btn-small remove-item back-red" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">

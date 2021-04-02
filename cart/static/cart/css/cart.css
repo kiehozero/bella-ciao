@@ -26,6 +26,11 @@ input.qty-select {
     font-size: 0.75rem;
 }
 
+.update-item,
+.remove-item {
+    cursor: pointer;
+}
+
 /* Responsiveness */
 
 @media (max-width: 992px) {

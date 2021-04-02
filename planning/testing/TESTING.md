@@ -24,3 +24,13 @@ category name, so I could probably write some simple Django logic to use a link 
 link. I've yet to work out whether this is a 'better' or scalable solution than using the jQuery (it probably isn't), but I opted 
 to use it purely because I came up with it just by thinking through the problem logically and really understanding the code I had 
 already fixed.
+
+3. As mentioned above, I followed the Boutique Ado project to get any core apps up and running during the 
+[Minimum Viable Concept](https://www.agilealliance.org/glossary/mvp/#q=~(infinite~false~filters~(tags~(~'mvp))~searchTerm~'~sort~false~sortDirection~'asc~page~1)
+ phase of my project, and consciously trying to make to stand apart as development progressed. In the tutorial the buttons were 
+ placed directly underneath the quantity form, but I moved the buttons to the  rightmost part of each item row. This cause the 
+ form submission to fail as the .prev jQuery function could no longer locate the  form. Javascript is definitely not my strong 
+ point so I needed the [jQuery documentation](https://api.jquery.com/siblings/) and the 
+ [W3 jQuery tutorials](https://www.w3schools.com/JQuery/jquery_traversing.asp) to refresh my memory. A chain of the parent, 
+ siblings and children methods provided the solution I needed after consoling logging each step to ensure the correct element 
+ was displayed.

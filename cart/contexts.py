@@ -37,12 +37,13 @@ def cart_contents(request):
                 total += quantity * product.price
                 # subtotal to go here
                 if product.loyalty is True:
-                    loyalty_stamps += 1
+                    loyalty_stamps += quantity
                 product_count += quantity
                 cart_items.append({
                     'item_id': item_id,
                     'quantity': quantity,
-                    # try working with flavour and milk here now that quantity doesn't match item_data anymore
+                    # try working with flavour and milk here now that 
+                    # quantity doesn't match item_data anymore
                     'product': product,
                     'size': size,
                 })

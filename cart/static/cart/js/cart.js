@@ -4,9 +4,9 @@ if ($(window).width() < 1280) {
 };
 
 
-/* Update and Remove parts of Boutique Ado cart update process */
+/* Update and Remove Items - Modified parts of Boutique Ado cart update process */
 $('.update-item').click(function(e){
-    var form = $(this).prev('.update-form');
+    var form = $(this).parent().siblings('.form-container').children('.update-form');
     form.submit();
 })
 

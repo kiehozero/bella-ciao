@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, reverse
 
 
 def view_cart(request):
@@ -45,3 +45,38 @@ def add_to_cart(request, item_id):
     request.session['cart'] = cart
 
     return redirect(redirect_url)
+
+
+def update_cart(request, item_id):
+    """ Add quantity of given item to cart. If a cart
+    exists, it updates it, if not it creates it """
+
+    quantity = int(request.POST.get('quantity'))
+
+    size = None
+    flavour = None
+    milk = None
+    if 'product_size' in request.POST:
+        size = request.POST['product_size']
+    if 'product_milk' in request.POST:
+        milk = request.POST['product_milk']
+    if 'product_flavour' in request.POST:
+        flavour = request.POST['product_flavour']
+
+    cart = request.session.get('cart', {})
+
+    # below if statement needs to be extended to include flavour and milk
+    if size:
+        if quantity > 0:
+            cart[item_id]['items_by_size'][size] = quantity
+        else:
+            del cart[item_id]['items_by_size'][size]
+    else:  # for items with no size
+        if quantity > 0:
+            cart[item_id] = quantity
+        else:
+            cart.pop[item_id]
+
+    request.session['cart'] = cart
+
+    return redirect(reverse('view_cart'))
