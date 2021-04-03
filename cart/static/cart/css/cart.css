@@ -13,12 +13,25 @@ input.qty-select {
 
 .btn-small.decrease-qty,
 .btn-small.increase-qty,
-.btn-small.remove-item {
+.btn-small.remove-item,
+.btn-small.update-item {
     font-size: 0.75rem;
     height: 2rem;
     line-height: 2rem;
     padding: 0 0 0 0;
     width: 2rem;
+}
+
+.btn-small.decrease-qty:hover,
+.btn-small.increase-qty:hover,
+.btn-small.update-item:hover {
+    background-color: #f0eee9;
+    color: #008763;
+}
+
+.btn-small.remove-item:hover {
+    background-color: #f0eee9;
+    color: #3b0022;
 }
 
 .btn-small.decrease-qty i,

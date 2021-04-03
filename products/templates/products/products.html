@@ -133,8 +133,7 @@ Products |
         <span>
             <small>
                 <!-- needs to switch to category.render_name somehow -->
-                {{products|length }} items found{% if search_term %} for
-                {{ search_term }}{% endif %}{% if current_categories %} in {{ cat_list }} category.{% endif %}
+                {{products|length }} items found{% if search_term %} for {{ search_term }}{% endif %}
             </small>
         </span>
     </div>

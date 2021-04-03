@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
+<!-- would probably be a good idea to build the loyalty totaller in cart_tools as well -->
 
 {% block extratitle %}
 My Cart |
@@ -27,12 +29,12 @@ My Cart |
                         <th class="hide-on-med-and-down">
                             <!-- blank -->
                         </th>
-                        <th colspan="2">Item</th>
-                        <th colspan="1">Quantity</th>
-                        <th colspan="1">Price</th>
-                        <th colspan="1">Subtotal</th>
-                        <th colspan="1">Update</th>
-                        <th colspan="1">Remove</th>
+                        <th colspan="2" class="center-align text-red">Item</th>
+                        <th colspan="1" class="center-align text-red">Quantity</th>
+                        <th colspan="1" class="center-align text-red">Price</th>
+                        <th colspan="1" class="center-align text-red hide-on-med-and-down">Subtotal</th>
+                        <th colspan="1" class="center-align text-red">Update Cart</th>
+                        <th colspan="1" class="center-align text-red">Remove</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,8 +62,9 @@ My Cart |
                                     </div>
                                     <div class="col s6">
                                         <!-- needs validation message if user types number out of range -->
-                                        <input class="qty-select" type="number" name="quantity" value="{{ item.quantity }}" 
-                                            min="1" max="49" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                        <input class="qty-select" type="number" name="quantity"
+                                            value="{{ item.quantity }}" min="1" max="49"
+                                            data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                     </div>
                                     <div class="col s3"></div>
                                     <button class="btn-small waves-effect text-white back-green increase-qty"
@@ -70,21 +73,24 @@ My Cart |
                                     </button>
                                 </div>
                                 {% if item.product.sizable %}
-                                    <input type="hidden" name="product_size" value="{{ item.size }}">
+                                <input type="hidden" name="product_size" value="{{ item.size }}">
                                 {% endif %}
                             </form>
                         </td>
-                        <td colspan="1">
+                        <td colspan="1" class="center-align">
                             €{{ item.product.price }}
                         </td>
-                        <td colspan="1">
-                            €{{ item.subtotal }}
+                        <td colspan="1" class="center-align hide-on-med-and-down">
+                            €{{ item.product.price | calc_subtotal:item.quantity }}
                         </td>
-                        <td colspan="1">
-                            <a class="update-item text-green">Update</a>
+                        <td colspan="1" class="center-align">
+                            <a class="btn-small update-item back-green">
+                                <i class="far fa-check-square text-white"></i>
+                            </a>
                         </td>
-                        <td colspan="1">
-                            <a class="btn-small remove-item back-red" id="remove_{{ item.item_id }}" data-size="{{ item.size }}">
+                        <td colspan="1" class="center-align">
+                            <a class="btn-small remove-item back-red" id="remove_{{ item.item_id }}"
+                                data-product_size="{{ item.size }}">
                                 <i class="far fa-trash-alt text-white"></i>
                             </a>
                         </td>
@@ -145,4 +151,26 @@ My Cart |
 {{ block.super }}
 <script type="text/javascript" src="{% static 'cart/js/cart.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/quantitySelect.js' %}"></script>
+<script type="text/javascript">
+
+    /* Update and Remove Items - Modified parts of Boutique Ado cart update process */
+    $('.update-item').click(function (e) {
+        var form = $(this).parent().siblings('.form-container').children('.update-form');
+        form.submit();
+    })
+
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/cart/remove/${itemId}/`;
+        var data = { 'csrfmiddlewaretoken': csrfToken, 'product_size': size };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+
+</script>
 {% endblock %}

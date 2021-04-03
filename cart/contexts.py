@@ -19,7 +19,6 @@ def cart_contents(request):
         if isinstance(item_data, int):
             product = get_object_or_404(Product, pk=item_id)
             total += item_data * product.price
-            subtotal = item_data * product.price
             if product.loyalty is True:
                 loyalty_stamps += 1
             product_count += item_data
@@ -27,7 +26,6 @@ def cart_contents(request):
                 'item_id': item_id,
                 'quantity': item_data,
                 'product': product,
-                'subtotal': subtotal,
             })
         else:
             # if it customisable each option needs to be iterated to
@@ -35,14 +33,13 @@ def cart_contents(request):
             product = get_object_or_404(Product, pk=item_id)
             for size, quantity in item_data['items_by_size'].items():
                 total += quantity * product.price
-                # subtotal to go here
                 if product.loyalty is True:
                     loyalty_stamps += quantity
                 product_count += quantity
                 cart_items.append({
                     'item_id': item_id,
                     'quantity': quantity,
-                    # try working with flavour and milk here now that 
+                    # try working with flavour and milk here now that
                     # quantity doesn't match item_data anymore
                     'product': product,
                     'size': size,
