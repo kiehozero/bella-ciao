@@ -3,11 +3,15 @@
 .product-header {    
     height: 10vh;
     padding-right: 20px;
-    padding-top: 20px;
 }
 
-.product-header h4 {
-    margin-top: 0px;
+.row.product-header {
+    margin-bottom: 0px;
+}
+
+.base-header {
+    /* removes margin from base template's header for this app */
+    margin-bottom: 0px;
 }
 
 .product-image {
@@ -46,6 +50,10 @@
 }
 
 /* View Product */
+
+.row.cat-breadcrumbs {
+    margin-top: 20px;
+}
 
 .breadcrumb {
     font-size: 10px;

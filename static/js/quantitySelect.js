@@ -27,7 +27,7 @@ $('.decrease-qty').click(function(e) {
     var closestInput = $(this).closest('.qty-panel').find('.qty-select')[0];
     var currentQty = parseInt($(closestInput).val());
     $(closestInput).val(currentQty - 1);
-    var ItemId = $(this).data('item_id');
+    var itemId = $(this).data('item_id');
     handleEnableDisable(itemId);
 });
 
@@ -37,6 +37,6 @@ $('.increase-qty').click(function(e) {
     var closestInput = $(this).closest('.qty-panel').find('.qty-select')[0];
     var currentQty = parseInt($(closestInput).val());
     $(closestInput).val(currentQty + 1);
-    var ItemId = $(this).data('item_id');
+    var itemId = $(this).data('item_id');
     handleEnableDisable(itemId);
 });

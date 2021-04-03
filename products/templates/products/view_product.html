@@ -22,7 +22,7 @@
 <!-- Default Materialize card format -->
 <div class="container">
 
-    <div class="row">
+    <div class="row cat-breadcrumbs">
         <!-- Need to mess around with this to make it look good -->
         <a href="{% url 'products' %}" class="breadcrumb text-green">All</a>
         <i class="fas fa-angle-right text-green"></i>
@@ -138,8 +138,7 @@
                         <a href="{% url 'products' %}" class="btn btn-large back-green waves-effect waves-green">
                             Back to Shop
                         </a>
-                        <input type="submit" value="Add to cart"
-                            class="btn btn-large back-green text-white waves-effect waves-green">
+                        <input type="submit" value="Add to cart" class="btn btn-large back-green text-white waves-effect waves-green">
                     </div>
 
                     <!-- sends the current URL to the next page so we can redirect reverse from there -->

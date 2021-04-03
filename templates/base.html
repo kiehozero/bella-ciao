@@ -30,15 +30,16 @@
 <body>
     <!-- Navigation Sidebar -->
     <header>
-        
-    {% include 'includes/desktop-navbar.html' %}
+
+        {% include 'includes/desktop-navbar.html' %}
 
     </header>
 
     <!-- button to open sidenav - Materialize floating action button -->
     <div class="trigger-display">
         <!-- needs to stick to top of page -->
-        <a href="#" data-target="mobile-snav" class="sidenav-trigger back-green btn-floating btn-large waves-effect waves-light">
+        <a href="#" data-target="mobile-snav"
+            class="sidenav-trigger back-green btn-floating btn-large waves-effect waves-light">
             <i class="fas fa-angle-down text-white"></i>
         </a>
     </div>
@@ -46,20 +47,9 @@
 
     <!-- Add button similar to above that is on the right, it will be the basket display once there is an item in it -->
 
-    <!-- User Prompts
-    {% if messages %}
-    <div class="row">
-        <div class="col s10 text-white back-red">
-            <div class="messages-container">
-                Change to the usual toasts/modals
-            </div>
-        </div>
-    </div>
-    {% endif %} -->
-
-    <div class="row">
+    <div class="row base-header">
         <div class="col m2">
-            <!-- Sits behind sidenav (can be turned off for mobile sidenav) -->
+            <!-- Sits behind sidenav on larger devices -->
         </div>
         <div class="col s12 m10">
             {% block page_header %}
@@ -67,13 +57,27 @@
         </div>
     </div>
 
+    {% if messages %}
+    <div class="row message-row back-red">
+        <div class="col s2">
+            <!-- Sits behind sidenav on larger devices -->
+        </div>
+        <div class="col s10 text-white valign-wrapper center-align">
+            <h6 class="messages-container">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+            </h6>
+        </div>
+    </div>
+    {% endif %}
+
     <!-- Page Content -->
 
     <main>
         <div class="row">
-            <div class="col d-sm-none m2">
-                <!-- Is d-sm-none a valid Materialize tag or is it a Bootstrap hangover? -->
-                <!-- Sits behind sidenav (can be turned off for mobile sidenav) -->
+            <div class="col m2">
+                <!-- Sits behind sidenav on larger devices -->
             </div>
             <div class="col s12 m10">
                 {% block content %}

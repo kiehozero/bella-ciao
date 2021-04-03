@@ -150,6 +150,14 @@ main {
     offset: 11.5rem;
 }
 
+.message-row {
+    height: 5vh;
+}
+
+.row.message-row {
+    margin-bottom: 0px;
+}
+
 
 /* Footers */
 
@@ -281,5 +289,14 @@ main {
 
     div.row.store-select {
         padding: 10px;
+    }
+
+    
+    /* Toasts */
+
+    #toast-container {
+        /* Overwrites default Materialize parameters */
+        /* raises item to top of screen */
+        margin-bottom: 90vh;
     }
 }

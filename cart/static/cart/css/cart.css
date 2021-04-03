@@ -1,11 +1,19 @@
 .cart-header {    
     height: 10vh;
     padding-right: 20px;
-    padding-top: 20px;
+}
+
+.row.cart-header {
+    margin-bottom: 0px;
 }
 
 input.qty-select {
     text-align: center;
+}
+
+.base-header {
+    /* removes margin from base template's header for this app */
+    margin-bottom: 0px;
 }
 
 

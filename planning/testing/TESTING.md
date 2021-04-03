@@ -34,3 +34,7 @@ already fixed.
  [W3 jQuery tutorials](https://www.w3schools.com/JQuery/jquery_traversing.asp) to refresh my memory. A chain of the parent, 
  siblings and children methods provided the solution I needed after consoling logging each step to ensure the correct element 
  was displayed.
+
+ ## Outstanding Issues
+
+ 
