@@ -15,40 +15,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Arvo';
 }
 
-
-/* Pallette */
-
-.back-green {
-    background-color: #008763;
-}
-
-.back-red {
-    background-color: #3b0022;
-}
-
-.back-white {
-    background-color: #f0eee9;
-}
-
-.text-green {
-    color: #008763;
-}
-
-.text-red {
-    color: #3b0022;
-}
-
-.text-white {
-    color: #f0eee9;
-}
-
-.text-black {
-    color: #100f10;
-}
-
-/* need a more pastel red for warning and error icons */
 /* end of project, go through the CSS below and replace any tags 
-below that are just colour options with above pallette tags in HTML */
+below that are just colour options with palette.css tags in HTML */
 
 /* Navigation */
 
@@ -65,7 +33,7 @@ nav.mat-override {
     height: 100%;
     position: fixed;
     width: 16.7%;
-    z-index: 1;
+    z-index: 2;
 }
 
 nav ul a:hover {
@@ -158,6 +126,10 @@ main {
     margin-bottom: 0px;
 }
 
+.message-container {
+    padding-right: 20px;
+}
+
 
 /* Footers */
 
@@ -234,7 +206,7 @@ main {
         position: absolute;
         text-align: center;
         width: 20%;
-        z-index: 1;
+        z-index: 2;
     }
 
     .sidenav-trigger {
@@ -275,6 +247,12 @@ main {
     .social-icon {
         font-size: 2em;
     }
+
+    /* Main */
+
+    .message-container {
+        padding-right: 0px;
+}
 
 
     /* Footer */

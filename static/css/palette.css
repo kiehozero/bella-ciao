@@ -1,0 +1,35 @@
+/* Pallette */
+
+.back-green {
+    background-color: #008763;
+}
+
+.back-red {
+    background-color: #3b0022;
+}
+
+.back-white {
+    background-color: #f0eee9;
+}
+
+.text-black {
+    color: #100f10;
+}
+
+.text-gold {
+    color: #ceca03;
+}
+
+.text-green {
+    color: #008763;
+}
+
+.text-red {
+    color: #3b0022;
+}
+
+.text-white {
+    color: #f0eee9;
+}
+
+/* need a more pastel red for warning and error icons */
