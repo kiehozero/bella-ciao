@@ -13,12 +13,12 @@ class Order(models.Model):
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=100, null=False, blank=False)
     phone_number = models.CharField(max_length=12, null=False, blank=False)
+    city = models.CharField(max_length=7, null=True, blank=True)
     eircode = models.CharField(max_length=7, null=True, blank=True)
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
-    date = models.DateField(auto_now_add=True)
-    time = models.TimeField(auto_now_add=False)
-    # need to add site here? Four sites plus delivery
+    date = models.DateTimeField(auto_now_add=True)
+    # add variables below for user-specified collection/delivery time/location
     loyalty_stamps = models.IntegerField(null=False, blank=False, default=0)
     delivery_cost = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, default=0)
@@ -75,6 +75,6 @@ class OrderLineItem(models.Model):
         the lineitem_total and updates the order total"""
         self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
-    
+
     def __str__(self):
         return f'SKU {self.product.sku} on order {self.order.order_number}'
