@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.http import HttpRequest
+from django.http import HttpRequest  # get_full_path used in toasts
 from django.shortcuts import (
     get_object_or_404, HttpResponse, redirect, render, reverse)
 
