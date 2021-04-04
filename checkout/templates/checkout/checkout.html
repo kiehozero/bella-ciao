@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% load cart_tools %}
+<!-- would probably be a good idea to build the loyalty totaller in cart_tools as well -->
+
+{% block extratitle %}
+Order Summary |
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="row checkout-header back-green">
+    <h4 class="col s12 l5 offset-l6 text-white right-align">Order Summary</h4>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col s12 l10 offset-l1">
+ 
+
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

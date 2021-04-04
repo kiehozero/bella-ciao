@@ -1,0 +1,13 @@
+.checkout-header {    
+    height: 10vh;
+    padding-right: 20px;
+}
+
+.row.checkout-header {
+    margin-bottom: 0px;
+}
+
+.base-header {
+    /* removes margin from base template's header for this app */
+    margin-bottom: 0px;
+}
