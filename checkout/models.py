@@ -18,6 +18,7 @@ class Order(models.Model):
     date = models.DateField(auto_now_add=True)
     time = models.TimeField(auto_now_add=False)
     # need to add site here? Four sites plus delivery
+    loyalty_stamps = models.IntegerField(null=False, blank=False, default=0)
     delivery_cost = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(
@@ -39,4 +40,4 @@ class OrderLineItem(models.Model):
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(
         max_digits=6, decimal_places=2,
-        snull=False, blank=False, editable=False)
+        null=False, blank=False, editable=False)
