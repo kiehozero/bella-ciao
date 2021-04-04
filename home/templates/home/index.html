@@ -7,11 +7,10 @@ Home |
 
 {% block page_header %}
 <!-- just here for colour and font testing at the moment -->
-<!-- Add parallax here -->
 <div class="row landing-header">
-    <div class="col s12 landing-box">
-        <h5 class="text-white">Barista-made coffee poured in the heart of Limerick city</h5>
-        <h5 class="text-white">Doirt caife de dhéantús Barista i gcroílár Luimneach</h5>
+    <div class="col-sm-12 landing-box">
+        <h5 class="text-offwhite">Barista-made coffee poured in the heart of Limerick city</h5>
+        <h5 class="text-offwhite">Doirt caife de dhéantús Barista i gcroílár Luimneach</h5>
     </div>
 </div>
 
@@ -23,92 +22,82 @@ Home |
 <div class="container">
     <div class="row">
 
-        <div class="col s12 m4">
+        <div class="col-sm-12 col-md-4">
             <div class="card index-card">
-                <div class="card-image">
-                    <img src="{{ MEDIA_URL }}coffee-order.png">
+                <img src="{{ MEDIA_URL }}coffee-order.png" class="card-image-top">
+                <div class="card-body back-offwhite text-black">
                     <h4 class="card-title">Order Online</h4>
+                    <p class="card-text">Delicious coffee prepared our professional baristas for delivery or collection.</p>
+                    <div class="btn btn-outline-green">
+                        <a href="{% url 'products' %}">Order Now</a>
+                    </div>
                 </div>
-                <div class="card-content back-white text-black">
-                    <p>Delicious coffee prepared our professional baristas for delivery or collection.</p>
-                </div>
-                <div class="card-action">
-                    <a href="{% url 'products' %}">Order Now</a>
-                </div>
+
             </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col-sm-12 col-md-4">
             <div class="card index-card">
-                <div class="card-image">
-                    <img src="{{ MEDIA_URL }}coffee-lots.png">
+                <img src="{{ MEDIA_URL }}coffee-lots.png" class="card-image-top">
+                <div class="card-body back-offwhite text-black">
                     <h4 class="card-title">Go Unlimited</h4>
+                    <p class="card-text">Sign up for our subscription to get unlimited coffee for a flat monthly fee.</p>
+                    <div class="btn btn-outline-green">
+                        <a href="#">Subscribe Today</a>
+                    </div>
                 </div>
-                <div class="card-content back-white text-black">
-                    <p>Sign up for our subscription to get unlimited coffee for a flat monthly fee.</p>
-                </div>
-                <div class="card-action">
-                    <a href="#">Subscribe Today</a>
-                </div>
+
             </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col-sm-12 col-md-4">
             <div class="card index-card">
-                <div class="card-image">
-                    <img src="{{ MEDIA_URL }}coffee-bike.png">
+                <img src="{{ MEDIA_URL }}coffee-bike.png" class="card-image-top">
+                <div class="card-body back-offwhite text-black">
                     <h4 class="card-title">Delivery</h4>
-                </div>
-                <div class="card-content back-white text-black">
-                    <p>Create an account for express checkout and home delivery options.</p>
-                </div>
-                <div class="card-action">
-                    <a href="{% url 'account_signup' %}">Register</a>
+                    <p class="card-text">Create an account for express checkout and home delivery options.</p>
+                    <div class="btn btn-outline-green">
+                        <a href="{% url 'account_signup' %}">Register</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col-sm-12 col-md-4">
             <div class="card index-card">
-                <div class="card-image">
-                    <img src="{{ MEDIA_URL }}coffee-loyalty.png">
+                <img src="{{ MEDIA_URL }}coffee-loyalty.png" class="card-image-top">
+                <div class="card-body back-offwhite text-black">
                     <h4 class="card-title">Get Rewards</h4>
-                </div>
-                <div class="card-content back-white text-black">
-                    <p>Create an account to get every tenth coffee free from any of our stores.</p>
-                </div>
-                <div class="card-action">
-                    <a href="{% url 'account_signup' %}">Register</a>
+                    <p class="card-text">Create an account to get every tenth coffee free from any of our stores.</p>
+                    <div class="btn btn-outline-green">
+                        <a href="{% url 'account_signup' %}">Register</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col-sm-12 col-md-4">
             <div class="card index-card">
-                <div class="card-image">
-                    <img src="{{ MEDIA_URL }}barista-pour.png">
+                <img src="{{ MEDIA_URL }}barista-pour.png" class="card-image-top">
+                <div class="card-body back-offwhite text-black">
                     <h4 class="card-title">Master Classes</h4>
-                </div>
-                <div class="card-content back-white text-black">
-                    <p>Subscribe today for free access to monthly tasting sessions and masterclasses.</p>
-                </div>
-                <div class="card-action">
-                    <a href="{% url 'account_signup' %}">Subscribe</a>
+                    <p class="card-text">Subscribe today for free access to monthly tasting sessions and masterclasses.</p>
+                    <div class="btn btn-outline-green">
+                        <a href="{% url 'account_signup' %}">Subscribe</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="col-sm-12 col-md-4">
             <div class="card index-card">
-                <div class="card-image">
-                    <img src="{{ MEDIA_URL }}coffee-take.png">
-                    <h4 class="card-title">Get Rewards</h4>
-                </div>
-                <div class="card-content back-white text-black">
-                    <p>Create an account to get every tenth coffee free from any of our stores.</p>
-                </div>
-                <div class="card-action">
-                    <a href="{% url 'account_signup' %}">Register</a>
+                <img src="{{ MEDIA_URL }}coffee-take.png" class="card-image-top">
+                <div class="card-body back-offwhite text-black">
+                    <h4 class="card-title">Master Classes</h4>
+                    <p class="card-text">Create an account to get every tenth coffee free from any of our stores.</p>
+                    <div class="btn btn-outline-green">
+                        <a href="{% url 'account_signup' %}">Register</a>
+                    </div>
                 </div>
             </div>
         </div>

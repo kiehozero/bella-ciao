@@ -9,12 +9,8 @@ $(document).ready(function(){
     /* initialises... */
     /* ... mobile side navigation bar */
     $('.sidenav').sidenav();
-    /* ... floating button to open side nav bar */
-    $('.fixed-action-btn').floatingActionButton();
     /* ... dropdown elements */
     $('.dropdown-trigger').dropdown();
-    /* ... customisation drop-downs */
-    $('select').formSelect();
 });
 
 /* Navbar - need to add mouseenter and mouseleaves on li.nav-option

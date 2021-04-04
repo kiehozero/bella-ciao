@@ -13,7 +13,7 @@ My Cart |
 
 {% block page_header %}
 <div class="row cart-header back-green">
-    <h4 class="col s12 l5 offset-l6 text-white right-align">My Cart</h4>
+    <h4 class="col-sm-12 col-md-5 col-md-offset-6 text-offwhite right-align">My Cart</h4>
 </div>
 {% endblock %}
 
@@ -55,7 +55,7 @@ My Cart |
                                 {% csrf_token %}
                                 <div class="center-align qty-panel">
                                     <div class="col s3">
-                                        <button class="btn-small waves-effect text-white back-green decrease-qty"
+                                        <button class="btn-small waves-effect text-offwhite back-green decrease-qty"
                                             data-item_id="{{ item.item_id }}" id="decrease-qty_{{ item.item_id }}">
                                             <i class="fas fa-minus fa-sm"></i>
                                         </button>
@@ -67,7 +67,7 @@ My Cart |
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                     </div>
                                     <div class="col s3"></div>
-                                    <button class="btn-small waves-effect text-white back-green increase-qty"
+                                    <button class="btn-small waves-effect text-offwhite back-green increase-qty"
                                         data-item_id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}">
                                         <i class="fas fa-plus fa-sm"></i>
                                     </button>
@@ -86,14 +86,14 @@ My Cart |
                         <td colspan="1" class="center-align">
                             <a class="btn-small update-item back-green"
                                 onclick="M.toast({html: updateItemToast, displayLength: 6000})">
-                                <i class="far fa-check-square text-white"></i>
+                                <i class="far fa-check-square text-offwhite"></i>
                             </a>
                         </td>
                         <td colspan="1" class="center-align">
                             <a class="btn-small remove-item back-red" id="remove_{{ item.item_id }}"
                                 onclick="M.toast({html: removeItemToast, displayLength: 6000})"
                                 data-product_size="{{ item.size }}">
-                                <i class="far fa-trash-alt text-white"></i>
+                                <i class="far fa-trash-alt text-offwhite"></i>
                             </a>
                         </td>
                     </tr>
@@ -131,10 +131,10 @@ My Cart |
             <div class="row center-align">
                 <div class="col s12 m8 offset-m2">
                     <button class="btn-large waves-effect back-green">
-                        <a href="{% url 'products' %}" class="text-white">Back to Store</a>
+                        <a href="{% url 'products' %}" class="text-offwhite">Back to Store</a>
                     </button>
-                    <button class="btn-large waves-effect text-white back-green">
-                        <a href="{% url 'checkout' %}" class="text-white">Checkout</a>
+                    <button class="btn-large waves-effect text-offwhite back-green">
+                        <a href="{% url 'checkout' %}" class="text-offwhite">Checkout</a>
                     </button>
                 </div>
             </div>

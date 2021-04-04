@@ -9,8 +9,8 @@ Products |
 
 <!-- just here for colour and font testing at the moment -->
 <div class="row landing-header">
-    <div class="col s12 landing-box">
-        <h5 class="text-white">Barista-made coffee poured in the heart of Limerick city</h5>
+    <div class="col-sm-12 landing-box">
+        <h5 class="text-offwhite">Barista-made coffee poured in the heart of Limerick city</h5>
     </div>
 </div>
 
@@ -23,43 +23,43 @@ Products |
     <!-- Preset product filters -->
     <div class="row center-align">
         <a class="waves-effect waves-light btn-small filter-button
-        {% if current_categories == None %} back-white text-green{% else %} back-green text-white{% endif %}"
+        {% if current_categories == None %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
             href="{% url 'products' %}">
             All
         </a>
         <!-- Bugfix #1: Category selection highlighting -->
         <a class="waves-effect waves-light btn-small filter-button
-        {% if 'coffee' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
+        {% if 'coffee' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
             href="{% url 'products' %}?category=coffee">
             Coffee
         </a>
         <a class="waves-effect waves-light btn-small filter-button
-        {% if 'tea' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
+        {% if 'tea' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
             href="{% url 'products' %}?category=tea">
             Tea
         </a>
         <a class="waves-effect waves-light btn-small filter-button
-        {% if 'hot_chocolate' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
+        {% if 'hot_chocolate' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
             href="{% url 'products' %}?category=hot_chocolate">
             Hot Chocolate
         </a>
         <a class="waves-effect waves-light btn-small filter-button
-        {% if 'sandwiches' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
+        {% if 'sandwiches' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
             href="{% url 'products' %}?category=sandwiches">
             Sandwiches
         </a>
         <a class="waves-effect waves-light btn-small filter-button
-        {% if 'snacks' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
+        {% if 'snacks' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
             href="{% url 'products' %}?category=snacks">
             Snacks
         </a>
         <a class="waves-effect waves-light btn-small filter-button
-        {% if 'desserts' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
+        {% if 'desserts' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
             href="{% url 'products' %}?category=desserts">
             Desserts
         </a>
         <a class="waves-effect waves-light btn-small filter-button
-        {% if 'merchandise' == cat_list %} back-white text-green{% else %} back-green text-white{% endif %}"
+        {% if 'merchandise' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
             href="{% url 'products' %}?category=merchandise">
             Merchandise
         </a>
@@ -81,12 +81,12 @@ Products |
 
                     <!-- Buttons -->
                     <div class="col s12 l4">
-                        <button type="submit" class="btn search-button text-white back-green waves-effect waves-light"
+                        <button type="submit" class="btn search-button text-offwhite back-green waves-effect waves-light"
                             id="searchButton">
                             Search
                         </button>
                         <a href="{% url 'products' %}"
-                            class="btn search-button text-white back-red waves-effect waves-light" id="searchReset">
+                            class="btn search-button text-offwhite back-red waves-effect waves-light" id="searchReset">
                             Reset
                         </a>
                     </div>
@@ -105,7 +105,7 @@ Products |
                          {% else %}
                              {% url 'products' %}?category={{ cat_list }}&sort=price&direction=asc
                          {% endif %}"
-                    class="btn-small filter-button waves-effect waves-light {% if current_sort == 'price_asc' %}back-white text-green{% else %}back-green text-white{% endif %}">
+                    class="btn-small filter-button waves-effect waves-light {% if current_sort == 'price_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
                     <i class="fas fa-euro-sign"></i>
                 </a>
                 <a href="{% if cat_list == None %}
@@ -113,7 +113,7 @@ Products |
                          {% else %}
                              {% url 'products' %}?category={{ cat_list }}&sort=name&direction=asc
                          {% endif %}"
-                    class="btn-small filter-button waves-effect waves-light {% if current_sort == 'name_asc' %}back-white text-green{% else %}back-green text-white{% endif %}">
+                    class="btn-small filter-button waves-effect waves-light {% if current_sort == 'name_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
                     <i class="fas fa-sort-alpha-down"></i>
                 </a>
                 <a href="{% if cat_list == None %}
@@ -121,7 +121,7 @@ Products |
                          {% else %}
                              {% url 'products' %}?category={{ cat_list }}&sort=name&direction=desc
                          {% endif %}"
-                    class="btn-small filter-button waves-effect waves-light {% if current_sort == 'name_desc' %}back-white text-green{% else %}back-green text-white{% endif %}">
+                    class="btn-small filter-button waves-effect waves-light {% if current_sort == 'name_desc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
                     <i class="fas fa-sort-alpha-up-alt"></i>
                 </a>
             </div>
@@ -161,13 +161,13 @@ Products |
                         <a href="{% url 'view_product' product.id %}" class="text-red">{{ product.name }}</a>
                     </h6>
                 </div>
-                <div class="card-action text-white right" style="width: 50%;">
+                <div class="card-action text-offwhite right" style="width: 50%;">
                     <a href="#">
                         <i class="fas fa-cart-plus"></i>
                         <!-- Need a modal here that asks for size, milk or flavour where relevant -->
                     </a>
                 </div>
-                <div class="card-action text-white left" style="width: 50%;">
+                <div class="card-action text-offwhite left" style="width: 50%;">
                     €{{ product.price }}
                 </div>
             </div>
@@ -180,7 +180,7 @@ Products |
 </div>
 
 <div class="fixed-action-btn">
-    <a class="btn-floating btn-large back-green text-white" id="backToTop">
+    <a class="btn-floating btn-large back-green text-offwhite" id="backToTop">
         <i class="fas fa-angle-double-up"></i>
     </a>
 </div>

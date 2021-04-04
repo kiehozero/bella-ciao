@@ -19,10 +19,10 @@ input.qty-select {
 
 /* Buttons (Overwriting default Materialize parameters */
 
-.btn-small.decrease-qty,
-.btn-small.increase-qty,
-.btn-small.remove-item,
-.btn-small.update-item {
+.btn-sm.decrease-qty,
+.btn-sm.increase-qty,
+.btn-sm.remove-item,
+.btn-sm.update-item {
     font-size: 0.75rem;
     height: 2rem;
     line-height: 2rem;
@@ -30,20 +30,20 @@ input.qty-select {
     width: 2rem;
 }
 
-.btn-small.decrease-qty:hover,
-.btn-small.increase-qty:hover,
-.btn-small.update-item:hover {
+.btn-sm.decrease-qty:hover,
+.btn-sm.increase-qty:hover,
+.btn-sm.update-item:hover {
     background-color: #f0eee9;
     color: #008763;
 }
 
-.btn-small.remove-item:hover {
+.btn-sm.remove-item:hover {
     background-color: #f0eee9;
     color: #3b0022;
 }
 
-.btn-small.decrease-qty i,
-.btn-small.increase-qty i {
+.btn-sm.decrease-qty i,
+.btn-sm.increase-qty i {
     font-size: 0.75rem;
 }
 
@@ -59,8 +59,7 @@ input#cardAddButton {
 
 /* Responsiveness */
 
-@media (max-width: 992px) {
-
+@media (max-width: 768px) {
     .sidenav li>a.cart-full,
     .sidenav li>a.cart-full i {
         /* cart-full replaces cart-empty upon
@@ -68,6 +67,4 @@ input#cardAddButton {
         color: #ceca03;
         font-weight: 800;
     }
-
-    
 }

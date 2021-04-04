@@ -4,12 +4,12 @@
     background-color: #008763;
 }
 
-.back-red {
-    background-color: #3b0022;
+.back-offwhite {
+    background-color: #f0eee9;
 }
 
-.back-white {
-    background-color: #f0eee9;
+.back-red {
+    background-color: #3b0022;
 }
 
 .text-black {
@@ -24,12 +24,12 @@
     color: #008763;
 }
 
-.text-red {
-    color: #3b0022;
+.text-offwhite {
+    color: #f0eee9;
 }
 
-.text-white {
-    color: #f0eee9;
+.text-red {
+    color: #3b0022;
 }
 
 /* need a more pastel red for warning and error icons */

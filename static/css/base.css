@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Montserrat&display=swap');
 
+
+/* Project-level Preferences */
 html {
     height: 100%;
 }
@@ -15,17 +17,18 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Arvo';
 }
 
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+} 
+
 /* end of project, go through the CSS below and replace any tags 
 below that are just colour options with palette.css tags in HTML */
 
 /* Navigation */
-
-nav.mat-override {
-    /* Overwrites default Materialize parameters */
-    background-color: rgba(255, 255, 255, 0);
-    height: 0;
-    line-height: 0;
-}
 
 .sidebar {
     background-image: linear-gradient(to bottom, #008763,#3b0022);
@@ -59,7 +62,7 @@ li.nav-option {
 }
 
 nav ul a {
-    /* Overwrites default Materialize parameters */
+    /* Overwrites default Bootstrap parameters */
     color: #f0eee9;
     padding: 0 0 0 0;
 }
@@ -135,6 +138,7 @@ main {
 
 .row.store-select {
     margin-bottom: 0;
+    margin-top: 15px;
 }
 
 .store-select {
@@ -151,6 +155,11 @@ main {
     font-weight: 600;
 }
 
+.btn.order-button:hover {
+    color: #3b0022;
+    font-weight: 600;
+}
+
 
 /* Index */
 
@@ -163,13 +172,17 @@ main {
     text-align: right;
 }
 
-.card .card-image .card-title {
+.landing-box h5 {
+    text-align: right;
+}
+
+.card .card-img-top .card-title {
     /* Overwrites default Materialize parameters */
     color: #f0eee9;
 }
 
-.card.index-card .card-action,
-.card.shop-card .card-action {
+.card.index-card .btn.btn-outline,
+.card.shop-card .btn.btn-outline {
     /* Overwrites default Materialize parameters */
     background-color: #008763;
 }
@@ -190,7 +203,7 @@ main {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     /* Alternative navigation parameters for smaller screens */
     .sidebar {
         /* static sidebar is replaced with pullout version on mobile and tablet */
