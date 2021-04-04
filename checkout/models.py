@@ -7,6 +7,7 @@ from products.models import Product
 import uuid
 
 
+# core model logic taken from Boutique Ado project and modified where necessary
 class Order(models.Model):
     order_number = models.CharField(max_length=12, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
@@ -26,6 +27,33 @@ class Order(models.Model):
     grand_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0)
 
+    def _generate_order_number(self):
+        """ Generates random and unique order number """
+        return uuid.uuid4().hex.upper()
+        # usr qr library to create image here, will
+
+    def update_total(self):
+        """ Updates grand total after each product addition """
+        self.order_total = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum']
+        if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
+            self.delivery_cost = (
+                self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE) / 100
+        else:
+            self.delivery_cost = 0
+        self.grand_total = self.order_total + self.delivery_cost
+        self.save()
+
+    def save(self, *args, **kwargs):
+        """ Overrides default save method to add order 
+        number if order does not have one already """
+        if not self.order_number:
+            self.order_number = self._generate_order_number()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.order_number
+
 
 class OrderLineItem(models.Model):
     order = models.ForeignKey(
@@ -41,3 +69,12 @@ class OrderLineItem(models.Model):
     lineitem_total = models.DecimalField(
         max_digits=6, decimal_places=2,
         null=False, blank=False, editable=False)
+
+    def save(self, *args, **kwargs):
+        """ Similar to save override in Order model, this sets
+        the lineitem_total and updates the order total"""
+        self.lineitem_total = self.product.price * self.quantity
+        super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return f'SKU {self.product.sku} on order {self.order.order_number}'
