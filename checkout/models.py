@@ -45,7 +45,7 @@ class Order(models.Model):
         self.save()
 
     def save(self, *args, **kwargs):
-        """ Overrides default save method to add order 
+        """ Overrides default save method to add order
         number if order does not have one already """
         if not self.order_number:
             self.order_number = self._generate_order_number()
