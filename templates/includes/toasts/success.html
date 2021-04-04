@@ -1,5 +1,16 @@
 {% for message in messages %}
-<div>
+<h6 class="messages-container center-align">
+    <i class="far fa-check-circle"></i>
+    &nbsp;
     {{ message }}
-</div>
+    &nbsp;
+    {% if "products" in request.get_full_path %}
+    <a href="{% url 'view_cart' %}" class="text-gold">
+        <!-- Change to modal? -->
+        View Cart <i class="fas fa-shopping-cart"></i>
+    </a>
+    &nbsp;
+    {% endif %}
+    <i class="fas fa-times close-message"></i>
+</h6>
 {% endfor %}

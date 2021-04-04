@@ -54,7 +54,7 @@ Testing for each of the below user stories is included within the [testing log](
 As a user I want to...
 
   1. order an item for collection;
-  2. order an item for pick-up;
+  2. order an item for delivery;
   3. modify the size, quantity or variety of product I order;
   4. read more information about a product;
   5. filter or sort products by category or a search term of my choice;
@@ -63,8 +63,10 @@ As a user I want to...
   8. create an account;
   9. edit my profile information;
   10. see my loyalty points;
-  11. view my current shopping cart;
-  12. view my order history;
+  11. redeem my loyalty points;
+  12. sign up to an in-store event;
+  13. view my current shopping cart;
+  14. view my order history.
 
 As an admin, I want to
   1. add a new product;
@@ -73,6 +75,8 @@ As an admin, I want to
   4. add a new product category;
   5. update a category;
   6. view all orders;
+  7. add a class;
+  8. add a new store.
 
 
 ## Features
@@ -134,7 +138,7 @@ As an admin, I want to
 - [Favicon.io](https://favicon.io/)
     - A quick and easy tool to create favicons for display in the address bar.
 
-- [Amazon Web Services](#)
+- [Amazon Web Services](https://aws.amazon.com/)
     - A non-relational database in which all data submitted by users is stored, and also where the skeleton of the project's
     data structure was first mapped out.
 
@@ -218,6 +222,9 @@ to complete this project:
 
 - Some of the authentication requirements were copied directly from the django-allauth 
 [documentation](https://django-allauth.readthedocs.io/en/latest/installation.html)
+- The [Django documentation](https://docs.djangoproject.com/en/3.1/ref/request-response/#django.http.HttpRequest.get_full_path)
+was invaluable as I learnt how to use the framework, this link in particular showed me a method of retrieving the current
+URL so I could customise messages based on it.
 
 ### Tutorials
 

@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/palette.css' %}">
     {% endblock %}
 
     <script src="https://kit.fontawesome.com/faa153a592.js" crossorigin="anonymous"></script>
@@ -62,12 +63,22 @@
         <div class="col s2">
             <!-- Sits behind sidenav on larger devices -->
         </div>
-        <div class="col s10 text-white valign-wrapper center-align">
-            <h6 class="messages-container">
-                {% for message in messages %}
-                {{ message }}
-                {% endfor %}
-            </h6>
+        <div class="col s10 offset-s1 l6 offset-l3 text-white valign-wrapper">
+            <!-- Message level logic taken from Django documentation via Boutique Ado tutorial-->
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 20 %}
+                        {% include 'includes/toasts/info.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/success.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/warning.html' %}
+                    {% elif level == 40 %}
+                        {% include 'includes/toasts/error.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+
         </div>
     </div>
     {% endif %}
@@ -99,6 +110,11 @@
     {% endblock %}
 
     {% block postloadjs %}
+    <script type="text/javascript">
+        $(".close-message").click(function () {
+            $(".message-row").css("display", "none")
+        })
+    </script>
     {% endblock %}
 
 </body>

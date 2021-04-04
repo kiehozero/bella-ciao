@@ -12,7 +12,7 @@
 {% block page_header %}
 <!-- just here for colour and font testing at the moment -->
 <div class="row product-header back-green">
-    <h4 class="text-white right">{{ product.name }}</h4>
+    <h4 class="col s12 l5 offset-l6 text-white right-align">{{ product.name }}</h4>
 </div>
 
 {% endblock %}
@@ -24,10 +24,12 @@
 
     <div class="row cat-breadcrumbs">
         <!-- Need to mess around with this to make it look good -->
-        <a href="{% url 'products' %}" class="breadcrumb text-green">All</a>
-        <i class="fas fa-angle-right text-green"></i>
-        <a href="{% url 'products' %}?category={{ product.category }}"
-            class="breadcrumb text-green">{{ product.category.render_name }}</a>
+        <div class="col s10">
+            <a href="{% url 'products' %}" class="breadcrumb text-green">All</a>
+            <i class="fas fa-angle-right text-green"></i>
+            <a href="{% url 'products' %}?category={{ product.category }}"
+                class="breadcrumb text-green">{{ product.category.render_name }}</a>
+        </div>
     </div>
 
     <div class="row">
@@ -60,13 +62,13 @@
 
             <!-- Idea for customisable item dropdowns taken from Boutique Ado project -->
 
-            <div class="row">
+            <div class="row center-align">
 
                 <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                     {% csrf_token %}
 
                     <!-- Customisation -->
-                    <div class="row">
+                    <div class="row center-align">
                         {% if product.sizable %}
                         <div class="col s12 l3 input-field text-green">
                             <p>Size:</p>
@@ -135,10 +137,11 @@
                     </div>
 
                     <div class="row center-align">
-                        <a href="{% url 'products' %}" class="btn btn-large back-green waves-effect waves-green">
+                        <a href="{% url 'products' %}" class="btn back-green waves-effect waves-green">
                             Back to Shop
                         </a>
-                        <input type="submit" value="Add to cart" class="btn btn-large back-green text-white waves-effect waves-green">
+                        <input type="submit" value="Add to cart" class="btn back-green text-white waves-effect waves-green"
+                        name="add-cart">
                     </div>
 
                     <!-- sends the current URL to the next page so we can redirect reverse from there -->

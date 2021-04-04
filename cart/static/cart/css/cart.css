@@ -52,6 +52,11 @@ input.qty-select {
     cursor: pointer;
 }
 
+input#cardAddButton {
+    color: #f0eee9;
+}
+
+
 /* Responsiveness */
 
 @media (max-width: 992px) {
