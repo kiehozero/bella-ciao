@@ -176,18 +176,23 @@ main {
     text-align: right;
 }
 
+.row.index.content {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
 .card .card-img-top .card-title {
     /* Overwrites default Materialize parameters */
     color: #f0eee9;
 }
 
-.card.index-card .btn.btn-outline,
-.card.shop-card .btn.btn-outline {
-    /* Overwrites default Materialize parameters */
-    background-color: #008763;
+.card.index-card .btn.btn-outline-success,
+.card.shop-card .btn.btn-outline-success {
+    /* Overwrites default Bootstrap parameters */
+    border-color: #008763;
 }
 
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+.card .btn.btn-outline-success a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color: #f0eee9;
     font-weight: 600;
 }
@@ -197,8 +202,8 @@ main {
 
 @media (min-width: 1200px) {
     .container {
-        /* taken from CI Boutique Ado, this overrides the default
-        Materialize class on the largest screen sizes */
+        /* taken from CI Boutique Ado, overrides the default
+        Bootstrap class on the largest screen sizes */
         max-width: 85%;
     }
 }

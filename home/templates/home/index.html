@@ -18,91 +18,119 @@ Home |
 
 {% block content %}
 
-<!-- Default Materialize card format -->
-<div class="container">
-    <div class="row">
+<!-- Default Bootstrap card format -->
+<div class="row index-content">
 
-        <div class="col-sm-12 col-md-4">
-            <div class="card index-card">
-                <img src="{{ MEDIA_URL }}coffee-order.png" class="card-image-top">
-                <div class="card-body back-offwhite text-black">
-                    <h4 class="card-title">Order Online</h4>
-                    <p class="card-text">Delicious coffee prepared our professional baristas for delivery or collection.</p>
-                    <div class="btn btn-outline-green">
-                        <a href="{% url 'products' %}">Order Now</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-sm-12 col-md-4">
-            <div class="card index-card">
-                <img src="{{ MEDIA_URL }}coffee-lots.png" class="card-image-top">
-                <div class="card-body back-offwhite text-black">
-                    <h4 class="card-title">Go Unlimited</h4>
-                    <p class="card-text">Sign up for our subscription to get unlimited coffee for a flat monthly fee.</p>
-                    <div class="btn btn-outline-green">
-                        <a href="#">Subscribe Today</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-sm-12 col-md-4">
-            <div class="card index-card">
-                <img src="{{ MEDIA_URL }}coffee-bike.png" class="card-image-top">
-                <div class="card-body back-offwhite text-black">
-                    <h4 class="card-title">Delivery</h4>
-                    <p class="card-text">Create an account for express checkout and home delivery options.</p>
-                    <div class="btn btn-outline-green">
-                        <a href="{% url 'account_signup' %}">Register</a>
-                    </div>
+    <div class="col-sm-12 col-md-4">
+        <div class="card index-card">
+            <img src="{{ MEDIA_URL }}coffee-order.png" class="card-image-top">
+            <div class="card-body back-offwhite text-black">
+                <h4 class="card-title">Order Online</h4>
+                <p class="card-text">Delicious coffee prepared our professional baristas for delivery or collection.
+                </p>
+                <div class="d-flex justify-content-center">
+                    <a href="{% url 'products' %}" class="btn btn-outline-success" role="button">Order Now</a>
                 </div>
             </div>
         </div>
-
-        <div class="col-sm-12 col-md-4">
-            <div class="card index-card">
-                <img src="{{ MEDIA_URL }}coffee-loyalty.png" class="card-image-top">
-                <div class="card-body back-offwhite text-black">
-                    <h4 class="card-title">Get Rewards</h4>
-                    <p class="card-text">Create an account to get every tenth coffee free from any of our stores.</p>
-                    <div class="btn btn-outline-green">
-                        <a href="{% url 'account_signup' %}">Register</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-12 col-md-4">
-            <div class="card index-card">
-                <img src="{{ MEDIA_URL }}barista-pour.png" class="card-image-top">
-                <div class="card-body back-offwhite text-black">
-                    <h4 class="card-title">Master Classes</h4>
-                    <p class="card-text">Subscribe today for free access to monthly tasting sessions and masterclasses.</p>
-                    <div class="btn btn-outline-green">
-                        <a href="{% url 'account_signup' %}">Subscribe</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-12 col-md-4">
-            <div class="card index-card">
-                <img src="{{ MEDIA_URL }}coffee-take.png" class="card-image-top">
-                <div class="card-body back-offwhite text-black">
-                    <h4 class="card-title">Master Classes</h4>
-                    <p class="card-text">Create an account to get every tenth coffee free from any of our stores.</p>
-                    <div class="btn btn-outline-green">
-                        <a href="{% url 'account_signup' %}">Register</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
+
+    <div class="col-sm-12 col-md-4">
+        <div class="card index-card">
+            <img src="{{ MEDIA_URL }}coffee-lots.png" class="card-image-top">
+            <div class="card-body back-offwhite text-black">
+                <h4 class="card-title">Go Unlimited</h4>
+                <!-- Will need a loop here that displays a different message if the user has a subscription -->
+                <p class="card-text">Sign up for our subscription to get unlimited coffee for a flat monthly fee.
+                </p>
+                <div class="d-flex justify-content-center">
+                    <!-- Will need a loop here that displays a different message if the user has a subscription -->
+                    <a href="#" class="btn btn-outline-success" role="button">Subscribe Today</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4">
+        <div class="card index-card">
+            <img src="{{ MEDIA_URL }}coffee-bike.png" class="card-image-top">
+            <div class="card-body back-offwhite text-black">
+                <h4 class="card-title">Delivery</h4>
+                {% if request.user.is_authenticated %}
+                <p class="card-text">Order now for delivery within 60 minutes.</p>
+                <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-outline-success" role="button">Delivery</a>
+                </div>
+                {% else %}
+                <p class="card-text">Create an account for express checkout and home delivery options.</p>
+                <div class="d-flex justify-content-center">
+                    <a href="{% url 'account_signup' %}" class="btn btn-outline-success" role="button">Delivery</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4">
+        <div class="card index-card">
+            <img src="{{ MEDIA_URL }}coffee-loyalty.png" class="card-image-top">
+            <div class="card-body back-offwhite text-black">
+                <h4 class="card-title">Get Rewards</h4>
+                {% if request.user.is_authenticated %}
+                <p class="card-text">You currently have COUNT loyalty points</p>
+                <div class="d-flex justify-content-center">
+                    <a href="{% url 'account_signup' %}" class="btn btn-outline-success" role="button">Register</a>
+                </div>
+                {% else %}
+                <p class="card-text">Create an account to get every tenth coffee free from any of our stores.</p>
+                <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-outline-success" role="button">Redeem</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4">
+        <div class="card index-card">
+            <img src="{{ MEDIA_URL }}barista-pour.png" class="card-image-top">
+            <div class="card-body back-offwhite text-black">
+                <h4 class="card-title">Master Classes</h4>
+                {% if request.user.is_authenticated %}
+                <p class="card-text">View our monthly in-store events, including tasting sessions and masterclasses.</p>
+                    <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-outline-success" role="button">Classes</a>
+                </div>
+                {% else %}
+                <p class="card-text">Subscribe today for free access to monthly tasting sessions and masterclasses.</p>
+                <div class="d-flex justify-content-center">
+                    <a href="{% url 'account_signup' %}" class="btn btn-outline-success" role="button">Register</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4">
+        <div class="card index-card">
+            <img src="{{ MEDIA_URL }}coffee-take.png" class="card-image-top">
+            <div class="card-body back-offwhite text-black">
+                <h4 class="card-title">Get Rewards</h4>
+                {% if request.user.is_authenticated %}
+                <p class="card-text">View or update your profile information.</p>
+                <div class="d-flex justify-content-center">
+                    <a href="#" class="btn btn-outline-success" role="button">Update</a>
+                </div>
+                {% else %}
+                <p class="card-text">Create an account to get every tenth coffee free from any of our stores.</p>
+                <div class="d-flex justify-content-center">
+                    <a href="{% url 'account_signup' %}" class="btn btn-outline-success" role="button">Register</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
 </div>
 
 {% endblock %}
