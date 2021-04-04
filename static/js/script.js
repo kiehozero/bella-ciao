@@ -13,8 +13,6 @@ $(document).ready(function(){
     $('.fixed-action-btn').floatingActionButton();
     /* ... dropdown elements */
     $('.dropdown-trigger').dropdown();
-    /* ... back-to-top button */
-    $('.fixed-action-btn').floatingActionButton();
     /* ... customisation drop-downs */
     $('select').formSelect();
 });
