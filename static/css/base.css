@@ -23,7 +23,18 @@ a {
 
 ul {
     list-style-type: none;
-} 
+}
+
+.row.base-header,
+.row.cart-header,
+.row.checkout-header,
+.row.landing-header,
+.row.product-header,
+.row.social-panel,
+footer .row {
+    /* fixes that Bootstrap issue of whitespace off the side of the screen */
+    --bs-gutter-x: 0;
+}
 
 /* end of project, go through the CSS below and replace any tags 
 below that are just colour options with palette.css tags in HTML */
@@ -344,15 +355,9 @@ a.view-cart-toast:hover {
 
     /* Footer */
 
-    footer {
-        bottom: 0;
-        right: 0;
-        left: 0;
-        position: fixed;
-    }
-
     .mob-footer-header {
         /* replicates a h5 without displaying as a block */
+        /* mobile footer is not stretching all the way to the edge for some reason */
         display: inline;
         font-family: 'Arvo';
         font-size: 1.64rem;
