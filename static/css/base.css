@@ -142,7 +142,6 @@ nav ul #site-logo a:hover {
 main {
     margin-bottom: 20px;
     margin-top: 20px;
-    offset: 11.5rem;
 }
 
 .message-row {
@@ -201,6 +200,7 @@ a.view-cart-toast:hover {
 
 .row .col.landing-box {
     text-align: right;
+    padding: 0 0 0 0;
 }
 
 .landing-box h5 {

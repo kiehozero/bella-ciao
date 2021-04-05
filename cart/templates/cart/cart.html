@@ -32,7 +32,8 @@ My Cart |
                         <th colspan="2" class="text-red" scope="col">Item</th>
                         <th colspan="1" class="justify-content-center text-red" scope="col">Quantity</th>
                         <th colspan="1" class="justify-content-center text-red" scope="col">Price</th>
-                        <th colspan="1" class="justify-content-center text-red d-none d-md-block" scope="col">Subtotal</th>
+                        <th colspan="1" class="justify-content-center text-red d-none d-md-block" scope="col">Subtotal
+                        </th>
                         <th colspan="1" class="justify-content-center text-red" scope="col">Update Cart</th>
                         <th colspan="1" class="justify-content-center text-red" scope="col">Remove</th>
                     </tr>
@@ -41,15 +42,25 @@ My Cart |
                     {% for item in cart_items %}
                     <tr>
                         <td colspan="1" class="d-none d-md-block">
-                            <img src="{{ item.product.image.url }}" style="height: 10vh;" alt="{{ item.product.name }}">
+                            <a href="{{ item.product.image.url }}" target="_blank">
+                                <!-- change to modal -->
+                                {% if item.product.image %}
+                                <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="product-image"
+                                    style="max-width: 10vh;">
+                                {% else %}
+                                <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}"
+                                    class="product-image" style="max-width: 10vh;">
+                                {% endif %}
+                            </a>
                         </td>
                         <td colspan="2">
-                            {{ item.product.name }}
+                            <a href="{ url 'view_product' item.product.id %}">
+                                {{ item.product.name }}
+                            </a>
                         </td>
 
                         <!-- Quantity selector -->
-                        <!-- Same code as in product_detail, this is taken from the Boutique Ado project -->
-                        <!-- action="{% url 'update_cart' item.item_id %}" -->
+                        <!-- Same code as in view_product, this is taken from the Boutique Ado project -->
                         <td colspan="1" class="form-container">
                             <form method="POST" action="{% url 'update_cart' item.item_id %}" class="update-form">
                                 {% csrf_token %}
@@ -60,12 +71,14 @@ My Cart |
                                             <i class="fas fa-minus fa-sm"></i>
                                         </button>
                                     </div>
+
                                     <div class="col s6">
                                         <!-- needs validation message if user types number out of range -->
                                         <input class="qty-select" type="number" name="quantity"
                                             value="{{ item.quantity }}" min="1" max="49"
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                     </div>
+
                                     <div class="col s3"></div>
                                     <button class="btn btn-sm text-offwhite back-green increase-qty"
                                         data-item_id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}">
@@ -131,11 +144,13 @@ My Cart |
             <div class="row justify-content-center">
                 <div class="col check-eject">
                     <button class="btn btn-outline-success">
+                        <i class="fas fa-shopping-cart"></i>&nbsp;
                         <a href="{% url 'products' %}" class="text-green">Back to Store</a>
                     </button>
                 </div>
                 <div class="col check-eject">
                     <button class="btn btn-outline-success">
+                        <i class="fas fa-lock"></i>&nbsp;
                         <a href="{% url 'checkout' %}" class="text-green">Checkout</a>
                     </button>
                 </div>

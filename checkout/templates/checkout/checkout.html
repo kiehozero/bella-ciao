@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 {% load cart_tools %}
-<!-- would probably be a good idea to build the loyalty totaller in cart_tools as well -->
 
 {% block extratitle %}
 Order Summary |
@@ -12,16 +11,105 @@ Order Summary |
 {% endblock %}
 
 {% block page_header %}
-    <div class="row checkout-header back-green">
-        <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">Order Summary</h4>
-    </div>
+<div class="row checkout-header back-green">
+    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">Order Summary</h4>
+</div>
 {% endblock %}
 
 {% block content %}
+<!-- Format taken from Boutique Ado project and customised -->
 <div class="container">
     <div class="row">
-        <div class="col-sm-12 col-md-10 offset-md-2">
+        <!-- Order Summary -->
+        <div class="col-sm-12 col-md-5 offset-md-1">
+            {% for item in cart_items %}
+            <div class="row">
+                <div class="col-sm-2">
+                    {% if item.product.image %}
+                    <a href="{{ item.product.image.url }}" target="_blank" style="max-width: 10vh;">
+                        <!-- change to modal -->
+                        <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="product-image"
+                            style="max-width: 10vh;">
+                    </a>
+                    {% else %}
+                    <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}" class="product-image"
+                        style="max-width: 10vh;">
+                    {% endif %}
+                </div>
+                <div class="col-sm-4">
+                    <a href="{ url 'view_product' item.product.id %}">
+                        {% if item.size %}{{ item.size }}{% endif %}&nbsp;{{ item.product.name }}
+                    </a>
+                </div>
+                <div class="col-sm-2">{{ item.quantity }}</div>
+                <div class="col-sm-2">€{{ item.product.price | calc_subtotal:item.quantity }}</div>
+            </div>
+            {% endfor %}
 
+            <div>
+                <div>Subtotal:</div>
+                €{{ total|floatformat:2 }}
+            </div>
+
+
+
+            <div>Delivery:</div>
+            <div>€{{ delivery|floatformat:2 }}</div>
+
+            <div>Grand Total:</div>
+            <div>€{{ grand_total|floatformat:2 }}</div>
+        </div>
+        <!-- Details and Payment -->
+        <div class="col-sm-12 col-md-5 offset-md-1">
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                <fieldset>
+                    <legend class="fieldset-label">Your Details</legend>
+                    {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+                </fieldset>
+
+                <!-- add if loop here, if delivery do this, if collection make another fieldset -->
+                <fieldset>
+                    <legend class="fieldset-label">Address</legend>
+                    {{ order_form.street_address1 | as_crispy_field }}
+                    {{ order_form.street_address2 | as_crispy_field }}
+                    {{ order_form.city | as_crispy_field }}
+                    {{ order_form.eircode | as_crispy_field }}
+                    <div class="form-check form-check-inline">
+                        {% if user.is_authenticated %}
+                        <label class="form-check-label" for="id-save-info">Update my profile with this address</label>
+                        <input class="form-check-input" type="checkbox" id="id-save-info" name="save-info">
+                        {% else %}
+                        <label class="form-check-label" for="id-save-info">
+                            <a href="{% url 'account_signup' %}" class="text-info">Register</a> for express checkout
+                            next time or
+                            <a href="{% url 'account_login' %}" class="text-info">sign in</a> to update your profile
+                            information
+                        </label>
+                        {% endif %}
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend class="fieldset-label">Your payment information</legend>
+                    <div id="card-element"></div>
+                    <div id="card-errors" class="text-danger" role="alert"></div>
+                </fieldset>
+
+                <div>
+                    <a href="{% url 'view_cart' %}" class="btn btn-outline-success text-green">
+                        <i class="fas fa-wrench"></i>
+                        &nbsp;
+                        Edit your order
+                    </a>
+                    <button id="submit-button" class="btn btn-outline-success text-green">
+                        <i class="far fa-credit-card"></i>
+                        &nbsp;
+                        Pay €{{ grand_total|floatformat:2 }}
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
