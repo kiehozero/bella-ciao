@@ -237,6 +237,7 @@ a.view-cart-toast:hover {
 }
 
 .btn-outline-success a i:hover,
+.btn-outline-success a:hover,
 .btn-outline-success i:hover {
     color: #f0eee9;
 }
