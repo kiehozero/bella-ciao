@@ -48,6 +48,12 @@
     box-shadow: 0 0 0 0.25rem rgb(0 135 99 / 25%);
 }
 
+#card-errors {
+    color: #e64958;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
 /* Stripe Elements CSS from the Stripe Documentation and tweaked to match project*/
 
 .StripeElement,
@@ -73,11 +79,12 @@
 }
 
 .StripeElement--invalid {
-    border-color: #fa755a;
+    border-color: rgb(230, 73, 88);
+    box-shadow: 0 0 0 0.25rem rgb(230 73 88 / 25%);
 }
 
 .StripeElement--webkit-autofill {
-    background-color: #fefde5 !important;
+    background-color: #f0eee9 !important;
 }
 
 .stripe-style-input::placeholder {

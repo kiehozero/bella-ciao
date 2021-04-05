@@ -26,3 +26,18 @@ var style = {
 
 var card = elements.create('card', {style: style});
 card.mount('#card-element');
+
+// Handle error validation in the main card element
+card.addEventListener('change', function(event) {
+    var cardErrorDiv = document.getElementById('card-errors');
+    if (event.error) {
+        var errorPrompt = `
+            <span role="alert">
+                <i class="far fa-times-circle"></i>
+            </span>
+            <span>${event.error.message}</span>`
+        $(cardErrorDiv).html(errorPrompt);
+    } else {
+        cardErrorDiv.textContent = '';
+    }
+})
