@@ -8,8 +8,7 @@ from .models import Product, Category
 def all_products(request):
     """ Display all items """
     products = Product.objects.all()
-    all_cats = Category.objects.all()
-    all_cat_names = all_cats.annotate(lower_name=Lower('name'))
+
     # Bugfix #1: use cat_list to extract category name before it enters
     # QuerySet, then use this to highlight category name upon use as filter
     categories = None
@@ -61,7 +60,6 @@ def all_products(request):
         'current_categories': categories,
         'current_sort': current_sort,
         'cat_list': cat_list,
-        'all_cat_names': all_cat_names,
     }
 
     return render(request, 'products/products.html', context)
