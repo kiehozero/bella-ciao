@@ -51,13 +51,22 @@ Order Summary |
                 €{{ total|floatformat:2 }}
             </div>
 
+            <div>
+                <div>Delivery:</div>
+                €{{ delivery|floatformat:2 }}
+            </div>
 
+            <div>
+                <div>Grand Total:</div>
+                €{{ grand_total|floatformat:2 }}
+            </div>
 
-            <div>Delivery:</div>
-            <div>€{{ delivery|floatformat:2 }}</div>
-
-            <div>Grand Total:</div>
-            <div>€{{ grand_total|floatformat:2 }}</div>
+            {% if user.is_authenticated %}
+            <div>
+                <div>Loyalty:</div>
+                <i class="fas fa-stamp"></i>&nbsp;{{ loyalty_stamps }} stamps.
+            </div>
+            {% endif %}
         </div>
         <!-- Details and Payment -->
         <div class="col-sm-12 col-md-5 offset-md-1">
