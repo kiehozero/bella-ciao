@@ -31,7 +31,7 @@
             </li>
             <li class="breadcrumb list-inline-item">
                 <a href="{% url 'products' %}?category={{ product.category }}" class="text-green">
-                {{ product.category.render_name }}</a>
+                    {{ product.category.render_name }}</a>
             </li>
         </div>
     </div>
@@ -70,41 +70,23 @@
                 <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                     {% csrf_token %}
 
-                    <!-- Customisation -->
-                    <div class="row justify-content-center">
+                    <!-- Product Customisation -->
+                    <div class="row d-flex justify-content-center">
                         {% if product.sizable %}
-                        <div class="col-sm-12 col-md-3 input-field text-green">
-                            <p>Size:</p>
-                            <select name="product_size" id="id_product_size">
+                        <div class="col-sm-12 col-md-6 input-field text-green">
+                            <small>Size:</small>
+                            <select name="product_size" id="id_product_size" class="text-green">
                                 <option value="regular" selected>Regular</option>
                                 <option value="large">Large</option>
                             </select>
                         </div>
                         {% endif %}
 
-                        {% if product.flavours %}
-                        <div class="col-sm-12 col-md-3 input-field text-green">
-                            <p>Flavour:</p>
-                            {% if product.category_name == 'snacks' %}
-                            <select name="product_flavour" id="id_flavour_select">
-                                <option value="sa-vi">Salt and Vinegar</option>
-                                <option value="re-sa" selected>Ready Salted</option>
-                            </select>
-                            {% else %}
-                            <select name="product_flavour" id="id_flavour_select">
-                                <option value="caramel">Salted Caramel Sauce</option>
-                                <option value="hazelnut">Hazelnut Syrup</option>
-                                <option value="vanilla">Vanilla Syrup</option>
-                                <option value="none" selected>None</option>
-                            </select>
-                            {% endif %}
-                        </div>
-                        {% endif %}
-
                         {% if product.milks %}
-                        <div class="col-sm-12 col-md-3 text-green">
-                            <p>Milk:</p>
-                            <select name="product_milk" id="id_milk_select">
+                        <div class="col-sm-12 col-md-6 text-green">
+                            <small>Milk:</small>
+                            <select name="product_milk" id="id_milk_select" class="text-green">
+                                <option value="none">None</option>
                                 <option value="almond">Almond</option>
                                 <option value="coconut">Coconut</option>
                                 <option value="dairy" selected>Dairy</option>
@@ -115,40 +97,64 @@
                         {% endif %}
                     </div>
 
+                    {% if product.flavours %}
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-sm-12 col-md-6 input-field text-green">
+                            {% if product.category_name == 'snacks' %}
+                            <small>Flavour:</small>
+                            <select name="product_flavour" id="id_flavour_select" class="text-green">
+                                <option value="canadian-ham">Canadian Ham</option>
+                                <option value="cheese-onion" selected>Cheese and Onion</option>
+                                <option value="ready-salted">Ready Salted</option>
+                                <option value="salt-vinegar">Salt and Vinegar</option>
+                            </select>
+                            {% else %}
+                            <small>Syrup:</small>
+                            <select name="product_flavour" id="id_flavour_select" class="text-green">
+                                <option value="none" selected>None</option>
+                                <option value="hazelnut">Hazelnut Syrup</option>
+                                <option value="caramel">Salted Caramel Sauce</option>
+                                <option value="vanilla">Vanilla Syrup</option>
+                            </select>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+
                     <!-- Quantity selector -->
                     <!-- Same code as the cart, this is taken from the Boutique Ado project -->
-                    <div class="row">
-                        <p class="text-green">Quantity:</p>
-                    </div>
-                    <div class="row justify-content-center qty-panel">
-                        <div class="col-sm-3">
-                            <button class="btn-sm text-offwhite back-green decrease-qty" data-item_id="{{ product.id }}"
-                                id="decrease-qty_{{ product.id }}">
+                    <div class="row d-flex justify-content-center qty-panel">
+
+                        <div class="col">
+                            <button class="btn btn-sm btn-outline-success decrease-qty text-green"
+                                data-item_id="{{ product.id }}" id="decrease-qty_{{ product.id }}">
                                 <i class="fas fa-minus"></i>
                             </button>
                         </div>
-                        <div class="col-sm-4">
-                            <!-- needs validation message if user types number out of range -->
-                            <input class="qty-select" type="number" name="quantity" value="1" min="1" max="49"
-                                data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+
+                        <div class="col">
+                            <input class="qty-select text-center" type="number" name="quantity" value="1" min="1"
+                                max="49" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                         </div>
-                        <div class="col-sm-3"></div>
-                        <button class="btn-sm text-offwhite back-green increase-qty" data-item_id="{{ product.id }}"
-                            id="increase-qty_{{ product.id }}">
-                            <i class="fas fa-plus"></i>
-                        </button>
+
+                        <div class="col">
+                            <button class="btn btn-sm btn-outline-success increase-qty" data-item_id="{{ product.id }}"
+                                id="increase-qty_{{ product.id }}">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
                     </div>
 
                     <div class="row justify-content-center">
                         <div class="col check-eject">
-                            <a href="{% url 'products' %}" class="btn btn-sm back-green text-offwhite"
-                                style="width: 100%;">
+                            <a href="{% url 'products' %}" class="btn btn-outline-success" style="width: 100%;">
                                 Back to Shop
                             </a>
                         </div>
                         <div class="col check-eject">
-                            <input type="submit" value="Add to cart" class="btn btn-sm back-green text-offwhite"
-                                name="add-cart" style="width: 100%;">
+                            <input type="submit" value="Add to cart" class="btn btn-outline-success" name="add-cart"
+                                style="width: 100%;">
                         </div>
                     </div>
 

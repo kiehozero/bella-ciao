@@ -53,6 +53,12 @@
     color: #3b0022;
 }
 
+#backToTop {
+    border-color: #008763;
+    height: 100%;
+}
+
+
 /* View Product */
 
 .breadcrumb {
@@ -67,9 +73,11 @@
     font-weight: 800;
 }
 
-#backToTop {
-    border-color: #008763;
-    height: 100%;
+.qty-panel {
+    /* not needed for styling, this is an element that identifies
+    the row for DOM traversal when updating the product quantity */
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 
