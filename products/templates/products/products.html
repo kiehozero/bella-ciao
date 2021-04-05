@@ -5,102 +5,126 @@
 Products |
 {% endblock %}
 
-{% block page_header %}
 
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'products/css/product.css' %}">
+{% endblock %}
+
+{% block page_header %}
 <!-- just here for colour and font testing at the moment -->
 <div class="row landing-header">
     <div class="col-sm-12 landing-box">
         <h5 class="text-offwhite">Barista-made coffee poured in the heart of Limerick city</h5>
     </div>
 </div>
-
 {% endblock %}
 
 {% block content %}
 
 <div class="container">
 
+    {% for cat in all_cat_names %}
+    {{ cat|title }}
+    {{ cat }}
+    {% endfor %}
     <!-- Preset product filters -->
-    <div class="row justify-content center">
-        <a class="btn-sm filter-button
+    <!-- Switch this to a loop for each category render name-->
+    
+    <div class="row d-flex flex-wrap filter-row">
+        <div class="col">
+            <a class="btn-sm filter-button
         {% if current_categories == None %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-            href="{% url 'products' %}">
-            All
-        </a>
-        <!-- Bugfix #1: Category selection highlighting -->
-        <a class="btn-sm filter-button
+                href="{% url 'products' %}">
+                All
+            </a>
+        </div>
+        <div class="col">
+            <!-- Bugfix #1: Category selection highlighting -->
+            <a class="btn-sm filter-button
         {% if 'coffee' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-            href="{% url 'products' %}?category=coffee">
-            Coffee
-        </a>
-        <a class="btn-sm filter-button
+                href="{% url 'products' %}?category=coffee">
+                Coffee
+            </a>
+        </div>
+        <div class="col">
+            <a class="btn-sm filter-button
         {% if 'tea' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-            href="{% url 'products' %}?category=tea">
-            Tea
-        </a>
-        <a class="btn-sm filter-button
+                href="{% url 'products' %}?category=tea">
+                Tea
+            </a>
+        </div>
+        <div class="col">
+            <a class="btn-sm filter-button
         {% if 'hot_chocolate' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-            href="{% url 'products' %}?category=hot_chocolate">
-            Hot Chocolate
-        </a>
+                href="{% url 'products' %}?category=hot_chocolate">
+                Hot Choc
+            </a>
+        </div>
+    <div class="col">
         <a class="btn-sm filter-button
         {% if 'sandwiches' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
             href="{% url 'products' %}?category=sandwiches">
             Sandwiches
         </a>
+    </div>
+    <div class="col">
         <a class="btn-sm filter-button
         {% if 'snacks' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
             href="{% url 'products' %}?category=snacks">
             Snacks
         </a>
+    </div>
+    <div class="col">
         <a class="btn-sm filter-button
         {% if 'desserts' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
             href="{% url 'products' %}?category=desserts">
             Desserts
         </a>
+    </div>
+    <div class="col">
         <a class="btn-sm filter-button
         {% if 'merchandise' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
             href="{% url 'products' %}?category=merchandise">
-            Merchandise
+            Merch
         </a>
     </div>
+</div>
 
-    <!-- Search box and counter taken from Code Institute task manager tutorial -->
-    <div class="row justify-content-center text-red">
-        <div class="col-sm-12 col-md-8">
-            <form method="GET" action="{% url 'products' %}">
-                <div class="row valign-wrapper justify-content-center">
+<!-- Search box and counter taken from Code Institute task manager tutorial -->
+<div class="row justify-content-center text-red">
+    <div class="col-sm-12 col-md-8">
+        <form method="GET" action="{% url 'products' %}">
+            <div class="row valign-wrapper justify-content-center">
 
-                    <!-- Search Box -->
-                    <div class="input-field col-sm-12 col-md-8">
-                        <!-- Not functioning with sort buttons, does the search item just need adding to if statement
+                <!-- Search Box -->
+                <div class="input-field col-sm-12 col-md-8">
+                    <!-- Not functioning with sort buttons, does the search item just need adding to if statement
                         in HTML below (see bugfix #2 note) -->
-                        <input name="search" minlength="3" class="validate" type="text" required>
-                        <label for="search">Search</label>
-                    </div>
-
-                    <!-- Buttons -->
-                    <div class="col-sm-12 col-md-4">
-                        <button type="submit" class="btn search-button text-offwhite back-green" id="searchButton">
-                            Search
-                        </button>
-                        <a href="{% url 'products' %}" class="btn search-button text-offwhite back-red"
-                            id="searchReset">
-                            Reset
-                        </a>
-                    </div>
-
+                    <input name="search" minlength="3" class="validate" type="text" required>
+                    <label for="search">Search</label>
                 </div>
-            </form>
-        </div>
 
-        <!-- Needs to work when filtered by category -->
-        <div class="col-sm-12 col-md-4">
-            <div class="row">
-                <div class="col">
+                <!-- Buttons -->
+                <div class="col-sm-12 col-md-4">
+                    <button type="submit" class="btn search-button text-offwhite back-green" id="searchButton">
+                        Search
+                    </button>
+                    <a href="{% url 'products' %}" class="btn search-button text-offwhite back-red" id="searchReset">
+                        Reset
+                    </a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <!-- Needs to work when filtered by category -->
+    <div class="col-sm-12 col-md-4">
+        <div class="row">
+            <div class="col">
                 <small class="text-red">Sort by:&nbsp;&nbsp;</small>
-                </div>
-                <div class="col">
+            </div>
+            <div class="col">
                 <!-- Bugfix #2: Category sorting -->
                 <a href="{% if cat_list == None %}
                              {% url 'products' %}?sort=price&direction=asc
@@ -110,8 +134,8 @@ Products |
                     class="btn-sm filter-button {% if current_sort == 'price_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
                     <i class="fas fa-euro-sign"></i>
                 </a>
-                </div>
-                <div class="col">
+            </div>
+            <div class="col">
                 <a href="{% if cat_list == None %}
                              {% url 'products' %}?sort=price&direction=asc
                          {% else %}
@@ -120,8 +144,8 @@ Products |
                     class="btn-sm filter-button {% if current_sort == 'name_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
                     <i class="fas fa-sort-alpha-down"></i>
                 </a>
-                </div>
-                <div class="col">
+            </div>
+            <div class="col">
                 <a href="{% if cat_list == None %}
                              {% url 'products' %}?sort=price&direction=asc
                          {% else %}
@@ -130,77 +154,77 @@ Products |
                     class="btn-sm filter-button {% if current_sort == 'name_desc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
                     <i class="fas fa-sort-alpha-up-alt"></i>
                 </a>
-                </div>
             </div>
         </div>
     </div>
+</div>
 
-    {% if search_term or current_categories or current_sort != 'None_None' %}
-    <div class="row justify-content-center">
-        <span>
-            <small>
-                <!-- needs to switch to category.render_name somehow -->
-                {{products|length }} items found{% if search_term %} for {{ search_term }}{% endif %}
-            </small>
-        </span>
-    </div>
-    {% endif %}
+{% if search_term or current_categories or current_sort != 'None_None' %}
+<div class="row justify-content-center">
+    <span>
+        <small>
+            <!-- needs to switch to category.render_name somehow -->
+            {{products|length }} items found{% if search_term %} for {{ search_term }}{% endif %}
+        </small>
+    </span>
+</div>
+{% endif %}
 
-    <!-- Default Materialize card format -->
-    <div class="row">
+<!-- Default Bootstrap card format -->
+<div class="row">
 
-        {% for product in products %}
+    {% for product in products %}
 
-        <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-4 product-cards">
 
-            <div class="card shop-card">
-                {% if product.image %}
-                <a href="{% url 'view_product' product.id %}">
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image card-img-top">
-                </a>
-                {% else %}
-                <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}" class="product-image card-img-top">
-                {% endif %}
-                <div class="card-body">
-                    <h6 class="card-title">
-                        <a href="{% url 'view_product' product.id %}" class="text-red">{{ product.name }}</a>
-                    </h6>
-                    <br>
+        <div class="card shop-card">
+            {% if product.image %}
+            <a href="{% url 'view_product' product.id %}">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image card-img-top">
+            </a>
+            {% else %}
+            <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}" class="product-image card-img-top">
+            {% endif %}
+            <div class="card-body">
+                <h6 class="card-title">
+                    <a href="{% url 'view_product' product.id %}" class="text-red">{{ product.name }}</a>
+                </h6>
+                <br>
 
-                    <div class="row justify-content-center">
-                        <div class="col text-center text-green">
-                            €{{ product.price }}
-                            &nbsp;&nbsp;
-                            <a href="#" class="btn btn-outline-success text-green text-center">
-                                <i class="fas fa-cart-plus"></i>
-                                <!-- Need a modal here that asks for size, milk or flavour where relevant -->
-                            </a>
-                        </div>
+                <div class="row justify-content-center">
+                    <div class="col text-center text-green">
+                        €{{ product.price }}
+                        &nbsp;&nbsp;
+                        <a href="#" class="btn btn-outline-success text-green text-center">
+                            <i class="fas fa-cart-plus"></i>
+                            <!-- Need a modal here that asks for size, milk or flavour where relevant -->
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
+</div>
 
-    <div class="row" style="margin-top: 10px; margin-bottom: 10px;">
-        <div class="col d-flex justify-content-center btt-col">
-            <a class="btn btn-outline-success text-green" id="backToTop">
-                <i class="fas fa-angle-double-up"></i>
-            </a>
-        </div>
+<div class="row btt-row">
+    <div class="col d-flex justify-content-center btt-col">
+        <a class="btn btn-outline-success text-green" id="backToTop">
+            <i class="fas fa-angle-double-up"></i>
+        </a>
     </div>
+</div>
 
-    {% endblock %}
+{% endblock %}
 
-    <!-- need a new footer for this page, having the order buttons at the bottom is confusing -->
+<!-- need a new footer for this page, having the order buttons at the bottom is confusing -->
 
-    {% block postloadjs %}
-    {{ block.super }}
-    <!-- idea taken from Boutique Ado -->
-    <script type="text/javascript">
-        $('#backToTop').click(function () {
-            window.scrollTo(0, 0)
-        })
-    </script>
-    {% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<!-- idea taken from Boutique Ado -->
+<script type="text/javascript">
+    $('#backToTop').click(function () {
+        window.scrollTo(0, 0)
+    })
+</script>
+{% endblock %}

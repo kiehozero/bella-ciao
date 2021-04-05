@@ -1,5 +1,3 @@
-/* Product - move to css file inside products folder */
-
 .product-header {    
     height: 10vh;
     padding-right: 20px;
@@ -14,8 +12,19 @@
     margin-bottom: 0px;
 }
 
+.product-cards {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 .product-image {
     width: 100%;
+}
+
+.btt-row,
+.filter-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .btn#searchButton,
@@ -66,16 +75,6 @@
 #backToTop {
     border-color: #008763;
     height: 100%;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-    width: 100%;
-}
-#backToTop:hover {
-    background-color: #f0eee9;
-}
-
-.btn#backToTop i:hover {
-    color: #008763;
 }
 
 
