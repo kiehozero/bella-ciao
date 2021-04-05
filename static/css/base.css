@@ -190,6 +190,10 @@ a.view-cart-toast:hover {
     font-weight: 600;
 }
 
+.location-box p {
+    font-size: 14px;
+}
+
 
 /* Index */
 
@@ -339,6 +343,13 @@ a.view-cart-toast:hover {
 
 
     /* Footer */
+
+    footer {
+        bottom: 0;
+        right: 0;
+        left: 0;
+        position: fixed;
+    }
 
     .mob-footer-header {
         /* replicates a h5 without displaying as a block */
