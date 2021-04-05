@@ -13,34 +13,34 @@ My Cart |
 
 {% block page_header %}
 <div class="row cart-header back-green">
-    <h4 class="col-sm-12 col-md-5 col-md-offset-6 text-offwhite right-align">My Cart</h4>
+    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">My Cart</h4>
 </div>
 {% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col s12 l10 offset-l1">
+        <div class="col-sm-12 col-md-10 offset-md-1">
             {% if cart_items %}
 
-            <table class="highlight">
+            <table class="table">
                 <thead>
                     <tr>
-                        <th class="hide-on-med-and-down">
+                        <th class="d-none d-md-block" scope="col">
                             <!-- blank -->
                         </th>
-                        <th colspan="2" class="center-align text-red">Item</th>
-                        <th colspan="1" class="center-align text-red">Quantity</th>
-                        <th colspan="1" class="center-align text-red">Price</th>
-                        <th colspan="1" class="center-align text-red hide-on-med-and-down">Subtotal</th>
-                        <th colspan="1" class="center-align text-red">Update Cart</th>
-                        <th colspan="1" class="center-align text-red">Remove</th>
+                        <th colspan="2" class="text-red" scope="col">Item</th>
+                        <th colspan="1" class="justify-content-center text-red" scope="col">Quantity</th>
+                        <th colspan="1" class="justify-content-center text-red" scope="col">Price</th>
+                        <th colspan="1" class="justify-content-center text-red d-none d-md-block" scope="col">Subtotal</th>
+                        <th colspan="1" class="justify-content-center text-red" scope="col">Update Cart</th>
+                        <th colspan="1" class="justify-content-center text-red" scope="col">Remove</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for item in cart_items %}
                     <tr>
-                        <td colspan="1" class="hide-on-med-and-down">
+                        <td colspan="1" class="d-none d-md-block">
                             <img src="{{ item.product.image.url }}" style="height: 10vh;" alt="{{ item.product.name }}">
                         </td>
                         <td colspan="2">
@@ -53,9 +53,9 @@ My Cart |
                         <td colspan="1" class="form-container">
                             <form method="POST" action="{% url 'update_cart' item.item_id %}" class="update-form">
                                 {% csrf_token %}
-                                <div class="center-align qty-panel">
+                                <div class="justify-content-center qty-panel">
                                     <div class="col s3">
-                                        <button class="btn-small waves-effect text-offwhite back-green decrease-qty"
+                                        <button class="btn btn-sm text-offwhite back-green decrease-qty"
                                             data-item_id="{{ item.item_id }}" id="decrease-qty_{{ item.item_id }}">
                                             <i class="fas fa-minus fa-sm"></i>
                                         </button>
@@ -67,7 +67,7 @@ My Cart |
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                     </div>
                                     <div class="col s3"></div>
-                                    <button class="btn-small waves-effect text-offwhite back-green increase-qty"
+                                    <button class="btn btn-sm text-offwhite back-green increase-qty"
                                         data-item_id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}">
                                         <i class="fas fa-plus fa-sm"></i>
                                     </button>
@@ -77,50 +77,50 @@ My Cart |
                                 {% endif %}
                             </form>
                         </td>
-                        <td colspan="1" class="center-align">
+                        <td colspan="1" class="justify-content-center">
                             €{{ item.product.price }}
                         </td>
-                        <td colspan="1" class="center-align hide-on-med-and-down">
+                        <td colspan="1" class="justify-content-center d-none d-md-block">
                             €{{ item.product.price | calc_subtotal:item.quantity }}
                         </td>
-                        <td colspan="1" class="center-align">
-                            <a class="btn-small update-item back-green"
+                        <td colspan="1" class="justify-content-center">
+                            <a class="btn btn-outline-success update-item"
                                 onclick="M.toast({html: updateItemToast, displayLength: 6000})">
-                                <i class="far fa-check-square text-offwhite"></i>
+                                <i class="far fa-check-square text-green"></i>
                             </a>
                         </td>
-                        <td colspan="1" class="center-align">
-                            <a class="btn-small remove-item back-red" id="remove_{{ item.item_id }}"
+                        <td colspan="1" class="justify-content-center">
+                            <a class="btn btn-outline-danger" id="remove_{{ item.item_id }}"
                                 onclick="M.toast({html: removeItemToast, displayLength: 6000})"
                                 data-product_size="{{ item.size }}">
-                                <i class="far fa-trash-alt text-offwhite"></i>
+                                <i class="far fa-trash-alt text-red"></i>
                             </a>
                         </td>
                     </tr>
                     {% endfor %}
                     <tr>
-                        <td class="hide-on-med-and-down"></td>
-                        <td class="hide-on-med-and-down"></td>
-                        <td class="hide-on-med-and-down"></td>
+                        <td class="d-none d-md-block"></td>
+                        <td class="d-none d-md-block"></td>
+                        <td class="d-none d-md-block"></td>
                         <td colspan="1" class="cart-total">Subtotal:</td>
                         <td>€{{ total|floatformat:2 }}</td>
                     </tr>
                     <tr>
-                        <td class="hide-on-med-and-down"></td>
-                        <td class="hide-on-med-and-down"></td>
-                        <td class="hide-on-med-and-down"></td>
+                        <td class="d-none d-md-block"></td>
+                        <td class="d-none d-md-block"></td>
+                        <td class="d-none d-md-block"></td>
                         <td colspan="1" class="cart-total">Delivery:</td>
                         <td>€{{ delivery|floatformat:2 }}</td>
                     </tr>
                     <tr>
-                        <td class="hide-on-med-and-down"></td>
-                        <td class="hide-on-med-and-down"></td>
-                        <td class="hide-on-med-and-down"></td>
+                        <td class="d-none d-md-block"></td>
+                        <td class="d-none d-md-block"></td>
+                        <td class="d-none d-md-block"></td>
                         <td colspan="1" class="cart-total">Total: </td>
                         <td>€{{ grand_total|floatformat:2 }}</td>
                     </tr>
                     <tr>
-                        <td colspan="6" class="center-align">
+                        <td colspan="6" class="justify-content-center">
                             <i class="fas fa-stamp"></i>&nbsp;&nbsp;You'll earn {{ loyalty_stamps }} stamps in this
                             transaction.
                         </td>
@@ -128,13 +128,15 @@ My Cart |
                 </tbody>
             </table>
 
-            <div class="row center-align">
-                <div class="col s12 m8 offset-m2">
-                    <button class="btn-large waves-effect back-green">
-                        <a href="{% url 'products' %}" class="text-offwhite">Back to Store</a>
+            <div class="row justify-content-center">
+                <div class="col check-eject">
+                    <button class="btn btn-outline-success">
+                        <a href="{% url 'products' %}" class="text-green">Back to Store</a>
                     </button>
-                    <button class="btn-large waves-effect text-offwhite back-green">
-                        <a href="{% url 'checkout' %}" class="text-offwhite">Checkout</a>
+                </div>
+                <div class="col check-eject">
+                    <button class="btn btn-outline-success">
+                        <a href="{% url 'checkout' %}" class="text-green">Checkout</a>
                     </button>
                 </div>
             </div>

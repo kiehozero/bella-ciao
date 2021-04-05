@@ -46,7 +46,7 @@ nav ul a:hover {
 }
 
 .sidebar .row a {
-    /* Overwrites default Materialize parameters */
+    /* Overwrites default Bootstrap parameters */
     color:#f0eee9;
 }
 
@@ -129,8 +129,15 @@ main {
     margin-bottom: 0px;
 }
 
-.message-container {
-    padding-right: 20px;
+.messages-container {
+    /* Overwrites default Bootstrap parameters */
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+a.view-cart-toast:hover {
+    /* Overwrites default Bootstrap parameters */
+    color: #008763;
 }
 
 
@@ -149,7 +156,7 @@ main {
 }
 
 .btn.btn-small {
-    /* Overwrites default Materialize parameters */
+    /* Overwrites default Bootstrap parameters */
     background-color: #f0eee9;
     color: #008763;
     font-weight: 600;
@@ -181,10 +188,13 @@ main {
     margin-bottom: 10vh;
 }
 
-.card .card-img-top .card-title {
-    /* Overwrites default Materialize parameters */
+.card .card-body h4.card-title {
+    /* Overwrites default Bootstrap parameters */
     color: #f0eee9;
 }
+
+
+/* Buttons */
 
 .card.index-card .btn.btn-outline-success,
 .card.shop-card .btn.btn-outline-success {
@@ -192,9 +202,36 @@ main {
     border-color: #008763;
 }
 
-.card .btn.btn-outline-success a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+.btn-outline-success:hover {
+    background-color: #008763;
+    border-color: #008763;
     color: #f0eee9;
-    font-weight: 600;
+}
+
+.btn-outline-success a i:hover,
+.btn-outline-success i:hover {
+    color: #f0eee9;
+}
+
+.btn-outline-danger {
+    border-color: #3b0022;
+    color: #3b0022;
+}
+
+.btn-outline-danger:hover {
+    background-color: #3b0022;
+    border-color: #3b0022;
+    color: #f0eee9;
+}
+
+.btn-outline-danger a i:hover,
+.btn-outline-danger i:hover {
+    color: #f0eee9;
+}
+
+.check-eject {
+    /* Add Cart, Checkout and Back To Shop buttons on Product and Cart Views */
+    width: 100%;
 }
 
 
@@ -202,8 +239,7 @@ main {
 
 @media (min-width: 1200px) {
     .container {
-        /* taken from CI Boutique Ado, overrides the default
-        Bootstrap class on the largest screen sizes */
+        /* taken from CI Boutique Ado, overrides default Bootstrap class on large screen sizes */
         max-width: 85%;
     }
 }
@@ -263,12 +299,12 @@ main {
     }
 
     .social-icon {
-        font-size: 2em;
+        font-size: 1.5em;
     }
 
     /* Main */
 
-    .message-container {
+    .messages-container {
         padding-right: 0px;
 }
 

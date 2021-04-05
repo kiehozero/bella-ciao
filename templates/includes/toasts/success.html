@@ -5,8 +5,7 @@
     {{ message }}
     &nbsp;
     {% if "products" in request.get_full_path %}
-    <a href="{% url 'view_cart' %}" class="text-gold">
-        <!-- Change to modal? -->
+    <a href="{% url 'view_cart' %}" class="text-gold view-cart-toast">
         View Cart <i class="fas fa-shopping-cart"></i>
     </a>
     &nbsp;
