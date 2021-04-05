@@ -50,6 +50,10 @@ nav ul a:hover {
     color:#f0eee9;
 }
 
+.sidebar ul {
+    padding-left: 0;
+}
+
 li.nav-option {
     font-weight: 600;
     line-height: 1.25em;
@@ -60,6 +64,23 @@ li.nav-option {
     text-transform: uppercase;
     width: 100%;
 }
+
+li.nav-option:hover,
+li.nav-option a:hover {
+    background-color: #f0eee9;
+    color: #008763;
+}
+
+li.nav-option#site-logo:hover,
+li.nav-option.social-panel:hover {
+    background-color: transparent;
+}
+
+li.nav-option.social-panel .col:hover {
+    background-color: transparent;
+    border-color: #f0eee9;
+}
+
 
 nav ul a {
     /* Overwrites default Bootstrap parameters */
