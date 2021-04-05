@@ -42,8 +42,7 @@ The icons I used within this project are all sources from [Font Awesome](https:/
 ### Responsiveness
 
 <<< In terms of look and feel, the site is similar across all browsers. The tablet and desktop views are almost identical
-but for a few alignment changes, while mobile devices always drop into col-12 formatting. For mobile devices, I have 
-included Materialize's default sidenav bar, which was much easier to set up than Bootstrap's mobile menu options. I have 
+but for a few alignment changes, while mobile devices always drop into col-12 formatting. For mobile devices, >>>. I have 
 also tended to use jQuery to change descriptive buttons it icon-based buttons for smaller devices. A full responsiveness
 testing procedure can be found within the [testing log](planning/testing/TESTING.md). >>>
 
@@ -98,15 +97,14 @@ As an admin, I want to
 - [CSS3](https://en.wikipedia.org/wiki/CSS3)
     - Cascading Style Sheets is the language used to style HTML content.
 
-- [Materialize](https://materializecss.com/)
-    - Materialize's grid framework helped me bring my initial wireframe ideas to life.
+- [Bootstrap](https://www.getbootstrap.com/)
+    - Bootstrap's grid framework helped me bring my initial wireframe ideas to life.
 
 - [Javascript](https://www.javascript.com/)
     - The language that makes the web interactive.
 
 - [jQuery](https://jquery.com/)
-    - An open-source Javascript library that simplifies interactive web design. In this case it is the key to utilising
-    some of Materialize's key features.
+    - An open-source Javascript library that simplifies interactive web design.
 
 - [Font Awesome](https://fontawesome.com/)
     - Font Awesome's free package provides a comprehensive icon suite that is fully customisable in CSS.
@@ -122,7 +120,9 @@ As an admin, I want to
 
 - [Heroku](https://www.heroku.com/)
     - A cloud platform for hosting scaleable apps in a variety of programming languages.
-
+    
+- [Stripe](https://www.stripe.com)/
+    - 
 - [Balsamiq](https://www.balsamiq.com/)
     - An intuitive drafting tool that enables visual planning during a project's infancy.
 
@@ -220,11 +220,16 @@ to complete this project:
 
 ### Content
 
+
+### Documentation
+
 - Some of the authentication requirements were copied directly from the django-allauth 
 [documentation](https://django-allauth.readthedocs.io/en/latest/installation.html)
 - The [Django documentation](https://docs.djangoproject.com/en/3.1/ref/request-response/#django.http.HttpRequest.get_full_path)
 was invaluable as I learnt how to use the framework, this link in particular showed me a method of retrieving the current
 URL so I could customise messages based on it.
+
+- [Stripe docs](https://stripe.com/docs/payments/accept-a-payment#web-collect-card-details)
 
 ### Tutorials
 

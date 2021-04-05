@@ -21,17 +21,17 @@ Order Summary |
 
     <div class="row">
         <!-- Order Summary -->
-        <div class="col-sm-12 col-md-8">
+        <div class="col-sm-12 col-md-7">
             <h6 class="text-green">Item Summary</h6>
             <div class="row summary-header">
-                <div class="col-sm-2"></div>
+                <div class="col-md-2 d-none d-md-block"></div>
                 <div class="col-sm-6">Description</div>
                 <div class="col-sm-2">Quantity</div>
                 <div class="col-sm-2">Subtotal</div>
             </div>
             {% for item in cart_items %}
-            <div class="row summary-row">
-                <div class="col-sm-2">
+            <div class="row summary-row justify-content-sm-center">
+                <div class="col-md-2 d-none d-md-block">
                     {% if item.product.image %}
                     <a href="{{ item.product.image.url }}" target="_blank">
                         <!-- change to modal -->
@@ -84,7 +84,7 @@ Order Summary |
             </div>
         </div>
         <!-- Details and Payment -->
-        <div class="col-sm-12 col-md-4">
+        <div class="col-sm-12 col-md-5">
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset>
@@ -136,4 +136,11 @@ Order Summary |
             </form>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
