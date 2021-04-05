@@ -202,6 +202,10 @@ a.view-cart-toast:hover {
     border-color: #008763;
 }
 
+.btn-outline-success {
+    border-color: #008763;
+}
+
 .btn-outline-success:hover {
     background-color: #008763;
     border-color: #008763;

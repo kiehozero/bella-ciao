@@ -63,11 +63,18 @@
     font-weight: 800;
 }
 
+#backToTop {
+    border-color: #008763;
+    height: 100%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    width: 100%;
+}
 #backToTop:hover {
     background-color: #f0eee9;
 }
 
-#backToTop i:hover {
+.btn#backToTop i:hover {
     color: #008763;
 }
 
