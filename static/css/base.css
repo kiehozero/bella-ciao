@@ -64,6 +64,7 @@ li.nav-option {
 nav ul a {
     /* Overwrites default Bootstrap parameters */
     color: #f0eee9;
+    height: 100%;
     padding: 0 0 0 0;
 }
 
@@ -118,6 +119,8 @@ nav ul #site-logo a:hover {
 /* Main */
 
 main {
+    margin-bottom: 20px;
+    margin-top: 20px;
     offset: 11.5rem;
 }
 
@@ -183,14 +186,14 @@ a.view-cart-toast:hover {
     text-align: right;
 }
 
-.row.index.content {
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+.index-card {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .card .card-body h4.card-title {
     /* Overwrites default Bootstrap parameters */
-    color: #f0eee9;
+    color: #3b0022;
 }
 
 

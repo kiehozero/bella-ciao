@@ -35,6 +35,16 @@ already fixed.
  siblings and children methods provided the solution I needed after consoling logging each step to ensure the correct element 
  was displayed.
 
+ 4. I initially wrote this project with Materialize in mind as I had become familiar with the classes and components, but when I
+ came to set up the checkout form I realised that crispy-forms doesn't offer native support for Materialize. My choices were either
+ to write my own forms and logic or make the switch to Bootstrap while I still only had four apps to deal with. It was a couple of
+ hours work to do this but it allowed me to follow a tutorial for a part of the project that links the front and back ends, namely
+ the crispy forms and Stripe payments, without potentially creating a mountain of work for myself. I had previously preferred using
+ Materialize to Bootstrap but switching over a ton of classes and removing the overwrites I'd done in my own CSS files gave me a new
+ appreciate for Bootstrap
+
  ## Outstanding Issues
+
+ 1. Search bar results can't be sorted by sort buttons
 
  

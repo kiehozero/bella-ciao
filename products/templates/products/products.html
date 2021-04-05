@@ -94,26 +94,26 @@ Products |
 <div class="row justify-content-center text-red">
     <div class="col-sm-12 col-md-8">
         <form method="GET" action="{% url 'products' %}">
-            <div class="row valign-wrapper justify-content-center">
+            <div class="row">
 
                 <!-- Search Box -->
-                <div class="input-field col-sm-12 col-md-8">
-                    <!-- Not functioning with sort buttons, does the search item just need adding to if statement
+                <div class="col-sm-12 col-md-8" aria-labelledby="search">
+                    <div class="input-group">
+                        <!-- Not functioning with sort buttons, does the search item just need adding to if statement
                         in HTML below (see bugfix #2 note) -->
-                    <input name="search" minlength="3" class="validate" type="text" required>
-                    <label for="search">Search</label>
-                </div>
+                        <input name="search" minlength="3" class="form-control" type="text" placeholder="Search the store" required>
 
                 <!-- Buttons -->
-                <div class="col-sm-12 col-md-4">
-                    <button type="submit" class="btn search-button text-offwhite back-green" id="searchButton">
-                        Search
-                    </button>
-                    <a href="{% url 'products' %}" class="btn search-button text-offwhite back-red" id="searchReset">
-                        Reset
-                    </a>
+                        <div class="input-group-append">
+                            <button type="submit" class=" btn search-button text-offwhite back-green" id="searchButton">
+                                Search
+                            </button>
+                            <a href="{% url 'products' %}" class="btn search-button text-offwhite back-red" id="searchReset">
+                                Reset
+                            </a>
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </form>
     </div>
@@ -122,7 +122,7 @@ Products |
     <div class="col-sm-12 col-md-4">
         <div class="row">
             <div class="col">
-                <small class="text-red">Sort by:&nbsp;&nbsp;</small>
+                <div class="text-red">Sort</div>
             </div>
             <div class="col">
                 <!-- Bugfix #2: Category sorting -->
@@ -131,7 +131,7 @@ Products |
                          {% else %}
                              {% url 'products' %}?category={{ cat_list }}&sort=price&direction=asc
                          {% endif %}"
-                    class="btn-sm filter-button {% if current_sort == 'price_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
+                    class="btn filter-button {% if current_sort == 'price_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
                     <i class="fas fa-euro-sign"></i>
                 </a>
             </div>
@@ -141,7 +141,7 @@ Products |
                          {% else %}
                              {% url 'products' %}?category={{ cat_list }}&sort=name&direction=asc
                          {% endif %}"
-                    class="btn-sm filter-button {% if current_sort == 'name_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
+                    class="btn filter-button {% if current_sort == 'name_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
                     <i class="fas fa-sort-alpha-down"></i>
                 </a>
             </div>
@@ -151,7 +151,7 @@ Products |
                          {% else %}
                              {% url 'products' %}?category={{ cat_list }}&sort=name&direction=desc
                          {% endif %}"
-                    class="btn-sm filter-button {% if current_sort == 'name_desc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
+                    class="btn filter-button {% if current_sort == 'name_desc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
                     <i class="fas fa-sort-alpha-up-alt"></i>
                 </a>
             </div>
