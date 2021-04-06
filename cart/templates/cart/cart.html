@@ -42,12 +42,13 @@ My Cart |
                     {% for item in cart_items %}
                     <tr>
                         <td colspan="1" class="d-none d-md-block">
+                            {% if item.product.image %}
                             <a href="{{ item.product.image.url }}" target="_blank">
                                 <!-- change to modal -->
-                                {% if item.product.image %}
                                 <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="product-image"
                                     style="max-width: 10vh;">
-                                {% else %}
+                            </a>
+                            {% else %}
                                 <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}"
                                     class="product-image" style="max-width: 10vh;">
                                 {% endif %}

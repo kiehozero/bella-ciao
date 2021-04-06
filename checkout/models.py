@@ -34,8 +34,10 @@ class Order(models.Model):
 
     def update_total(self):
         """ Updates grand total after each product addition """
+        # the 'or 0' sets order_total as 0 instead of None,
+        # preventing an error when calculating delivery_costs
         self.order_total = self.lineitems.aggregate(
-            Sum('lineitem_total'))['lineitem_total__sum']
+            Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery_cost = (
                 self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE) / 100

@@ -43,7 +43,7 @@ Order Summary |
                 </div>
                 <div class="col-sm-6">
                     <p class="text-wrap">
-                    <a href="{ url 'view_product' item.product.id %}" class="text-black">
+                    <a href="{ url 'view_product' product.id %}" class="text-black">
                         {% if item.size %}{{ item.size|title }}{% endif %}&nbsp;{{ item.product.name }}
                     </a>
                     {% if item.milk %} - {{ item.milk }}{% endif %}
@@ -91,6 +91,7 @@ Order Summary |
                     <legend class="fieldset-label text-green">Your Details</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
+                    {{ order_form.phone_number | as_crispy_field }}
                 </fieldset>
 
                 <!-- add if loop here, if delivery do this, if collection make another fieldset -->

@@ -2,7 +2,7 @@
 documentation in the README and the Boutique Ado tutorial */
 
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
-var clientSecret = $('#client_secret').text().slice(1, -1);
+var clientSecret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
 
@@ -28,19 +28,20 @@ var card = elements.create('card', {style: style});
 card.mount('#card-element');
 
 // Error validation in the main card element
+
 card.addEventListener('change', function(event) {
-    var cardErrorDiv = document.getElementById('card-errors');
+    var errorDiv = document.getElementById('card-errors');
     if (event.error) {
         var errorPrompt = `
             <span role="alert">
                 <i class="far fa-times-circle"></i>
             </span>
-            <span>${event.error.message}</span>`
-        $(cardErrorDiv).html(errorPrompt);
+            <span>${event.error.message}</span>`;
+        $(errorDiv).html(errorPrompt);
     } else {
-        cardErrorDiv.textContent = '';
+        errorDiv.textContent = '';
     }
-})
+});
 
 // Form Submission
 
@@ -57,13 +58,13 @@ form.addEventListener('submit', function(ev) {
     }).then(function(result) {
         if (result.error) {
             var errorDiv = document.getElementById('card-errors');
-            var html = `
+            var errorPrompt = `
                 <span role="alert">
                     <i class="fas fa-times-circle"></i>
                 </span>
                 <span>${result.error.message}</span>`;
-            $(errorDiv).html(html);
-            card.update({ 'disabled': false});
+            $(errorDiv).html(errorPrompt);
+            card.update({'disabled': false});
             $('#submit-button').attr('disabled', false);
         } else {
             if (result.paymentIntent.status === 'succeeded') {

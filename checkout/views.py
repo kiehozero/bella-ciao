@@ -28,7 +28,7 @@ def checkout(request):
             'street_address1': request.POST['street_address1'],
             'street_address2': request.POST['street_address2'],
             'city': request.POST['city'],
-            'postcode': request.POST['postcode'],
+            'eircode': request.POST['eircode'],
 
         }
         order_form = OrderForm(form_data)
@@ -102,9 +102,7 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save-info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(
-        request, f'Thanks for supporting a local business! \
-            Your order number is {order_number} and you will \
-            receive a confirmation e-mail shortly.')
+        request, f'Order complete!')
     if 'cart' in request.session:
         del request.session['cart']
 

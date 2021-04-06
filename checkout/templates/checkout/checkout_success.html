@@ -11,82 +11,41 @@ Order Confirmation |
 
 {% block page_header %}
 <div class="row checkout-header back-green">
-    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">TEXT TEXT TEXT TEXT TEXT</h4>
+    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">Order Confirmation</h4>
 </div>
 {% endblock %}
 
 {% block content %}
 <!-- Format taken from Boutique Ado project and customised -->
 
-    <div class="row">
+<div class="row">
 
-        <!-- Cheers Blurb -->
-        <div class="col-sm-12 col-md-5">
-            <h6>"Bella Ciao"</h6>
-            <p>Goodbye and thank you for supporting a local business today! We've sent a confirmation </p>
-        </div>
-
-        <!-- Order Summary -->
-        <div class="col-sm-12 col-md-7">
-            <h6 class="text-green">Item Summary</h6>
-            <div class="row summary-header">
-                <div class="col-md-2 d-none d-md-block"></div>
-                <div class="col-sm-6">Description</div>
-                <div class="col-sm-2">Quantity</div>
-                <div class="col-sm-2">Subtotal</div>
-            </div>
-            {% for item in cart_items %}
-            <div class="row summary-row justify-content-sm-center">
-                <div class="col-md-2 d-none d-md-block">
-                    {% if item.product.image %}
-                    <div>
-                        <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="product-image">
-                    </div>
-                    {% else %}
-                    <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}" class="product-image">
-                    {% endif %}
-                </div>
-                <div class="col-sm-6">
-                    <p class="text-wrap">
-                    <a href="{ url 'view_product' item.product.id %}" class="text-black">
-                        {% if item.size %}{{ item.size|title }}{% endif %}&nbsp;{{ item.product.name }}
-                    </a>
-                    {% if item.milk %} - {{ item.milk }}{% endif %}
-                    {% if item.flavour %} - {{ item.flavour }}{% endif %}
-                    </p>
-                </div>
-                <div class="col-sm-2">{{ item.quantity }}</div>
-                <div class="col-sm-2">€{{ item.product.price | calc_subtotal:item.quantity }}</div>
-            </div>
-            {% endfor %}
-
-            <div class="row">
-                <h6 class="text-green order-summary">Order Summary</h6>
-                <div>
-                    Subtotal:
-                    €{{ total|floatformat:2 }}
-                </div>
-                <div>
-                    <i class="fas fa-percent"></i>&nbsp;&nbsp;VAT:
-                    €
-                </div>
-                <div>
-                    <i class="fas fa-truck"></i>&nbsp;&nbsp;Delivery:
-                    €{{ delivery|floatformat:2 }}
-                </div>
-                <div>
-                    <i class="far fa-credit-card"></i>&nbsp;&nbsp;Grand Total:
-                    €{{ grand_total|floatformat:2 }}
-                </div>
-                <div>
-                    <i class="fas fa-stamp text green"></i>&nbsp;&nbsp;Loyalty: {% if user.is_authenticated %}
-                    You've earn {{ loyalty_stamps }} stamps today.
-                    {% else %}
-                    Points mean prizes! <a href="{% url 'account_signup' %}">Sign up</a> and earn stamps for future orders.
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-
+    <!-- Cheers Blurb -->
+    <div class="col-sm-12 col-md-5">
+        <h6>A "Bella Ciao" to you!</h6>
+        <p>Thank you for supporting a local business today</p>
+        <p>Your order number is {{ order.email }}, and we've sent you a confirmation email to {{ order.email }}.</p>
     </div>
+
+    <!-- Order Summary -->
+    <div class="col-sm-12 col-md-7">
+        <!-- blank at the moment -->
+    </div>
+
+</div>
+
+<!-- Post-Purchase Options -->
+<div class="row">
+    <div class="col-12 col-md-10 offset-md-1 d-flex justify-content-center">
+        {% if user.is_authenticated %}
+        <a href="#" class="btn btn-outline-success"><i class="fas fa-history"></i>&nbsp;&nbsp;Order history</a>
+        <a href="#" class="btn btn-outline-success"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Upcoming events</a>
+        <a href="#" class="btn btn-outline-success"><i class="fas fa-coins"></i>&nbsp;&nbsp;Loyalty balance</a>
+        <a href="#" class="btn btn-outline-success"><i class="fas fa-infinity"></i>&nbsp;&nbsp;Join CBC Unlimited</a>
+        {% else %}
+        <a href="{% url 'account_signup' %}" class="btn btn-outline-success"><i class="fas fa-clipboard-check"></i>&nbsp;&nbsp;Register</a>
+        <a href="#" class="btn btn-outline-success"><i class="fas fa-infinity"></i>&nbsp;&nbsp;Join CBC Unlimited</a>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
