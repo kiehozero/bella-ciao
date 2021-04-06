@@ -97,14 +97,14 @@ My Cart |
                             €{{ item.product.price | calc_subtotal:item.quantity }}
                         </td>
                         <td colspan="1" class="justify-content-center">
-                            <a class="btn btn-outline-success update-item"
-                                onclick="M.toast({html: updateItemToast, displayLength: 6000})">
+                            <a class="btn btn-outline-success update-item">
                                 <i class="far fa-check-square text-green"></i>
                             </a>
                         </td>
                         <td colspan="1" class="justify-content-center">
-                            <a class="btn btn-outline-danger" id="remove_{{ item.item_id }}"
-                                onclick="M.toast({html: removeItemToast, displayLength: 6000})"
+                            <a
+                                class="btn btn-outline-danger remove-item"
+                                id="remove_{{ item.item_id }}"
                                 data-product_size="{{ item.size }}">
                                 <i class="far fa-trash-alt text-red"></i>
                             </a>

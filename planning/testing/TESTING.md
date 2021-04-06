@@ -41,10 +41,17 @@ already fixed.
  hours work to do this but it allowed me to follow a tutorial for a part of the project that links the front and back ends, namely
  the crispy forms and Stripe payments, without potentially creating a mountain of work for myself. I had previously preferred using
  Materialize to Bootstrap but switching over a ton of classes and removing the overwrites I'd done in my own CSS files gave me a new
- appreciate for Bootstrap
+ appreciate for Bootstrap.
+
+ 5. I suspected that there was always likely to be some Materialize 'ghosts' floating around my codebase after converting to 
+ Bootstrap, and one that I found was in the shopping cart, where I discovered that the remove item. This was a pretty easy fix as I 
+ had left an onclick event containing Materialize's toast feature inside this button's attributes, and has omitted a class to tie 
+ it to the JS at the bottom of the page.
+
 
  ## Outstanding Issues
 
  1. Search bar results can't be sorted by sort buttons
+ 2. Cart quantity will sometimes allow a user to submit a quantity outside of the parameters, but sometimes performs as expected.
 
  

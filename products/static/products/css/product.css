@@ -21,6 +21,10 @@
     width: 100%;
 }
 
+h6.card-title a:hover {
+    color: #008763;
+}
+
 .btt-row,
 .filter-row {
     margin-top: 10px;

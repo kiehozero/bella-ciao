@@ -5,17 +5,6 @@
 /* Comments above tells JSHint what version of JS is being used, and secondly overrides JSHint's assumption that the 
 $ symbol is an undefined variable */
 
-$(document).ready(function(){
-    /* initialises... */
-    /* ... mobile side navigation bar */
-    $('.sidenav').sidenav();
-    /* ... dropdown elements */
-    $('.dropdown-trigger').dropdown();
-});
-
-/* Navbar - need to add mouseenter and mouseleaves on li.nav-option
-    and li.nav-option a to highlight whole box when insider */
-
 /* Tablet and Mobile Only */
 
 if ($(window).width() < 1280) {
