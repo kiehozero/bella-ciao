@@ -179,7 +179,9 @@ Products |
                 <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image card-img-top">
             </a>
             {% else %}
-            <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}" class="product-image card-img-top">
+            <a href="{% url 'view_product' product.id %}">
+                <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}" class="product-image card-img-top">
+            </a>
             {% endif %}
             <div class="card-body">
                 <h6 class="card-title">

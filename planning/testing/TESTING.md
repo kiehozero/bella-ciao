@@ -48,10 +48,15 @@ already fixed.
  had left an onclick event containing Materialize's toast feature inside this button's attributes, and has omitted a class to tie 
  it to the JS at the bottom of the page.
 
+ 6. When it came to testing the cart I found that if it contained a product with no image, the cart was returning an error. This was
+ due to the placement of an if loop inside an anchor, displayed an image if available and a placeholder otherwise. However, the anchor
+ element href contained a link to this image, so I just needed to put the anchor element inside the loop to fix this.
+
 
  ## Outstanding Issues
 
  1. Search bar results can't be sorted by sort buttons
  2. Cart quantity will sometimes allow a user to submit a quantity outside of the parameters, but sometimes performs as expected.
+
 
  
