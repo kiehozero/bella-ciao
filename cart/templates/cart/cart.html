@@ -49,10 +49,11 @@ My Cart |
                                     style="max-width: 10vh;">
                             </a>
                             {% else %}
-                                <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}"
-                                    class="product-image" style="max-width: 10vh;">
-                                {% endif %}
+                            <a href="{{ MEDIA_URL }}placeholder.png" target="_blank">
+                                <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}" class="product-image"
+                                    style="max-width: 10vh;">
                             </a>
+                            {% endif %}
                         </td>
                         <td colspan="2">
                             <a href="{ url 'view_product' product.id %}">
@@ -103,9 +104,7 @@ My Cart |
                             </a>
                         </td>
                         <td colspan="1" class="justify-content-center">
-                            <a
-                                class="btn btn-outline-danger remove-item"
-                                id="remove_{{ item.item_id }}"
+                            <a class="btn btn-outline-danger remove-item" id="remove_{{ item.item_id }}"
                                 data-product_size="{{ item.size }}">
                                 <i class="far fa-trash-alt text-red"></i>
                             </a>
