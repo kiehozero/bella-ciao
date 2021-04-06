@@ -9,11 +9,11 @@ import uuid
 
 # core model logic taken from Boutique Ado project and modified where necessary
 class Order(models.Model):
-    order_number = models.CharField(max_length=12, null=False, editable=False)
+    order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=100, null=False, blank=False)
-    phone_number = models.CharField(max_length=12, null=False, blank=False)
-    city = models.CharField(max_length=7, null=True, blank=True)
+    phone_number = models.CharField(max_length=15, null=False, blank=False)
+    city = models.CharField(max_length=20, null=True, blank=True)
     eircode = models.CharField(max_length=7, null=True, blank=True)
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)

@@ -221,6 +221,7 @@ to complete this project:
 ### Content
 
 
+
 ### Documentation
 
 - Some of the authentication requirements were copied directly from the django-allauth 
@@ -229,7 +230,7 @@ to complete this project:
 was invaluable as I learnt how to use the framework, this link in particular showed me a method of retrieving the current
 URL so I could customise messages based on it.
 
-- [Stripe docs](https://stripe.com/docs/payments/accept-a-payment#web-collect-card-details)
+- [Stripe docs](https://stripe.com/docs/payments/accept-a-payment)
 
 ### Tutorials
 

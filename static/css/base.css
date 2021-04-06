@@ -31,6 +31,7 @@ ul {
 .row.landing-header,
 .row.product-header,
 .row.social-panel,
+.row.message-row,
 footer .row {
     /* fixes that Bootstrap issue of whitespace off the side of the screen */
     --bs-gutter-x: 0;
@@ -74,6 +75,10 @@ li.nav-option {
     padding-bottom: 0.5em;
     text-transform: uppercase;
     width: 100%;
+}
+
+li.nav-option.text-link {
+    padding-left: 1em;
 }
 
 li.nav-option:hover,
@@ -122,6 +127,7 @@ nav ul a.cart-full {
 
 .sidebar #site-logo img {
     max-width: 100%;
+    padding-left: 0em;
 }
 
 nav ul #site-logo a:hover {
@@ -130,7 +136,6 @@ nav ul #site-logo a:hover {
 
 .social-icon {
     font-size: 1.5em;
-    word-spacing: 0.75em;
     padding-bottom: 0.5em;  
     padding-left: 0.5em;
     padding-right: 0.5em;

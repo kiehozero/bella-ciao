@@ -19,7 +19,7 @@ def checkout(request):
         messages.error(request, "Your cart is empty.")
         return redirect(reverse('products'))
 
-    current_cart = cart_contents(request)   
+    current_cart = cart_contents(request)
     total = current_cart['grand_total']
     stripe_total = round(total * 100)
     stripe.api_key = stripe_secret_key

@@ -10,7 +10,7 @@
             </li>
 
             <!-- Shopping cart - logic taken from Code Institute Boutique Ado project -->
-            <li class="nav-option">
+            <li class="nav-option text-link">
                 <a href="{% url 'view_cart' %}" class="{% if grand_total %}cart-full{% else %}cart-empty{% endif %}">
                     <i class="fas fa-shopping-cart sh-cart-icon"></i>&nbsp;&nbsp;
                     {% if grand_total %}
@@ -21,14 +21,14 @@
                 </a>
             </li>
 
-            <li class="nav-option">
+            <li class="nav-option text-link">
                 <a href="{% url 'products' %}">Online Store
                 </a>
             </li>
 
             <!-- User Profile -->
             <!-- Use a drop-down to roll up sign-out and profile links under user heading-->
-            <li class="nav-option">
+            <li class="nav-option text-link">
                 <!-- Redirects to user profile if logged in, login page if not -->
                 {% if request.user.is_authenticated %}
                 <a href="#">
@@ -44,21 +44,21 @@
             <!-- User-conditional nav elements -->
             {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-            <li class="nav-option">
+            <li class="nav-option text-link">
                 <a href="#">Administration</a>
             </li>
             {% endif %}
-            <li class="nav-option">
+            <li class="nav-option text-link">
                 <a href="{% url 'account_logout' %}">Sign Out</a>
             </li>
             {% else %}
-            <li class="nav-option">
+            <li class="nav-option text-link">
                 <a href="{% url 'account_signup' %}">Register</a>
             </li>
             {% endif %}
 
             <!-- Other nav elements -->
-            <li class="nav-option">
+            <li class="nav-option text-link">
                 <a href="#">Locations</a>
             </li>
 
