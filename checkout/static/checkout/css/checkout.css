@@ -54,6 +54,10 @@
     margin-bottom: 10px;
 }
 
+#choochoo:hover {
+    color: #ceca03;
+}
+
 /* Stripe Elements CSS from the Stripe Documentation and tweaked to match project*/
 
 .StripeElement,

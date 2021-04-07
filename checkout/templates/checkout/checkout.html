@@ -83,6 +83,7 @@ Order Summary |
                 </div>
             </div>
         </div>
+
         <!-- Details and Payment -->
         <div class="col-sm-12 col-md-5">
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -105,6 +106,7 @@ Order Summary |
                         {% if user.is_authenticated %}
                         <label class="form-check-label" for="id-save-info">Update my profile with this address</label>
                         <input class="form-check-input" type="checkbox" id="id-save-info" name="save-info">
+                        <!-- add hidden element here for loyalty once you see how save info button works-->
                         {% else %}
                         <label class="form-check-label" for="id-save-info">
                             <a href="{% url 'account_signup' %}" class="text-green">Register</a> for express checkout

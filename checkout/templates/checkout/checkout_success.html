@@ -17,76 +17,160 @@ Order Confirmation |
 {% endblock %}
 
 {% block content %}
-<!-- Format taken from Boutique Ado project and customised -->
+
 
 <div class="row">
-
     <!-- Cheers Blurb -->
-    <div class="col-sm-12 col-md-5">
+    <div class="col-sm-12 col-md-8 offset-md-2 text-center">
         <h6 class="text-green">
-            <a href="https://www.youtube.com/watch?v=zf7I_FpTWsM" target="_blank">Have a campa-choo-choo! on us!</a>
+            <a href="https://www.youtube.com/watch?v=zf7I_FpTWsM" target="_blank" class="text-green"  id="choochoo">
+                Have a campa-choo-choo on us!</a>
         </h6>
-        <p>Thank you for supporting a local business today</p>
-        <p>Your order number is {{ order.email }}, and we've sent you a confirmation email to {{ order.email }}.</p>
+        <p>Thank you for supporting a local business today! Your order number is {{ order.order_number }}.</p>
+        <p>We've sent you an order confirmation to {{ order.email }}.</p>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+
+    <!-- Customer Details -->
+    <div class="col-sm-12 col-md-5">
+        <div class="row">
+            <h6 class="text-green text-xs-center text-md-right">Your Details</h6>
+        </div>
+        <div class="summary-row">
+            <p>Name:</p>
+            <p>{{ order.full_name|title }}</p>
+            <p>Contact Number: </p>
+            <p>{{ order.phone_number }}</p>
+            {% if user.is_authenticated %}
+            <p>Loyalty Points Earned: </p>
+            <p>{{ order.loyalty_stamps }}</p>
+            <p>Current Loyalty Balance:</p>
+            <p>Loyalty balance here</p>
+            {% endif %}
+        </div>
     </div>
 
     <!-- Order Summary -->
     <div class="col-sm-12 col-md-7">
         <div class="row">
-            <h6 class="text-green text-xs-center text-md-right">Order Details</h6>
-            <p>Order Number: </p>
-            <p>{{ order.order_number }}</p>
-            <p>Full Name: </p>
-            <p>{{ order.full_name }}</p>
-            <p>Email Address: </p>
-            <p>{{ order.email }}</p>
-            <p>Contact Number: </p>
-            <p>{{ order.phone_number }}</p>
-            {% if user.is_authenticated %}
-            <p>Loyalty Points: </p>
-            <p>{{ order.loyalty_stamps }}</p>
-            {% endif %}
-            <!-- idea for anon users, sign up now to keep these points in your account? -->
+            <div class="col-sm-12">
+                <div class="row">
+                    <h6 class="text-green text-xs-center text-md-right">Item Summary</h6>
+                </div>
+                <div class="row summary-header">
+                    <div class="col-sm-6">Description</div>
+                    <div class="col-sm-2">Quantity</div>
+                    <div class="col-sm-2">Subtotal</div>
+                </div>
+                {% for item in order.lineitems.all %}
+                <div class="row summary-row">
+                    <div class="col-sm-6">
+                        <p class="text-wrap">
+                            <a href="{ url 'view_product' product.id %}" class="text-black">
+                                {% if item.size %}{{ item.size|title }}{% endif %}&nbsp;{{ item.product.name }}
+                            </a>
+                            {% if item.milk %} - {{ item.milk }}{% endif %}
+                            {% if item.flavour %} - {{ item.flavour }}{% endif %}
+                        </p>
+                    </div>
+                    <div class="col-sm-2">{{ item.quantity }}</div>
+                    <div class="col-sm-2">€{{ item.product.price }}</div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
-        <div class="row">
-            <h6 class="text-green text-xs-center text-md-right">Delivery Details</h6>
-            <!-- Add if statement to confirm presence of non-mandatory items -->
-            <p>Street Address</p>
-            <p>{{ order.street_address1}}, {% if order.street_address2 %}{{ order.street_address2 }}{% endif %}</p>
-            <p>City: </p>
-            <p>{{ order.city }}</p>
-            <p>Eircode:</p>
-            <p>{{ order.eircode }}</p>
-        </div>
+    </div>
+    
+</div>
+    
+<div class="row justify-content-center">
+
+    <!-- Payment Details -->
+    <div class="col-sm-12 col-md-5">
         <div class="row">
             <h6 class="text-green text-xs-center text-md-right">Payment Details</h6>
-            <p>Subtotal</p>
+        </div>
+        <div class="row summary-row">
+            <p>Subtotal:</p>
             <p>€{{ order.order_total|floatformat:2 }}</p>
             {% if order.delivery_cost %}
-            <p>Delivery Charge:</p>
+            <p>
+                <i class="fas fa-truck"></i>
+                &nbsp;&nbspDelivery Charge:
+            </p>
             <p>€{{ order.delivery_cost|floatformat:2 }}</p>
             {% else %}
-            <p>"You qualified for free delivery!</p>
+            <p>You qualified for free delivery!</p>
             {% endif %}
-            <p>Total:</p>
+            <p>
+                <i class="far fa-credit-card"></i>
+                &nbsp;&nbsp;Total:</p>
             <p>€{{ order.grand_total|floatformat:2 }}</p>
         </div>
     </div>
-
+    
+    <!-- Delivery Details -->
+    <div class="col-sm-12 col-md-7">
+        <div class="row">
+            <h6 class="text-green text-xs-center text-md-right">Delivery Details</h6>
+        </div>
+        <div class="row summary-row">
+            <!-- Add if statement to confirm presence of non-mandatory items -->
+            <p>Street Address:</p>
+            <p>{{ order.street_address1|title }}, {% if order.street_address2 %}{{ order.street_address2|title }}
+                    {% endif %}</p>
+            <p>City: </p>
+            <p>{{ order.city|title }}</p>
+            <p>Eircode:</p>
+            <p>{{ order.eircode|upper }}</p>
+        </div>
+    </div>
 </div>
 
 <!-- Post-Purchase Options -->
 <div class="row">
     <div class="col-12 col-md-10 offset-md-1 d-flex justify-content-center">
         {% if user.is_authenticated %}
-        <a href="#" class="btn btn-outline-success"><i class="fas fa-history"></i>&nbsp;&nbsp;Order history</a>
-        <a href="#" class="btn btn-outline-success"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Upcoming events</a>
-        <a href="#" class="btn btn-outline-success"><i class="fas fa-coins"></i>&nbsp;&nbsp;Loyalty balance</a>
-        <a href="#" class="btn btn-outline-success"><i class="fas fa-infinity"></i>&nbsp;&nbsp;Join CBC Unlimited</a>
+        <div class="mx-1 my-1">
+            <a href="#" class="btn btn-outline-success">
+                <i class="fas fa-history"></i>
+                &nbsp;&nbsp;Order history
+            </a>
+        </div>
+        <div class="mx-1 my-1">
+            <a href="#" class="btn btn-outline-success">
+                <i class="far fa-calendar-alt"></i>
+                &nbsp;&nbsp;Upcoming events
+            </a>
+        </div>
+        <div class="mx-1 my-1">
+            <a href="#" class="btn btn-outline-success">
+                <i class="fas fa-coins"></i>
+                &nbsp;&nbsp;Loyalty balance
+            </a>
+        </div>
+        <div class="mx-1 my-1">
+            <a href="#" class="btn btn-outline-success">
+                <i class="fas fa-infinity"></i>
+                &nbsp;&nbsp;Join CBC Unlimited
+            </a>
+        </div>
         {% else %}
-        <a href="{% url 'account_signup' %}" class="btn btn-outline-success"><i class="fas fa-clipboard-check"></i>&nbsp;&nbsp;Register</a>
-        <a href="#" class="btn btn-outline-success"><i class="fas fa-infinity"></i>&nbsp;&nbsp;Join CBC Unlimited</a>
-        {% endif %}
+        <div class="mx-1 my-1">
+            <a href="{% url 'account_signup' %}" class="btn btn-outline-success">
+                <i class="fas fa-clipboard-check"></i>
+                &nbsp;&nbsp;Register
+            </a>
+        </div>
+        <div class="mx-1 my-1">
+            <a href="#" class="btn btn-outline-success">
+                <i class="fas fa-infinity"></i>
+                &nbsp;&nbsp;Join CBC Unlimited
+            </a>
+            {% endif %}
+        </div>
     </div>
 </div>
-{% endblock %}
+    {% endblock %}
