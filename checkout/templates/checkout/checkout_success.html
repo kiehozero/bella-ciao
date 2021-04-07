@@ -23,14 +23,54 @@ Order Confirmation |
 
     <!-- Cheers Blurb -->
     <div class="col-sm-12 col-md-5">
-        <h6>A "Bella Ciao" to you!</h6>
+        <h6 class="text-green">
+            <a href="https://www.youtube.com/watch?v=zf7I_FpTWsM" target="_blank">Have a campa-choo-choo! on us!</a>
+        </h6>
         <p>Thank you for supporting a local business today</p>
         <p>Your order number is {{ order.email }}, and we've sent you a confirmation email to {{ order.email }}.</p>
     </div>
 
     <!-- Order Summary -->
     <div class="col-sm-12 col-md-7">
-        <!-- blank at the moment -->
+        <div class="row">
+            <h6 class="text-green text-xs-center text-md-right">Order Details</h6>
+            <p>Order Number: </p>
+            <p>{{ order.order_number }}</p>
+            <p>Full Name: </p>
+            <p>{{ order.full_name }}</p>
+            <p>Email Address: </p>
+            <p>{{ order.email }}</p>
+            <p>Contact Number: </p>
+            <p>{{ order.phone_number }}</p>
+            {% if user.is_authenticated %}
+            <p>Loyalty Points: </p>
+            <p>{{ order.loyalty_stamps }}</p>
+            {% endif %}
+            <!-- idea for anon users, sign up now to keep these points in your account? -->
+        </div>
+        <div class="row">
+            <h6 class="text-green text-xs-center text-md-right">Delivery Details</h6>
+            <!-- Add if statement to confirm presence of non-mandatory items -->
+            <p>Street Address</p>
+            <p>{{ order.street_address1}}, {% if order.street_address2 %}{{ order.street_address2 }}{% endif %}</p>
+            <p>City: </p>
+            <p>{{ order.city }}</p>
+            <p>Eircode:</p>
+            <p>{{ order.eircode }}</p>
+        </div>
+        <div class="row">
+            <h6 class="text-green text-xs-center text-md-right">Payment Details</h6>
+            <p>Subtotal</p>
+            <p>€{{ order.order_total|floatformat:2 }}</p>
+            {% if order.delivery_cost %}
+            <p>Delivery Charge:</p>
+            <p>€{{ order.delivery_cost|floatformat:2 }}</p>
+            {% else %}
+            <p>"You qualified for free delivery!</p>
+            {% endif %}
+            <p>Total:</p>
+            <p>€{{ order.grand_total|floatformat:2 }}</p>
+        </div>
     </div>
 
 </div>
