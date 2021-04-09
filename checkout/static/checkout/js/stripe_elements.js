@@ -52,7 +52,7 @@ form.addEventListener('submit', function(ev) {
     card.update({'disabled': true});
     $('#submit-button').attr('disabled', true);
 
-    /* variables that can't be passed into the payment intent and sends it to cache_checkout_data */
+    /* variables that can only be added as metadata payment intent and sends it to cache_checkout_data */
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
@@ -103,7 +103,7 @@ form.addEventListener('submit', function(ev) {
                 $('#submit-button').attr('disabled', false);
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
-                    form.submit();
+                    // form.submit();
                 }
             }
         });
