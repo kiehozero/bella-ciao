@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.contrib import messages
-from django.shortcuts import redirect, render, reverse, get_object_or_404
+from django.shortcuts import (
+    HttpResponse, redirect, render, reverse, get_object_or_404)
+from django.views.decorators.http import require_POST
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
@@ -8,6 +10,7 @@ from cart.contexts import cart_contents
 from products.models import Product
 
 import stripe
+import json
 
 
 # core logic comes from Boutique Ado tutorial
@@ -63,7 +66,7 @@ def checkout(request):
 
             # ALERT USE THE BELOW METHOD TO STORE LOYALTY
             # POINTS, HIDE POINT IN A HIDDEN INPUT?
-            request.session['save-info'] = 'save-info' in request.POST
+            request.session['save_info'] = 'save_info' in request.POST
             return redirect(reverse(
                 'checkout_success', args=[order.order_number]))
         else:
@@ -99,10 +102,10 @@ def checkout(request):
 def checkout_success(request, order_number):
     """ Display page once order is successfully submitted """
 
-    save_info = request.session.get('save-info')
+    save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(
-        request, f'Order complete!')
+        request, 'Order complete!')
     if 'cart' in request.session:
         del request.session['cart']
 
@@ -112,3 +115,22 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'cart': json.dumps(request.session.get('cart', {})),
+            'save_info': request.POST.get('save_info'),
+            # need to add loyalty_stamps here to save it
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(
+            request, "Your payment could not be processed, \
+                please try again later.")
+        return HttpResponse(content=e, status=400)
