@@ -4,10 +4,13 @@ from django.shortcuts import get_object_or_404, render
 from .forms import UserProfileForm
 from .models import UserProfile
 
+import datetime
+
 
 def profile(request):
     """ Show the user's profile """
 
+    time = datetime.datetime.now()
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -23,6 +26,8 @@ def profile(request):
     context = {
         'form': form,
         'orders': orders,
+        'time': time,
+
     }
 
     return render(request, template, context)
