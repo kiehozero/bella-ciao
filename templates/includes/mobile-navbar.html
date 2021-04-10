@@ -66,6 +66,11 @@
         {% endif %}
 
         <!-- Other nav elements -->
+        {% if request.user.is_authenticated %}
+        <li class="nav-option">
+            <a href="{% url 'events' %}" class="text-offwhite">Events</a>
+        </li>
+        {% endif %}
         <li class="nav-option">
             <a href="#" class="text-offwhite">Locations</a>
         </li>

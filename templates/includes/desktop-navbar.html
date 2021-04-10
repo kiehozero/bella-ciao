@@ -61,6 +61,12 @@
             <li class="nav-option text-link">
                 <a href="#">Locations</a>
             </li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-option text-link">
+                <a href="{% url 'events' %}">Events</a>
+            </li>
+            {% endif %}
+
 
             <!--Social Media -->
             <li class="row nav-option social-panel">
