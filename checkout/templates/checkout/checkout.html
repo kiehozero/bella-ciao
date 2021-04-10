@@ -22,7 +22,7 @@ Order Summary |
     <div class="row">
         <!-- Order Summary -->
         <div class="col-sm-12 col-md-7">
-            <h6 class="text-green">Item Summary</h6>
+            <h6 class="text-green pt-3 pb-2">Item Summary</h6>
             <div class="row summary-header">
                 <div class="col-md-2 d-none d-md-block"></div>
                 <div class="col-sm-6">Description</div>
@@ -56,7 +56,7 @@ Order Summary |
             {% endfor %}
 
             <div class="row">
-                <h6 class="text-green order-summary">Order Summary</h6>
+                <h6 class="text-green order-summary pt-3 pb-2">Order Summary</h6>
                 <div>
                     Subtotal:
                     €{{ total|floatformat:2 }}
@@ -89,7 +89,7 @@ Order Summary |
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset>
-                    <legend class="fieldset-label text-green">Your Details</legend>
+                    <legend class="fieldset-label text-green pt-3 pb-2">Your Details</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                     {{ order_form.phone_number | as_crispy_field }}
@@ -97,7 +97,7 @@ Order Summary |
 
                 <!-- add if loop here, if delivery do this, if collection make another fieldset -->
                 <fieldset>
-                    <legend class="fieldset-label text-green">Address</legend>
+                    <legend class="fieldset-label text-green pt-3 pb-2">Address</legend>
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
                     {{ order_form.city | as_crispy_field }}
@@ -119,7 +119,7 @@ Order Summary |
                 </fieldset>
 
                 <fieldset>
-                    <legend class="fieldset-label text-green">Payment Details</legend>
+                    <legend class="fieldset-label text-green pt-3 pb-2">Payment Details</legend>
                     <div id="card-element"></div>
                     <div id="card-errors" class="text-danger" role="alert"></div>
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">

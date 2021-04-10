@@ -20,7 +20,7 @@
 
     <div class="row">
         <div class="col-sm col-md-6 justify-content-xs-center justify-content-md-left">
-            <h6 class="text-green py-3">My profile information</h6>
+            <h6 class="text-green pt-3 pb-2">My profile information</h6>
             <div class="row">
                 <div class="col-sm-12 col-md-10">
                     <form method="POST" action="{% url 'profile' %}" id="profile-update-form" class="text-left">
@@ -32,14 +32,14 @@
             </div>
         </div>
         <div class="col-xs col-md-6 justify-content-xs-center justify-content-md-left">
-            <h6 class="text-green py-3">Loyalty</h6>
+            <h6 class="text-green pt-3 pb-2">Loyalty</h6>
             <div class="row"></div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-xs col-md-6 justify-content-xs-center justify-content-md-left">
-            <h6 class="text-green py-3">My order history</h6>
+            <h6 class="text-green pt-3 pb-2">My order history</h6>
             <div class="row">
                 <div class="col">
                     {{ orders }}
@@ -47,8 +47,29 @@
             </div>
         </div>
         <div class="col-xs col-md-6 justify-content-xs-center justify-content-md-left">
-            <h6 class="text-green py-3">My events</h6>
+            <h6 class="text-green pt-3 pb-2">My events</h6>
             <div class="row"></div>
         </div>
-     </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-10 offset-md-1 d-flex justify-content-center">
+            <div class="mx-1 my-1">
+                <a href="{% url 'products' %}" class="btn btn-outline-success">
+                    <i class="fas fa-coffee"></i>
+                    &nbsp;&nbsp;Order Online
+                </a>
+            </div>
+            <div class="mx-1 my-1">
+                <a href="{% url 'events' %}" class="btn btn-outline-success">
+                    <i class="far fa-calendar-alt"></i>
+                    &nbsp;&nbsp;Upcoming events
+                </a>
+            </div>
+            <div class="mx-1 my-1">
+                <a href="#" class="btn btn-outline-success">
+                    <i class="fas fa-infinity"></i>
+                    &nbsp;&nbsp;Join CBC Unlimited
+                </a>
+            </div>
 {% endblock %}
