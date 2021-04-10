@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extratitle %}
-Your Profile |
+{{ profile }}'s Profile |
 {% endblock %}
 <!-- insert username above-->
 
@@ -19,6 +19,21 @@ Your Profile |
 {% block content %}
 
     <div class="row">
-       
+        <div class="col-sm col-md-6 justify-content-xs-center justify-content-md-left">
+            <h6 class="text-green">My profile information</h6>
+            
+        </div>
+        <div class="col-xs col-md-6 justify-content-xs-center justify-content-md-left">
+            <h6 class="text-green">Loyalty</h6>
+        </div>
     </div>
+
+    <div class="row">
+        <div class="col-xs col-md-6 justify-content-xs-center justify-content-md-left">
+            <h6 class="text-green">My order history</h6>
+        </div>
+        <div class="col-xs col-md-6 justify-content-xs-center justify-content-md-left">
+            <h6 class="text-green">My events</h6>
+        </div>
+     </div>
 {% endblock %}

@@ -5,7 +5,7 @@ from django.dispatch import receiver
 
 
 class UserProfile(models.Model):
-    """ User profile for storing order history, 
+    """ User profile for storing order history,
     account information and loyalty points """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -28,5 +28,5 @@ def create_or_update_profile(sender, instance, created, **kwargs):
     update profile if an existing user"""
 
     if created:
-        UserProfile.objects.create(user.instance)
+        UserProfile.objects.create(user=instance)
     instance.userprofile.save()
