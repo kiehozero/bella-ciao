@@ -4,15 +4,14 @@
 {% block extratitle %}
 {{ request.user }}'s Profile |
 {% endblock %}
-<!-- insert username above-->
 
 {% block extracss %}
 <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
 {% block page_header %}
-<div class="row checkout-header back-green">
-    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">Your Profile</h4>
+<div class="row profile-header back-green">
+    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-center text-md-right">Your Profile</h4>
 </div>
 {% endblock %}
 

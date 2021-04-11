@@ -30,12 +30,15 @@ ul {
 .row.checkout-header,
 .row.landing-header,
 .row.product-header,
+.row.profile-header,
 .row.social-panel,
 .row.message-row,
 footer .row {
     /* fixes that Bootstrap issue of whitespace off the side of the screen */
+    /* go through all headers above and consolidate the ones that are just the green header into a standard tag */
     --bs-gutter-x: 0;
 }
+
 
 /* end of project, go through the CSS below and replace any tags 
 below that are just colour options with palette.css tags in HTML */

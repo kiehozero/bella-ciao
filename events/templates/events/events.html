@@ -1,16 +1,16 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block extratitle %}
 Upcoming Events |
 {% endblock %}
-<!-- insert username above-->
 
 {% block extracss %}
-<link rel="stylesheet" href="{% 'static' events/css/events.css %}">
+<link rel="stylesheet" href="{% static 'events/css/events.css' %}">
 {% endblock %}
 
 {% block page_header %}
-<div class="row checkout-header back-green">
+<div class="row events-header back-green">
     <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">Upcoming Events</h4>
 </div>
 {% endblock %}

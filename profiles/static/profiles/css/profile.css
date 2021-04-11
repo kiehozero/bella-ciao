@@ -8,3 +8,12 @@
     border-color: #008763;
     box-shadow: 0 0 0 0.25rem rgb(0 135 99 / 25%);
 }
+
+.profile-header {    
+    height: 10vh;
+    padding-right: 20px;
+}
+
+.row.profile-header {
+    margin-bottom: 0px;
+}
