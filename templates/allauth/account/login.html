@@ -7,9 +7,7 @@
 
 {% block inner_content %}
 
-<hr>
-<h2 class="logo-font mb-4">{% trans "Sign In" %}</h2>
-<hr>
+<h2 class="text-green pt-3 pb-2">{% trans "Sign In" %}</h2>
 
 {% get_providers as socialaccount_providers %}
 
@@ -18,32 +16,34 @@
 of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
 for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
-<div class="socialaccount_ballot">
+<div class="socialaccount_ballot pt-3 pb-2">
 
-  <ul class="socialaccount_providers">
+    <ul class="socialaccount_providers">
     {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
+    </ul>
 
-  <div class="login-or">{% trans 'or' %}</div>
+    <div class="login-or">{% trans 'or' %}</div>
 
 </div>
 
 {% include "socialaccount/snippets/login_extra.html" %}
 
 {% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
+<p class="pt-3 pb-2">{% blocktrans %}If you have not created an account yet, then please
 <a href="{{ signup_url }}" class="text-green">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form|crispy }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <a class="btn btn-outline-success text-green" href="{% url 'home' %}">Home</a>
-  <button class="primaryAction btn btn-outline-success text-green" type="submit">{% trans "Sign In" %}</button>
-  <a class="button secondaryAction btn btn-outline-success text-green" href="{% url 'account_reset_password' %}">{% trans "Forgot Your Password?" %}</a>
+<form class="login pt-3 pb-2" method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    {{ form|crispy }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <div class="pt-3 pb-2">
+        <a class="btn btn-outline-success text-green" href="{% url 'home' %}">Home</a>
+        <button class="primaryAction btn btn-outline-success" type="submit">{% trans "Sign In" %}</button>
+        <a class="button secondaryAction btn btn-outline-success text-green" href="{% url 'account_reset_password' %}">{% trans "Forgot Your Password?" %}</a>
+    </div>
 </form>
 
 {% endblock %}
