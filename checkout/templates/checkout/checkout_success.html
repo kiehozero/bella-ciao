@@ -11,7 +11,8 @@ Order Confirmation |
 
 {% block page_header %}
 <div class="row checkout-header back-green">
-    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">Order Confirmation</h4>
+    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">
+        {% if from_profile %}Order History{% else %}Order Confirmation{% endif %}</h4>
 </div>
 
 {% endblock %}
@@ -22,12 +23,17 @@ Order Confirmation |
 <div class="row">
     <!-- Cheers Blurb -->
     <div class="col-sm-12 col-md-8 offset-md-2 text-center">
+        {% if from_profile %}
+        <h5 class="text-green">Order Number: {{ order.order_number }}</h5>
+        <p>Placed on {{ order.date|slice:10 }}</p>
+        {% else %}
         <h5 class="text-green">
-            <a href="https://www.youtube.com/watch?v=zf7I_FpTWsM" target="_blank" class="text-green"  id="choochoo">
+            <a href="https://www.youtube.com/watch?v=zf7I_FpTWsM" target="_blank" class="text-green" id="choochoo">
                 Have a campa-choo-choo on us!</a>
         </h5>
         <p>Thank you for supporting a local business today! Your order number is {{ order.order_number }}.</p>
         <p>We've sent you an order confirmation to {{ order.email }}.</p>
+        {% endif %}
     </div>
 </div>
 
@@ -130,47 +136,7 @@ Order Confirmation |
 </div>
 
 <!-- Post-Purchase Options -->
-<div class="row">
-    <div class="col-12 col-md-10 offset-md-1 d-flex justify-content-center">
-        {% if user.is_authenticated %}
-        <div class="mx-1 my-1">
-            <a href="#" class="btn btn-outline-success">
-                <i class="fas fa-history"></i>
-                &nbsp;&nbsp;Order history
-            </a>
-        </div>
-        <div class="mx-1 my-1">
-            <a href="#" class="btn btn-outline-success">
-                <i class="far fa-calendar-alt"></i>
-                &nbsp;&nbsp;Upcoming events
-            </a>
-        </div>
-        <div class="mx-1 my-1">
-            <a href="#" class="btn btn-outline-success">
-                <i class="fas fa-coins"></i>
-                &nbsp;&nbsp;Loyalty balance
-            </a>
-        </div>
-        <div class="mx-1 my-1">
-            <a href="#" class="btn btn-outline-success">
-                <i class="fas fa-infinity"></i>
-                &nbsp;&nbsp;Join CBC Unlimited
-            </a>
-        </div>
-        {% else %}
-        <div class="mx-1 my-1">
-            <a href="{% url 'account_signup' %}" class="btn btn-outline-success">
-                <i class="fas fa-clipboard-check"></i>
-                &nbsp;&nbsp;Register
-            </a>
-        </div>
-        <div class="mx-1 my-1">
-            <a href="#" class="btn btn-outline-success">
-                <i class="fas fa-infinity"></i>
-                &nbsp;&nbsp;Join CBC Unlimited
-            </a>
-            {% endif %}
-        </div>
-    </div>
-</div>
-    {% endblock %}
+
+{% include 'includes/post-purchase.html' %}
+
+{% endblock %}

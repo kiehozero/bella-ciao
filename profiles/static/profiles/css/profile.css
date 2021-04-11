@@ -17,3 +17,13 @@
 .row.profile-header {
     margin-bottom: 0px;
 }
+
+.profile-history {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.profile-history .table tbody tr td {
+    /* overwrites default Bootstrap parameters */
+    font-size: 0.75rem;
+}
