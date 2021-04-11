@@ -28,7 +28,6 @@ def profile(request):
         'form': form,
         'orders': orders,
         'time': time,
-
     }
 
     return render(request, template, context)
