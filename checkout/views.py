@@ -96,7 +96,7 @@ def checkout(request):
 
         if request.user.is_authenticated:
             try:
-                profile=UserProfile.objects.get(user=request.user)
+                profile = UserProfile.objects.get(user=request.user)
                 order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
@@ -134,6 +134,7 @@ def checkout_success(request, order_number):
 
     if save_info:
         profile_data = {
+            # need to add full name option in here, as well as in model
             'default_phone_number': order.phone_number,
             'default_street_address1': order.street_address1,
             'default_street_address2': order.street_address2,
