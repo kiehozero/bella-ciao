@@ -20,11 +20,16 @@
 <div class="row">
     <h5 class="text-green pt-3 pb-2">
         {% if time.hour > 17 %}
-        Good evening, {{ request.user|title }}!
+        Good evening
         {% elif time.hour > 11 %}
-        Good afternoon, {{ request.user|title }}!
+        Good afternoon
         {% else %}
-        Good morning, {{ request.user|title }}!
+        Good morning
+        {% endif %}
+        {% if forename != None %}
+        {{ forename }}!
+        {% else %}
+        !
         {% endif %}
         <!-- add forename in here instead of screen name, check at multiple times -->
     </h5>

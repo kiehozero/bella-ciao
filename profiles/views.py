@@ -13,6 +13,12 @@ def profile(request):
 
     time = datetime.datetime.now()
     profile = get_object_or_404(UserProfile, user=request.user)
+    # returns user's first name if they have saved it
+    if profile.default_name is not None:
+        default_name = profile.default_name
+        forename = default_name.title().split(" ")[0]
+    else:
+        forename = "friend"
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -28,6 +34,7 @@ def profile(request):
         'form': form,
         'orders': orders,
         'time': time,
+        'forename': forename,
     }
 
     return render(request, template, context)
