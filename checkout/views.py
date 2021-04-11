@@ -137,8 +137,8 @@ def checkout_success(request, order_number):
             'default_name': order.full_name.title(),
             'default_phone_number': order.phone_number,
             'default_street_address1': order.street_address1.title(),
-            'default_street_address2': order.street_address2.title(),
-            'default_city': order.city.title(),
+            'default_street_address2': order.street_address2,
+            'default_city': order.city,
             'default_eircode': order.eircode.upper(),
         }
         user_profile_form = UserProfileForm(profile_data, instance=profile)

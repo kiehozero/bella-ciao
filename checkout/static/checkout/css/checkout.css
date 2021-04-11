@@ -31,8 +31,13 @@
     width: 100%;
 }
 
+#choochoo:hover {
+    color: #ceca03;
+}
+
+/* Crispy-Forms overwrites */
+
 .fieldset-label {
-    /* Overwrites default crispy-forms parameters */
     font-family: 'Arvo';
     font-size: 16px;
 }
@@ -48,17 +53,14 @@
     box-shadow: 0 0 0 0.25rem rgb(0 135 99 / 25%);
 }
 
+
+/* Stripe Elements CSS from the Stripe Documentation and tweaked to match project */
+
 #card-errors {
     color: #e64958;
     font-size: 12px;
     margin-bottom: 10px;
 }
-
-#choochoo:hover {
-    color: #ceca03;
-}
-
-/* Stripe Elements CSS from the Stripe Documentation and tweaked to match project*/
 
 .StripeElement,
 .stripe-style-input {

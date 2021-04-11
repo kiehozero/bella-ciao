@@ -2,6 +2,7 @@ from django.http import HttpResponse
 
 from .models import Order, OrderLineItem
 from products.models import Product
+from profiles.models import UserProfile
 
 import json
 import time
@@ -39,6 +40,22 @@ class StripeWH_Handler:
             if value == "":
                 shipping_details.address[field] = None
 
+        # Handle save_info choices
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            # add loyalty stamps here using similar logic
+            if save_info:
+                profile = UserProfile.objects.get(user__username=username)
+                profile.default_name = shipping_details.name,
+                profile.default_phone_number = shipping_details.phone,
+                profile.default_street_address1 = shipping_details.address.line1,
+                profile.default_street_address2 = shipping_details.address.line2,
+                profile.default_city = shipping_details.address.city,
+                profile.default_eircode = shipping_details.address.postal_code,
+                profile.save
+
+
         order_exists = False
         attempt = 1
         # if order is not found after 5 loops of one second each, it is created
@@ -71,6 +88,7 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
+                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     eircode=shipping_details.address.postal_code,

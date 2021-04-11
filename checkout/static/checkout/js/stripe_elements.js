@@ -59,7 +59,7 @@ form.addEventListener('submit', function(ev) {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
         'save_info': saveInfo,
-        /* add loyalty_stamps here, will be similar to saveInfo      */
+        /* add loyalty_stamps here, will be similar to saveInfo */
     };
     var url = '/checkout/cache_checkout_data/';
 

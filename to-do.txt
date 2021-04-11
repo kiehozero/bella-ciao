@@ -1,6 +1,7 @@
 Housekeeping
 
 - add aria tags for all icons
+- make eircode mandatory
 - all alt tags for all imgs
 - want to send collection customers a QR code they can scan on arrival
 - want to be able to give customers a reward at a certain number of loyalty points, what to do if transaction value is zero?
