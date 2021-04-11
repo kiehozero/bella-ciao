@@ -238,6 +238,8 @@ URL so I could customise messages based on it.
 gave me a good structure to work from, as well as the foundations for using Django;
 - Setting up favicons was slightly different in Django then just sticking them in the project root, luckily 
 [this](https://learndjango.com/tutorials/django-favicon-tutorial) made this another painless transition.
+- Thanks to [Igor Basuga](https://github.com/bravoalpha79) for spotting an error in my settings.py file that was causing
+my allauth template inheritance to fail.
 
 
 ### Media

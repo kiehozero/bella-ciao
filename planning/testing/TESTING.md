@@ -52,6 +52,10 @@ already fixed.
  due to the placement of an if loop inside an anchor, displayed an image if available and a placeholder otherwise. However, the anchor
  element href contained a link to this image, so I just needed to put the anchor element inside the loop to fix this.
 
+ 7. I initially could not get my allauth templates to inherit from templates/base.html, but a quick call to Code Institute tutoring
+ found the error, which was a missing comma in my settings.py file. Thanks to [Igor Basuga](https://github.com/bravoalpha79) for
+ spotting that one.
+
 
  ## Outstanding Issues
 
