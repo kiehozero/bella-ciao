@@ -9,6 +9,8 @@ class UserProfile(models.Model):
     account information and loyalty points """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # all options as users aren't obliged to store this information
+    default_name = models.CharField(max_length=50, null=True, blank=True)
     default_phone_number = models.CharField(
         max_length=15, null=True, blank=True)
     default_street_address1 = models.CharField(

@@ -134,7 +134,7 @@ def checkout_success(request, order_number):
 
     if save_info:
         profile_data = {
-            # need to add full name option in here, as well as in model
+            'default_name': order.full_name,
             'default_phone_number': order.phone_number,
             'default_street_address1': order.street_address1,
             'default_street_address2': order.street_address2,

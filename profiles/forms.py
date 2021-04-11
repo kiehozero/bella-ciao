@@ -15,6 +15,7 @@ class UserProfileForm(forms.ModelForm):
         this is taken from the Boutique Ado project """
         super().__init__(*args, **kwargs)
         placeholders = {
+            'default_name': 'Name',
             'default_phone_number': 'Phone Number',
             'default_street_address1': 'Street Address 1',
             'default_street_address2': 'Street Address 2',
@@ -29,5 +30,5 @@ class UserProfileForm(forms.ModelForm):
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'text-red mx-5 profile-form-input'
+            self.fields[field].widget.attrs['class'] = 'text-red'
             self.fields[field].label = False
