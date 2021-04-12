@@ -45,16 +45,15 @@ class StripeWH_Handler:
         username = intent.metadata.username
         if username != 'AnonymousUser':
             # add loyalty stamps here using similar logic
+            profile = UserProfile.objects.get(user__username=username)
             if save_info:
-                profile = UserProfile.objects.get(user__username=username)
-                profile.default_name = shipping_details.name,
-                profile.default_phone_number = shipping_details.phone,
-                profile.default_street_address1 = shipping_details.address.line1,
-                profile.default_street_address2 = shipping_details.address.line2,
-                profile.default_city = shipping_details.address.city,
-                profile.default_eircode = shipping_details.address.postal_code,
-                profile.save
-
+                profile.default_name = shipping_details.name
+                profile.default_phone_number = shipping_details.phone
+                profile.default_street_address1 = shipping_details.address.line1
+                profile.default_street_address2 = shipping_details.address.line2
+                profile.default_city = shipping_details.address.city
+                profile.default_eircode = shipping_details.address.postal_code
+                profile.save()
 
         order_exists = False
         attempt = 1
