@@ -56,6 +56,8 @@ already fixed.
  found the error, which was a missing comma in my settings.py file. Thanks to [Igor Basuga](https://github.com/bravoalpha79) for
  spotting that one.
 
+ 8. 
+
 
  ## Outstanding Issues
 
