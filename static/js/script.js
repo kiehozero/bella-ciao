@@ -5,12 +5,20 @@
 /* Comments above tells JSHint what version of JS is being used, and secondly overrides JSHint's assumption that the 
 $ symbol is an undefined variable */
 
- $('.nav-option').mouseenter(function() {
-     $(this).children().css("color", "#008763");
- });
+$(".nav-option").mouseenter(function() {
+    $(this).children().css("color", "#008763");
+});
 
- $('.nav-option').mouseleave(function() {
+$(".nav-option").mouseleave(function() {
     $(this).children().css("color", "#f0eee9");
+});
+
+$(".nav-option#cart-container").mouseenter(function() {
+    $(".nav-option a#cart-full").css("color", "#008763");
+});
+
+$(".nav-option#cart-container").mouseleave(function() {
+    $(".nav-option a#cart-full").css("color", "#ceca03");
 });
 
 

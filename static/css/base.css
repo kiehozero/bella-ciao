@@ -121,7 +121,7 @@ nav ul a {
     font-size: 2em;
 }
 
-nav ul a.cart-full {
+nav ul a#cart-full {
     /* cart-full replaces cart-empty upon
     items being added to the customer's cart */
     color: #ceca03;
