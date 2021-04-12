@@ -4,7 +4,8 @@
     &nbsp;
     {{ message }}
     &nbsp;
-    <!-- only adds View Cart suffix if message is displayed on a product page -->
+    <!-- only adds View Cart suffix if message is displayed on a product 
+        page, need to edit again once this page is loaded from edit_product -->
     {% if "/products/" in request.get_full_path %}
     <a href="{% url 'view_cart' %}" class="text-gold view-cart-toast">
         View Cart <i class="fas fa-shopping-cart"></i>

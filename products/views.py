@@ -87,13 +87,44 @@ def add_product(request):
             return redirect(reverse('add_product'))
         else:
             messages.error(
-                request, "Item addition failure. Please check for any errors."
+                request, "Item addition failure. Please \
+                    check your submission for errors."
             )
     else:
         form = ProductForm()
     template = 'products/add_product.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_product(request, product_id):
+    """ Admin-only view to edit an item in the store """
+    """ need to replicate this for categories and events """
+    product = get_object_or_404(Product, pk=product_id)
+    # add link to this view in product_detail page
+    # change admin page to a central link for CRUD ops by admin
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request, f'Updated {product.name}')
+            return redirect(reverse('view_product', args=[product.id]))
+        else:
+            messages.error(
+                request, "Item update failure. Please \
+                    check your submission for errors."
+            )
+    else:
+        form = ProductForm(instance=product)
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form,
+        'product': product,
     }
 
     return render(request, template, context)
