@@ -14,3 +14,27 @@ Upcoming Events |
     <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">Upcoming Events</h4>
 </div>
 {% endblock %}
+
+{% block content %}
+
+<!-- Default Bootstrap card format -->
+<div class="row index-content">
+<!-- for event in events -->
+    <div class="col-sm-12 col-md-4">
+        <div class="card index-card">
+            <img src="{{ MEDIA_URL }}coffee-order.png" class="card-image-top">
+            <div class="card-body back-offwhite text-black">
+                <h4 class="card-title">Order Online</h4>
+                <p class="card-text">Delicious coffee prepared our professional baristas for delivery or collection.
+                </p>
+                <div class="d-flex justify-content-center">
+                    <a href="{% url 'products' %}" class="btn btn-outline-success" role="button">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- need a back to top button here for mobile only -->
+</div>
+
+{% endblock %}
