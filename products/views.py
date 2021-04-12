@@ -2,6 +2,8 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.shortcuts import get_object_or_404, redirect, render, reverse
+
+from .forms import ProductForm
 from .models import Product, Category
 
 
@@ -50,7 +52,7 @@ def all_products(request):
             products = products.filter(queries)
 
     current_sort = f'{sort}_{direction}'
-
+    template = 'products/products.html'
     context = {
         'products': products,
         'search_term': query,
@@ -59,15 +61,39 @@ def all_products(request):
         'cat_list': cat_list,
     }
 
-    return render(request, 'products/products.html', context)
+    return render(request, template, context)
 
 
 def view_product(request, product_id):
     """ Display all information on a particular products """
     product = get_object_or_404(Product, pk=product_id)
-
+    template = 'products/view_product.html'
     context = {
         'product': product,
     }
 
-    return render(request, 'products/view_product.html', context)
+    return render(request, template, context)
+
+
+def add_product(request):
+    """ Admin-only view to add item to the store """
+    """ need to replicate this for categories and events """
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request, "Item added to store")
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(
+                request, "Item addition failure. Please check for any errors."
+            )
+    else:
+        form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

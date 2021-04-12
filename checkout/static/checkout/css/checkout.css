@@ -35,24 +35,6 @@
     color: #ceca03;
 }
 
-/* Crispy-Forms overwrites */
-
-.fieldset-label {
-    font-family: 'Arvo';
-    font-size: 16px;
-}
-
-.form-control {
-    font-size: 14px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
-
-.form-control:focus {
-    border-color: #008763;
-    box-shadow: 0 0 0 0.25rem rgb(0 135 99 / 25%);
-}
-
 
 /* Stripe Elements CSS from the Stripe Documentation and tweaked to match project */
 

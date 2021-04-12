@@ -75,10 +75,10 @@ Order Summary |
                 </div>
                 <div>
                     <i class="fas fa-stamp text green"></i>&nbsp;&nbsp;Loyalty: {% if user.is_authenticated %}
-                    You'll earn {{ loyalty_stamps }} stamps.
+                    You'll earn {{ loyalty_stamps }} {% if loyalty_stamps != 1 %}stamps{% else %}stamp{% endif %}!
                     {% else %}
                     <a href="{% url 'account_signup' %}">Sign up</a> and earn 
-                    {{ loyalty_stamps }} stamps.
+                    {{ loyalty_stamps }} {% if loyalty_stamps != 1 %}stamps{% else %}stamp{% endif %}!
                     {% endif %}
                 </div>
             </div>

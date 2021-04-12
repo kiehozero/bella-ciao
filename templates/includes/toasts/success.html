@@ -4,7 +4,8 @@
     &nbsp;
     {{ message }}
     &nbsp;
-    {% if "products" in request.get_full_path %}
+    <!-- only adds View Cart suffix if message is displayed on a product page -->
+    {% if "/products/" in request.get_full_path %}
     <a href="{% url 'view_cart' %}" class="text-gold view-cart-toast">
         View Cart <i class="fas fa-shopping-cart"></i>
     </a>

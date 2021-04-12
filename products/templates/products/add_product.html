@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extratitle %}
+Store Administration |
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'products/css/product.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="row product-header back-green">
+    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">Store Administration</h4>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-12 col-md-5">
+        <form action="{% url 'add_product' %}" method="POST" id="add-product-form" class="pt-3 pb-2" encytype="multipart/form-data">
+            {% csrf_token %}
+                <legend class="fieldset-label text-green pt-3 pb-2">Add a New Product</legend>
+                {{ form | crispy }}
+
+            <div class="w-100">
+                <button id="submit-button" class="btn btn-outline-success text-green">
+                    <i class="far fa-plus-square"></i>
+                    &nbsp;
+                    Add Item
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

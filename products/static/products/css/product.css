@@ -91,6 +91,13 @@ h6.card-title a:hover {
 }
 
 
+/* Product Admin */
+
+.form-group label {
+    font-size: 12px;
+}
+
+
 /* Responsiveness */
 
 @media (max-width: 768px) {
