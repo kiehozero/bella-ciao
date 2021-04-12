@@ -44,9 +44,13 @@ h6.card-title a:hover {
 
 .btn#searchButton:hover,
 .btn#searchButton:focus,
+.btn.filter-button:hover,
+.btn.filter-button:focus,
 .btn-sm.filter-button:hover,
 .btn-sm.filter-button:focus {
     background-color: #f0eee9;
+    border-color: #008763;
+    border-width: 1px;
     color: #008763;
 }
 
@@ -54,6 +58,8 @@ h6.card-title a:hover {
 .btn#searchReset:focus {
     /* needs amending after click */
     background-color: #f0eee9;
+    border-color: #3b0022;
+    border-width: 1px;
     color: #3b0022;
 }
 

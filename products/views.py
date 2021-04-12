@@ -51,9 +51,6 @@ def all_products(request):
 
     current_sort = f'{sort}_{direction}'
 
-    # will need to go back to MS3 to find out how to
-    # reset the search criteria to show all products
-
     context = {
         'products': products,
         'search_term': query,

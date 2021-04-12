@@ -133,7 +133,7 @@ Products |
             </div>
             <div class="col">
                 <a href="{% if cat_list == None %}
-                             {% url 'products' %}?sort=price&direction=asc
+                             {% url 'products' %}?sort=name&direction=asc
                          {% else %}
                              {% url 'products' %}?category={{ cat_list }}&sort=name&direction=asc
                          {% endif %}"
@@ -143,7 +143,7 @@ Products |
             </div>
             <div class="col">
                 <a href="{% if cat_list == None %}
-                             {% url 'products' %}?sort=price&direction=asc
+                             {% url 'products' %}?sort=name&direction=desc
                          {% else %}
                              {% url 'products' %}?category={{ cat_list }}&sort=name&direction=desc
                          {% endif %}"
