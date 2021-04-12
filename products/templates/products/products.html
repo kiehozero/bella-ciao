@@ -159,8 +159,7 @@ Products |
 <div class="row justify-content-center">
     <span>
         <small>
-            <!-- needs to switch to category.render_name somehow -->
-            {{products|length }} items found{% if search_term %} for {{ search_term }}{% endif %}
+            {{products|length }} {% if products|length == 1 %}item{% else %}items{% endif %} found{% if search_term %} for {{ search_term }}{% endif %}
         </small>
     </span>
 </div>
@@ -210,8 +209,9 @@ Products |
 
 {% endblock %}
 
-<!-- need a new footer for this page, having the order buttons at the bottom is confusing -->
+<!-- need a new footer for this page, having the order buttons at the bottom is confusing, maybe just take order buttons off? -->
 
+</div>
 {% block postloadjs %}
 {{ block.super }}
 <!-- idea taken from Boutique Ado -->

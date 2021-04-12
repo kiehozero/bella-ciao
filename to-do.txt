@@ -1,8 +1,9 @@
 Housekeeping
 
 - add aria tags for all icons
-- make eircode mandatory
+- make eircode mandatory in checkout form
 - all alt tags for all imgs
+- move form CSS for checkout (and any other app that has forms.py) into forms.py using the field.widget.attrs['class'] methods
 - want to send collection customers a QR code they can scan on arrival
 - want to be able to give customers a reward at a certain number of loyalty points, what to do if transaction value is zero?
 Display idea is that once the user hits a threshold, their option to redeem is displayed in the cart and subtracts the price
