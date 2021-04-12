@@ -1,0 +1,9 @@
+Thanks for supporting a business in Limerick city today!
+
+Your order number is {{ order.order_number }} and your card has been charged €{{ order.grand_total|floatformat:2 }}.
+
+If you have any queries please contact us at {{ contact_email }}.
+
+Yours,
+
+Cafe Bella Ciao
