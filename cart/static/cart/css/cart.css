@@ -16,6 +16,15 @@ input.qty-select {
     margin-bottom: 0px;
 }
 
+.product-name {
+    color: #008763;
+}
+
+a.product-name:hover {
+    color: #008763;
+    font-weight: 600;
+}
+
 
 /* Buttons (Overwriting default Materialize parameters */
 
