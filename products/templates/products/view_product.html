@@ -160,17 +160,19 @@
                     {% if request.user.is_superuser %}
                     <div class="row justify-content-center pt-3 pb-2">
                         <div class="col check-eject pt-3 pb-2">
-                            <a href="{% url 'edit_product' product.id %}" class="btn btn-outline-warning" style="width: 100%;">
+                            <a href="{% url 'edit_product' product.id %}" class="btn btn-outline-warning"
+                                style="width: 100%;">
                                 <i class="fas fa-wrench"></i>
                                 Edit Item
                             </a>
                         </div>
                         <div class="col check-eject pt-3 pb-2">
-                            <a href="{% url 'delete_product' product.id %}" class="btn btn-outline-danger" style="width: 100%;">
+                            <button
+                                type="button" class="btn btn-outline-danger"
+                                style="width: 100%;" id="deletionButton">
                                 <i class="far fa-trash-alt"></i>
                                 Delete Item
-                                <!-- add modal here for confirmation message, route view to modal button -->
-                            </a>
+                            </button>
                         </div>
                     </div>
                     {% endif %}
@@ -178,13 +180,16 @@
                     <!-- sends the current URL to the next page so we can redirect reverse from there -->
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
-
+            
             </div>
 
         </div>
 
     </div>
 </div>
+
+<!-- Modal for confirming deletions -->
+{% include 'includes/deletion-modal.html' %}
 
 {% endblock %}
 

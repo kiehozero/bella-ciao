@@ -4,10 +4,12 @@
     &nbsp;
     {{ message }}
     &nbsp;
+    {% if "/products/" in request.get_full_path %}
     <a href="{% url 'view_cart' %}" class="text-gold view-cart-toast">
         View Cart <i class="fas fa-shopping-cart"></i>
     </a>
     &nbsp;
-    &times;
+    {% endif %}
+    <i class="fas fa-times close-message"></i>
 </h6>
 {% endfor %}

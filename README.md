@@ -57,15 +57,14 @@ As a user I want to...
   3. modify the size, quantity or variety of product I order;
   4. read more information about a product;
   5. filter or sort products by category or a search term of my choice;
-  6. start a subscription.
-  7. cancel a subscription;
-  8. create an account;
+  6. create an account;
   9. edit my profile information;
   10. see my loyalty points;
   11. redeem my loyalty points;
   12. sign up to an in-store event;
   13. view my current shopping cart;
-  14. view my order history.
+  14. view my order history;
+  15. save my address for future use;
 
 As an admin, I want to
   1. add a new product;
@@ -74,20 +73,25 @@ As an admin, I want to
   4. add a new product category;
   5. update a category;
   6. view all orders;
-  7. add a class;
-  8. add a new store.
+  7. add a category;
+  8. add a new store;
+  9. add an event;
+  10. edit an event;
+  11. delete an event;
 
 
 ## Features
 
 ### Existing Features
 
-
+- Purchase items
+- View order history
+- Events for logged in users
+- Admin panel for products and events
 
 ### Features to Implement
 
-
-
+- Subscription requires separate payment method from Stripe, ran out of time
 
 ## Technologies Used
 
@@ -221,6 +225,8 @@ to complete this project:
 ### Content
 
 - [Time and date welcome message](https://tecadmin.net/get-current-date-time-python/)
+- The excellent [Noise and Gradient](https://www.noiseandgradient.com/) helped me get some nice colour gradients really quickly
+for logo backgrounds, and ultimately helped confirm the colour selection for the whole site.
 
 ### Documentation
 
@@ -240,6 +246,9 @@ gave me a good structure to work from, as well as the foundations for using Djan
 [this](https://learndjango.com/tutorials/django-favicon-tutorial) made this another painless transition.
 - Thanks to [Igor Basuga](https://github.com/bravoalpha79) for spotting an error in my settings.py file that was causing
 my allauth template inheritance to fail.
+- [Bootstrap's documentation](https://getbootstrap.com/docs/5.0/utilities/spacing/) is fairly comprehensive and I leant
+particularly on their guides for spacing shortcuts as I wanted to write as little CSS as possible as that is where I've
+gotten bogged down on previous Bootstrap projects.
 
 
 ### Media
