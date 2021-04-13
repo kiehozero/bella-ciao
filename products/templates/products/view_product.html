@@ -145,17 +145,34 @@
 
                     </div>
 
-                    <div class="row justify-content-center">
-                        <div class="col check-eject">
+                    <div class="row justify-content-center pt-3 pb-2">
+                        <div class="col check-eject pt-3 pb-2">
                             <a href="{% url 'products' %}" class="btn btn-outline-success" style="width: 100%;">
                                 Back to Shop
                             </a>
                         </div>
-                        <div class="col check-eject">
-                            <input type="submit" value="Add to cart" class="btn btn-outline-success" name="add-cart"
+                        <div class="col check-eject pt-3 pb-2">
+                            <input type="submit" value="Add to Cart" class="btn btn-outline-success" name="add-cart"
                                 style="width: 100%;">
                         </div>
                     </div>
+
+                    {% if request.user.is_superuser %}
+                    <div class="row justify-content-center pt-3 pb-2">
+                        <div class="col check-eject pt-3 pb-2">
+                            <a href="{% url 'edit_product' product.id %}" class="btn btn-outline-warning" style="width: 100%;">
+                                <i class="fas fa-wrench"></i>
+                                Edit Item
+                            </a>
+                        </div>
+                        <div class="col check-eject pt-3 pb-2">
+                            <a href="{% url 'delete_product' product.id %}" class="btn btn-outline-danger" style="width: 100%;">
+                                <i class="far fa-trash-alt"></i>
+                                Delete Item
+                            </a>
+                        </div>
+                    </div>
+                    {% endif %}
 
                     <!-- sends the current URL to the next page so we can redirect reverse from there -->
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
