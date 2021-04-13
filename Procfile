@@ -1,0 +1,1 @@
+web: gunicorn bella_ciao.wsgi:application
