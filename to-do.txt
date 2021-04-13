@@ -3,6 +3,7 @@ Housekeeping
 - add aria tags for all icons
 - make eircode mandatory in checkout form
 - all alt tags for all imgs
+- uniform whitespace header for all pages after index
 - move form CSS for checkout (and any other app that has forms.py) into forms.py using the field.widget.attrs['class'] methods
 - want to send collection customers a QR code they can scan on arrival
 - want to be able to give customers a reward at a certain number of loyalty points, what to do if transaction value is zero?
