@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extratitle %}
-Order Confirmation |
+Order Summary |
 {% endblock %}
 
 {% block extracss %}
@@ -10,15 +10,14 @@ Order Confirmation |
 {% endblock %}
 
 {% block page_header %}
-<div class="row checkout-header back-green">
-    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">
-        {% if from_profile %}Order History{% else %}Order Confirmation{% endif %}</h4>
-</div>
-
+{% if from_profile %}
+{% include 'includes/page-header.html' with h3_title="Order History" %}
+{% else %}
+{% include 'includes/page-header.html' with h3_title="Order Confirmation" %}
+{% endif %}
 {% endblock %}
 
 {% block content %}
-
 
 <div class="row">
     <!-- Cheers Blurb -->
@@ -88,9 +87,9 @@ Order Confirmation |
             </div>
         </div>
     </div>
-    
+
 </div>
-    
+
 <div class="row justify-content-center">
 
     <!-- Payment Details -->
@@ -112,11 +111,12 @@ Order Confirmation |
             {% endif %}
             <p>
                 <i class="far fa-credit-card"></i>
-                &nbsp;&nbsp;Total:</p>
+                &nbsp;&nbsp;Total:
+            </p>
             <p>€{{ order.grand_total|floatformat:2 }}</p>
         </div>
     </div>
-    
+
     <!-- Delivery Details -->
     <div class="col-sm-12 col-md-7">
         <div class="row">
@@ -126,7 +126,7 @@ Order Confirmation |
             <!-- Add if statement to confirm presence of non-mandatory items -->
             <p>Street Address:</p>
             <p>{{ order.street_address1|title }}, {% if order.street_address2 %}{{ order.street_address2|title }}
-                    {% endif %}</p>
+                {% endif %}</p>
             <p>City: </p>
             <p>{{ order.city|title }}</p>
             <p>Eircode:</p>

@@ -9,10 +9,12 @@ Upcoming Events |
 <link rel="stylesheet" href="{% static 'events/css/events.css' %}">
 {% endblock %}
 
+{% block h3_title %}
+Upcoming Events
+{% endblock %}
+
 {% block page_header %}
-<div class="row events-header back-green">
-    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">Upcoming Events</h4>
-</div>
+{% include 'includes/page-header.html' with h3_title="Upcoming Events" %}
 {% endblock %}
 
 {% block content %}

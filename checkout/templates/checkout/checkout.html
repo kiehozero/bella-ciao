@@ -11,9 +11,7 @@ Order Summary |
 {% endblock %}
 
 {% block page_header %}
-<div class="row checkout-header back-green">
-    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">Checkout</h4>
-</div>
+{% include 'includes/page-header.html' with h3_title="Checkout" %}
 {% endblock %}
 
 {% block content %}

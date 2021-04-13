@@ -12,9 +12,7 @@ My Cart |
 {% endblock %}
 
 {% block page_header %}
-<div class="row cart-header back-green">
-    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-right">My Cart</h4>
-</div>
+{% include 'includes/page-header.html' with h3_title="My Cart" %}
 {% endblock %}
 
 {% block content %}
@@ -54,7 +52,8 @@ My Cart |
                             {% endif %}
                         </td>
                         <td colspan="2">
-                            <a href="{ url 'view_product' product.id %}" class="product-name">
+                            <a href="{% url 'view_product' item.product.id %}" class="product-name">
+                                
                                 {{ item.product.name }}
                             </a>
                         </td>

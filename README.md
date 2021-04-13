@@ -227,6 +227,8 @@ to complete this project:
 - [Time and date welcome message](https://tecadmin.net/get-current-date-time-python/)
 - The excellent [Noise and Gradient](https://www.noiseandgradient.com/) helped me get some nice colour gradients really quickly
 for logo backgrounds, and ultimately helped confirm the colour selection for the whole site.
+- This very short [RIP Tutorial](https://riptutorial.com/django/example/32472/use-of----extends---------include----and----blocks---)
+lesson was very valuable as it showed me how to define variables inside Django template tags.
 
 ### Documentation
 

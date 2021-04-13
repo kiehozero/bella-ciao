@@ -10,10 +10,7 @@
 {% endblock %}
 
 {% block page_header %}
-<div class="row product-header back-green">
-    <h4 class="col-sm-12 col-md-5 offset-md-6 text-offwhite text-center text-md-right">{{ product.name }}</h4>
-</div>
-
+{% include 'includes/page-header.html' with h3_title=product.name %}
 {% endblock %}
 
 {% block content %}
