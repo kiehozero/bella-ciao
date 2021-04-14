@@ -17,7 +17,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Arvo';
 }
 
-a {
+a,
+a:hover {
     text-decoration: none;
 }
 
@@ -161,23 +162,23 @@ li.nav-item {
     font-weight: 600;
 }
 
+.dropdown-item:active {
+    background-color: #008763;
+    color: #f0eee9;
+}
+
+.dropdown-item:focus {
+    background-color: #008763;
+    color: #f0eee9;
+}
+
 
 /* Headers */
-
-.row.base-header,
-.row.landing-header,
-.row.page-header,
-.row.social-panel,
-.row.message-row,
-footer .row {
-    /* fixes Bootstrap issue of whitespace off the side of the screen */
-    --bs-gutter-x: 0;
-}
 
 .page-header {
     height: 15vh;
     margin-bottom: 0px;
-    padding-right: 20px;
+    padding-right: 12.5vh;
 }
 
 .page-header h3 {
@@ -261,6 +262,11 @@ a.view-cart-toast:hover {
     text-align: right;
 }
 
+.card {
+    border: 0px;
+    padding: 10px;
+}
+
 .index-card {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -282,8 +288,10 @@ a.view-cart-toast:hover {
 
 .btn-outline-success {
     border-color: #008763;
+    color: #008763;
 }
 
+.btn-outline-success:active,
 .btn-outline-success:hover {
     background-color: #008763;
     border-color: #008763;

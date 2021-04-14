@@ -52,10 +52,6 @@ a.product-name:hover {
     cursor: pointer;
 }
 
-input#cardAddButton {
-    color: #f0eee9;
-}
-
 .btn-sm.decrease-qty,
 .btn-sm.increase-qty {
     font-size: 0.75rem;
@@ -65,7 +61,7 @@ input#cardAddButton {
 }
 
 .qty-select {
-    width: 40%;
+    width: 70%;
 }
 
 .cart-total {

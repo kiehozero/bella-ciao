@@ -21,7 +21,8 @@ My Cart |
         <div class="col col-md-10 offset-md-1">
 
             {% if cart_items %}
-            <table class="table table-responsive mobile-font">
+            <div class="table-responsive">
+            <table class="table mobile-font">
                 <thead>
                     <tr>
                         <th class="d-none d-md-block" scope="col">&nbsp;</th>
@@ -91,12 +92,12 @@ My Cart |
                             €{{ item.product.price | calc_subtotal:item.quantity }}
                         </td>
                         <td colspan="1">
-                            <a class="btn btn-outline-success update-item">
+                            <a class="btn btn-outline-success update-item text-green">
                                 <i class="far fa-check-square fa-sm text-green"></i>
                             </a>
                         </td>
                         <td colspan="1">
-                            <a class="btn btn-outline-danger remove-item" id="remove_{{ item.item_id }}"
+                            <a class="btn btn-outline-danger remove-item text-green" id="remove_{{ item.item_id }}"
                                 data-product_size="{{ item.size }}">
                                 <i class="far fa-trash-alt fa-sm text-red"></i>
                             </a>
@@ -124,18 +125,19 @@ My Cart |
                     </tr>
                 </tbody>
             </table>
+            </div>
 
             <div class="row justify-content-between">
                 <div class="col check-eject">
-                    <button class="btn btn-outline-success">
+                    <button class="btn btn-outline-success" id="backShopBtn">
                         <i class="fas fa-shopping-cart"></i>&nbsp;
-                        <a href="{% url 'products' %}" class="text-green mobile-font">Back to Store</a>
+                        <a href="{% url 'products' %}" class="mobile-font text-green">Back to Store</a>
                     </button>
                 </div>
                 <div class="col check-eject">
-                    <button class="btn btn-outline-success">
+                    <button class="btn btn-outline-success" id="checkoutBtn">
                         <i class="fas fa-lock"></i>&nbsp;
-                        <a href="{% url 'checkout' %}" class="text-green mobile-font">Checkout</a>
+                        <a href="{% url 'checkout' %}" class="mobile-font text-green">Checkout</a>
                     </button>
                 </div>
             </div>

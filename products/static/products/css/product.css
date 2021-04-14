@@ -16,6 +16,11 @@ h6.card-title a:hover {
     color: #008763;
 }
 
+.card.shop-card {
+    border: 1px solid #3b0022;
+    padding: 0px;
+}
+
 .btt-row,
 .filter-row {
     margin-top: 10px;
@@ -63,10 +68,12 @@ h6.card-title a:hover {
 /* View Product */
 
 .breadcrumb {
+    background-color: transparent;
     display: inline-block;
     font-size: 10px;
     text-transform: uppercase;
     margin-top: 10vh;
+    padding: 0px;
 }
 
 .breadcrumb:last-child {
