@@ -176,15 +176,15 @@ li.nav-item {
 /* Headers */
 
 .page-header {
-    height: 15vh;
+    height: 12vh;
     margin-bottom: 0px;
-    padding-right: 12.5vh;
+    padding-right: 7vw;
 }
 
 .page-header h3 {
     text-align: right;
     padding-right: 5vw;
-    padding-top: 3vh;
+    padding-top: 4vh;
 }
 
 
