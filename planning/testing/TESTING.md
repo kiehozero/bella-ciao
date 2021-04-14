@@ -66,5 +66,6 @@ already fixed.
  3. Delivery calc in the admin is not rounding as outlined in settings.py, still showing as the 10% amount rather than 10% rounded to
  the nearest 0.1 value
  4. Loyalty stamps don't seem to add up on certain drinks (noticed this first on the espresso added using the product form)
+ 5. Cart quantity buttons on smaller devices
 
  

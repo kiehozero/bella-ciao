@@ -68,6 +68,10 @@ input#cardAddButton {
     width: 40%;
 }
 
+.cart-total {
+    text-align: right;
+}
+
 
 /* Responsiveness */
 
@@ -78,9 +82,5 @@ input#cardAddButton {
         items being added to the customer's cart */
         color: #ceca03;
         font-weight: 800;
-    }
-
-    .qty-select {
-        width: 70%;
     }
 }

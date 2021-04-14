@@ -87,15 +87,15 @@ My Cart |
                         <td colspan="1" class="justify-content-center">
                             €{{ item.product.price }}
                         </td>
-                        <td colspan="1" class="justify-content-center d-none d-md-inline">
+                        <td colspan="1" class="justify-content-between d-none d-md-table-cell">
                             €{{ item.product.price | calc_subtotal:item.quantity }}
                         </td>
-                        <td colspan="1" class="justify-content-center">
+                        <td colspan="1">
                             <a class="btn btn-outline-success update-item">
                                 <i class="far fa-check-square fa-sm text-green"></i>
                             </a>
                         </td>
-                        <td colspan="1" class="justify-content-center">
+                        <td colspan="1">
                             <a class="btn btn-outline-danger remove-item" id="remove_{{ item.item_id }}"
                                 data-product_size="{{ item.size }}">
                                 <i class="far fa-trash-alt fa-sm text-red"></i>
@@ -105,16 +105,16 @@ My Cart |
                     {% endfor %}
                     
                     <tr>
-                        <td class="cart-total">Subtotal:</td>
-                        <td>€{{ total|floatformat:2 }}</td>
+                        <td colspan="8" class="cart-total">Subtotal:</td>
+                        <td colspan="2">€{{ total|floatformat:2 }}</td>
                     </tr>
                     <tr>
-                        <td class="cart-total">Delivery:</td>
-                        <td>€{{ delivery|floatformat:2 }}</td>
+                        <td colspan="8" class="cart-total">Delivery:</td>
+                        <td colspan="2">€{{ delivery|floatformat:2 }}</td>
                     </tr>
                     <tr>
-                        <td class="cart-total">Total: </td>
-                        <td>€{{ grand_total|floatformat:2 }}</td>
+                        <td colspan="8" class="cart-total">Total: </td>
+                        <td colspan="2">€{{ grand_total|floatformat:2 }}</td>
                     </tr>
                     <tr>
                         <td colspan="9" class="justify-content-center">
