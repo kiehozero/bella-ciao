@@ -1,3 +1,5 @@
+/* Enter and leave settings for icon and anchor container buttons */
+
 $("#backShopBtn").mouseenter(function() {
     $("#backShopBtn a").css("color", "#f0eee9");
 });
