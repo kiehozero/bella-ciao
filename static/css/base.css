@@ -134,10 +134,29 @@ nav ul #site-logo a:hover {
     color:#008763;
 }
 
-.sidenav-trigger {
-    /* only available on smaller devices - see media queries at bottom */
-    display: none;
+/* Mobile Navbar - predominantly overwriting default Bootstrap parameters */
+
+.navbar {
+    padding-left: 5vh;
+    padding-right: 5vh;
 }
+#mobile-logo {
+    max-height: 7.5vh;
+}
+
+.navbar-toggler {
+    color: #f0eee9;
+}
+
+.navbar-toggler {
+    border-color: transparent;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color:#f0eee9;
+    color: #008763;
+}
+
 
 /* Headers */
 
@@ -152,7 +171,7 @@ footer .row {
 }
 
 .page-header {
-    height: 10vh;
+    height: 15vh;
     margin-bottom: 0px;
     padding-right: 20px;
 }
@@ -333,51 +352,9 @@ a.view-cart-toast:hover {
 @media (max-width: 768px) {
     /* Alternative navigation parameters for smaller screens */
     .sidebar {
-        /* static sidebar is replaced with pullout version on mobile and tablet */
-        /* can the sidebar be triggered by a button in jQuery rather than writing
-        two different sidebars? */
+        /* static sidebar is replaced with top navbar on mobile and tablet */
         display: none;
     }
-
-    .sidenav-trigger {
-        /* display and position allow trigger to sit on top of any
-        headers without interfering with the layout below the trigger */
-        display: inline;
-        position: absolute;
-        text-align: center;
-        width: 20%;
-        z-index: 2;
-    }
-
-    .sidenav-trigger {
-        /* pushes button in from screen edges */
-        margin-left: 5%;
-        margin-top: 5%;
-    }
-
-    .trigger-display a i {
-        font-size: 3rem;
-    }
-
-    /* all items below containing sidenav are overwrites of default Materialize parameters */
-
-    .sidenav li>a {
-        /* Overwrites default Materialize parameters */
-        color: #f0eee9;
-        font-size: 1.5em;
-        font-weight: 600;
-        height: 20%;
-}
-
-    .sidenav li>a>i {
-        /* Overwrites default Materialize parameters */
-        color: #f0eee9;
-        float: none;
-    }
-
-    .sidenav #mob-logo img {
-        max-width: 100%;
-}
 
     .hidden-spacer {
         /* sits behind sidebar on larger screens */
@@ -392,7 +369,7 @@ a.view-cart-toast:hover {
 
     .messages-container {
         padding-right: 0px;
-}
+    }
 
 
     /* Footer */

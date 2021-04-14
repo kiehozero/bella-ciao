@@ -29,9 +29,16 @@ $("#deletionButton").click(function() {
 
 $("#modalClose").click(function() {
     $("#deletionModal").modal("hide");
-})
+});
 
-/* Tablet and Mobile Only */
+/* Modile Navbar */
+
+$(".navbar-toggler").click(function() {
+    $("#navbarNav").toggle();
+});
+
+
+/* Tablet and Mobile Rendering */
 
 if ($(window).width() < 1280) {
     $("#searchButton").html("<i class='fas fa-search' aria-label='Search Products'></i>");
