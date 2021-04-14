@@ -38,8 +38,8 @@
 <body>
     <!-- Navigation Sidebar -->
     <header>
-        {% include 'includes/desktop-navbar.html' %}
-        {% include 'includes/mobile-navbar.html' %}
+        {% include 'includes/desk-navbar.html' %}
+        {% include 'includes/mob-navbar.html' %}
         <!-- find a way of adding in a conditional for these two? -->
     </header>
 
@@ -91,7 +91,8 @@
     </main>
 
     <footer>
-        {% include 'includes/footer.html' %}
+        {% include 'includes/desk-footer.html' %}
+        {% include 'includes/mob-footer.html' %}
     </footer>
 
     {% block postloadjs %}

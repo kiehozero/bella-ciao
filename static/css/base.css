@@ -139,6 +139,7 @@ nav ul #site-logo a:hover {
 .navbar {
     padding-left: 5vh;
     padding-right: 5vh;
+    text-transform: uppercase;
 }
 #mobile-logo {
     max-height: 7.5vh;
@@ -150,6 +151,10 @@ nav ul #site-logo a:hover {
 
 .navbar-toggler {
     border-color: transparent;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0rem;
 }
 
 .navbar-nav .nav-link:hover {
@@ -209,6 +214,10 @@ a.view-cart-toast:hover {
 .row.store-select {
     margin-bottom: 0;
     margin-top: 15px;
+}
+
+.hidden-spacer {
+    display: inline;
 }
 
 .store-select {
@@ -374,17 +383,11 @@ a.view-cart-toast:hover {
 
     /* Footer */
 
-    .mob-footer-header {
-        /* replicates a h5 without displaying as a block */
-        /* mobile footer is not stretching all the way to the edge for some reason */
-        display: inline;
-        font-family: 'Arvo';
-        font-size: 1.64rem;
-        font-weight: 400;
-    }
-
-    div.row.store-select {
-        padding: 10px;
+    .store-select {
+        padding-bottom: 2.5vh;
+        padding-left: 5vh;
+        padding-right: 5vh;
+        padding-top: 2.5vh;
     }
 
     

@@ -97,4 +97,9 @@ h6.card-title a:hover {
     .breadcrumb {
         margin-top: 5vh;
     }
+
+    .card.shop-card {
+        /* does this work on tablet view? */
+        flex-direction: row;
+    }
 }
