@@ -42,14 +42,6 @@ $("#navbarDropdownMenuLink").click(function() {
     $(".dropdown-menu").toggle();
 });
 
-$("li.nav-item a").click(function () {
-    $(this).parent().css("background-color", "#f0eee9");
-});
-
-$("a.dropdown-item").click(function () {
-    $(this).parent().css("background-color", "#f0eee9");
-});
-
 
 /* Tablet and Mobile Rendering */
 

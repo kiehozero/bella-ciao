@@ -157,18 +157,8 @@ nav ul #site-logo a:hover {
     box-shadow: 0 0 0 0rem;
 }
 
-.navbar-nav .nav-link:focus {
-    background-color:#f0eee9;
-    color: #008763;
-}
-
 li.nav-item {
     font-weight: 600;
-}
-
-.dropdown-item:active {
-    background-color: #f0eee9;
-    color: #008763;
 }
 
 
@@ -327,7 +317,7 @@ a.view-cart-toast:hover {
 .btn-outline-warning a i:hover,
 .btn-outline-warning i:hover {
     color: #100f10;
-} 
+}
 
 .check-eject {
     /* Add Cart, Checkout, Admin and Back To Shop buttons on Product and Cart Views */
@@ -383,6 +373,10 @@ a.view-cart-toast:hover {
 
     .messages-container {
         padding-right: 0px;
+    }
+
+    .pp-button {
+        font-size: 0.75rem;
     }
 
 

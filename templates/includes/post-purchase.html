@@ -1,48 +1,33 @@
 <div class="row pt-3 pb-2">
     <div class="col-10 offset-1 d-flex justify-content-center">
         {% if user.is_authenticated %}
+        {% if from_profile %}
         <div class="mx-1 my-1">
-            <a href="{% url 'profile' %}" class="btn btn-outline-success">
-                {% if from_profile %}
-                <i class="far fa-user-circle account-icon"></i>
-                &nbsp;&nbsp;Back to My Profile
-                {% else %}
+            <a href="{% url 'profile' %}" class="btn btn-outline-success pp-button">
                 <i class="fas fa-history"></i>
                 &nbsp;&nbsp;Order history
-                {% endif %}
             </a>
         </div>
+        {% endif %}
         <div class="mx-1 my-1">
-            <a href="#" class="btn btn-outline-success">
+            <a href="{% url 'events' %}" class="btn btn-outline-success pp-button">
                 <i class="far fa-calendar-alt"></i>
                 &nbsp;&nbsp;Upcoming events
             </a>
         </div>
         <div class="mx-1 my-1">
-            <a href="{% url 'products' %}" class="btn btn-outline-success">
+            <a href="{% url 'products' %}" class="btn btn-outline-success pp-button">
                 <i class="fas fa-coffee"></i>
                 &nbsp;&nbsp;Order Online
             </a>
         </div>
-        <div class="mx-1 my-1">
-            <a href="#" class="btn btn-outline-success">
-                <i class="fas fa-infinity"></i>
-                &nbsp;&nbsp;Join CBC Unlimited
-            </a>
-        </div>
         {% else %}
         <div class="mx-1 my-1">
-            <a href="{% url 'account_signup' %}" class="btn btn-outline-success">
+            <a href="{% url 'account_signup' %}" class="btn btn-outline-success pp-button">
                 <i class="fas fa-clipboard-check"></i>
                 &nbsp;&nbsp;Register
             </a>
         </div>
-        <div class="mx-1 my-1">
-            <a href="#" class="btn btn-outline-success">
-                <i class="fas fa-infinity"></i>
-                &nbsp;&nbsp;Join CBC Unlimited
-            </a>
-            {% endif %}
-        </div>
+        {% endif %}
     </div>
 </div>
