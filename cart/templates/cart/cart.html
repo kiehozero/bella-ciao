@@ -18,20 +18,20 @@ My Cart |
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-sm-12 col-md-10 offset-md-1">
+        <div class="col col-md-10 offset-md-1">
 
             {% if cart_items %}
-            <table class="table">
+            <table class="table table-responsive mobile-font">
                 <thead>
                     <tr>
                         <th class="d-none d-md-block" scope="col">&nbsp;</th>
                         <th colspan="2" class="text-red" scope="col">Item</th>
-                        <th colspan="1" class="justify-content-center text-red" scope="col">Quantity</th>
-                        <th colspan="1" class="justify-content-center text-red" scope="col">Price</th>
-                        <th colspan="1" class="justify-content-center text-red d-none d-md-block" scope="col">Subtotal
+                        <th colspan="2" class="text-red" scope="col">Qty</th>
+                        <th colspan="1" class="text-red" scope="col">Price</th>
+                        <th colspan="1" class="text-red d-none d-md-block" scope="col">Total
                         </th>
-                        <th colspan="1" class="justify-content-center text-red" scope="col">Update Cart</th>
-                        <th colspan="1" class="justify-content-center text-red" scope="col">Remove</th>
+                        <th colspan="1" class="text-red" scope="col">Update</th>
+                        <th colspan="1" class="text-red" scope="col">Remove</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,36 +53,31 @@ My Cart |
                         </td>
                         <td colspan="2">
                             <a href="{% url 'view_product' item.product.id %}" class="product-name">
-                                
                                 {{ item.product.name }}
                             </a>
                         </td>
 
                         <!-- Quantity selector -->
                         <!-- Same code as in view_product, this is taken from the Boutique Ado project -->
-                        <td colspan="1" class="form-container">
+                        <td colspan="2" class="form-container">
                             <form method="POST" action="{% url 'update_cart' item.item_id %}" class="update-form">
                                 {% csrf_token %}
                                 <div class="justify-content-center qty-panel">
-                                    <div class="col s3">
+                                    <div class="col">
                                         <button class="btn btn-sm text-offwhite back-green decrease-qty"
                                             data-item_id="{{ item.item_id }}" id="decrease-qty_{{ item.item_id }}">
-                                            <i class="fas fa-minus fa-sm"></i>
+                                            <i class="fas fa-minus fa-sm mobile-font"></i>
                                         </button>
-                                    </div>
-
-                                    <div class="col s6">
                                         <!-- needs validation message if user types number out of range -->
-                                        <input class="qty-select" type="number" name="quantity"
+                                        <input class="qty-select mobile-font" type="number" name="quantity"
                                             value="{{ item.quantity }}" min="1" max="49"
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
-                                    </div>
 
-                                    <div class="col s3"></div>
-                                    <button class="btn btn-sm text-offwhite back-green increase-qty"
-                                        data-item_id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}">
-                                        <i class="fas fa-plus fa-sm"></i>
-                                    </button>
+                                        <button class="btn btn-sm text-offwhite back-green increase-qty"
+                                            data-item_id="{{ item.item_id }}" id="increase-qty_{{ item.item_id }}">
+                                            <i class="fas fa-plus fa-sm mobile-font"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 {% if item.product.sizable %}
                                 <input type="hidden" name="product_size" value="{{ item.size }}">
@@ -92,46 +87,37 @@ My Cart |
                         <td colspan="1" class="justify-content-center">
                             €{{ item.product.price }}
                         </td>
-                        <td colspan="1" class="justify-content-center d-none d-md-block">
+                        <td colspan="1" class="justify-content-center d-none d-md-inline">
                             €{{ item.product.price | calc_subtotal:item.quantity }}
                         </td>
                         <td colspan="1" class="justify-content-center">
                             <a class="btn btn-outline-success update-item">
-                                <i class="far fa-check-square text-green"></i>
+                                <i class="far fa-check-square fa-sm text-green"></i>
                             </a>
                         </td>
                         <td colspan="1" class="justify-content-center">
                             <a class="btn btn-outline-danger remove-item" id="remove_{{ item.item_id }}"
                                 data-product_size="{{ item.size }}">
-                                <i class="far fa-trash-alt text-red"></i>
+                                <i class="far fa-trash-alt fa-sm text-red"></i>
                             </a>
                         </td>
                     </tr>
                     {% endfor %}
                     
                     <tr>
-                        <td class="d-none d-md-block"></td>
-                        <td class="d-none d-md-block"></td>
-                        <td class="d-none d-md-block"></td>
-                        <td colspan="1" class="cart-total">Subtotal:</td>
+                        <td class="cart-total">Subtotal:</td>
                         <td>€{{ total|floatformat:2 }}</td>
                     </tr>
                     <tr>
-                        <td class="d-none d-md-block"></td>
-                        <td class="d-none d-md-block"></td>
-                        <td class="d-none d-md-block"></td>
-                        <td colspan="1" class="cart-total">Delivery:</td>
+                        <td class="cart-total">Delivery:</td>
                         <td>€{{ delivery|floatformat:2 }}</td>
                     </tr>
                     <tr>
-                        <td class="d-none d-md-block"></td>
-                        <td class="d-none d-md-block"></td>
-                        <td class="d-none d-md-block"></td>
-                        <td colspan="1" class="cart-total">Total: </td>
+                        <td class="cart-total">Total: </td>
                         <td>€{{ grand_total|floatformat:2 }}</td>
                     </tr>
                     <tr>
-                        <td colspan="6" class="justify-content-center">
+                        <td colspan="9" class="justify-content-center">
                             <i class="fas fa-stamp"></i>&nbsp;&nbsp;You'll earn {{ loyalty_stamps }} {% if loyalty_stamps != 1 %}stamps{% else %}stamp{% endif %} in this
                             transaction.
                         </td>
@@ -139,17 +125,17 @@ My Cart |
                 </tbody>
             </table>
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-between">
                 <div class="col check-eject">
                     <button class="btn btn-outline-success">
                         <i class="fas fa-shopping-cart"></i>&nbsp;
-                        <a href="{% url 'products' %}" class="text-green">Back to Store</a>
+                        <a href="{% url 'products' %}" class="text-green mobile-font">Back to Store</a>
                     </button>
                 </div>
                 <div class="col check-eject">
                     <button class="btn btn-outline-success">
                         <i class="fas fa-lock"></i>&nbsp;
-                        <a href="{% url 'checkout' %}" class="text-green">Checkout</a>
+                        <a href="{% url 'checkout' %}" class="text-green mobile-font">Checkout</a>
                     </button>
                 </div>
             </div>

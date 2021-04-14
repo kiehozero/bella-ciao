@@ -56,6 +56,18 @@ input#cardAddButton {
     color: #f0eee9;
 }
 
+.btn-sm.decrease-qty,
+.btn-sm.increase-qty {
+    font-size: 0.75rem;
+    height: 1.5rem;
+    line-height: 0.75rem;
+    width: 1.5rem;
+}
+
+.qty-select {
+    width: 40%;
+}
+
 
 /* Responsiveness */
 
@@ -66,5 +78,9 @@ input#cardAddButton {
         items being added to the customer's cart */
         color: #ceca03;
         font-weight: 800;
+    }
+
+    .qty-select {
+        width: 70%;
     }
 }
