@@ -162,6 +162,10 @@ nav ul #site-logo a:hover {
     color: #008763;
 }
 
+li.nav-item {
+    font-weight: 600;
+}
+
 
 /* Headers */
 
@@ -214,10 +218,6 @@ a.view-cart-toast:hover {
 .row.store-select {
     margin-bottom: 0;
     margin-top: 15px;
-}
-
-.hidden-spacer {
-    display: inline;
 }
 
 .store-select {

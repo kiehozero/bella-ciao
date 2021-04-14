@@ -31,10 +31,14 @@ $("#modalClose").click(function() {
     $("#deletionModal").modal("hide");
 });
 
-/* Modile Navbar */
+/* Mobile Navbar */
 
 $(".navbar-toggler").click(function() {
     $("#navbarNav").toggle();
+});
+
+$("#navbarDropdownMenuLink").click(function() {
+    $(".dropdown-menu").toggle();
 });
 
 

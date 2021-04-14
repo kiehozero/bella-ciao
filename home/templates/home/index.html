@@ -96,12 +96,12 @@ Home |
                 {% if request.user.is_authenticated %}
                 <p class="card-text">You currently have COUNT loyalty points</p>
                 <div class="d-flex justify-content-center">
-                    <a href="{% url 'account_login' %}" class="btn btn-outline-success" role="button">Register</a>
+                    <a href="{% url 'profile' %}" class="btn btn-outline-success" role="button">Redeem</a>
                 </div>
                 {% else %}
                 <p class="card-text">Create an account to get every tenth coffee free from any of our stores.</p>
                 <div class="d-flex justify-content-center">
-                    <a href="{% url 'account_signup' %}" class="btn btn-outline-success" role="button">Redeem</a>
+                    <a href="{% url 'account_signup' %}" class="btn btn-outline-success" role="button">Register</a>
                 </div>
                 {% endif %}
             </div>
