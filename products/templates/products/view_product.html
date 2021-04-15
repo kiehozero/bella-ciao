@@ -156,16 +156,14 @@
                     {% if request.user.is_superuser %}
                     <div class="row justify-content-center pt-3 pb-2">
                         <div class="col check-eject pt-3 pb-2">
-                            <a href="{% url 'edit_product' product.id %}" class="btn btn-outline-warning"
-                                style="width: 100%;">
+                            <a href="{% url 'edit_product' product.id %}" class="btn btn-outline-warning w-100">
                                 <i class="fas fa-wrench"></i>
                                 Edit Item
                             </a>
                         </div>
                         <div class="col check-eject pt-3 pb-2">
                             <button
-                                type="button" class="btn btn-outline-danger"
-                                style="width: 100%;" id="deletionButton">
+                                type="button" class="btn btn-outline-danger w-100" id="deletionButton">
                                 <i class="far fa-trash-alt"></i>
                                 Delete Item
                             </button>
@@ -185,7 +183,9 @@
 </div>
 
 <!-- Modal for confirming deletions -->
-{% include 'includes/deletion-modal.html' %}
+{% if request.user.is_superuser %}
+{% include 'includes/del-item-modal.html' %}
+{% endif %}
 
 {% endblock %}
 
