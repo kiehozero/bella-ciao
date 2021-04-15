@@ -41,18 +41,14 @@ Order Summary |
     <!-- Customer Details -->
     <div class="col-sm-12 col-md-5">
         <div class="row">
-            <h6 class="text-green text-xs-center text-md-right">Your Details</h6>
+            <h6 class="text-green text-xs-center w-100">Your Details</h6>
         </div>
         <div class="summary-row">
-            <p>Name:</p>
-            <p>{{ order.full_name|title }}</p>
-            <p>Contact Number: </p>
-            <p>{{ order.phone_number }}</p>
+            <p class="w-100">Name: {{ order.full_name|title }}</p>
+            <p class="w-100">Contact Number: {{ order.phone_number }}</p>
             {% if user.is_authenticated %}
-            <p>Loyalty Points Earned: </p>
-            <p>{{ order.loyalty_stamps }}</p>
-            <p>Current Loyalty Balance:</p>
-            <p>Loyalty balance here</p>
+            <p class="w-100">Loyalty Points Earned:  {{ order.loyalty_stamps }}</p>
+            <p class="w-100">Current Loyalty Balance: Loyalty balance here</p>
             {% endif %}
         </div>
     </div>
@@ -62,7 +58,7 @@ Order Summary |
         <div class="row">
             <div class="col-sm-12">
                 <div class="row">
-                    <h6 class="text-green text-xs-center text-md-right">Item Summary</h6>
+                    <h6 class="text-green">Item Summary</h6>
                 </div>
                 <div class="row summary-header">
                     <div class="col-sm-6">Description</div>
@@ -95,25 +91,22 @@ Order Summary |
     <!-- Payment Details -->
     <div class="col-sm-12 col-md-5">
         <div class="row">
-            <h6 class="text-green text-xs-center text-md-right">Payment Details</h6>
+            <h6 class="text-green">Payment Details</h6>
         </div>
         <div class="row summary-row">
-            <p>Subtotal:</p>
-            <p>€{{ order.order_total|floatformat:2 }}</p>
+            <p class="w-100">
+                <i class="fas fa-coffee"></i>
+                &nbsp;&nbsp;Subtotal: €{{ order.order_total|floatformat:2 }}</p>
             {% if order.delivery_cost %}
-            <p>
+            <p class="w-100">
                 <i class="fas fa-truck"></i>
-                &nbsp;&nbspDelivery Charge:
-            </p>
-            <p>€{{ order.delivery_cost|floatformat:2 }}</p>
+                &nbsp;&nbsp;Delivery Charge: €{{ order.delivery_cost|floatformat:2 }}</p>
             {% else %}
-            <p>You qualified for free delivery!</p>
+            <p class="w-100">You qualified for free delivery!</p>
             {% endif %}
-            <p>
+            <p class="w-100">
                 <i class="far fa-credit-card"></i>
-                &nbsp;&nbsp;Total:
-            </p>
-            <p>€{{ order.grand_total|floatformat:2 }}</p>
+                &nbsp;&nbsp;Total: €{{ order.grand_total|floatformat:2 }}</p>
         </div>
     </div>
 
@@ -124,13 +117,11 @@ Order Summary |
         </div>
         <div class="row summary-row">
             <!-- Add if statement to confirm presence of non-mandatory items -->
-            <p>Street Address:</p>
-            <p>{{ order.street_address1|title }}, {% if order.street_address2 %}{{ order.street_address2|title }}
+            <p class="w-100">Street Address:</p>
+            <p class="w-100">{{ order.street_address1|title }}, {% if order.street_address2 %}{{ order.street_address2|title }}
                 {% endif %}</p>
-            <p>City: </p>
-            <p>{{ order.city|title }}</p>
-            <p>Eircode:</p>
-            <p>{{ order.eircode|upper }}</p>
+            <p class="w-100">City: {{ order.city|title }}</p>
+            <p class="w-100">Eircode: {{ order.eircode|upper }}</p>
         </div>
     </div>
 </div>

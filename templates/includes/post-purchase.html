@@ -5,7 +5,14 @@
         <div class="mx-1 my-1">
             <a href="{% url 'profile' %}" class="btn btn-outline-success mobile-font">
                 <i class="fas fa-history"></i>
-                &nbsp;&nbsp;Order history
+                &nbsp;&nbsp;Order History
+            </a>
+        </div>
+        {% else %}
+        <div class="mx-1 my-1">
+            <a href="{% url 'profile' %}" class="btn btn-outline-success mobile-font">
+                <i class="far fa-user-circle"></i>
+                &nbsp;&nbsp;My Profile
             </a>
         </div>
         {% endif %}
