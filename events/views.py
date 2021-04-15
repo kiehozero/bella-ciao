@@ -1,11 +1,20 @@
 from django.shortcuts import get_object_or_404, render
-# from .models import Events, EventAttendees
+
+from .models import Event
+# , EventAttendees
 # # add forms.py to create new events
 
 
 def view_events(request):
     """ Display list of events """
-    return render(request, 'events/events.html')
+    events = Event.objects.all()
+
+    template = 'events/events.html'
+    context = {
+        'events': events,
+    }
+
+    return render(request, template, context)
 
 
 # def event_detail(request, event_id):
