@@ -53,32 +53,32 @@ Order Summary |
             </div>
             {% endfor %}
 
-            <div class="row">
-                <h6 class="text-green order-summary pt-3 pb-2">Order Summary</h6>
-                <div>
+            <div class="row mobile-font">
+                <h6 class="text-green order-summary pt-3 pb-2 w-100">Order Summary</h6>
+                <p>
                     Subtotal:
                     €{{ total|floatformat:2 }}
-                </div>
-                <div>
+                </p>
+                <p class="pt-2 w-100">
                     <i class="fas fa-percent"></i>&nbsp;&nbsp;VAT:
                     €
-                </div>
-                <div>
+                </p>
+                <p class="pt-2 w-100">
                     <i class="fas fa-truck"></i>&nbsp;&nbsp;Delivery:
                     €{{ delivery|floatformat:2 }}
-                </div>
-                <div>
+                </p>
+                <p class="pt-2 w-100">
                     <i class="far fa-credit-card"></i>&nbsp;&nbsp;Grand Total:
                     €{{ grand_total|floatformat:2 }}
-                </div>
-                <div>
+                </p>
+                <p class="pt-2 w-100">
                     <i class="fas fa-stamp text green"></i>&nbsp;&nbsp;Loyalty: {% if user.is_authenticated %}
                     You'll earn {{ loyalty_stamps }} {% if loyalty_stamps != 1 %}stamps{% else %}stamp{% endif %}!
                     {% else %}
                     <a href="{% url 'account_signup' %}">Sign up</a> and earn 
                     {{ loyalty_stamps }} {% if loyalty_stamps != 1 %}stamps{% else %}stamp{% endif %}!
                     {% endif %}
-                </div>
+                </p>
             </div>
         </div>
 
