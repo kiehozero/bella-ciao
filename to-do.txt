@@ -13,3 +13,11 @@ of a selected item to zero
 of nested ifs? Obvious solution seems to be to add each size as a different product but I want to push the logic a bit rather
 than following the tutorial like most people
 - VAT display? Add VAT category to each item, populate and then use to calculate total tax in card-total elements?
+
+Events:
+
+- Tasting evening
+- Poetry night
+- Blindboy reading
+- Eddie Lenihan
+- Post Punk Podge

@@ -24,23 +24,27 @@ Upcoming Events
 {% for event in events %}
     <div class="col-sm-12 col-md-4">
         <div class="card index-card">
-            <img src="{{ MEDIA_URL }}coffee-order.png" class="card-image-top">
+            {% if product.image %}
+            <a href="#">
+                <img src="{{ event.image.url }}" alt="{{ event.event_name }}" class="product-image card-img-top">
+            </a>
+            {% else %}
+            <a href="#">
+                <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ event.event_name }}" class="product-image card-img-top">
+            </a>
+            {% endif %}
             <div class="card-body back-offwhite text-black">
-                <h4 class="card-title">Order Online</h4>
-                <p class="card-text">Delicious coffee prepared our professional baristas for delivery or collection.
+                <h4 class="card-title">{{ event.event_name}}</h4>
+                <p class="card-text">{{ event.description }}
                 </p>
                 <div class="d-flex justify-content-center">
-                    <a href="{% url 'products' %}" class="btn btn-outline-success" role="button">Order Now</a>
+                    <a href="#" class="btn btn-outline-success" role="button">
+                        <i class="far fa-calendar-check"></i>&nbsp;&nbsp;RSVP</a>
                 </div>
             </div>
         </div>
     </div>
-
-    Events:
-
-    Tasting evening
-    Afternoon tea
-    Poetry night
+{% endfor %}
 
     <!-- need a back to top button here for mobile only -->
 </div>
