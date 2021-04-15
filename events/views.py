@@ -1,11 +1,11 @@
-# from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render
 # from .models import Events, EventAttendees
 # # add forms.py to create new events
 
 
-# def view_events(request):
-#     """ Display list of events """
-#     return render(request, 'events/events.html')
+def view_events(request):
+    """ Display list of events """
+    return render(request, 'events/events.html')
 
 
 # def event_detail(request, event_id):
