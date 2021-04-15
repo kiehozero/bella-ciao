@@ -35,11 +35,12 @@ Upcoming Events
             {% endif %}
             <div class="card-body back-offwhite text-black">
                 <h4 class="card-title">{{ event.event_name}}</h4>
+                <p>{{ event.date }}</p>
                 <div class="d-flex justify-content-center">
-                    <a href="{% url 'view_event' event.id %}" class="btn btn-outline-success mx-2 mobile-font" role="button">
-                        <i class="fas fa-info-circle"></i>&nbsp;&nbsp;Info</a>
-                    <a href="#" class="btn btn-outline-success mx-2 mobile-font" role="button">
-                        <i class="far fa-calendar-check"></i>&nbsp;&nbsp;RSVP</a>
+                    <a href="{% url 'view_event' event.id %}" class="btn btn-outline-success mx-2 mobile-font text-center" role="button">
+                        <i class="fas fa-info-circle"></i> Info</a>
+                    <a href="#" class="btn btn-outline-success mx-2 mobile-font text-center" role="button">
+                        <i class="far fa-calendar-plus"></i> RSVP</a>
                 </div>
             </div>
         </div>

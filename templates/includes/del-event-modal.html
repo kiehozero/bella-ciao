@@ -7,10 +7,10 @@
                 <h5 class="modal-title text-green" id="deletionModalLabel">Confirm Deletion</h5>
             </div>
             <div class="modal-body">
-                <p>Are you sure you want to delete {{ product.name }}?</p>
+                <p>Are you sure you want to delete {{ event.name }}?</p>
             </div>
             <div class="modal-footer">
-                <a href="{% url 'delete_product' product.id %}" class="btn btn-outline-danger">
+                <a href="{% url 'delete_event' event.id %}" class="btn btn-outline-danger">
                     <i class="far fa-trash-alt"></i>
                     Delete Item
                 </a>

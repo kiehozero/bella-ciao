@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block extratitle %}
-{{ event.name }} |
+{{ event.event_name }} |
 {% endblock %}
 
 {% block extracss %}
-<link rel="stylesheet" href="{% static 'products/css/events.css' %}">
+<link rel="stylesheet" href="{% static 'events/css/events.css' %}">
 {% endblock %}
 
 {% block page_header %}
-{% include 'includes/page-header.html' with h3_title=event.name %}
+{% include 'includes/page-header.html' with h3_title=event.event_name %}
 {% endblock %}
 
 {% block content %}
@@ -19,7 +19,7 @@
     
     <div class="row">
 
-        <div class="col-sm-12 col-md-5">
+        <div class="col-sm-12 col-md-5 pt-3 pb-2">
             <!-- logic taken from Boutique Ado project -->
             {% if event.image %}
             <a href="{{ event.image.url }}" target="_blank">
@@ -31,7 +31,7 @@
             {% endif %}
         </div>
 
-        <div class="col-sm-12 col-md-5 offset-md-2">
+        <div class="col-sm-12 col-md-5 offset-md-2 pt-3 pb-2">
             <div class="mobile-font">
                 {{ event.description }}
             </div>
@@ -46,12 +46,12 @@
                     <div class="row justify-content-center pt-3 pb-2">
                         <div class="col check-eject pt-3 pb-2">
                             <a href="{% url 'events' %}" class="btn btn-outline-success text-green w-100">
-                                <i class="far fa-calendar-alt"></i>
-                                &nbsp;&nbsp;Upcoming events
+                                <i class="far fa-calendar"></i>
+                                &nbsp;&nbsp;All events
                             </a>
                         </div>
                         <div class="col check-eject pt-3 pb-2">
-                            <input type="submit" value="Join" class="btn btn-outline-success text-green w-100" name="add-cart">
+                            <input type="submit" value="RSVP" class="btn btn-outline-success text-green w-100" name="add-cart">
                         </div>
                     </div>
 
@@ -69,7 +69,7 @@
                                 type="button" class="btn btn-outline-danger"
                                 style="width: 100%;" id="deletionButton">
                                 <i class="far fa-trash-alt"></i>
-                                Delete Event
+                                Delete
                             </button>
                         </div>
                     </div>
@@ -87,7 +87,8 @@
 </div>
 
 <!-- Modal for confirming deletions -->
-<!-- Does this need a from_event that changes the modal description and action? -->
-{% include 'includes/deletion-modal.html' %}
+{% if request.user.is_superuser %}
+{% include 'includes/del-event-modal.html' %}
+{% endif %}
 
 {% endblock %}

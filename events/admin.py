@@ -4,11 +4,11 @@ from .models import Event  #, EventAttendees
 
 class EventAdmin(admin.ModelAdmin):
     list_display = (
-        'event_name', 'location', 'category',
-        'description', 'date', 'capacity', 'image',
+        'event_name', 'location',
+        'category', 'date', 'capacity',
     )
 
-    ordering = ('event_name',)
+    ordering = ('date',)
 
 
 admin.site.register(Event, EventAdmin)
