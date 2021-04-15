@@ -25,20 +25,20 @@ Upcoming Events
     <div class="col-sm-12 col-md-4">
         <div class="card index-card">
             {% if product.image %}
-            <a href="#">
+            <a href="{% url 'view_event' event.id %}">
                 <img src="{{ event.image.url }}" alt="{{ event.event_name }}" class="product-image card-img-top">
             </a>
             {% else %}
-            <a href="#">
+            <a href="{% url 'view_event' event.id %}">
                 <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ event.event_name }}" class="product-image card-img-top">
             </a>
             {% endif %}
             <div class="card-body back-offwhite text-black">
                 <h4 class="card-title">{{ event.event_name}}</h4>
-                <p class="card-text">{{ event.description }}
-                </p>
                 <div class="d-flex justify-content-center">
-                    <a href="#" class="btn btn-outline-success" role="button">
+                    <a href="{% url 'view_event' event.id %}" class="btn btn-outline-success mx-2 mobile-font" role="button">
+                        <i class="fas fa-info-circle"></i>&nbsp;&nbsp;Info</a>
+                    <a href="#" class="btn btn-outline-success mx-2 mobile-font" role="button">
                         <i class="far fa-calendar-check"></i>&nbsp;&nbsp;RSVP</a>
                 </div>
             </div>

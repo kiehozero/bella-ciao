@@ -5,7 +5,7 @@ from .models import Event
 # # add forms.py to create new events
 
 
-def view_events(request):
+def all_events(request):
     """ Display list of events """
     events = Event.objects.all()
 
@@ -17,11 +17,11 @@ def view_events(request):
     return render(request, template, context)
 
 
-# def event_detail(request, event_id):
-#     """ Display more information to the user """
-#     """ Display an admin panel for admins """
-#     event = get_object_or_404(Events, event_id=event_id)
-#     template = 'events/event_detail.html'
+def view_event(request, event_id):
+    """ Display more information to the user """
+    """ Display an admin panel for admins """
+#     event = get_object_or_404(Events, pk=event_id)
+#     template = 'events/view_event.html'
 #     context = {
 #         'event': event,
 #     }
