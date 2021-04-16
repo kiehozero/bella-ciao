@@ -58,7 +58,7 @@ def edit_event(request, event_id):
         if form.is_valid():
             form.save()
             messages.info(
-                request, f'Updated {event.name}')
+                request, f'Updated {event.event_name}')
             return redirect(reverse('view_event', args=[event.id]))
         else:
             messages.error(
