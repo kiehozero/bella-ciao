@@ -53,7 +53,7 @@ def add_event(request):
         if form.is_valid():
             event = form.save()
             messages.info(
-                request, f'{event.event_name} added to store.')
+                request, f'{event.event_name} added to events.')
             return redirect(reverse('view_product', args=[event.id]))
         else:
             messages.error(
