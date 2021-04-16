@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extratitle %}
+Add Event |
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'events/css/events.css' %}">
+{% endblock %}
+
+{% block page_header %}
+{% include 'includes/page-header.html' with h3_title="Add Event" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-12 col-md-5">
+        <form action="{% url 'add_event' %}" method="POST" id="add-events-form" class="pt-3 pb-2" encytype="multipart/form-data">
+            {% csrf_token %}
+            {{ form | crispy }}
+
+            <div class="w-100 pt-3 pb-2">
+                <a class="btn btn-outline-success" href="{% url 'admin' %}">
+                    <i class="far fa-window-close"></i>
+                    &nbsp;
+                    Cancel
+                </a>
+                <button id="submit-button" class="btn btn-outline-success text-green">
+                    <i class="far fa-plus-square"></i>
+                    &nbsp;
+                    Add Item
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

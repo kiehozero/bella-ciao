@@ -40,10 +40,34 @@ def view_event(request, event_id):
 #         'event': event,
 #     }
 #     return render(request, template, context)
-### in join_event, if the Event Attendees already contains this number
-### of attendees defined in capacity, users will get a Sold Out message)
+#     in join_event, if the Event Attendees already contains this number
+#     of attendees defined in capacity, users will get a Sold Out message)
 
-# def add_event(request):
+
+@login_required
+def add_event(request):
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+    if request.method == 'POST':
+        form = EventForm(request.POST, request.FILES)
+        if form.is_valid():
+            event = form.save()
+            messages.info(
+                request, f'{event.event_name} added to store.')
+            return redirect(reverse('view_product', args=[event.id]))
+        else:
+            messages.error(
+                request, "Item addition failure. Please \
+                    check your submission for errors."
+            )
+    else:
+        form = EventForm()
+    template = 'events/add_event.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
 
 
 @login_required
@@ -74,7 +98,6 @@ def edit_event(request, event_id):
         'event': event,
     }
     return render(request, template, context)
-
 
 
 @login_required

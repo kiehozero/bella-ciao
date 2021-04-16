@@ -12,23 +12,14 @@ of a selected item to zero
 - want to add more than just size as a custom option, is there a way of adding multiple items to items_by_size without a ton
 of nested ifs? Obvious solution seems to be to add each size as a different product but I want to push the logic a bit rather
 than following the tutorial like most people
-- VAT display? Add VAT category to each item, populate and then use to calculate total tax in card-total elements?
-
-Events:
-
-- Tasting evening
-- Poetry night
-- Blindboy reading
-- Eddie Lenihan
-- Post Punk Podge
 
 Pages:
 
-- admin page (add event, add product)
 - add Event
-- edit Event
-
 - join event view
-
 - delivery/collection
 - loyalty
+
+Nice to have:
+- Add VAT category to each item, populate and then use to calculate total tax in card-total elements?
+- edit product or event from admin panel (dropdown to select product on form, see product form category choice)

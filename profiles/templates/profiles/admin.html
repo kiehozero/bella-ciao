@@ -16,9 +16,19 @@ Administration |
 {% block content %}
 
 <div class="row">
-    <div class="col d-flex justify-content-center">
+    <div class="col-12 d-flex justify-content-center">
         <a href="{% url 'add_product' %}" class="btn btn-lg btn-outline-success p-3 m-3"> Add a product</a>
-        <a href="#" class="btn btn-lg btn-outline-success p-3 m-3">Add an event</a>
+        <a href="{% url 'add_event' %}" class="btn btn-lg btn-outline-success p-3 m-3">Add an event</a>
+    </div>
+        <!-- Edit event and edit product blank forms with drop-down to select produce here? -->
+    <div class="col-12 d-flex justify-content-center">
+        <a href="#" class="btn btn-lg btn-outline-warning p-3 m-3">Edit a product</a>
+        <a href="#" class="btn btn-lg btn-outline-warning p-3 m-3">Edit an event</a>
+    </div>
+        <!-- Delete buttons should be pretty easy if you select a product using a dropdown, no forms to fill out -->
+    <div class="col-12 d-flex justify-content-center">
+        <a href="#" class="btn btn-lg btn-outline-danger p-3 m-3">Delete a product</a>
+        <a href="#" class="btn btn-lg btn-outline-danger p-3 m-3">Delete an event</a>
     </div>
 </div>
 
