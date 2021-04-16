@@ -21,6 +21,9 @@ $(".nav-option#cart-container").mouseleave(function() {
     $(".nav-option a#cart-full").css("color", "#ceca03");
 });
 
+$(".close-message").click(function () {
+    $(".message-row").css("display", "none")
+})
 
 /* Confirmation Modal */
 
