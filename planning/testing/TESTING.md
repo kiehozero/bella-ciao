@@ -67,5 +67,6 @@ already fixed.
  the nearest 0.1 value
  4. Loyalty stamps don't seem to add up on certain drinks (noticed this first on the espresso added using the product form)
  5. Cart quantity buttons on smaller devices
+ 6. Sites database
 
  
