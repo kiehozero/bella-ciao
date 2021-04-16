@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404, render
 from .forms import UserProfileForm
 from .models import UserProfile
 from checkout.models import Order, OrderLineItem
+from events.models import Event
 
 import datetime
 
@@ -57,3 +58,13 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
+
+
+# @login_required
+# def my_events(request):
+
+
+@login_required
+def admin(request):
+    template = 'profiles/admin.html'
+    return render(request, template)

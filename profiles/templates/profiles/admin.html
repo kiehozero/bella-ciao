@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extratitle %}
+Administration |
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
+{% include 'includes/page-header.html' with h3_title="Site Administration" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col d-flex justify-content-center">
+        <a href="{% url 'add_product' %}" class="btn btn-lg btn-outline-success p-3 m-3"> Add a product</a>
+        <a href="#" class="btn btn-lg btn-outline-success p-3 m-3">Add an event</a>
+    </div>
+</div>
+
+{% endblock %}

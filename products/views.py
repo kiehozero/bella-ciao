@@ -79,7 +79,6 @@ def view_product(request, product_id):
 @login_required
 def add_product(request):
     """ Admin-only view to add item to the store """
-    """ need to replicate this for categories and events """
     if not request.user.is_superuser:
         return redirect(reverse('home'))
 
@@ -108,7 +107,6 @@ def add_product(request):
 @login_required
 def edit_product(request, product_id):
     """ Admin-only view to edit an item in the store """
-    """ need to replicate this for categories and events """
     product = get_object_or_404(Product, pk=product_id)
     # add link to this view in product_detail page
     # change admin page to a central link for CRUD ops by admin

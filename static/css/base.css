@@ -339,6 +339,10 @@ a.view-cart-toast:hover {
     width: 100%;
 }
 
+.check-eject a {
+    width: 100%;
+}
+
 
 /* Crispy-Forms overwrites */
 

@@ -1,6 +1,8 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 
+from .forms import EventForm
 from .models import Event
 # , EventAttendees
 # # add forms.py to create new events
@@ -30,6 +32,8 @@ def view_event(request, event_id):
 
 
 # def join_event(request, event_id):
+#     if not request.user.is_authenticated:
+#         return redirect(reverse('home'))
 #     # will be similar to add to cart process
 #     template = 'events/join_event.html'
 #     context = {
@@ -38,14 +42,39 @@ def view_event(request, event_id):
 #     return render(request, template, context)
 
 
-# def edit_event(request, event_id):
-#     template = 'events/edit_event.html'
-#     context = {
-#         'event': event,
-#     }
-#     return render(request, template, context)
+# def add_event(request):
 
 
+def edit_event(request, event_id):
+    event = get_object_or_404(Event, pk=event_id)
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
+    if request.method == 'POST':
+        form = EventForm(request.POST, request.FILES, instance=event)
+        if form.is_valid():
+            form.save()
+            messages.info(
+                request, f'Updated {event.name}')
+            return redirect(reverse('view_event', args=[event.id]))
+        else:
+            messages.error(
+                request, "Event update failure. Please \
+                    check your submission for errors."
+            )
+    else:
+        form = EventForm(instance=event)
+
+    template = 'events/edit_event.html'
+    context = {
+        'form': form,
+        'event': event,
+    }
+    return render(request, template, context)
+
+
+
+@login_required
 def delete_event(request, event_id):
     if not request.user.is_superuser:
         return redirect(reverse('home'))
@@ -56,3 +85,6 @@ def delete_event(request, event_id):
     messages.info(request, "Event deleted.")
 
     return redirect(reverse('events'))
+
+
+# def event_attendees(request):

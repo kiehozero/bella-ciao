@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extratitle %}
-Store Administration |
+Add Product |
 {% endblock %}
 
 {% block extracss %}
@@ -19,11 +19,10 @@ Store Administration |
     <div class="col-sm-12 col-md-5">
         <form action="{% url 'add_product' %}" method="POST" id="add-product-form" class="pt-3 pb-2" encytype="multipart/form-data">
             {% csrf_token %}
-                <legend class="fieldset-label text-green pt-3 pb-2">Add a New Product</legend>
-                {{ form | crispy }}
+            {{ form | crispy }}
 
             <div class="w-100 pt-3 pb-2">
-                <a class="btn btn-outline-success" href="{% url 'products' %}">
+                <a class="btn btn-outline-success" href="{% url 'admin' %}">
                     <i class="far fa-window-close"></i>
                     &nbsp;
                     Cancel

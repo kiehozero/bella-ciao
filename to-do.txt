@@ -21,3 +21,14 @@ Events:
 - Blindboy reading
 - Eddie Lenihan
 - Post Punk Podge
+
+Pages:
+
+- admin page (add event, add product)
+- add Event
+- edit Event
+
+- join event view
+
+- delivery/collection
+- loyalty
