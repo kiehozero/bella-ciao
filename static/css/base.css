@@ -218,31 +218,27 @@ a.view-cart-toast:hover {
 }
 
 
-/* Footers */
+/* Desktop Footer */
 
-.row.store-select {
-    margin-bottom: 0;
-    margin-top: 15px;
+.info-box {
+    padding-bottom: 2.5vh;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-top: 2.5vh;
 }
 
-.store-select {
-    bottom: 0;
-    height: 20%;
-    padding-bottom: 20px;
-    text-align: center;
+.info-box .address-box div {
+    font-size: 12px;
+    line-height: 1;
+    padding: 12px;
 }
 
-.btn.btn-small {
-    /* Overwrites default Bootstrap parameters */
-    background-color: #f0eee9;
-    color: #008763;
-    font-weight: 600;
+.info-box .address-box h6 {
+    line-height: 1;
+    margin: 0px;
+    padding: 12px;
 }
 
-.btn.order-button:hover {
-    color: #3b0022;
-    font-weight: 600;
-}
 
 /* Index */
 
@@ -331,6 +327,13 @@ a.view-cart-toast:hover {
     color: #100f10;
 }
 
+.btn.btn-small {
+    /* Overwrites default Bootstrap parameters */
+    background-color: #f0eee9;
+    color: #008763;
+    font-weight: 600;
+}
+
 .check-eject {
     /* Add Cart, Checkout, Admin and Back To Shop buttons on Product and Cart Views */
     width: 100%;
@@ -390,23 +393,6 @@ a.view-cart-toast:hover {
 
     .mobile-font {
         font-size: 0.75rem;
-    }
-
-
-    /* Footer */
-
-    .info-box {
-        padding-bottom: 2.5vh;
-        padding-left: 5vh;
-        padding-right: 5vh;
-        padding-top: 2.5vh;
-    }
-
-    .info-box .address-box div,
-    .info-box .address-box h6 {
-        font-size: 12px;
-        line-height: 1;
-        padding: 12px;
     }
 
     
