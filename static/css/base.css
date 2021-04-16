@@ -86,6 +86,10 @@ li.nav-option.social-panel .col:hover {
     border-color: #f0eee9;
 }
 
+li.nav-option.social-panel div a:hover {
+    background-color: transparent;
+}
+
 nav ul a {
     /* Overwrites default Bootstrap parameters */
     color: #f0eee9;
@@ -131,7 +135,6 @@ nav ul #site-logo a:hover {
 }
 
 .social-icon:hover {
-    background-color: #f0eee9;
     color:#008763;
 }
 
@@ -240,11 +243,6 @@ a.view-cart-toast:hover {
     color: #3b0022;
     font-weight: 600;
 }
-
-.location-box p {
-    font-size: 14px;
-}
-
 
 /* Index */
 
@@ -397,11 +395,18 @@ a.view-cart-toast:hover {
 
     /* Footer */
 
-    .store-select {
+    .info-box {
         padding-bottom: 2.5vh;
         padding-left: 5vh;
         padding-right: 5vh;
         padding-top: 2.5vh;
+    }
+
+    .info-box .address-box div,
+    .info-box .address-box h6 {
+        font-size: 12px;
+        line-height: 1;
+        padding: 12px;
     }
 
     
