@@ -108,8 +108,6 @@ def add_product(request):
 def edit_product(request, product_id):
     """ Admin-only view to edit an item in the store """
     product = get_object_or_404(Product, pk=product_id)
-    # add link to this view in product_detail page
-    # change admin page to a central link for CRUD ops by admin
     if not request.user.is_superuser:
         return redirect(reverse('home'))
 

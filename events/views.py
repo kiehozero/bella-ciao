@@ -40,12 +40,15 @@ def view_event(request, event_id):
 #         'event': event,
 #     }
 #     return render(request, template, context)
-
+### in join_event, if the Event Attendees already contains this number
+### of attendees defined in capacity, users will get a Sold Out message)
 
 # def add_event(request):
 
 
+@login_required
 def edit_event(request, event_id):
+    """ Admin-only view to edit an existing event """
     event = get_object_or_404(Event, pk=event_id)
     if not request.user.is_superuser:
         return redirect(reverse('home'))

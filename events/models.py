@@ -12,9 +12,6 @@ class Event(models.Model):
     image = models.ImageField(null=True, blank=True)
 
 ### use calendar picker for filling out date
-### display generic CBC logo if no image is present
-### in join_event, if the Event Attendees already contains this number
-### of attendees defined in capacity, users will get a Sold Out message)
 
 # class EventAttendees(models.Model):
 
