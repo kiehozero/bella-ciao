@@ -45,19 +45,19 @@
             {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
             <li class="nav-option text-link">
-                <a href="{% url 'add_product' %}">
+                <a href="{% url 'admin' %}">
                     <i class="fas fa-tools"></i>&nbsp;&nbsp;Admin
                 </a>
             </li>
             {% endif %}
             <li class="nav-option text-link">
+                <a href="{% url 'events' %}">
+                    <i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Events</a>
+            </li>
+            <li class="nav-option text-link">
                 <a href="{% url 'account_logout' %}">
                     <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Sign Out
                 </a>
-            </li>
-            <li class="nav-option text-link">
-                <a href="{% url 'events' %}">
-                    <i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Events</a>
             </li>
             {% else %}
             <li class="nav-option text-link">

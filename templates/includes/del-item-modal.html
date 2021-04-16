@@ -1,10 +1,10 @@
 <!-- This is the Bootstrap generic modal template -->
-<div class="modal fade" id="deletionModal" tabindex="-1" role="dialog" aria-labelledby="deletionModalLabel"
+<div class="modal fade" id="delItemModal" tabindex="-1" role="dialog" aria-labelledby="delItemModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-green" id="deletionModalLabel">Confirm Deletion</h5>
+                <h5 class="modal-title text-green" id="delItemModalLabel">Confirm Deletion</h5>
             </div>
             <div class="modal-body">
                 <p>Are you sure you want to delete {{ product.name }}?</p>
@@ -14,7 +14,7 @@
                     <i class="far fa-trash-alt"></i>
                     Delete Item
                 </a>
-                <button type="button" class="btn btn-outline-success" id="modalClose">Cancel</button>
+                <button type="button" class="btn btn-outline-success" id="modalItemClose">Cancel</button>
             </div>
         </div>
     </div>

@@ -24,12 +24,20 @@ $(".nav-option#cart-container").mouseleave(function() {
 
 /* Confirmation Modal */
 
-$("#deletionButton").click(function() {
-    $("#deletionModal").modal("show");
+$("#delEventButton").click(function() {
+    $("#delEventModal").modal("show");
 });
 
-$("#modalClose").click(function() {
-    $("#deletionModal").modal("hide");
+$("#delItemButton").click(function() {
+    $("#delItemModal").modal("show");
+});
+
+$("#modalEventClose").click(function() {
+    $("#delEventModal").modal("hide");
+});
+
+$("#modalItemClose").click(function() {
+    $("#delItemModal").modal("hide");
 });
 
 
