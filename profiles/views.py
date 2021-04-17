@@ -43,7 +43,8 @@ def profile(request):
     events_list = []
     for event in events_attending:
         events_list.append(event[2])
-    events = Event.objects.filter(pk__in=events_list)
+    events = Event.objects.filter(pk__in=events_list).order_by('date')
+    # sort by event.date
 
     template = 'profiles/profile.html'
     context = {
