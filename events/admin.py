@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Event  #, EventAttendees
+from .models import Event, EventAttendees
 
 
 class EventAdmin(admin.ModelAdmin):
@@ -11,5 +11,11 @@ class EventAdmin(admin.ModelAdmin):
     ordering = ('date',)
 
 
+class EventAttendeesAdmin(admin.ModelAdmin):
+    list_display = ('event', 'user',)
+
+    ordering = ('event', 'user',)
+
+
 admin.site.register(Event, EventAdmin)
-# admin.site.register(EventAttendees, EventAttendeesAdmin)
+admin.site.register(EventAttendees, EventAttendeesAdmin)

@@ -29,6 +29,10 @@ def view_event(request, event_id):
     context = {
         'event': event,
     }
+    # access attendees db here to give a countdown of tickets remaining,
+    # will need to return event.capacity, then filter attendees by event_id,
+    # then substract. Also run a percentage remaining sum that turns the text
+    # red when it is closer to selling out
     return render(request, template, context)
 
 
@@ -36,14 +40,15 @@ def view_event(request, event_id):
 def join_event(request, event_id):
     if not request.user.is_authenticated:
         return redirect(reverse('home'))
-    # event = get_object_or_404(Event, pk=event_id)
+    event = get_object_or_404(Event, pk=event_id)
     profile = UserProfile.objects.get(user=request.user)
-    userpk = profile.id
+    user = profile.user
     # will be similar to add to cart process
     # convert to if from_view_event to determine whether request was
     # event list or from the event's view_event page
     # needs to search for user/event combo already being in DB
-    EventAttendees.objects.create(user=userpk, event=event_id)
+    EventAttendees.objects.create(user=user, event=event_id)
+    messages.info(request, f"You're in! {event.event_name} has been added to your profile.")
     return redirect(reverse('events'))
 
 
