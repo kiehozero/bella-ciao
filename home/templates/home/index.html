@@ -59,9 +59,9 @@ Home |
         <div class="card index-card">
             <img src="{{ MEDIA_URL }}barista-pour.png" class="card-image-top">
             <div class="card-body back-offwhite text-black">
-                <h4 class="card-title">Master Classes</h4>
+                <h4 class="card-title">Events@CBC</h4>
                 {% if request.user.is_authenticated %}
-                <p class="card-text">View our monthly in-store events, including tasting sessions and masterclasses.</p>
+                <p class="card-text">View upcoming events at our city centre Roasthouse, including tasting sessions, live music and masterclasses.</p>
                 <div class="d-flex justify-content-center">
                     <a href="{% url 'events' %}" class="btn btn-outline-success" role="button">Classes</a>
                 </div>

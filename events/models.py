@@ -1,5 +1,5 @@
 from django.db import models
-from profiles.models import UserProfile
+
 
 class Event(models.Model):
     """ Index of upcoming in-store events """

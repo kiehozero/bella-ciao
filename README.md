@@ -147,7 +147,7 @@ As an admin, I want to
     data structure was first mapped out.
 
 - [Django](https://www.djangoproject.com/)
-    - Django is an open-source Python framework that  is designed for quick launches.
+    - Django is an open-source Python framework that is designed for quick launches.
 
 - [DBDiagram](https://dbdiagram.io/)
     - >>>
@@ -184,6 +184,7 @@ For an in-depth guide to cloning repositories, click
 [here](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/), from which the steps above were taken.
 
 ### Django
+>>> Installation information, creation of databases, runserver, makemigrations, etc.
 
 ### Heroku
 
@@ -213,7 +214,7 @@ This project is built on the [Django](https://www.djangoproject.com/) framework.
 to complete this project:
 
 - [django-allauth](https://pypi.org/project/django-allauth/) is an authentication and account management library;
-
+>>> dj_database_url, gunicorn, stripe, django-crispy-forms
 
 ## Database Architecture
 
@@ -228,16 +229,18 @@ to complete this project:
 - The excellent [Noise and Gradient](https://www.noiseandgradient.com/) helped me get some nice colour gradients really quickly
 for logo backgrounds, and ultimately helped confirm the colour selection for the whole site.
 - This very short [RIP Tutorial](https://riptutorial.com/django/example/32472/use-of----extends---------include----and----blocks---)
-lesson was very valuable as it showed me how to define variables inside Django template tags.
+lesson was very valuable as it showed me how to define variables inside Django template tags, I subsequently came to rely in equal
+parts on this site and the Django documentation (see below) in learning Django's core concepts.
 
 ### Documentation
 
 - Some of the authentication requirements were copied directly from the django-allauth 
-[documentation](https://django-allauth.readthedocs.io/en/latest/installation.html)
+[documentation](https://django-allauth.readthedocs.io/en/latest/installation.html);
 - The [Django documentation](https://docs.djangoproject.com/en/3.1/ref/request-response/#django.http.HttpRequest.get_full_path)
 was invaluable as I learnt how to use the framework, this link in particular showed me a method of retrieving the current
-URL so I could customise messages based on it.
-
+URL so I could customise messages based on it;
+- Sometimes it is useful to get a second explanation of a Django process and for this I found the guides at
+[Tutorials Point](https://www.tutorialspoint.com/django/django_models.htm) very comprehensive;
 - [Stripe docs](https://stripe.com/docs/payments/accept-a-payment)
 
 ### Tutorials

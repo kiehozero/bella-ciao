@@ -14,6 +14,7 @@ import datetime
 def profile(request):
     """ Show the user's profile """
 
+    # basic information
     time = datetime.datetime.now()
     profile = get_object_or_404(UserProfile, user=request.user)
     # returns user's first name if they have saved it
@@ -23,6 +24,7 @@ def profile(request):
     else:
         forename = "friend"
 
+    # Update profile information
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid:
@@ -33,12 +35,21 @@ def profile(request):
                 request, 'Update failed, please check your form for errors.')
     else:
         form = UserProfileForm(instance=profile)
+
+    # Order and Event histories
     orders = profile.orders.all()
+    events_attending = EventAttendees.objects.filter(
+        user=request.user).values_list()
+    events_list = []
+    for event in events_attending:
+        events_list.append(event[2])
+    events = Event.objects.filter(pk__in=events_list)
 
     template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
+        'events': events,
         'time': time,
         'forename': forename,
     }
@@ -58,14 +69,6 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
-
-
-# @login_required
-# def my_events(request):
-#    event_key = EventAttendees.objects.filter(user=request.user)
-# to view their events, user profile will need to import EventAttendees and
-# return any entries where a matching username is found, will be similar to
-# order history view above
 
 
 @login_required

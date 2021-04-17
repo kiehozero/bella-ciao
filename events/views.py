@@ -5,10 +5,9 @@ from django.shortcuts import get_object_or_404, redirect, render, reverse
 from .forms import EventForm
 from .models import Event, EventAttendees
 from profiles.models import UserProfile
-# , EventAttendees
-# # add forms.py to create new events
 
 
+@login_required
 def all_events(request):
     """ Display list of events """
     events = Event.objects.all().order_by('date')
@@ -21,6 +20,7 @@ def all_events(request):
     return render(request, template, context)
 
 
+@login_required
 def view_event(request, event_id):
     """ Display more information to the user """
     """ Display an admin panel for admins """
@@ -48,14 +48,12 @@ def join_event(request, event_id):
     # event list or from the event's view_event page
     # needs to search for user/event combo already being in DB
     EventAttendees.objects.create(user=user, event=event_id)
-    messages.info(request, f"You're in! {event.event_name} has been added to your profile.")
+    messages.info(
+        request, f"You're in! {event.event_name} \
+            has been added to your events.")
     return redirect(reverse('events'))
-
-
-# in join_event, if the Event Attendees already contains this number
-# of attendees defined in capacity, users will get a Sold Out message)
-# will probably need to write a from_product for determining the origin
-# of the request, one from main events page and one from detail page
+    # in join_event, if the Event Attendees already contains this number
+    # of attendees defined in capacity, users will get a Sold Out message)
 
 
 @login_required
