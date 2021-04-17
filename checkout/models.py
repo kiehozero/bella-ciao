@@ -37,7 +37,6 @@ class Order(models.Model):
     def _generate_order_number(self):
         """ Generates random and unique order number """
         return uuid.uuid4().hex.upper()
-        # usr qr library to create image here, will
 
     def update_total(self):
         """ Updates grand total after each product addition """

@@ -29,7 +29,6 @@
         {% else %}
         !
         {% endif %}
-        <!-- add forename in here instead of screen name, check at multiple times -->
     </h5>
     <p>
         <!-- Blurb about profile features -->
@@ -44,7 +43,6 @@
                 <form method="POST" action="{% url 'profile' %}" id="profile-update-form" class="text-left">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <!-- how to sort items by most recent date first? -->
                     <div class="row">
                         <button class="btn btn-sm btn-outline-success text-green">Update</button>
                     </div>
@@ -104,7 +102,8 @@
             </div>
         </div>
     </div>
-
+    
+    <!-- Displays user's upcoming events -->
     <div class="col-xs col-md-6 justify-content-xs-center justify-content-md-left">
         <h6 class="text-green pt-3 pb-2">My events</h6>
         <div class="table-responsive table-sm profile-history">
@@ -130,6 +129,7 @@
                         <td>
                             {{ event.location }}
                         </td>
+                        <!-- add column and view for removing event -->
                     </tr>
                     {% endfor %}
                 </tbody>

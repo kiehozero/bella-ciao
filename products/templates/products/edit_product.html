@@ -17,7 +17,9 @@ Edit Product |
 
 <div class="row">
     <div class="col-sm-12 col-md-5">
-        <form action="{% url 'edit_product' product.id %}" method="POST" id="add-product-form" class="pt-3 pb-2" encytype="multipart/form-data">
+        <form
+            action="{% url 'edit_product' product.id %}" id="add-product-form"
+            method="POST" class="pt-3 pb-2" encytype="multipart/form-data">
             {% csrf_token %}
                 <legend class="fieldset-label text-green pt-3 pb-2">Edit Product</legend>
                 {{ form | crispy }}
@@ -31,7 +33,7 @@ Edit Product |
                 <button id="submit-button" class="btn btn-outline-warning">
                     <i class="fas fa-wrench"></i>
                     &nbsp;
-                    Edit Item
+                    Edit
                 </button>
             </div>
         </form>

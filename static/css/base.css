@@ -111,8 +111,7 @@ nav ul a {
 }
 
 nav ul a#cart-full {
-    /* cart-full replaces cart-empty upon
-    items being added to the customer's cart */
+    /* cart-full replaces cart-empty upon items being added to the customer's cart */
     color: #ceca03;
     font-weight: 800;
 }
@@ -243,6 +242,7 @@ a.view-cart-toast:hover {
 /* Index */
 
 .landing-header {
+    /* image to be changed */
     background: url('https://www.dromoland.ie/wp-content/uploads/2019/01/sl-limerick-city.jpg') no-repeat fixed center;
     height: 40vh;
 }
@@ -272,11 +272,10 @@ a.view-cart-toast:hover {
 }
 
 
-/* Buttons */
+/* Buttons - all btn items are overwrites of Bootstrap parameters */
 
 .card.index-card .btn.btn-outline-success,
 .card.shop-card .btn.btn-outline-success {
-    /* Overwrites default Bootstrap parameters */
     border-color: #008763;
 }
 
@@ -372,15 +371,11 @@ a.view-cart-toast:hover {
     }
 }
 
+
 @media (max-width: 768px) {
-    /* Alternative navigation parameters for smaller screens */
+    /* Alternative navigation element for smaller screens */
     .sidebar {
         /* static sidebar is replaced with top navbar on mobile and tablet */
-        display: none;
-    }
-
-    .hidden-spacer {
-        /* sits behind sidebar on larger screens */
         display: none;
     }
 
@@ -397,14 +392,5 @@ a.view-cart-toast:hover {
 
     .mobile-font {
         font-size: 0.75rem;
-    }
-
-    
-    /* Toasts */
-
-    #toast-container {
-        /* Overwrites default Materialize parameters */
-        /* raises item to top of screen */
-        margin-bottom: 90vh;
     }
 }

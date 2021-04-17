@@ -1,6 +1,5 @@
 <nav class="d-none d-md-inline">
     <div class="sidebar d-flex justify-content-center">
-        <!-- Desktop -->
         <ul class="w-100">
             <!-- Logo -->
             <li id="site-logo" class="nav-option">
@@ -27,7 +26,6 @@
             </li>
 
             <!-- User Profile -->
-            <!-- Use a drop-down to roll up sign-out and profile links under user heading-->
             <li class="nav-option text-link">
                 <!-- Redirects to user profile if logged in, login page if not -->
                 {% if request.user.is_authenticated %}
@@ -41,7 +39,7 @@
                 {% endif %}
             </li>
 
-            <!-- User-conditional nav elements -->
+            <!-- User-Conditional Nav Elements -->
             {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
             <li class="nav-option text-link">
@@ -67,7 +65,6 @@
 
             <!--Social Media -->
             <li class="row nav-option social-panel">
-                <!-- hover over icons is fine, hover over anchors is weird -->
                 <div class="col">
                     <a href="https://www.facebook.com/" target="_blank">
                         <i class="fab fa-facebook-f social-icon text-offwhite"></i>

@@ -52,7 +52,6 @@ h6.card-title a:hover {
 
 .btn#searchReset:hover,
 .btn#searchReset:focus {
-    /* needs amending after click */
     background-color: #f0eee9;
     border-color: #3b0022;
     border-width: 1px;
@@ -100,7 +99,7 @@ h6.card-title a:hover {
 
 @media (max-width: 768px) {
 
-    /* Overwrites default Materialize parameters */
+    /* Overwrites default Bootstrap parameters */
     .breadcrumb {
         margin-top: 5vh;
     }

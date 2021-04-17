@@ -12,7 +12,7 @@ def cart_contents(request):
     loyalty_stamps = 0
     cart = request.session.get('cart', {})
 
-    # this the loop that adds up the quantity and value of items in the cart
+    # this loop adds up the quantity and value of items in the cart
     for item_id, item_data in cart.items():
         # if the item is not customisable, item_data
         # will simply be an integer for quantity ordered

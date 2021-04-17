@@ -11,7 +11,6 @@ from profiles.models import UserProfile
 def all_events(request):
     """ Display list of events """
     events = Event.objects.all().order_by('date')
-    # need to sort by event.date
     template = 'events/events.html'
     context = {
         'events': events,
@@ -32,7 +31,8 @@ def view_event(request, event_id):
     # access attendees db here to give a countdown of tickets remaining,
     # will need to return event.capacity, then filter attendees by event_id,
     # then substract. Also run a percentage remaining sum that turns the text
-    # red when it is closer to selling out
+    # red when it is closer to selling out (define % threshold in settings.py)
+    # write this function in a profile_tools.py file
     return render(request, template, context)
 
 
@@ -43,17 +43,14 @@ def join_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
     profile = UserProfile.objects.get(user=request.user)
     user = profile.user
-    # will be similar to add to cart process
-    # convert to if from_view_event to determine whether request was
-    # event list or from the event's view_event page
     # needs to search for user/event combo already being in DB
     EventAttendees.objects.create(user=user, event=event_id)
     messages.info(
         request, f"You're in! {event.event_name} \
             has been added to your events.")
     return redirect(reverse('events'))
-    # in join_event, if the Event Attendees already contains this number
-    # of attendees defined in capacity, users will get a Sold Out message)
+    # in join_event, if Event Attendees already contains this number of
+    # attendees defined in capacity, users will get a Sold Out message)
 
 
 @login_required

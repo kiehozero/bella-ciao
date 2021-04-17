@@ -116,7 +116,6 @@ Order Summary |
             <h6 class="text-green text-xs-center text-md-right">Delivery Details</h6>
         </div>
         <div class="row summary-row">
-            <!-- Add if statement to confirm presence of non-mandatory items -->
             <p class="w-100">Street Address:</p>
             <p class="w-100">{{ order.street_address1|title }}, {% if order.street_address2 %}{{ order.street_address2|title }}
                 {% endif %}</p>
@@ -127,7 +126,6 @@ Order Summary |
 </div>
 
 <!-- Post-Purchase Options -->
-
 {% include 'includes/post-purchase.html' %}
 
 {% endblock %}

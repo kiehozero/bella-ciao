@@ -37,16 +37,17 @@ Home |
 
     <div class="col-sm-12 col-md-4">
         <div class="card index-card">
-            <img src="{{ MEDIA_URL }}coffee-take.png" class="card-image-top">
+            <img src="{{ MEDIA_URL }}barista-pour.png" class="card-image-top">
             <div class="card-body back-offwhite text-black">
-                <h4 class="card-title">Get Rewards</h4>
+                <h4 class="card-title">Events@CBC</h4>
                 {% if request.user.is_authenticated %}
-                <p class="card-text">View or update your profile information.</p>
+                <p class="card-text">View upcoming events at our city centre Roasthouse, including tasting sessions,
+                    live music and masterclasses.</p>
                 <div class="d-flex justify-content-center">
-                    <a href="{% url 'profile' %}" class="btn btn-outline-success" role="button">Update</a>
+                    <a href="{% url 'events' %}" class="btn btn-outline-success" role="button">Classes</a>
                 </div>
                 {% else %}
-                <p class="card-text">Create an account to get every tenth coffee free from any of our stores.</p>
+                <p class="card-text">Subscribe today for free access to monthly tasting sessions and masterclasses.</p>
                 <div class="d-flex justify-content-center">
                     <a href="{% url 'account_signup' %}" class="btn btn-outline-success" role="button">Register</a>
                 </div>
@@ -57,16 +58,16 @@ Home |
 
     <div class="col-sm-12 col-md-4">
         <div class="card index-card">
-            <img src="{{ MEDIA_URL }}barista-pour.png" class="card-image-top">
+            <img src="{{ MEDIA_URL }}coffee-take.png" class="card-image-top">
             <div class="card-body back-offwhite text-black">
-                <h4 class="card-title">Events@CBC</h4>
+                <h4 class="card-title">Get Rewards</h4>
                 {% if request.user.is_authenticated %}
-                <p class="card-text">View upcoming events at our city centre Roasthouse, including tasting sessions, live music and masterclasses.</p>
+                <p class="card-text">View or update your profile information.</p>
                 <div class="d-flex justify-content-center">
-                    <a href="{% url 'events' %}" class="btn btn-outline-success" role="button">Classes</a>
+                    <a href="{% url 'profile' %}" class="btn btn-outline-success" role="button">Update</a>
                 </div>
                 {% else %}
-                <p class="card-text">Subscribe today for free access to monthly tasting sessions and masterclasses.</p>
+                <p class="card-text">Create an account to get every tenth coffee free from any of our stores.</p>
                 <div class="d-flex justify-content-center">
                     <a href="{% url 'account_signup' %}" class="btn btn-outline-success" role="button">Register</a>
                 </div>

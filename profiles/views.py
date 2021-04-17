@@ -14,7 +14,7 @@ import datetime
 def profile(request):
     """ Show the user's profile """
 
-    # basic information
+    # User Information
     time = datetime.datetime.now()
     profile = get_object_or_404(UserProfile, user=request.user)
     # returns user's first name if they have saved it
@@ -44,7 +44,6 @@ def profile(request):
     for event in events_attending:
         events_list.append(event[2])
     events = Event.objects.filter(pk__in=events_list).order_by('date')
-    # sort by event.date
 
     template = 'profiles/profile.html'
     context = {

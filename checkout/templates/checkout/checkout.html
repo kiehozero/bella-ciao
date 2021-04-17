@@ -32,7 +32,7 @@ Order Summary |
                 <div class="col-md-2 d-none d-md-block">
                     {% if item.product.image %}
                     <a href="{{ item.product.image.url }}" target="_blank">
-                        <!-- change to modal -->
+                        <!-- change to modal, does this need to be a link at checkout? -->
                         <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="product-image">
                     </a>
                     {% else %}

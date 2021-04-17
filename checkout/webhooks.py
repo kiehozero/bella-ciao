@@ -11,12 +11,12 @@ import stripe
 @require_POST
 @csrf_exempt
 def webhook(request):
-    """ Code copied from Stripe Docs via Boutique Ado """
-    # setup
+    """ From Stripe Docs via Boutique Ado """
+    # Setup
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
-    # retrieval
+    # Retrieval
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None

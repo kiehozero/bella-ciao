@@ -17,7 +17,7 @@ a.product-name:hover {
 }
 
 
-/* Buttons (Overwriting default Materialize parameters */
+/* Buttons (Overwriting default Bootstrap parameters) */
 
 .btn-sm.decrease-qty,
 .btn-sm.increase-qty,
@@ -66,17 +66,4 @@ a.product-name:hover {
 
 .cart-total {
     text-align: right;
-}
-
-
-/* Responsiveness */
-
-@media (max-width: 768px) {
-    .sidenav li>a.cart-full,
-    .sidenav li>a.cart-full i {
-        /* cart-full replaces cart-empty upon
-        items being added to the customer's cart */
-        color: #ceca03;
-        font-weight: 800;
-    }
 }

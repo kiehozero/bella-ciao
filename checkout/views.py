@@ -69,7 +69,7 @@ def checkout(request):
                     return redirect(reverse('view_cart'))
 
             # ALERT USE THE BELOW METHOD TO STORE LOYALTY
-            # POINTS, HIDE POINT IN A HIDDEN INPUT?
+            # POINTS, HIDE POINTS IN A HIDDEN INPUT?
             request.session['save_info'] = 'save_info' in request.POST
             # request.session['loyalty_stamps'] = 'loyalty_stamps in request.POST
             return redirect(reverse(

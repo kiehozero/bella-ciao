@@ -4,8 +4,7 @@ from .models import Event, EventAttendees
 
 class EventAdmin(admin.ModelAdmin):
     list_display = (
-        'event_name', 'location',
-        'category', 'date', 'capacity',
+        'event_name', 'location', 'category', 'date', 'capacity',
     )
 
     ordering = ('date',)

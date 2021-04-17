@@ -258,7 +258,7 @@ gotten bogged down on previous Bootstrap projects.
 
 ### Media
 
-
+>>> photo credits here
 
 ### Acknowledgements
 
