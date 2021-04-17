@@ -37,7 +37,7 @@ def profile(request):
         form = UserProfileForm(instance=profile)
 
     # Order and Event histories
-    orders = profile.orders.all()
+    orders = profile.orders.all().order_by('-date')
     events_attending = EventAttendees.objects.filter(
         user=request.user).values_list()
     events_list = []
