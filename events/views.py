@@ -3,7 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 
 from .forms import EventForm
-from .models import Event
+from .models import Event, EventAttendees
+from profiles.models import UserProfile
 # , EventAttendees
 # # add forms.py to create new events
 
@@ -31,17 +32,25 @@ def view_event(request, event_id):
     return render(request, template, context)
 
 
-# def join_event(request, event_id):
-#     if not request.user.is_authenticated:
-#         return redirect(reverse('home'))
-#     # will be similar to add to cart process
-#     template = 'events/join_event.html'
-#     context = {
-#         'event': event,
-#     }
-#     return render(request, template, context)
-#     in join_event, if the Event Attendees already contains this number
-#     of attendees defined in capacity, users will get a Sold Out message)
+@login_required
+def join_event(request, event_id):
+    if not request.user.is_authenticated:
+        return redirect(reverse('home'))
+    # event = get_object_or_404(Event, pk=event_id)
+    profile = UserProfile.objects.get(user=request.user)
+    userpk = profile.id
+    # will be similar to add to cart process
+    # convert to if from_view_event to determine whether request was
+    # event list or from the event's view_event page
+    # needs to search for user/event combo already being in DB
+    EventAttendees.objects.create(user=userpk, event=event_id)
+    return redirect(reverse('events'))
+
+
+# in join_event, if the Event Attendees already contains this number
+# of attendees defined in capacity, users will get a Sold Out message)
+# will probably need to write a from_product for determining the origin
+# of the request, one from main events page and one from detail page
 
 
 @login_required
@@ -114,3 +123,5 @@ def delete_event(request, event_id):
 
 
 # def event_attendees(request):
+#    if not request.user.is_superuser:
+#        return redirect(reverse('home'))

@@ -11,14 +11,10 @@ class Event(models.Model):
     capacity = models.IntegerField(null=False, blank=False, default=0)
     image = models.ImageField(null=True, blank=True)
 
-### use calendar picker for filling out date
 
-# class EventAttendees(models.Model):
+class EventAttendees(models.Model):
 
-### username = models.CharField(max_length=30, null=False, blank=False)
-### event = models.CharField(max_length=30, null=False, blank=False)
+    user = models.CharField(max_length=30, null=False, blank=False)
+    event = models.IntegerField(null=False, blank=False)
 
-### join_event view adds both the user's username and the event item requested
-
-### to view their own events, user profile will need to import EventAttendees and
-### return any entries where a matching username is found
+#   join_event view adds both the user's username and the event item requested

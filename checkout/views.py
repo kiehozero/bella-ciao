@@ -22,9 +22,7 @@ def checkout(request):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
-        # add if collection loop in here which creates a separate
-        # dictionary replacing the delivery address with store name,
-        # will need to refer to OrderFormCollect
+        # add add delivery/collection to form
         cart = request.session.get('cart', {})
         form_data = {
             'full_name': request.POST['full_name'],
@@ -73,6 +71,7 @@ def checkout(request):
             # ALERT USE THE BELOW METHOD TO STORE LOYALTY
             # POINTS, HIDE POINT IN A HIDDEN INPUT?
             request.session['save_info'] = 'save_info' in request.POST
+            # request.session['loyalty_stamps'] = 'loyalty_stamps in request.POST
             return redirect(reverse(
                 'checkout_success', args=[order.order_number]))
         else:
@@ -106,6 +105,7 @@ def checkout(request):
                     'city': profile.default_city,
                     'eircode': profile.default_eircode,
                 })
+                # loyalty_stamps to loyalty model here
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
         else:
@@ -166,7 +166,7 @@ def cache_checkout_data(request):
         stripe.PaymentIntent.modify(pid, metadata={
             'cart': json.dumps(request.session.get('cart', {})),
             'save_info': request.POST.get('save_info'),
-            # need to add loyalty_stamps here to save it
+            # 'loyalty_stamps': request.POST.get('loyalty_stamps'),
             'username': request.user,
         })
         return HttpResponse(status=200)

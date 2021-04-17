@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, render
 from .forms import UserProfileForm
 from .models import UserProfile
 from checkout.models import Order, OrderLineItem
-from events.models import Event
+from events.models import Event, EventAttendees
 
 import datetime
 
@@ -62,6 +62,10 @@ def order_history(request, order_number):
 
 # @login_required
 # def my_events(request):
+#    event_key = EventAttendees.objects.filter(user=request.user)
+# to view their events, user profile will need to import EventAttendees and
+# return any entries where a matching username is found, will be similar to
+# order history view above
 
 
 @login_required

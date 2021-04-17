@@ -15,5 +15,5 @@ urlpatterns = [
     #     'event_attendees/<int:event_id>/',
     #     views.event_attendees,
     #     name='event_attendees'),
-    # path('join_event/', views.join_event, name='join_event'),
+    path('join_event/<int:event_id>/', views.join_event, name='join_event'),
 ]

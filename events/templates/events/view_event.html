@@ -40,7 +40,7 @@
 
             <div class="row ">
 
-                <form class="form" action="#" method="POST">
+                <form class="form" action="{% url 'join_event' event.id %}" method="POST">
                     {% csrf_token %}
                     
                     <div class="row justify-content-center pt-3 pb-2">
