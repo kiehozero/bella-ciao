@@ -1,0 +1,23 @@
+HOUSEKEEPING
+- add aria tags for all icons
+- make eircode mandatory in checkout form
+- all alt tags for all imgs
+- move form CSS for checkout (and any other app that has forms.py) into forms.py using the field.widget.attrs['class'] methods
+- go through CSS files and see where padding and margin settings can be replaced by Bootstrap tags (line 29 base.css)
+- convert warnings and errors to the pastel red colour in palette.css
+- profile models and forms show good examples of how to customise, use of widgets at __str__
+- once code is completed, open all sheets and clean up any items that show up in the problems tab
+- upload final db-schema.png in planning folder
+- can base-header tags by moved out of app-level CSS into project-level?
+
+NEED TO HAVE:
+- delivery/collection
+- loyalty
+- event attendee admin view, attendance calculation
+- fix display of message on mobile view (overlaps on longer messages, maybe display above page header?)
+- contact form (use pintbaby)
+- finalise landing header, move to includes if it stays being used on multiple pages (index, all products)
+
+NICE TO HAVE:
+- Add VAT category to each item, populate and then use to calculate total tax in card-total elements?
+- edit product or event from admin panel (dropdown to select product on form, see product form category choice)
