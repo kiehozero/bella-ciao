@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, redirect, render, reverse
 
 from .forms import EventForm
@@ -27,11 +28,15 @@ def view_event(request, event_id):
     attendees = EventAttendees.objects.filter(event=event).values_list()
     guestlist = {}
     for attendee in attendees:
-        guestlist.update({attendee[0]: attendee[1]})
+        # stores event_attendee pk to pass to delete_attendee if required
+        attendee_key = attendee[0]
+        username = User.objects.get(pk=attendee[1])
+        guestlist.update({attendee[1]: username})
     template = 'events/view_event.html'
     context = {
         'event': event,
         'guestlist': guestlist,
+        'attendee_key': attendee_key,
     }
     # access attendees db here to give a countdown of tickets remaining,
     # will need to return event.capacity, then filter attendees by event_id,
@@ -125,3 +130,14 @@ def delete_event(request, event_id):
     messages.info(request, "Event deleted.")
 
     return redirect(reverse('events'))
+
+
+# @login_required
+# def delete_attendee(request, attendee_key):
+#     if not request.user.is_superuser:
+#         return redirect(reverse('home'))
+
+
+# @login_required
+# def delete_attendance(request, attendee_key):
+
