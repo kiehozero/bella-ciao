@@ -92,6 +92,7 @@ As an admin, I want to
 ### Features to Implement
 
 - Subscription requires separate payment method from Stripe, ran out of time
+- Delete event option for users
 
 ## Technologies Used
 

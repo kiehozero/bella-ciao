@@ -34,11 +34,8 @@ def view_event(request, event_id):
         # stores event_attendee pk to pass to delete_attendee if required
         username = User.objects.get(pk=attendee[1])
         guestlist.append(
-            {'user': attendee[1],
-            'username': username,
-            'attendee_key': attendee[0]}
+            {'user': attendee[1], 'username': username, 'attendee_key': attendee[0]}
         )
-    print(guestlist)
     template = 'events/view_event.html'
     context = {
         'event': event,
@@ -64,7 +61,8 @@ def join_event(request, event_id):
     messages.info(
         request, f"You're in! {event.event_name} \
             has been added to your events.")
-    return redirect(reverse('events'))
+    return redirect(reverse('view_event', args=[event.id]))
+    # need to redirect back to 'events' if that was the request source
     # in join_event, if Event Attendees already contains this number of
     # attendees defined in capacity, users will get a Sold Out message)
 
@@ -149,10 +147,4 @@ def delete_attendee(request, attendee_key):
     messages.info(
         request, "User removed from event")
 
-    return redirect(reverse('view_event', args=[event_id]))
-
-
-@login_required
-def delete_attendance(request, attendee_key):
-    """ user feature to delete event from their profile """
-    return redirect('profile')
+    return redirect(reverse('events'))

@@ -8,6 +8,7 @@ from checkout.models import Order, OrderLineItem
 from events.models import Event, EventAttendees
 
 import datetime
+import json
 
 
 @login_required
@@ -42,10 +43,17 @@ def profile(request):
     events_attending = EventAttendees.objects.filter(
         user=request.user).values_list()
     events_list = []
+    events_dict = []
     for event in events_attending:
         events_list.append(event[2])
+        event_return = Event.objects.filter(pk=event[2]).values('event_name', 'date', 'location')
+        events_dict.append(
+            {'event': event[2], 'attendee_key': event[0]})
     events = Event.objects.filter(pk__in=events_list).order_by('date')
 
+    print(event_return)
+    print(events_dict)
+    # lines 46, 49, 50, 51, 54, 55 are experimenting with returning usable data from Event
     template = 'profiles/profile.html'
     context = {
         'form': form,
@@ -77,3 +85,13 @@ def order_history(request, order_number):
 def admin(request):
     template = 'profiles/admin.html'
     return render(request, template)
+
+
+@login_required
+def delete_attendance(request, attendee_key):
+    """ user feature to delete event from their profile """
+    attendee = EventAttendees.objects.get(pk=attendee_key)
+    attendee.delete()
+    messages.info(
+        request, "UEvent removed from your schedule")
+    return redirect('profile')

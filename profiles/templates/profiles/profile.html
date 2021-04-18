@@ -113,7 +113,7 @@
                         <th>Date</th>
                         <th>Event</th>
                         <th>Location</th>
-                        <th>Delete</th>
+                        <!-- <th>Delete</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -130,11 +130,11 @@
                         <td>
                             {{ event.location }}
                         </td>
-                        <td>
-                            <a href="{% url 'edit_event' event.id %}" class="btn btn-sm btn-outline-danger">
+                        <!-- <td>
+                            <a href="#" class="btn btn-sm btn-outline-danger">
                                 <i class="far fa-trash-alt fa-sm"></i>
                             </a>
-                        </td>
+                        </td> -->
                     </tr>
                     {% endfor %}
                 </tbody>
