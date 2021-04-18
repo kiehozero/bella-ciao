@@ -242,6 +242,8 @@ URL so I could customise messages based on it;
 - Sometimes it is useful to get a second explanation of a Django process and for this I found the guides at
 [Tutorials Point](https://www.tutorialspoint.com/django/django_models.htm) very comprehensive;
 - [Stripe docs](https://stripe.com/docs/payments/accept-a-payment)
+- As always, W3Schools was invaluable, particularly [this link](https://www.w3schools.com/python/python_dictionaries.asp) 
+on building dictionaries, which helped me build the event list and guest list CRUD functionality.
 
 ### Tutorials
 

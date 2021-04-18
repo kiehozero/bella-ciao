@@ -300,13 +300,13 @@ a.view-cart-toast:hover {
 }
 
 .btn-outline-danger {
-    border-color: #3b0022;
-    color: #3b0022;
+    border-color: #e64757;
+    color: #e64757;
 }
 
 .btn-outline-danger:hover {
-    background-color: #3b0022;
-    border-color: #3b0022;
+    background-color: #e64757;
+    border-color: #e64757;
     color: #f0eee9;
 }
 

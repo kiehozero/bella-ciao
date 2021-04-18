@@ -27,9 +27,8 @@ def view_event(request, event_id):
     attendees = EventAttendees.objects.filter(event=event_id).values_list()
     guestlist = {}
     for attendee in attendees:
-        print(attendee)
         guestlist.update({attendee[0]: attendee[1]})
-    print(guestlist)
+
     template = 'events/view_event.html'
     context = {
         'event': event,
@@ -70,7 +69,7 @@ def add_event(request):
             event = form.save()
             messages.info(
                 request, f'{event.event_name} added to events.')
-            return redirect(reverse('view_product', args=[event.id]))
+            return redirect(reverse('view_event', args=[event.id]))
         else:
             messages.error(
                 request, "Item addition failure. Please \

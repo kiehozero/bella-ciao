@@ -69,5 +69,6 @@ already fixed.
  5. Cart quantity buttons on smaller devices
  6. Sites database
  7. Event form Description field styling, Date/Time widget UX (date format)
+ 8. On the events page 
 
  

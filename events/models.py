@@ -11,8 +11,14 @@ class Event(models.Model):
     capacity = models.IntegerField(null=False, blank=False, default=0)
     image = models.ImageField(null=True, blank=True)
 
+    def __str__(self):
+        return self.event_name
+
 
 class EventAttendees(models.Model):
     """ Index of attendees at upcoming in-store events """
     user = models.CharField(max_length=30, null=False, blank=False)
     event = models.IntegerField(null=False, blank=False)
+
+    def __str__(self):
+        return f'User {self.user} at event {self.event}'
