@@ -1,7 +1,8 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404, redirect, render, reverse
+from django.shortcuts import (
+    get_object_or_404, HttpResponse, redirect, render, reverse)
 
 from .forms import EventForm
 from .models import Event, EventAttendees
@@ -25,18 +26,23 @@ def view_event(request, event_id):
     """ Display more information to the user """
     """ Display an admin panel for admins """
     event = get_object_or_404(Event, pk=event_id)
-    attendees = EventAttendees.objects.filter(event=event).values_list()
-    guestlist = {}
+    attendees = EventAttendees.objects.filter(
+        event=event).values_list().order_by('user')
+    guestlist = []
+
     for attendee in attendees:
         # stores event_attendee pk to pass to delete_attendee if required
-        attendee_key = attendee[0]
         username = User.objects.get(pk=attendee[1])
-        guestlist.update({attendee[1]: username})
+        guestlist.append(
+            {'user': attendee[1],
+            'username': username,
+            'attendee_key': attendee[0]}
+        )
+    print(guestlist)
     template = 'events/view_event.html'
     context = {
         'event': event,
         'guestlist': guestlist,
-        'attendee_key': attendee_key,
     }
     # access attendees db here to give a countdown of tickets remaining,
     # will need to return event.capacity, then filter attendees by event_id,
@@ -132,12 +138,21 @@ def delete_event(request, event_id):
     return redirect(reverse('events'))
 
 
-# @login_required
-# def delete_attendee(request, attendee_key):
-#     if not request.user.is_superuser:
-#         return redirect(reverse('home'))
+@login_required
+def delete_attendee(request, attendee_key):
+    """ Admin-only feature to delete a user from an event """
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
+    attendee = EventAttendees.objects.get(pk=attendee_key)
+    attendee.delete()
+    messages.info(
+        request, "User removed from event")
+
+    return redirect(reverse('view_event', args=[event_id]))
 
 
-# @login_required
-# def delete_attendance(request, attendee_key):
-
+@login_required
+def delete_attendance(request, attendee_key):
+    """ user feature to delete event from their profile """
+    return redirect('profile')
