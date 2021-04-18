@@ -1,8 +1,3 @@
-.base-header {
-    /* removes margin from base template's header for this app */
-    margin-bottom: 0px;
-}
-
 .summary-row,
 .summary-header,
 .form-check-label {

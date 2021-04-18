@@ -1,8 +1,3 @@
-.base-header {
-    /* removes margin from base template's header for this app */
-    margin-bottom: 0px;
-}
-
 .product-cards {
     margin-top: 20px;
     margin-bottom: 20px;

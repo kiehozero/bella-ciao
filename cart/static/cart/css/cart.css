@@ -2,11 +2,6 @@ input.qty-select {
     text-align: center;
 }
 
-.base-header {
-    /* removes margin from base template's header for this app */
-    margin-bottom: 0px;
-}
-
 .product-name {
     color: #008763;
 }

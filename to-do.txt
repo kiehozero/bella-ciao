@@ -8,7 +8,6 @@ HOUSEKEEPING
 - profile models and forms show good examples of how to customise, use of widgets at __str__
 - once code is completed, open all sheets and clean up any items that show up in the problems tab
 - upload final db-schema.png in planning folder
-- can base-header tags by moved out of app-level CSS into project-level?
 
 NEED TO HAVE:
 - delivery/collection
