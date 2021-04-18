@@ -56,7 +56,13 @@ already fixed.
  found the error, which was a missing comma in my settings.py file. Thanks to [Igor Basuga](https://github.com/bravoalpha79) for
  spotting that one.
 
- 8. Changing events_attendees to ForeignKeys from IntegerFields
+ 8. I initially created the event_attendees database of something of a data dump for event and user ids to be added to the same row.
+ As I did some [reading](https://riptutorial.com/django/example/30649/foreignkey), I realised that this could cause database problems
+ if I deleted a user or event. I tested this and it seems to work fine, i.e. deleting an event and then re-opening a user's profile
+ would see that event disappear, but something didn't sit right with leaving tons of user-event rows in the event_attendee database
+ once they were no longer needed, and using foreign keys to ensure cascading deletion seemed to be the best-practice option. Once I
+ got my head around the exact order of deleting old test attendee entries, updating models and migrating them, this was a relatively
+ simple process.
 
 
  ## Outstanding Issues

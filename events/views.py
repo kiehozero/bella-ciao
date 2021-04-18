@@ -24,10 +24,10 @@ def view_event(request, event_id):
     """ Display more information to the user """
     """ Display an admin panel for admins """
     event = get_object_or_404(Event, pk=event_id)
-    attendees = EventAttendees.objects.filter(event=event_id).values_list()
-    guestlist = []
+    attendees = EventAttendees.objects.filter(event=event).values_list()
+    guestlist = {}
     for attendee in attendees:
-        guestlist.append(attendee[0])
+        guestlist.update({attendee[0]: attendee[1]})
     template = 'events/view_event.html'
     context = {
         'event': event,
@@ -49,7 +49,7 @@ def join_event(request, event_id):
     profile = UserProfile.objects.get(user=request.user)
     user = profile.user
     # needs to search for user/event combo already being in DB
-    EventAttendees.objects.create(user=user, event=event_id)
+    EventAttendees.objects.create(user=user, event=event)
     messages.info(
         request, f"You're in! {event.event_name} \
             has been added to your events.")
