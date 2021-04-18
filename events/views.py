@@ -25,10 +25,9 @@ def view_event(request, event_id):
     """ Display an admin panel for admins """
     event = get_object_or_404(Event, pk=event_id)
     attendees = EventAttendees.objects.filter(event=event_id).values_list()
-    guestlist = {}
+    guestlist = []
     for attendee in attendees:
-        guestlist.update({attendee[0]: attendee[1]})
-
+        guestlist.append(attendee[0])
     template = 'events/view_event.html'
     context = {
         'event': event,

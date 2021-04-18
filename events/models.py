@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -17,8 +18,11 @@ class Event(models.Model):
 
 class EventAttendees(models.Model):
     """ Index of attendees at upcoming in-store events """
-    user = models.CharField(max_length=30, null=False, blank=False)
-    event = models.IntegerField(null=False, blank=False)
+    user = models.ForeignKey(
+        User, null=False, blank=False, on_delete=models.CASCADE)
+    event = models.ForeignKey(
+        Event, null=False, blank=False, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'User {self.user} at event {self.event}'
+        return f'User {self.user.username} is \
+            attending event {self.event.event_name}'

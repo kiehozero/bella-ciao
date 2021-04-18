@@ -56,7 +56,7 @@ already fixed.
  found the error, which was a missing comma in my settings.py file. Thanks to [Igor Basuga](https://github.com/bravoalpha79) for
  spotting that one.
 
- 8. 
+ 8. Changing events_attendees to ForeignKeys from IntegerFields
 
 
  ## Outstanding Issues
@@ -69,6 +69,6 @@ already fixed.
  5. Cart quantity buttons on smaller devices
  6. Sites database
  7. Event form Description field styling, Date/Time widget UX (date format)
- 8. On the events page 
+
 
  
