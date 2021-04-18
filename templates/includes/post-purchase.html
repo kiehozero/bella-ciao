@@ -8,6 +8,8 @@
                 &nbsp;&nbsp;Order History
             </a>
         </div>
+        {% elif in_profile %}
+        <!-- Removes button when in main profile screen -->
         {% else %}
         <div class="mx-1 my-1">
             <a href="{% url 'profile' %}" class="btn btn-outline-success mobile-font">

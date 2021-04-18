@@ -16,6 +16,7 @@ def profile(request):
 
     # User Information
     time = datetime.datetime.now()
+    in_profile = True
     profile = get_object_or_404(UserProfile, user=request.user)
     # returns user's first name if they have saved it
     if profile.default_name is not None:
@@ -52,6 +53,7 @@ def profile(request):
         'events': events,
         'time': time,
         'forename': forename,
+        'in_profile': in_profile,
     }
 
     return render(request, template, context)
@@ -60,12 +62,12 @@ def profile(request):
 @login_required
 def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
-
+    from_profile = True
     template = 'checkout/checkout_success.html'
 
     context = {
         'order': order,
-        'from_profile': True,
+        'from_profile': from_profile,
     }
 
     return render(request, template, context)
