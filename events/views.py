@@ -24,9 +24,16 @@ def view_event(request, event_id):
     """ Display more information to the user """
     """ Display an admin panel for admins """
     event = get_object_or_404(Event, pk=event_id)
+    attendees = EventAttendees.objects.filter(event=event_id).values_list()
+    guestlist = {}
+    for attendee in attendees:
+        print(attendee)
+        guestlist.update({attendee[0]: attendee[1]})
+    print(guestlist)
     template = 'events/view_event.html'
     context = {
         'event': event,
+        'guestlist': guestlist,
     }
     # access attendees db here to give a countdown of tickets remaining,
     # will need to return event.capacity, then filter attendees by event_id,
@@ -120,8 +127,3 @@ def delete_event(request, event_id):
     messages.info(request, "Event deleted.")
 
     return redirect(reverse('events'))
-
-
-# def event_attendees(request):
-#    if not request.user.is_superuser:
-#        return redirect(reverse('home'))

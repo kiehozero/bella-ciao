@@ -10,13 +10,14 @@ HOUSEKEEPING
 - upload final db-schema.png in planning folder
 
 NEED TO HAVE:
+- user and admin can delete their attendance to an event
 - delivery/collection
 - loyalty
-- event attendee admin view, attendance calculation
 - fix display of message on mobile view (overlaps on longer messages, maybe display above page header?)
 - contact form (use pintbaby)
 - finalise landing header, move to includes if it stays being used on multiple pages (index, all products)
 
 NICE TO HAVE:
+- event attendance calculation
 - Add VAT category to each item, populate and then use to calculate total tax in card-total elements?
 - edit product or event from admin panel (dropdown to select product on form, see product form category choice)

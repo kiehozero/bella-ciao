@@ -16,7 +16,7 @@
 {% block content %}
 
 <div class="container">
-    
+
     <div class="row">
 
         <div class="col-sm-12 col-md-5 pt-3 pb-2">
@@ -37,31 +37,30 @@
             </div>
 
             <!-- Idea for customisable item dropdowns taken from Boutique Ado project -->
-            <div class="row ">
+            <div class="row justify-content-center">
 
                 <form class="form" action="{% url 'join_event' event.id %}" method="POST">
                     {% csrf_token %}
-                    
-                    <div class="row justify-content-center pt-3 pb-2">
+
+                    <div class="row pt-3 pb-2">
                         <div class="col check-eject pt-3 pb-2">
                             <a href="{% url 'events' %}" class="btn btn-outline-success text-green w-100">
-                                <i class="far fa-calendar-alt"></i>
-                                &nbsp;&nbsp;All events
+                                All Events
                             </a>
                         </div>
                         <div class="col check-eject pt-3 pb-2">
-                            <input type="submit" value="RSVP" class="btn btn-outline-success text-green w-100" name="add-cart">
+                            <input type="submit" value="RSVP" class="btn btn-outline-success text-green w-100"
+                                name="add-cart">
                         </div>
                     </div>
 
                     {% if request.user.is_superuser %}
                     <div class="row justify-content-center pt-3 pb-2">
-                        <div class="col check-eject pt-3 pb-2">
-                            <a href="#" class="btn btn-outline-success">
-                                <i class="fas fa-users"></i>
-                                Attendees
-                            </a>
+                        <div class="col">
+                            <h5 class="text-green">Admin Controls</h5>
                         </div>
+                    </div>
+                    <div class="row pt-3 pb-2">
                         <div class="col check-eject pt-3 pb-2">
                             <a href="{% url 'edit_event' event.id %}" class="btn btn-outline-warning">
                                 <i class="fas fa-wrench"></i>
@@ -69,8 +68,7 @@
                             </a>
                         </div>
                         <div class="col check-eject pt-3 pb-2">
-                            <button
-                                type="button" class="btn btn-outline-danger" id="delEventButton">
+                            <button type="button" class="btn btn-outline-danger" id="delEventButton">
                                 <i class="far fa-trash-alt"></i>
                                 Delete
                             </button>
@@ -82,7 +80,37 @@
                     <!-- is this being used in this view or is it a hangover from the CI tutorial? -->
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
-            
+
+            </div>
+
+            <!-- Guestlist -->
+            <div class="row">
+                <h6 class="text-green">Guestlist</h6>
+                <div class="table-responsive table-sm table-hover">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Key</th>
+                                <th>User</th>
+                                <th>Uninvite</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for key, value in guestlist.items %}
+                            <tr>
+                                <td>{{ key }}</td>
+                                <td>{{ value }}</td>
+                                <td>
+                                    <a href="{% url 'delete_atten' event.id %}" class="btn btn-sm btn-outline-danger">
+                                        <i class="far fa-trash-alt fa-sm"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
 
         </div>
