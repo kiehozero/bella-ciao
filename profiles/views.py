@@ -16,7 +16,7 @@ def profile(request):
 
     # User Information
     time = datetime.datetime.now()
-    in_profile = True
+    in_profile = True  # customises post-purchase button
     profile = get_object_or_404(UserProfile, user=request.user)
     # returns user's first name if they have saved it
     if profile.default_name is not None:
