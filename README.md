@@ -254,6 +254,8 @@ gave me a good structure to work from, as well as the foundations for using Djan
 [this](https://learndjango.com/tutorials/django-favicon-tutorial) made this another painless transition.
 - Thanks to [Igor Basuga](https://github.com/bravoalpha79) for spotting an error in my settings.py file that was causing
 my allauth template inheritance to fail.
+- Thanks to Michael Park at Code Institute for spotting an error in how I was trying to unpack querysets when building
+the feature that allows users to delete their own attendance from an event;
 - [Bootstrap's documentation](https://getbootstrap.com/docs/5.0/utilities/spacing/) is fairly comprehensive and I leant
 particularly on their guides for spacing shortcuts as I wanted to write as little CSS as possible as that is where I've
 gotten bogged down on previous Bootstrap projects.

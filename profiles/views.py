@@ -48,10 +48,12 @@ def profile(request):
         events_list.append(event[2])
         event_return = Event.objects.filter(pk=event[2]).values('event_name', 'date', 'location')
         events_dict.append(
-            {'event': event[2], 'attendee_key': event[0]})
+            {'event': event[2], 'event_name': event_return[0]['date'],
+            'attendee_key': event[0],'date': event_return[0]['date'],
+            'location': event_return[0]['location']})
     events = Event.objects.filter(pk__in=events_list).order_by('date')
 
-    print(event_return)
+    print(event_return[0]['date'])
     print(events_dict)
     # lines 46, 49, 50, 51, 54, 55 are experimenting with returning usable data from Event
     template = 'profiles/profile.html'
@@ -59,6 +61,7 @@ def profile(request):
         'form': form,
         'orders': orders,
         'events': events,
+        'events_dict': events_dict,
         'time': time,
         'forename': forename,
         'in_profile': in_profile,
