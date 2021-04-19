@@ -106,12 +106,6 @@
     <!-- Displays user's upcoming events -->
     <div class="col-xs col-md-6 justify-content-xs-center justify-content-md-left">
         <h6 class="text-green pt-3 pb-2">My events</h6>
-        {% for event in events_dict %}
-            {{ event }}, {{ event_name }}
-            {{ date }}
-            {{ location }}
-            {{ attendee_key }}
-        {% endfor %}
         <div class="table-responsive table-sm profile-history">
             <table class="table">
                 <thead>
