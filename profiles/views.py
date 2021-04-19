@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 
 from .forms import UserProfileForm
 from .models import UserProfile
@@ -41,17 +41,20 @@ def profile(request):
     # Order and Event histories
     orders = profile.orders.all().order_by('-date')
     events_attending = EventAttendees.objects.filter(
-        user=request.user).values_list().order_by()
+        user=request.user).values_list()
     events_list = []
     events_dict = []
     for event in events_attending:
         events_list.append(event[2])
         event_return = Event.objects.filter(
             pk=event[2]).values('event_name', 'date', 'location')
-        events_dict.append(
-            {'event': event[2], 'event_name': event_return[0]['event_name'],
-            'attendee_key': event[0],'date': event_return[0]['date'],
-            'location': event_return[0]['location']})
+        events_dict.append({
+            'event': event[2],
+            'event_name': event_return[0]['event_name'],
+            'attendee_key': event[0],
+            'date': event_return[0]['date'],
+            'location': event_return[0]['location']
+            })
     # events = Event.objects.filter(pk__in=events_list).order_by('date')
 
     template = 'profiles/profile.html'
@@ -93,5 +96,5 @@ def delete_attendance(request, attendee_key):
     attendee = EventAttendees.objects.get(pk=attendee_key)
     attendee.delete()
     messages.info(
-        request, "UEvent removed from your schedule")
+        request, "Event removed from your schedule")
     return redirect('profile')
