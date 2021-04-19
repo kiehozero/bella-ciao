@@ -64,6 +64,11 @@ already fixed.
  got my head around the exact order of deleting old test attendee entries, updating models and migrating them, this was a relatively
  simple process.
 
+ 9. My initial message display was overlapping headers on smaller screens when the message was too long. I tried restricting the
+ maximum length of messages but this defeated the whole purpose of having one. I eventually found that the problem was actually 
+ caused by a vh height being set on the message-row tag. I then moved this above the page-header tagged elements and this provided
+ a much improved user experience.
+
 
  ## Outstanding Issues
 

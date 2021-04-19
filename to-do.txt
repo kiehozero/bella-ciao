@@ -10,8 +10,6 @@ HOUSEKEEPING
 
 NEED TO HAVE:
 - USER STORY: loyalty
-- USER STORY: admin view order page - re-directs to order confirmation screen?
-- fix display of message on mobile view (overlaps on longer messages, maybe display above page header?)
 - contact form (use pintbaby)
 - finalise landing header, move to includes if it stays being used on multiple pages (index, all products)
 - sort out exact routing of add/delete event views, some load back to event page, some back to list of events

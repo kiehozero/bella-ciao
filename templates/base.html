@@ -43,13 +43,6 @@
         {% include 'includes/mob-navbar.html' %}
     </header>
 
-    <div class="row no-gutters">
-        <div class="col-sm-12">
-            {% block page_header %}
-            {% endblock %}
-        </div>
-    </div>
-
     {% if messages %}
     <div class="row message-row back-red no-gutters">
         <div class="col-sm-12 col-md-10 offset-md-2 text-offwhite">
@@ -70,6 +63,13 @@
         </div>
     </div>
     {% endif %}
+
+    <div class="row no-gutters">
+        <div class="col-sm-12">
+            {% block page_header %}
+            {% endblock %}
+        </div>
+    </div>
 
     <!-- Page Content -->
     <main>
