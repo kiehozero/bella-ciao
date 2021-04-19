@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import (
     HttpResponse, redirect, render, reverse, get_object_or_404)
 from django.views.decorators.http import require_POST
@@ -175,3 +176,18 @@ def cache_checkout_data(request):
             request, "Your payment could not be processed, \
                 please try again later.")
         return HttpResponse(content=e, status=400)
+
+
+@login_required
+def admin_orders(request):
+    """ View for admin to see all orders """
+    if not request.user.is_authenticated:
+        return redirect(reverse('home'))
+
+    all_orders = Order.objects.all().order_by('-date')
+    template = 'checkout/admin_orders.html'
+    context = {
+        'all_orders': all_orders,
+    }
+
+    return render(request, template, context)

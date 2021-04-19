@@ -28,7 +28,8 @@ Order Summary |
         {% else %}
         <h5 class="text-green">
             <a href="https://www.youtube.com/watch?v=zf7I_FpTWsM" target="_blank" class="text-green" id="choochoo">
-                Have a campa-choo-choo on us!</a>
+                Have a campa-choo-choo on us!
+            </a>
         </h5>
         <p>Thank you for supporting a local business today! Your order number is {{ order.order_number }}.</p>
         <p>We've sent an order confirmation to {{ order.email }}.</p>
@@ -47,7 +48,7 @@ Order Summary |
             <p class="w-100">Name: {{ order.full_name|title }}</p>
             <p class="w-100">Contact Number: {{ order.phone_number }}</p>
             {% if user.is_authenticated %}
-            <p class="w-100">Loyalty Points Earned:  {{ order.loyalty_stamps }}</p>
+            <p class="w-100">Loyalty Points Earned: {{ order.loyalty_stamps }}</p>
             <p class="w-100">Current Loyalty Balance: Loyalty balance here</p>
             {% endif %}
         </div>

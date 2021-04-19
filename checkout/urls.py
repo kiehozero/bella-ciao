@@ -5,6 +5,7 @@ from .webhooks import webhook
 
 urlpatterns = [
     path('', views.checkout, name='checkout'),
+    path('admin_orders/', views.admin_orders, name='admin_orders'),
     path(
         'cache_checkout_data/',
         views.cache_checkout_data,

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extratitle %}
+Site Order History |
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+{% include 'includes/page-header.html' with h3_title="Site Order History" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col d-flex justify-content-center">
+        <div class="table-responsive table-sm">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>User</th>
+                        <th>Name</th>
+                        <th>Email Address</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in all_orders %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'order_history' order.order_number %}"
+                                title="{{ order.order_number }}" class="text-green">
+                                {{ order.date }}
+                            </a>
+                        </td>
+                        <td>{{ order.user_profile }}</td>
+                        <td>{{ order.full_name }}</td>
+                        <td>{{ order.email }}</td>
+                        <td>{{ order.grand_total }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}
