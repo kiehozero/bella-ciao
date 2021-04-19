@@ -41,7 +41,7 @@ def profile(request):
     # Order and Event histories
     orders = profile.orders.all().order_by('-date')
     events_attending = EventAttendees.objects.filter(
-        user=request.user).values_list()
+        user=request.user).values_list().order_by()
     events_list = []
     events_dict = []
     for event in events_attending:
@@ -58,7 +58,6 @@ def profile(request):
     context = {
         'form': form,
         'orders': orders,
-        # 'events': events,
         'events_dict': events_dict,
         'time': time,
         'forename': forename,
