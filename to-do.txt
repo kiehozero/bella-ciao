@@ -16,5 +16,4 @@ NEED TO HAVE:
 
 NICE TO HAVE:
 - event attendance calculation
-- Add VAT category to each item, populate and then use to calculate total tax in card-total elements?
 - edit product or event from admin panel (dropdown to select product on form, see product form category choice)
