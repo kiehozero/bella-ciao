@@ -106,7 +106,12 @@
     <!-- Displays user's upcoming events -->
     <div class="col-xs col-md-6 justify-content-xs-center justify-content-md-left">
         <h6 class="text-green pt-3 pb-2">My events</h6>
-        {{ events_dict }}
+        {% for event in events_dict %}
+            {{ event }}, {{ event_name }}
+            {{ date }}
+            {{ location }}
+            {{ attendee_key }}
+        {% endfor %}
         <div class="table-responsive table-sm profile-history">
             <table class="table">
                 <thead>
@@ -114,28 +119,28 @@
                         <th>Date</th>
                         <th>Event</th>
                         <th>Location</th>
-                        <!-- <th>Delete</th> -->
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for event in events %}
+                    {% for event in events_dict %}
                     <tr>
                         <td>
                             {{ event.date }}
                         </td>
                         <td>
-                            <a href="{% url 'view_event' event.id %}" class="text-green">
+                            <a href="{% url 'view_event' event.event %}" class="text-green">
                                 {{ event.event_name }}
                             </a>
                         </td>
                         <td>
                             {{ event.location }}
                         </td>
-                        <!-- <td>
-                            <a href="#" class="btn btn-sm btn-outline-danger">
+                        <td>
+                            <a href="{% url 'delete_attendance' event.attendee_key %}" class="btn btn-sm btn-outline-danger">
                                 <i class="far fa-trash-alt fa-sm"></i>
                             </a>
-                        </td> -->
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
