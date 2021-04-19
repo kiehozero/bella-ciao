@@ -62,6 +62,9 @@ maximum length of messages but this defeated the whole purpose of having one. I 
 caused by a vh height being set on the message-row tag. I then moved this above the page-header tagged elements and this provided
 a much improved user experience.
 
+10. During testing I noticed that a couple of the dummy accounts I had set up could see the guestlist on events. This was intended 
+to be an admin feature so quickly wrapping the entire row in the request.user.is_superuser statement was a simple fix.
+
 
 ## Outstanding Issues
 

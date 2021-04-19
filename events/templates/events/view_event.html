@@ -83,7 +83,8 @@
 
             </div>
 
-            <!-- Guestlist -->
+            <!-- Guestlist, see bugfix #10 -->
+            {% if request.user.is_superuser %}
             <div class="row">
                 <h6 class="text-green">Guestlist</h6>
                 <div class="table-responsive table-sm table-hover">
@@ -110,8 +111,8 @@
                         </tbody>
                     </table>
                 </div>
-
             </div>
+            {% endif %}
 
         </div>
 
