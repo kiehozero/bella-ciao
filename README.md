@@ -1,7 +1,12 @@
 <img src="media/banner-text.png">
 
 Welcome to my full-stack development milestone project. For this project I chose to create 
-[Bella Ciao](#), an online store for a fictional coffee chain based at various locations in Limerick, Ireland.
+[Bella Ciao](https://cafe-bella-ciao.herokuapp.com/), an online store for a coffee chain based in Limerick, Ireland.
+The owners are a commercial kitchen facility that specialises in corporate event catering, but during lockdown decided
+that they wanted to diversify their business towards delivery orders. The business contains a number of highly-trained
+staff who wished to display their own skills beyond the corporate catering environment, so the owners and employees
+collectively decided to convert a vacant storehouse within their premises into an area where they can host a range of
+exclusive events for repeat customers and corporate team-building events once public health restrictions are eased.
 
 
 ## User Experience
@@ -11,33 +16,34 @@ Welcome to my full-stack development milestone project. For this project I chose
 - A [Balsamiq](https://www.balsamiq.com/) wireframe for this project is included in the repository, with 
 [desktop/tablet](planning/wireframes/desktop.pdf) and [mobile](planning/wireframes/mobile.pdf) versions.
 
-In colour selection I wanted to portray that the staff at the store have an authentic connection to both Italy and 
-Ireland, and to do so I used the following hex colours, selected using [Pixlr](https://www.pixlr.com/).
+In colour selection I wanted to portray that the staff at the store have an authentic connection to both Italy, where many
+of the staff trained, and Ireland. To achieve this I used the following hex colours, selected using 
+[Pixlr](https://www.pixlr.com/), and all colour selections are stored in their own [CSS file](static/css/palette.css).
 
 - #008763 - The natural place to start was the colour green, present on both national flags. Officially called 
 [Golf Green](https://www.pantone.com/color-finder/18-5642-TCX), this green was used on the 
 [flag of Italy](https://en.wikipedia.org/wiki/Flag_of_Italy#Description) before a constitutional change in 2006. 
 This is the first shade used in the background of the navigation element on larger devices, and the only
 shade used on smaller device navigation elements;
-- #2f5f43 - Using , I start experimenting with various tints and shades of
-green to have a slightly richer colour to make buttons stand out. This green is found on smaller elements either as
-a background or text against a background of the following colour;
 - #f0eee9 - officially called [Cloud Dancer](https://www.pantone.com/color-finder/11-4201-TCX), before 2006 this was
 the official colour of the central band of the Italian flag. The [new colour](https://www.pantone.com/color-finder/11-0601-TCX) 
-is much brighter and tended to stand out too much when used as a background, so I defaulted to the older version.
-- #3b0022 - Rather than use the official red, I used [Color Hex](https://www.color-hex.com/) to identify a red shade 
-that best complemented the greens already selected. This red jumped out as providing a dark contrast against items with 
-a white background.
-- #100f10 - >>>
+is much brighter and tended to stand out too much when used as a background, so I defaulted to the older version;
+- #3b0022 - Rather than use the official red, I used Color Hex to identify a red shade that best complemented the greens already selected. This red jumped out as providing a dark contrast against items with a white background, or vice versa;
+- #e64757 - For a red that needs to indicate danger or warning, I used a tint close to the default Bootstrap colour for such
+elements (including their default 'danger' buttons), but made it slightly paler;
+- #ceca03 - This is a gold that is slightly paler again than Bootstrap's default caution colour, and overrides the btn-warning
+elements accordingly. It is also used to highlight the cart total once an item is placed there;
+- #100f10 - Lastly this is the default colour of any text on the site that is not within a header element or a button tag.
 
 ### Fonts and Icons
 
-- [Arvo](https://fonts.google.com/specimen/Arvo) - 
+- [Arvo](https://fonts.google.com/specimen/Arvo) - I wanted a blocky font that would not look out of place on a screen-printed
+or stamped design, and Arvo fulfils that requirement, especially in upper case.
 - [Montserrat](https://fonts.google.com/specimen/Montserrat) - luckily Google Fonts contains a handy tool which shows 
 commonly-selected fonts against each other, so once I had selected Arvo I decided to pick out Montserrat as a lightweight 
 font to display non-header elements or larger blocks of text.
 
-The icons I used within this project are all sources from [Font Awesome](https://fontawesome.com/)'s free package.
+The icons I used within this project are all sourced from [Font Awesome](https://fontawesome.com/)'s free package.
 
 ### Responsiveness
 
@@ -52,16 +58,16 @@ Testing for each of the below user stories is included within the [testing log](
 
 As a user I want to...
 
-  1. order an item for collection;
-  2. order an item for delivery;
+  1. order an item from the store;
   3. modify the size, quantity or variety of product I order;
   4. read more information about a product;
   5. filter or sort products by category or a search term of my choice;
   6. create an account;
   9. edit my profile information;
   10. see my loyalty points;
-  11. redeem my loyalty points;
-  12. sign up to an in-store event;
+  11. sign up to an in-store event;
+  12. view events I have signed up to;
+  13. remove an event from my events list;
   13. view my current shopping cart;
   14. view my order history;
   15. save my address for future use;
@@ -70,14 +76,11 @@ As an admin, I want to
   1. add a new product;
   2. update a product;
   3. delete a product;
-  4. add a new product category;
-  5. update a category;
   6. view all orders;
-  7. add a category;
-  8. add a new store;
   9. add an event;
   10. edit an event;
   11. delete an event;
+  12. delete a user from an event;
 
 
 ## Features
@@ -92,7 +95,8 @@ As an admin, I want to
 ### Features to Implement
 
 - Subscription requires separate payment method from Stripe, ran out of time
-- Delete event option for users
+- VAT options
+- Delivery/collection for when lockdown ends and the business might want to expand to a retail outlet
 
 ## Technologies Used
 
@@ -118,16 +122,25 @@ As an admin, I want to
     - Google's free service provided countless fonts to help your project stand out.
 
 - [Gitpod](https://www.gitpod.io/)
-    - A software development editor perfect for personal or collaborative use.
+    - A software development editor perfect for personal or collaborative use. Gitpod changed their default IDE from Theia
+    to Microsoft's VSCode mid-project, and this change was pretty seamless for myself.
 
 - [GitHub](https://www.github.com/)
     - The world's leading code-hosting platform, and the location of the core code that the project is built upon.
 
 - [Heroku](https://www.heroku.com/)
     - A cloud platform for hosting scaleable apps in a variety of programming languages.
-    
-- [Stripe](https://www.stripe.com)/
-    - 
+
+- [Amazon Web Services](https://aws.amazon.com/)
+    - A non-relational database in which all data submitted by users is stored, and also where the skeleton of the project's
+    data structure was first mapped out.
+
+- [Django](https://www.djangoproject.com/)
+    - Django is an open-source Python framework that is designed for quick launches.
+
+- [Stripe](https://www.stripe.com/)
+    - One of the world's foremost payment-processing businesses, they offer lots of services designed for quick setup.
+
 - [Balsamiq](https://www.balsamiq.com/)
     - An intuitive drafting tool that enables visual planning during a project's infancy.
 
@@ -137,21 +150,15 @@ As an admin, I want to
     to learn.
 
 - [Color Hex](https://www.color-hex.com/)
-    - This was a fantastic tool which takes an existing colour and recommends complementary colours. Another free piece
+    - This was a fantastic tool which takes an existing colour and recommends complementary colours. Another piece
     of software that I wish I had discovered a long time ago.
 
 - [Favicon.io](https://favicon.io/)
     - A quick and easy tool to create favicons for display in the address bar.
 
-- [Amazon Web Services](https://aws.amazon.com/)
-    - A non-relational database in which all data submitted by users is stored, and also where the skeleton of the project's
-    data structure was first mapped out.
-
-- [Django](https://www.djangoproject.com/)
-    - Django is an open-source Python framework that is designed for quick launches.
-
 - [DBDiagram](https://dbdiagram.io/)
-    - >>>
+    - This tool really helped me visualise my initial idea as a structure to build. I made a couple of changes but it allowed
+    me to plan a route towards project completion.
 
 
 ## Testing
@@ -259,7 +266,6 @@ the feature that allows users to delete their own attendance from an event;
 - [Bootstrap's documentation](https://getbootstrap.com/docs/5.0/utilities/spacing/) is fairly comprehensive and I leant
 particularly on their guides for spacing shortcuts as I wanted to write as little CSS as possible as that is where I've
 gotten bogged down on previous Bootstrap projects.
-
 
 ### Media
 

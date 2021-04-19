@@ -10,14 +10,13 @@ HOUSEKEEPING
 - upload final db-schema.png in planning folder
 
 NEED TO HAVE:
-- delivery/collection - rework explanation as being a place that has a commercial kitchen?
-- loyalty
+- USER STORY: loyalty
+- USER STORY: admin view order page - re-directs to order confirmation screen?
 - fix display of message on mobile view (overlaps on longer messages, maybe display above page header?)
 - contact form (use pintbaby)
 - finalise landing header, move to includes if it stays being used on multiple pages (index, all products)
 
 NICE TO HAVE:
 - event attendance calculation
-- user can delete attendance of event
 - Add VAT category to each item, populate and then use to calculate total tax in card-total elements?
 - edit product or event from admin panel (dropdown to select product on form, see product form category choice)

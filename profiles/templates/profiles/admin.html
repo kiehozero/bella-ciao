@@ -16,21 +16,26 @@ Administration |
 {% block content %}
 
 <div class="row">
-    <div class="col-12 d-flex justify-content-center">
-        <a href="{% url 'add_product' %}" class="btn btn-lg btn-outline-success p-3 m-3"> Add a Product</a>
-        <a href="{% url 'add_event' %}" class="btn btn-lg btn-outline-success p-3 m-3">Add an Event</a>
+    <div class="col d-flex justify-content-center">
+        <a href="{% url 'add_product' %}" class="btn btn-lg btn-outline-success p-3 m-3">
+            <i class="fas fa-coffee fa-lg"></i>&nbsp;&nbsp;Add a Product
+        </a>
     </div>
-        <!-- Edit event and edit product blank forms with drop-down to select product/event here? -->
-    <div class="col-12 d-flex justify-content-center">
-        <a href="#" class="btn btn-lg btn-outline-warning p-3 m-3">Edit a Product</a>
-        <a href="#" class="btn btn-lg btn-outline-warning p-3 m-3">Edit an Event</a>
+</div>
+
+<div class="row">
+    <div class="col d-flex justify-content-center">
+        <a href="{% url 'add_event' %}" class="btn btn-lg btn-outline-success p-3 m-3">
+            <i class="far fa-calendar-alt fa-lg"></i>&nbsp;&nbsp;Add an Event
+        </a>
     </div>
-        <!-- Edit forms will need a blank submission of each form on GET,
-            with a dropdown returning all items, then posting to the regular URL-->
-        <!-- Delete buttons should be pretty easy if you select a product using a dropdown, no forms to fill out -->
-    <div class="col-12 d-flex justify-content-center">
-        <a href="#" class="btn btn-lg btn-outline-danger p-3 m-3">Delete Product</a>
-        <a href="#" class="btn btn-lg btn-outline-danger p-3 m-3">Delete Event</a>
+</div>
+
+<div class="row">
+    <div class="col d-flex justify-content-center">
+        <a href="#" class="btn btn-lg btn-outline-success p-3 m-3">
+            <i class="fas fa-receipt fa-lg"></i>&nbsp;&nbsp;View All Orders
+        </a>
     </div>
 </div>
 
