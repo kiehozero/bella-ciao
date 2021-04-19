@@ -7,9 +7,11 @@ HOUSEKEEPING
 - profile models and forms show good examples of how to customise, use of widgets at __str__
 - once code is completed, open all sheets and clean up any items that show up in the problems tab
 - upload final db-schema.png in planning folder
+- scroll bar in cart table on smaller desktop screens?
 
 NEED TO HAVE:
 - USER STORY: loyalty
+- remove flavour/milk from cart, checkout and product logic/views
 - contact form (use pintbaby)
 - finalise landing header, move to includes if it stays being used on multiple pages (index, all products)
 - sort out exact routing of add/delete event views, some load back to event page, some back to list of events

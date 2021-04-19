@@ -55,7 +55,6 @@ def profile(request):
             'date': event_return[0]['date'],
             'location': event_return[0]['location']
             })
-    # events = Event.objects.filter(pk__in=events_list).order_by('date')
 
     template = 'profiles/profile.html'
     context = {

@@ -23,7 +23,6 @@ def checkout(request):
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
-        # add add delivery/collection to form
         cart = request.session.get('cart', {})
         form_data = {
             'full_name': request.POST['full_name'],
@@ -86,6 +85,7 @@ def checkout(request):
             return redirect(reverse('products'))
 
         current_cart = cart_contents(request)
+        # loyalty_stamps here also?
         total = current_cart['grand_total']
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
@@ -117,6 +117,7 @@ def checkout(request):
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
+        # loyalty_stamps
     }
     return render(request, template, context)
 
