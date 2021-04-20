@@ -11,7 +11,6 @@ HOUSEKEEPING
 
 NEED TO HAVE:
 - USER STORY: loyalty
-- remove flavour/milk from cart, checkout and product logic/views
 - contact form (use pintbaby)
 - finalise landing header, move to includes if it stays being used on multiple pages (index, all products)
 - sort out exact routing of add/delete event views, some load back to event page, some back to list of events

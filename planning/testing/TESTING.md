@@ -76,8 +76,7 @@ the nearest 0.1 value
 5. Cart quantity buttons on smaller devices
 6. Sites database
 7. Event form Description field styling, Date/Time widget UX (date format)
-8. Orders sometimes displaying twice in the database but only showing once in Stripe webhooks. Duplication seems to occur when the
-charge.succeeded event happens before the payment_intent.succeeded
+8. Orders sometimes displaying twice in the database but only showing once in Stripe webhooks. Explain in detail from Chris' conversation
 
 
  

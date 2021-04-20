@@ -34,8 +34,7 @@ class StripeWH_Handler:
         """ Handle an unexpected webhook """
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
-            status=200
-        )
+            status=200)
 
     def handle_payment_intent_succeeded(self, event):
         """ Handle successful payments, intent returns all customer information
@@ -97,8 +96,8 @@ class StripeWH_Handler:
         if order_exists:
             self._send_confirmation_email(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]}, \
-                    verified order is already in database.',
+                content=(f'Webhook received: {event["type"]}, \
+                    verified order is already in database.'),
                 status=200)
         else:
             order = None
