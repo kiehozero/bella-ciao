@@ -77,44 +77,7 @@
                         </div>
                         {% endif %}
 
-                        {% if product.milks %}
-                        <div class="col-sm-12 col-md-6 text-green">
-                            <small>Milk:</small>
-                            <select name="product_milk" id="id_milk_select" class="text-green">
-                                <option value="none">None</option>
-                                <option value="almond">Almond</option>
-                                <option value="coconut">Coconut</option>
-                                <option value="dairy" selected>Dairy</option>
-                                <option value="oat">Oat</option>
-                                <option value="soya">Soya</option>
-                            </select>
-                        </div>
-                        {% endif %}
                     </div>
-
-                    {% if product.flavours %}
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-sm-12 col-md-6 input-field text-green">
-                            {% if product.category_name == 'snacks' %}
-                            <small>Flavour:</small>
-                            <select name="product_flavour" id="id_flavour_select" class="text-green">
-                                <option value="canadian-ham">Canadian Ham</option>
-                                <option value="cheese-onion" selected>Cheese and Onion</option>
-                                <option value="ready-salted">Ready Salted</option>
-                                <option value="salt-vinegar">Salt and Vinegar</option>
-                            </select>
-                            {% else %}
-                            <small>Syrup:</small>
-                            <select name="product_flavour" id="id_flavour_select" class="text-green">
-                                <option value="none" selected>None</option>
-                                <option value="hazelnut">Hazelnut Syrup</option>
-                                <option value="caramel">Salted Caramel Sauce</option>
-                                <option value="vanilla">Vanilla Syrup</option>
-                            </select>
-                            {% endif %}
-                        </div>
-                    </div>
-                    {% endif %}
 
                     <!-- Quantity selector -->
                     <!-- Same code as the cart, this is taken from the Boutique Ado project -->

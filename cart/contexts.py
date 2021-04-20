@@ -28,8 +28,6 @@ def cart_contents(request):
                 'product': product,
             })
         else:
-            # if it customisable each option needs to be iterated to
-            # check for combinations of each customisable option
             product = get_object_or_404(Product, pk=item_id)
             for size, quantity in item_data['items_by_size'].items():
                 total += quantity * product.price
@@ -39,8 +37,6 @@ def cart_contents(request):
                 cart_items.append({
                     'item_id': item_id,
                     'quantity': quantity,
-                    # try working with flavour and milk here now that
-                    # quantity doesn't match item_data anymore
                     'product': product,
                     'size': size,
                 })

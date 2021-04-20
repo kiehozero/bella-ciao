@@ -41,11 +41,9 @@ Order Summary |
                 </div>
                 <div class="col-sm-6">
                     <p class="text-wrap">
-                    <a href="{ url 'view_product' product.id %}" class="text-black">
-                        {% if item.size %}{{ item.size|title }}{% endif %}&nbsp;{{ item.product.name }}
-                    </a>
-                    {% if item.milk %} - {{ item.milk }}{% endif %}
-                    {% if item.flavour %} - {{ item.flavour }}{% endif %}
+                        <a href="{ url 'view_product' product.id %}" class="text-black">
+                            {% if item.size %}{{ item.size|title }}{% endif %}&nbsp;{{ item.product.name }}
+                        </a>
                     </p>
                 </div>
                 <div class="col-sm-2">{{ item.quantity }}</div>
