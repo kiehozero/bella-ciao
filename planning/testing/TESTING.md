@@ -77,6 +77,3 @@ the nearest 0.1 value
 6. Sites database
 7. Event form Description field styling, Date/Time widget UX (date format)
 8. Orders sometimes displaying twice in the database but only showing once in Stripe webhooks. Explain in detail from Chris' conversation
-
-
- 
