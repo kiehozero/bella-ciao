@@ -13,7 +13,7 @@ HOUSEKEEPING
 NEED TO HAVE:
 - change delivery to a flat fee below threshold to remove ambiguity against rounding, write up full bugfix
 - USER STORY: loyalty
-- USER STORY: email confirmation
+- stick header on mobile
 - set up Heroku webhook on deployment
 - contact form (use pintbaby)
 - finalise landing header, move to includes if it stays being used on multiple pages (index, all products)
