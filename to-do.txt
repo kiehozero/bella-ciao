@@ -11,9 +11,10 @@ HOUSEKEEPING
 - cart update and remove hover buttons
 
 NEED TO HAVE:
-- change delivery to a flat fee below threshold to remove ambiguity against rounding, write up full bugfix
+- if a user has already signed up to an event, prevent them from doing so again (search EventAttendees for user, then search for even),
+add this to join view as an if loop
 - USER STORY: loyalty
-- rounding issue still showing up on orders containing items that don't end in a zero
+- rounding issue still showing up on orders containing items that don't end in a zero, write up full bugfix
 - set up Heroku webhook on deployment
 - contact form (use pintbaby)
 - finalise landing header, move to includes if it stays being used on multiple pages (index, all products)
