@@ -32,6 +32,21 @@
         </div>
 
         <div class="col-sm-12 col-md-5 offset-md-2 pt-3 pb-2">
+
+            {% if sold_out == True %}
+            <h6 class="mobile-font back-lightred text-offwhite text-center px-3 py-3 w-100">
+                Sold Out!
+            </h6>
+            {% elif limited_avail == True %}
+            <h6 class="mobile-font back-lightred text-offwhite text-center px-3 py-3 w-100">
+                Limited availability!
+            </h6>
+            {% endif %}
+
+            <div class="mobile-font my-3">
+                <i class="far fa-calendar-alt"></i>&nbsp;&nbsp;{{ event.date }}
+            </div>
+
             <div class="mobile-font">
                 {{ event.description }}
             </div>
@@ -49,14 +64,16 @@
                                 All Events
                             </a>
                         </div>
-                        <div class="col check-eject pt-3 pb-2">
+                        {% if sold_out == False %}
+                        <div class="col check-eject pt-3 pb-2"> 
                             <input type="submit" value="RSVP" class="btn btn-primary back-green text-offwhite"
-                                name="add-cart">
+                                name="add-cart"> 
                         </div>
+                        {% endif %}
                     </div>
 
                     {% if request.user.is_superuser %}
-                    <div class="row justify-content-center pt-3 pb-2">
+                    <div class="row justify-content-center pt-5 pb-2">
                         <div class="col">
                             <h5 class="text-green">Admin Controls</h5>
                         </div>
@@ -86,8 +103,18 @@
 
             <!-- Guestlist, see bugfix #10 -->
             {% if request.user.is_superuser %}
-            <div class="row">
+            <div class="row pt-3 pb-2">
+                <p>Capacity: {{ event.capacity }}</p>
+                <p>Tickets sold: {{ attendance }}</p>
+            </div>
+
+            {{ guestlist }}
+
+            <div class="row pt-3 pb-2">
                 <h6 class="text-green">Guestlist</h6>
+            </div>
+            <!-- "No attendees yet" message if guestlist is empty -->
+            <div class="row pt-3 pb-2">
                 <div class="table-responsive table-sm table-hover">
                     <table class="table">
                         <thead>

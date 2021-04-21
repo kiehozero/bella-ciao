@@ -1,3 +1,5 @@
+from decimal import Decimal
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -33,13 +35,33 @@ def view_event(request, event_id):
     for attendee in attendees:
         # stores event_attendee pk to pass to delete_attendee if required
         username = User.objects.get(pk=attendee[1])
-        guestlist.append(
-            {'user': attendee[1], 'username': username, 'attendee_key': attendee[0]}
-        )
+        guestlist.append({
+            'user': attendee[1],
+            'username': username,
+            'attendee_key': attendee[0]
+            })
+
+    attendance = len(guestlist)
+    capacity = event.capacity
+    tickets_sold = Decimal(attendance / capacity * 100)
+
+    if settings.TICKET_THRESHOLD_PERCENTAGE < tickets_sold:
+        limited_avail = True
+    else:
+        limited_avail = False
+
+    if attendance == capacity:
+        sold_out = True
+    else:
+        sold_out = False
+
     template = 'events/view_event.html'
     context = {
         'event': event,
         'guestlist': guestlist,
+        'attendance': attendance,
+        'limited_avail': limited_avail,
+        'sold_out': sold_out,
     }
     # access attendees db here to give a countdown of tickets remaining,
     # will need to return event.capacity, then filter attendees by event_id,
@@ -53,9 +75,13 @@ def view_event(request, event_id):
 def join_event(request, event_id):
     if not request.user.is_authenticated:
         return redirect(reverse('home'))
+
     event = get_object_or_404(Event, pk=event_id)
     profile = UserProfile.objects.get(user=request.user)
     user = profile.user
+    print(event)
+    print(profile)
+    print(user)
     # needs to search for user/event combo already being in DB
     EventAttendees.objects.create(user=user, event=event)
     messages.info(

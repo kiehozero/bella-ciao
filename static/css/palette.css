@@ -4,6 +4,10 @@
     background-color: #008763;
 }
 
+.back-lightred {
+    background-color:#e64757;
+}
+
 .back-offwhite {
     background-color: #f0eee9;
 }
@@ -24,14 +28,14 @@
     color: #008763;
 }
 
+.text-lightred {
+    color: #e64757;
+}
+
 .text-offwhite {
     color: #f0eee9;
 }
 
 .text-red {
     color: #3b0022;
-}
-
-.text-lightred {
-    color: #e64757;
 }
