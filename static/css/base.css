@@ -3,13 +3,15 @@
 
 /* Project-level Preferences */
 html {
-    height: 100%;
+    min-height: 100%;
+    position: relative;
 }
 
 body {
     background-size: cover;
     color: #100f10;
     font-family: 'Montserrat';
+    margin-bottom: 35vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -215,6 +217,12 @@ a.view-cart-toast:hover {
 
 /* Desktop Footer */
 
+footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
 .info-box {
     padding-bottom: 2.5vh;
     padding-left: 5vh;
@@ -364,6 +372,11 @@ a.view-cart-toast:hover {
 
 
 @media (max-width: 768px) {
+    body {
+        /* see how these need to be amended for tablet views */
+        margin-top: 20%;
+        margin-bottom: 20%;
+    }
     /* Alternative navigation element for smaller screens */
     .sidebar {
         /* static sidebar is replaced with top navbar on mobile and tablet */

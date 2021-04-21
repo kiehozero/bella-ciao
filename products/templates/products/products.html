@@ -23,7 +23,7 @@ Products |
 <div class="container">
 
     <!-- Preset product filters -->
-    <div class="row d-flex flex-wrap filter-row justify-content-center">
+    <div class="row d-flex flex-wrap filter-row justify-content-center pt-3 pb-2">
         <div class="col">
             <a class="btn-sm filter-button
         {% if current_categories == None %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
@@ -84,7 +84,7 @@ Products |
     </div>
 
     <!-- Search box and counter taken from Code Institute task manager tutorial -->
-    <div class="row justify-content-center text-red">
+    <div class="row justify-content-center text-red pt-3 pb-2">
         <div class="col-sm-12 col-md-8">
             <form method="GET" action="{% url 'products' %}">
                 <div class="row">
@@ -165,7 +165,7 @@ Products |
     {% endif %}
 
     <!-- Default Bootstrap card format -->
-    <div class="row">
+    <div class="row pt-3 pb-2">
 
         {% for product in products %}
 
