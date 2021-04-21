@@ -44,6 +44,13 @@ $("#modalItemClose").click(function() {
 });
 
 
+/* Auto-Scroll Button - taken from Boutique Ado */
+
+$('#backToTop').click(function () {
+    window.scrollTo(0, 0);
+});
+
+
 /* Mobile Navbar */
 
 $(".navbar-toggler").click(function() {

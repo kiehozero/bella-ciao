@@ -7,6 +7,27 @@
     padding: 0px;
 }
 
+/* Buttons - overwriting Bootstrap default parameters */
+
+.btn-primary {
+    border-color: #008763;
+}
+
+.btn-primary:active,
+.btn-primary:hover {
+    background-color: #f0eee9;
+    border-color: #008763;
+    color: #008763;
+}
+
+.btn-primary a i:hover,
+.btn-primary a:hover,
+.btn-primary i:hover {
+    background-color: #f0eee9;
+    color: #008763;
+}
+
+
 /* Responsiveness */
 
 @media (max-width: 768px) {

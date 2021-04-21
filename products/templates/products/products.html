@@ -23,8 +23,6 @@ Products |
 <div class="container">
 
     <!-- Preset product filters -->
-    <!-- Switch this to a loop for each category render name-->
-    
     <div class="row d-flex flex-wrap filter-row justify-content-center">
         <div class="col">
             <a class="btn-sm filter-button
@@ -55,165 +53,159 @@ Products |
                 Specials
             </a>
         </div>
-    <div class="col">
-        <a class="btn-sm filter-button
-        {% if 'sandwiches' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-            href="{% url 'products' %}?category=sandwiches">
-            Sandwiches
-        </a>
-    </div>
-    <div class="col">
-        <a class="btn-sm filter-button
-        {% if 'snacks' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-            href="{% url 'products' %}?category=snacks">
-            Snacks
-        </a>
-    </div>
-    <div class="col">
-        <a class="btn-sm filter-button
+        <div class="col">
+            <a class="btn-sm filter-button
+            {% if 'sandwiches' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
+                href="{% url 'products' %}?category=sandwiches">
+                Sandwiches
+            </a>
+        </div>
+        <div class="col">
+            <a class="btn-sm filter-button
+            {% if 'snacks' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
+                href="{% url 'products' %}?category=snacks">
+                Snacks
+            </a>
+        </div>
+        <div class="col">
+            <a class="btn-sm filter-button
         {% if 'desserts' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-            href="{% url 'products' %}?category=desserts">
-            Desserts
-        </a>
-    </div>
-    <div class="col">
-        <a class="btn-sm filter-button
+                href="{% url 'products' %}?category=desserts">
+                Desserts
+            </a>
+        </div>
+        <div class="col">
+            <a class="btn-sm filter-button
         {% if 'merchandise' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-            href="{% url 'products' %}?category=merchandise">
-            Merch
-        </a>
+                href="{% url 'products' %}?category=merchandise">
+                Merch
+            </a>
+        </div>
     </div>
-</div>
 
-<!-- Search box and counter taken from Code Institute task manager tutorial -->
-<div class="row justify-content-center text-red">
-    <div class="col-sm-12 col-md-8">
-        <form method="GET" action="{% url 'products' %}">
-            <div class="row">
+    <!-- Search box and counter taken from Code Institute task manager tutorial -->
+    <div class="row justify-content-center text-red">
+        <div class="col-sm-12 col-md-8">
+            <form method="GET" action="{% url 'products' %}">
+                <div class="row">
 
-                <!-- Search Box -->
-                <div class="col-sm-12 col-md-8" aria-labelledby="search">
-                    <div class="input-group">
-                        <!-- Not functioning with sort buttons, does the search item just need adding to if statement
+                    <!-- Search Box -->
+                    <div class="col-sm-12 col-md-8" aria-labelledby="search">
+                        <div class="input-group">
+                            <!-- Not functioning with sort buttons, does the search item just need adding to if statement
                         in HTML below (see bugfix #2 note)? -->
-                        <input name="search" minlength="3" class="form-control" type="text" placeholder="Search the store" required>
+                            <input name="search" minlength="3" class="form-control" type="text"
+                                placeholder="Search the store" required>
 
-                        <!-- Buttons -->
-                        <div class="input-group-append">
-                            <button type="submit" class=" btn search-button text-offwhite back-green" id="searchButton">
-                                Search
-                            </button>
-                            <a href="{% url 'products' %}" class="btn search-button text-offwhite back-red" id="searchReset">
-                                Reset
-                            </a>
+                            <!-- Buttons -->
+                            <div class="input-group-append">
+                                <button type="submit" class=" btn search-button text-offwhite back-green"
+                                    id="searchButton">
+                                    Search
+                                </button>
+                                <a href="{% url 'products' %}" class="btn search-button text-offwhite back-red"
+                                    id="searchReset">
+                                    Reset
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
 
-    <div class="col-sm-12 col-md-4">
-        <div class="row">
-            <div class="col">
-                <div class="text-red">Sort</div>
-            </div>
-            <div class="col">
-                <!-- Bugfix #2: Category sorting -->
-                <a href="{% if cat_list == None %}
+        <div class="col-sm-12 col-md-4">
+            <div class="row">
+                <div class="col">
+                    <div class="text-red">Sort</div>
+                </div>
+                <div class="col">
+                    <!-- Bugfix #2: Category sorting -->
+                    <a href="{% if cat_list == None %}
                              {% url 'products' %}?sort=price&direction=asc
                          {% else %}
                              {% url 'products' %}?category={{ cat_list }}&sort=price&direction=asc
                          {% endif %}"
-                    class="btn filter-button {% if current_sort == 'price_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
-                    <i class="fas fa-euro-sign"></i>
-                </a>
-            </div>
-            <div class="col">
-                <a href="{% if cat_list == None %}
+                        class="btn filter-button {% if current_sort == 'price_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
+                        <i class="fas fa-euro-sign"></i>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% if cat_list == None %}
                              {% url 'products' %}?sort=name&direction=asc
                          {% else %}
                              {% url 'products' %}?category={{ cat_list }}&sort=name&direction=asc
                          {% endif %}"
-                    class="btn filter-button {% if current_sort == 'name_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
-                    <i class="fas fa-sort-alpha-down"></i>
-                </a>
-            </div>
-            <div class="col">
-                <a href="{% if cat_list == None %}
+                        class="btn filter-button {% if current_sort == 'name_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
+                        <i class="fas fa-sort-alpha-down"></i>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="{% if cat_list == None %}
                              {% url 'products' %}?sort=name&direction=desc
                          {% else %}
                              {% url 'products' %}?category={{ cat_list }}&sort=name&direction=desc
                          {% endif %}"
-                    class="btn filter-button {% if current_sort == 'name_desc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
-                    <i class="fas fa-sort-alpha-up-alt"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-{% if search_term or current_categories or current_sort != 'None_None' %}
-<div class="row justify-content-center">
-    <span>
-        <small>
-            {{products|length }} {% if products|length == 1 %}item{% else %}items{% endif %} found{% if search_term %} for {{ search_term }}{% endif %}
-        </small>
-    </span>
-</div>
-{% endif %}
-
-<!-- Default Bootstrap card format -->
-<div class="row">
-
-    {% for product in products %}
-
-    <div class="col-sm-12 col-md-4 product-cards">
-
-        <div class="card shop-card">
-            {% if product.image %}
-            <a href="{% url 'view_product' product.id %}">
-                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image card-img-top">
-            </a>
-            {% else %}
-            <a href="{% url 'view_product' product.id %}">
-                <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}" class="product-image card-img-top">
-            </a>
-            {% endif %}
-            <div class="card-body">
-                <h6 class="card-title">
-                    <a href="{% url 'view_product' product.id %}" class="text-red">{{ product.name }}</a>
-                </h6>
-                <br>
-
-                <div class="row">
-                    <div class="col text-green text-right">
-                        €{{ product.price }}
-                    </div>
+                        class="btn filter-button {% if current_sort == 'name_desc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
+                        <i class="fas fa-sort-alpha-up-alt"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-    {% endfor %}
-</div>
 
-<div class="row btt-row">
-    <div class="col d-flex justify-content-center btt-col">
-        <a class="btn btn-outline-success text-green" id="backToTop">
-            <i class="fas fa-angle-double-up"></i>
-        </a>
+    {% if search_term or current_categories or current_sort != 'None_None' %}
+    <div class="row justify-content-center">
+        <span>
+            <small>
+                {{products|length }} {% if products|length == 1 %}item{% else %}items{% endif %} found{% if search_term %} for {{ search_term }}{% endif %}
+            </small>
+        </span>
+    </div>
+    {% endif %}
+
+    <!-- Default Bootstrap card format -->
+    <div class="row">
+
+        {% for product in products %}
+
+        <div class="col-sm-12 col-md-4 product-cards">
+
+            <div class="card shop-card">
+                {% if product.image %}
+                <a href="{% url 'view_product' product.id %}">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image card-img-top">
+                </a>
+                {% else %}
+                <a href="{% url 'view_product' product.id %}">
+                    <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}"
+                        class="product-image card-img-top">
+                </a>
+                {% endif %}
+                <div class="card-body">
+                    <h6 class="card-title">
+                        <a href="{% url 'view_product' product.id %}" class="text-red">{{ product.name }}</a>
+                    </h6>
+                    <br>
+
+                    <div class="row">
+                        <div class="col text-green text-right">
+                            €{{ product.price }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="row btt-row">
+        <div class="col d-flex justify-content-center btt-col">
+            <a class="btn btn-outline-success text-green" id="backToTop">
+                <i class="fas fa-angle-double-up"></i>
+            </a>
+        </div>
     </div>
 </div>
 
-{% endblock %}
-
-</div>
-{% block postloadjs %}
-{{ block.super }}
-<!-- idea taken from Boutique Ado -->
-<script type="text/javascript">
-    $('#backToTop').click(function () {
-        window.scrollTo(0, 0)
-    })
-</script>
 {% endblock %}
