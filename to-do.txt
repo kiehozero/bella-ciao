@@ -22,5 +22,3 @@ then search for event), add this to join view as an if loop
 within profile and join from within event working fine, need to check admin removing from event
 
 NICE TO HAVE:
-- event attendance calculation
-- edit product or event from admin panel (dropdown to select product on form, see product form category choice)
