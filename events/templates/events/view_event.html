@@ -33,6 +33,12 @@
 
         <div class="col-sm-12 col-md-5 offset-md-2 pt-3 pb-2">
 
+            <!-- {% if user_attending == True %}
+            <h6 class="mobile-font back-green text-offwhite text-center px-3 py-3 w-100">
+                You've got a ticket!
+            </h6>
+            {% endif %}
+             -->
             {% if sold_out == True %}
             <h6 class="mobile-font back-lightred text-offwhite text-center px-3 py-3 w-100">
                 Sold Out!
@@ -65,10 +71,14 @@
                             </a>
                         </div>
                         {% if sold_out == False %}
-                        <div class="col check-eject pt-3 pb-2"> 
-                            <input type="submit" value="RSVP" class="btn btn-primary back-green text-offwhite"
-                                name="add-cart"> 
-                        </div>
+                            {% if user_attending == True %}
+                            <!-- blank -->
+                            {% else %}
+                            <div class="col check-eject pt-3 pb-2"> 
+                                <input type="submit" value="RSVP" class="btn btn-primary back-green text-offwhite"
+                                    name="add-cart"> 
+                            </div>
+                            {% endif %}
                         {% endif %}
                     </div>
 
