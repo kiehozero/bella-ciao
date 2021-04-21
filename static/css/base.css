@@ -270,11 +270,6 @@ a.view-cart-toast:hover {
 
 /* Buttons - all btn items are overwrites of Bootstrap parameters */
 
-.card.index-card .btn.btn-outline-success,
-.card.shop-card .btn.btn-outline-success {
-    border-color: #008763;
-}
-
 .btn-outline-success {
     border-color: #008763;
     color: #008763;

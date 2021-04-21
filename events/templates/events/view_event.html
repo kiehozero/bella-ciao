@@ -42,6 +42,7 @@
                 <form class="form" action="{% url 'join_event' event.id %}" method="POST">
                     {% csrf_token %}
 
+                    <!-- The two buttons plus the two admin buttons need to be w-100 on mobile and vertically stacked -->
                     <div class="row pt-3 pb-2">
                         <div class="col check-eject pt-3 pb-2">
                             <a href="{% url 'events' %}" class="btn btn-outline-success text-green w-100">
