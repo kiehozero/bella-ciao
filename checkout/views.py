@@ -17,6 +17,26 @@ import json
 
 
 # core logic comes from Boutique Ado tutorial
+
+@require_POST
+def cache_checkout_data(request):
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'cart': json.dumps(request.session.get('cart', {})),
+            'save_info': request.POST.get('save_info'),
+            # 'loyalty_stamps': request.POST.get('loyalty_stamps'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(
+            request, "Your payment could not be processed, \
+                please try again later.")
+        return HttpResponse(content=e, status=400)
+
+
 def checkout(request):
     """ See the contents (if any) of the shopping cart """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -32,8 +52,8 @@ def checkout(request):
             'street_address2': request.POST['street_address2'],
             'city': request.POST['city'],
             'eircode': request.POST['eircode'],
-
         }
+
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
@@ -91,14 +111,14 @@ def checkout(request):
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
-            currency=settings.STRIPE_CURRENCY
+            currency=settings.STRIPE_CURRENCY,
         )
 
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
                 order_form = OrderForm(initial={
-                    'full_name': profile.default_name,
+                    'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
                     'street_address1': profile.default_street_address1,
@@ -136,12 +156,11 @@ def checkout_success(request, order_number):
 
     if save_info:
         profile_data = {
-            'default_name': order.full_name.title(),
             'default_phone_number': order.phone_number,
-            'default_street_address1': order.street_address1.title(),
+            'default_street_address1': order.street_address1,
             'default_street_address2': order.street_address2,
             'default_city': order.city,
-            'default_eircode': order.eircode.upper(),
+            'default_eircode': order.eircode,
         }
         user_profile_form = UserProfileForm(profile_data, instance=profile)
         if user_profile_form.is_valid():
@@ -149,6 +168,7 @@ def checkout_success(request, order_number):
 
     messages.success(
         request, 'Order complete!')
+
     if 'cart' in request.session:
         del request.session['cart']
 
@@ -158,25 +178,6 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
-
-
-@require_POST
-def cache_checkout_data(request):
-    try:
-        pid = request.POST.get('client_secret').split('_secret')[0]
-        stripe.api_key = settings.STRIPE_SECRET_KEY
-        stripe.PaymentIntent.modify(pid, metadata={
-            'cart': json.dumps(request.session.get('cart', {})),
-            'save_info': request.POST.get('save_info'),
-            # 'loyalty_stamps': request.POST.get('loyalty_stamps'),
-            'username': request.user,
-        })
-        return HttpResponse(status=200)
-    except Exception as e:
-        messages.error(
-            request, "Your payment could not be processed, \
-                please try again later.")
-        return HttpResponse(content=e, status=400)
 
 
 @login_required

@@ -8,9 +8,13 @@ HOUSEKEEPING
 - once code is completed, open all sheets and clean up any items that show up in the problems tab
 - upload final db-schema.png in planning folder
 - scroll bar in cart table on smaller desktop screens?
+- cart update and remove hover buttons
 
 NEED TO HAVE:
+- change delivery to a flat fee below threshold to remove ambiguity against rounding, write up full bugfix
 - USER STORY: loyalty
+- USER STORY: email confirmation
+- set up Heroku webhook on deployment
 - contact form (use pintbaby)
 - finalise landing header, move to includes if it stays being used on multiple pages (index, all products)
 - sort out exact routing of add/delete event views, some load back to event page, some back to list of events

@@ -65,6 +65,8 @@ a much improved user experience.
 10. During testing I noticed that a couple of the dummy accounts I had set up could see the guestlist on events. This was intended 
 to be an admin feature so quickly wrapping the entire row in the request.user.is_superuser statement was a simple fix.
 
+11. WRITE UP EXPLANATION OF ROUNDING ISSUE IN cart/contexts.py delivery items when you can be bothered
+
 
 ## Outstanding Issues
 
@@ -76,4 +78,8 @@ the nearest 0.1 value
 5. Cart quantity buttons on smaller devices
 6. Sites database
 7. Event form Description field styling, Date/Time widget UX (date format)
-8. Orders sometimes displaying twice in the database but only showing once in Stripe webhooks. Explain in detail from Chris' conversation
+
+
+## Rendering
+
+>>> User Lighthouse in Chrome here

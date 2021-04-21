@@ -44,6 +44,7 @@ class StripeWH_Handler:
         intent = event.data.object
         pid = intent.id
         cart = intent.metadata.cart
+
         save_info = intent.metadata.save_info
         # loyalty_stamps = intent.metadata.loyalty_stamps
 
@@ -63,7 +64,6 @@ class StripeWH_Handler:
             # add loyalty stamps here using similar logic
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
-                profile.default_name = shipping_details.name
                 profile.default_phone_number = shipping_details.phone
                 profile.default_street_address1 = shipping_details.address.line1
                 profile.default_street_address2 = shipping_details.address.line2
@@ -111,7 +111,6 @@ class StripeWH_Handler:
                     city=shipping_details.address.city,
                     street_address1=shipping_details.address.line1,
                     street_address2=shipping_details.address.line2,
-                    grand_total=grand_total,
                     original_cart=cart,
                     stripe_pid=pid,
                 )

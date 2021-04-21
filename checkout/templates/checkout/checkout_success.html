@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
 
 {% block extratitle %}
 Order Summary |
@@ -48,7 +49,7 @@ Order Summary |
             <p class="w-100">Name: {{ order.full_name|title }}</p>
             <p class="w-100">Contact Number: {{ order.phone_number }}</p>
             {% if user.is_authenticated %}
-            <p class="w-100">Loyalty Points Earned: {{ cart_contents.loyalty_stamps }}</p>
+            <p class="w-100">Loyalty Points Earned: </p>
             <p class="w-100">Current Loyalty Balance: Loyalty balance here</p>
             {% endif %}
         </div>
@@ -76,7 +77,7 @@ Order Summary |
                         </p>
                     </div>
                     <div class="col-sm-2">{{ item.quantity }}</div>
-                    <div class="col-sm-2">€{{ item.product.price }}</div>
+                    <div class="col-sm-2">€{{ item.product.price | calc_subtotal:item.quantity }}</div>
                 </div>
                 {% endfor %}
             </div>
@@ -95,17 +96,17 @@ Order Summary |
         <div class="row summary-row">
             <p class="w-100">
                 <i class="fas fa-coffee"></i>
-                &nbsp;&nbsp;Subtotal: €{{ order.order_total|floatformat:2 }}</p>
+                &nbsp;&nbsp;Subtotal: €{{ order.order_total }}</p>
             {% if order.delivery_cost %}
             <p class="w-100">
                 <i class="fas fa-truck"></i>
-                &nbsp;&nbsp;Delivery Charge: €{{ order.delivery_cost|floatformat:2 }}</p>
+                &nbsp;&nbsp;Delivery Charge: €{{ order.delivery_cost }}</p>
             {% else %}
             <p class="w-100">You qualified for free delivery!</p>
             {% endif %}
             <p class="w-100">
                 <i class="far fa-credit-card"></i>
-                &nbsp;&nbsp;Total: €{{ order.grand_total|floatformat:2 }}</p>
+                &nbsp;&nbsp;Total: €{{ order.grand_total }}</p>
         </div>
     </div>
 

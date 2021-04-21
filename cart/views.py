@@ -22,18 +22,11 @@ def add_to_cart(request, item_id):
     redirect_url = request.POST.get('redirect_url')
 
     size = None
-    flavour = None
-    milk = None
     if 'product_size' in request.POST:
         size = request.POST['product_size']
-    if 'product_milk' in request.POST:
-        milk = request.POST['product_milk']
-    if 'product_flavour' in request.POST:
-        flavour = request.POST['product_flavour']
 
     cart = request.session.get('cart', {})
 
-    # below if statement needs to be extended to include milk
     if size:
         if item_id in list(cart.keys()):
             if size in cart[item_id]['items_by_size'].keys():
@@ -75,18 +68,9 @@ def update_cart(request, item_id):
     size = None
     if 'product_size' in request.POST:
         size = request.POST['product_size']
-    milk = None
-    if 'product_milk' in request.POST:
-        milk = request.POST['product_milk']
-    flavour = None
-    if 'product_flavour' in request.POST:
-        flavour = request.POST['product_flavour']
 
     cart = request.session.get('cart', {})
 
-    # below if statement needs to be extended to include flavour and milk
-    # perhaps it would be good to combine them into keys, e.g. size only,
-    # size and milk, size and flavour, size milk flavour (s, sm, sf, smf)?
     if size:
         if quantity > 0:
             # quantity decreases but item still in cart
@@ -122,16 +106,9 @@ def remove_item(request, item_id):
         size = None
         if 'product_size' in request.POST:
             size = request.POST['product_size']
-        milk = None
-        if 'product_milk' in request.POST:
-            milk = request.POST['product_milk']
-        flavour = None
-        if 'product_flavour' in request.POST:
-            flavour = request.POST['product_flavour']
 
         cart = request.session.get('cart', {})
 
-        # below if statement needs to be extended to include flavour and milk
         if size:
             # deletes size key if present, deletes whole item if not
             del cart[item_id]['items_by_size'][size]

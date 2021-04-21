@@ -87,10 +87,8 @@ Order Summary |
                     {{ order_form.phone_number | as_crispy_field }}
                 </fieldset>
 
-                <!-- add if loop here, if delivery do this, if collection make another fieldset -->
                 <fieldset>
                     <legend class="fieldset-label text-green pt-3 pb-2">Address</legend>
-                    <!-- How to make these Title or Upper the case of each field?-->
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
                     {{ order_form.city | as_crispy_field }}
