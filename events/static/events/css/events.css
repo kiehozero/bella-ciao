@@ -14,7 +14,8 @@
 }
 
 .btn-primary:active,
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus {
     background-color: #f0eee9;
     border-color: #008763;
     color: #008763;
@@ -22,9 +23,18 @@
 
 .btn-primary a i:hover,
 .btn-primary a:hover,
-.btn-primary i:hover {
+.btn-primary i:hover,
+.btn-primary:not(:disabled):not(.disabled):active {
     background-color: #f0eee9;
+    border-color: #008763;
     color: #008763;
+}
+
+.btn-primary:not(:disabled):not(.disabled):focus,
+.btn-primary:focus {
+    background-color: #f0eee9;
+    border-color: #008763;
+    box-shadow: 0 0 0 0.2rem rgb(0 135 99 / 50%);
 }
 
 

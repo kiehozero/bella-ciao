@@ -16,6 +16,8 @@ $("#checkoutBtn").mouseleave(function() {
     $("#checkoutBtn a").css("color", "#008763");
 });
 
+/* items below need to only hover for each item rather than all of them */
+
 $(".update-item").mouseenter(function() {
     $(".update-item i").css("color", "#f0eee9");
 });
@@ -29,7 +31,7 @@ $(".remove-item").mouseenter(function() {
 });
 
 $(".remove-item").mouseleave(function() {
-    $(".remove-item i").css("color", "#3b0022");
+    $(".remove-item i").css("color", "e64757");
 });
 
 if ($(window).width() < 1280) {

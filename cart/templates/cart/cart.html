@@ -92,14 +92,14 @@ My Cart |
                             €{{ item.product.price | calc_subtotal:item.quantity }}
                         </td>
                         <td colspan="1">
-                            <a class="btn btn-outline-success update-item text-green">
+                            <a class="btn btn-outline-success update-item">
                                 <i class="far fa-check-square fa-sm text-green"></i>
                             </a>
                         </td>
                         <td colspan="1">
-                            <a class="btn btn-outline-danger remove-item text-green" id="remove_{{ item.item_id }}"
+                            <a class="btn btn-outline-danger remove-item" id="remove_{{ item.item_id }}"
                                 data-product_size="{{ item.size }}">
-                                <i class="far fa-trash-alt fa-sm text-red"></i>
+                                <i class="far fa-trash-alt fa-sm text-lightred"></i>
                             </a>
                         </td>
                     </tr>

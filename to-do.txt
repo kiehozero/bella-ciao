@@ -13,6 +13,7 @@ HOUSEKEEPING
 NEED TO HAVE:
 - change delivery to a flat fee below threshold to remove ambiguity against rounding, write up full bugfix
 - USER STORY: loyalty
+- rounding issue still showing up on orders containing items that don't end in a zero
 - stick header on mobile
 - set up Heroku webhook on deployment
 - contact form (use pintbaby)
