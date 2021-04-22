@@ -30,7 +30,7 @@ Upcoming Events
             </a>
             {% else %}
             <a href="{% url 'view_event' event.id %}">
-                <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ event.event_name }}" class="product-image card-img-top">
+                <img src="{{ MEDIA_URL }}city-square.png" alt="{{ event.event_name }}" class="product-image card-img-top">
             </a>
             {% endif %}
             <div class="card-body">
@@ -47,12 +47,6 @@ Upcoming Events
 {% endfor %}
 </div>
 
-<div class="row btt-row">
-    <div class="col d-flex justify-content-center btt-col">
-        <a class="btn btn-outline-success text-green" id="backToTop">
-            <i class="fas fa-angle-double-up"></i>
-        </a>
-    </div>
-</div>
+{% include 'includes/back-to-top.html' %}
 
 {% endblock %}
