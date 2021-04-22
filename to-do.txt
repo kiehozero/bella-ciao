@@ -1,7 +1,5 @@
 HOUSEKEEPING
-- add aria tags for all icons
 - make eircode mandatory in checkout form
-- all alt tags for all imgs
 - move form CSS for checkout (and any other app that has forms.py) into forms.py using the field.widget.attrs['class'] methods
 - go through CSS files and see where padding and margin settings can be replaced by Bootstrap tags (line 29 base.css)
 - profile models and forms show good examples of how to customise, use of widgets at __str__
@@ -11,8 +9,8 @@ HOUSEKEEPING
 - cart update and remove hover buttons
 
 NEED TO HAVE:
-- if a user has already signed up to an event, prevent them from doing so again (search EventAttendees for user, 
-then search for event), add this to join view as an if loop
+- if a user is already attending an event, prevent them from doing so again (search EventAttendees for user, then search for 
+event), add this to join view as an if loop
 - USER STORY: loyalty
 - rounding issue still showing up on orders containing items that don't end in a zero, write up full bugfix
 - set up Heroku webhook on deployment
@@ -20,5 +18,3 @@ then search for event), add this to join view as an if loop
 - event model needs an image url field?
 - sort out exact routing of add/delete event views, some load back to event page, some back to list of events. Delete from
 within profile and join from within event working fine, need to check admin removing from event
-
-NICE TO HAVE

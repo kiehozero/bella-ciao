@@ -2,6 +2,7 @@
 
 Welcome to my full-stack development milestone project. For this project I chose to create 
 [Bella Ciao](https://cafe-bella-ciao.herokuapp.com/), an online store for a coffee chain based in Limerick, Ireland.
+
 The owners are a commercial kitchen facility that specialises in corporate event catering, but during lockdown decided
 that they wanted to diversify their business towards delivery orders. The business contains a number of highly-trained
 staff who wished to display their own skills beyond the corporate catering environment, so the owners and employees
@@ -17,8 +18,11 @@ exclusive events for repeat customers and corporate team-building events once pu
 [desktop/tablet](planning/wireframes/desktop.pdf) and [mobile](planning/wireframes/mobile.pdf) versions.
 
 In colour selection I wanted to portray that the staff at the store have an authentic connection to both Italy, where many
-of the staff trained, and Ireland. To achieve this I used the following hex colours, selected using 
-[Pixlr](https://www.pixlr.com/), and all colour selections are stored in their own [CSS file](static/css/palette.css).
+of the staff trained, and Ireland. To achieve this I used the a uniform palette of hex colours, selected using 
+[Pixlr](https://www.pixlr.com/), and all colour selections are stored in their own [CSS file](static/css/palette.css). To
+create a strong theme, the navbar uses these colours in a vertical fade, while the landing page header is of the ornate
+Sarsfield Bridge, familiar to any Limerick resident, stylised using the palette to emphasise the strong connection between the city 
+and this business.
 
 - #008763 - The natural place to start was the colour green, present on both national flags. Officially called 
 [Golf Green](https://www.pantone.com/color-finder/18-5642-TCX), this green was used on the 
