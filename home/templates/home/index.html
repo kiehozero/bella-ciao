@@ -6,19 +6,13 @@ Home |
 {% endblock %}
 
 {% block page_header %}
-<!-- just here for colour and font testing at the moment -->
-<div class="row landing-header no-gutters">
-    <div class="col-sm-12 landing-box">
-        <h5 class="text-offwhite">Barista-made coffee poured in the heart of Limerick city</h5>
-        <h5 class="text-offwhite">Doirt caife de dhéantús Barista i gcroílár Luimneach</h5>
-    </div>
-</div>
-
+{% include 'includes/landing-header.html' %}
 {% endblock %}
 
 {% block content %}
 
 <!-- Default Bootstrap card format -->
+
 <div class="row index-content no-gutters">
 
     <div class="col-sm-12 col-md-4">
@@ -123,12 +117,8 @@ Home |
         </div>
     </div>
 
-    <div class="col-sm-12 col-md-4">
-
-    </div>
-
-    <!-- need a back to top button here for mobile only -->
-
 </div>
+
+{% include 'includes/back-to-top.html' %}
 
 {% endblock %}
