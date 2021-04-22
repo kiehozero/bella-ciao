@@ -246,9 +246,12 @@ footer {
 /* Index */
 
 .landing-header {
-    /* image to be changed */
-    background: url('https://www.dromoland.ie/wp-content/uploads/2019/01/sl-limerick-city.jpg') no-repeat fixed center;
     height: 40vh;
+}
+
+.landing-box img {
+    height: 40vh;
+    width: 100%;
 }
 
 .row .col.landing-box {
@@ -377,6 +380,16 @@ footer {
         margin-top: 20%;
         margin-bottom: 20%;
     }
+
+    .landing-header {
+        height: 20vh;
+    }
+
+    .landing-box img {
+        height: 20vh;
+        width: 100%;
+    }
+    
     /* Alternative navigation element for smaller screens */
     .sidebar {
         /* static sidebar is replaced with top navbar on mobile and tablet */

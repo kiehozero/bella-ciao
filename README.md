@@ -269,7 +269,10 @@ gotten bogged down on previous Bootstrap projects.
 
 ### Media
 
->>> photo credits here
+- The image used in the index page header is taken from [Tourism Europe](https://www.tourlane.com/europe/ireland/limerick/).
+The [original](https://images.ctfassets.net/bth3mlrehms2/2CKgqB27vGnVOVRbDEtkll/b1d0d5183538f02650dea4450e08fbbd/Limerick__Ireland.jpg)
+is used as that page's background element; I styled this significantly using [Pixlr](https://www.pixlr.com/) to match the 
+colour scheme of the project. A cropped version of this is used as a placeholder for events without an image.
 
 ### Acknowledgements
 
