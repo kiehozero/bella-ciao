@@ -56,20 +56,6 @@ h6.card-title a:hover {
 
 /* View Product */
 
-.breadcrumb {
-    background-color: transparent;
-    display: inline-block;
-    font-size: 10px;
-    text-transform: uppercase;
-    margin-top: 10vh;
-    padding: 0px;
-}
-
-.breadcrumb:last-child {
-    color: #008763;
-    font-weight: 800;
-}
-
 .qty-panel {
     /* not needed for styling, this is an element that identifies
     the row for DOM traversal when updating the product quantity */

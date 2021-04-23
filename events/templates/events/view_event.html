@@ -17,6 +17,20 @@
 
 <div class="container">
 
+    <div class="row text-uppercase">
+        <div class="col list-inline">
+            <li class="breadcrumb list-inline-item">
+                <a href="{% url 'events' %}" class="text-green">All Events</a>
+            </li>
+            <li class="breadcrumb list-inline-item">
+                <i class="fas fa-angle-right text-green"></i>
+            </li>
+            <li class="breadcrumb list-inline-item text-green">
+                    {{ event.event_name }}
+            </li>
+        </div>
+    </div>
+
     <div class="row">
 
         <div class="col-sm-12 col-md-5 pt-3 pb-2">
@@ -50,7 +64,7 @@
             {% endif %}
 
             <div class="mobile-font my-3">
-                <i class="far fa-calendar-alt"></i>&nbsp;&nbsp;{{ event.date }}
+                <i class="far fa-calendar-alt text-green"></i>&nbsp;&nbsp;{{ event.date }}
             </div>
 
             <div class="mobile-font">
@@ -65,18 +79,13 @@
 
                     <!-- The two buttons plus the two admin buttons need to be w-100 on mobile and vertically stacked -->
                     <div class="row pt-3 pb-2">
-                        <div class="col check-eject pt-3 pb-2">
-                            <a href="{% url 'events' %}" class="btn btn-primary back-green text-offwhite">
-                                All Events
-                            </a>
-                        </div>
                         {% if sold_out == False %}
                             {% if user_attending == True %}
                             <!-- blank -->
                             {% else %}
-                            <div class="col check-eject pt-3 pb-2"> 
-                                <input type="submit" value="RSVP" class="btn btn-primary back-green text-offwhite"
-                                    name="add-cart"> 
+                            <div class="col check-eject pt-3 pb-2 d-flex justify-content-center"> 
+                                <input type="submit" value="RSVP" name="RSVP"
+                                    class="btn btn-primary back-green text-offwhite"> 
                             </div>
                             {% endif %}
                         {% endif %}
@@ -84,19 +93,19 @@
 
                     {% if request.user.is_superuser %}
                     <div class="row justify-content-center pt-5 pb-2">
-                        <div class="col">
-                            <h5 class="text-green">Admin Controls</h5>
+                        <div class="col-12">
+                            <h5 class="text-green text-center">Admin Controls</h5>
                         </div>
                     </div>
                     <div class="row pt-3 pb-2">
-                        <div class="col check-eject pt-3 pb-2">
-                            <a href="{% url 'edit_event' event.id %}" class="btn btn-outline-warning">
+                        <div class="col-12 col-sm-6 pt-3 pb-2">
+                            <a href="{% url 'edit_event' event.id %}" class="btn btn-outline-warning w-100" aria-label="Edit Event">
                                 <i class="fas fa-wrench"></i>
                                 Edit
                             </a>
                         </div>
-                        <div class="col check-eject pt-3 pb-2">
-                            <button type="button" class="btn btn-outline-danger" id="delEventButton">
+                        <div class="col-12 col-sm-6 check-eject pt-3 pb-2">
+                            <button type="button" class="btn btn-outline-danger w-100" id="delEventButton" aria-label="Delete event">
                                 <i class="far fa-trash-alt"></i>
                                 Delete
                             </button>
@@ -113,18 +122,15 @@
 
             <!-- Guestlist, see bugfix #10 -->
             {% if request.user.is_superuser %}
-            <div class="row pt-3 pb-2">
-                <p>Capacity: {{ event.capacity }}</p>
-                <p>Tickets sold: {{ attendance }}</p>
-            </div>
 
             {{ guestlist }}
 
-            <div class="row pt-3 pb-2">
+            <div class="row pt-3 pb-2 d-flex justify-content-center">
                 <h6 class="text-green">Guestlist ({{ attendance }} of {{ event.capacity }})</h6>
             </div>
             <!-- "No attendees yet" message if guestlist is empty -->
-            <div class="row pt-3 pb-2">
+            {% if guestlist|length > 0 %}
+            <div class="row pt-3 pb-2 d-flex justify-content-center">
                 <div class="table-responsive table-sm table-hover">
                     <table class="table">
                         <thead>
@@ -135,24 +141,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% if guestlist|length > 0 %}
-                                {% for guest in guestlist %}
-                                <tr>
-                                    <td>{{ guest.user }}</td>
-                                    <td>{{ guest.username }}</td>
-                                    <td>
-                                        <a href="{% url 'delete_attendee' guest.attendee_key %}" class="btn btn-sm btn-outline-danger">
-                                            <i class="far fa-trash-alt fa-sm"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                {% endfor %}
-                            {% else %}
-                            
+                            {% for guest in guestlist %}
+                            <tr>
+                                <td>{{ guest.user }}</td>
+                                <td>{{ guest.username }}</td>
+                                <td>
+                                    <a href="{% url 'delete_attendee' guest.attendee_key %}" class="btn btn-sm btn-outline-danger">
+                                        <i class="far fa-trash-alt fa-sm"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
             </div>
+            {% else %}
+            <p class="mobile-font d-flex justify-content-center">No guests attending yet!</p>
+            {% endif %}
             {% endif %}
 
         </div>
