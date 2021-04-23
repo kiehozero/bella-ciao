@@ -18,55 +18,60 @@ Order Summary |
 <!-- Format taken from Boutique Ado project and customised -->
 
     <div class="row">
-        <!-- Order Summary -->
-        <div class="col-sm-12 col-md-7">
+        <!-- Item Summary -->
+        <div class="col-12 col-md-7">
             <h6 class="text-green pt-3 pb-2">Item Summary</h6>
-            <div class="row summary-header">
-                <div class="col-md-2 d-none d-md-block"></div>
-                <div class="col-sm-6">Description</div>
-                <div class="col-sm-2">Quantity</div>
-                <div class="col-sm-2">Subtotal</div>
-            </div>
-            {% for item in cart_items %}
-            <div class="row summary-row justify-content-sm-center">
-                <div class="col-md-2 d-none d-md-block">
-                    {% if item.product.image %}
-                    <a href="{{ item.product.image.url }}" target="_blank">
-                        <!-- change to modal, does this need to be a link at checkout? -->
-                        <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="product-image">
-                    </a>
-                    {% else %}
-                    <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}" class="product-image">
-                    {% endif %}
-                </div>
-                <div class="col-sm-6">
-                    <p class="text-wrap">
-                        <a href="{ url 'view_product' product.id %}" class="text-black">
-                            {% if item.size %}{{ item.size|title }}{% endif %}&nbsp;{{ item.product.name }}
-                        </a>
-                    </p>
-                </div>
-                <div class="col-sm-2">{{ item.quantity }}</div>
-                <div class="col-sm-2">€{{ item.product.price | calc_subtotal:item.quantity }}</div>
-            </div>
-            {% endfor %}
 
+            <div class="table-responsive table-sm">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="d-none d-md-block">&nbsp;</th>
+                            <th class="mobile-font">Description</th>
+                            <th class="mobile-font">Qty</th>
+                            <th class="mobile-font">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in cart_items %}
+                        <tr>
+                            <td class="d-none d-md-block">
+                                {% if item.product.image %}
+                                <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="checkout-image">
+                                {% else %}
+                                <img src="{{ MEDIA_URL }}placeholder.png" alt="{{ product.name }}" class="checkout-image">
+                                {% endif %}
+                            </td>
+                            <td class="mobile-font">
+                                <a href="{ url 'view_product' product.id %}" class="text-green">
+                                    {% if item.size %}{{ item.size|title }}{% endif %}&nbsp;{{ item.product.name }}
+                                </a>
+                            </td>
+                            <td class="mobile-font">{{ item.quantity }}</td>
+                            <td class="mobile-font">€{{ item.product.price | calc_subtotal:item.quantity }}</td>
+                        </tr>
+                        {% endfor %}                        
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Order Summary -->
             <div class="row mobile-font">
-                <h6 class="text-green order-summary pt-3 pb-2 w-100">Order Summary</h6>
-                <p>
-                    Subtotal:
+                <h6 class="text-green order-summary pt-3 pb-2 px-3 w-100">Order Summary</h6>
+                <p class="pt-2 px-3 w-100">
+                    <i class="fas fa-shopping-cart text-green"></i>&nbsp;&nbsp;Subtotal:
                     €{{ total|floatformat:2 }}
                 </p>
-                <p class="pt-2 w-100">
-                    <i class="fas fa-truck"></i>&nbsp;&nbsp;Delivery:
+                <p class="pt-2 px-3 w-100">
+                    <i class="fas fa-truck text-green"></i>&nbsp;&nbsp;Delivery:
                     €{{ delivery|floatformat:2 }}
                 </p>
-                <p class="pt-2 w-100">
-                    <i class="far fa-credit-card"></i>&nbsp;&nbsp;Grand Total:
+                <p class="pt-2 px-3 w-100">
+                    <i class="far fa-credit-card text-green"></i>&nbsp;&nbsp;Grand Total:
                     €{{ grand_total|floatformat:2 }}
                 </p>
-                <p class="pt-2 w-100">
-                    <i class="fas fa-stamp text green"></i>&nbsp;&nbsp;Loyalty: {% if user.is_authenticated %}
+                <p class="pt-2 px-3 w-100">
+                    <i class="fas fa-stamp text-green"></i>&nbsp;&nbsp;Loyalty: {% if user.is_authenticated %}
                     You'll earn {{ loyalty_stamps }} {% if loyalty_stamps != 1 %}stamps{% else %}stamp{% endif %}!
                     {% else %}
                     <a href="{% url 'account_signup' %}">Sign up</a> and earn 
@@ -95,8 +100,8 @@ Order Summary |
                     {{ order_form.eircode | as_crispy_field }}
                     <div class="form-check form-check-inline">
                         {% if user.is_authenticated %}
-                        <label class="form-check-label" for="id-save-info">Update my profile with this address</label>
                         <input class="form-check-input" type="checkbox" id="id-save-info" name="save_info">
+                        <label class="form-check-label" for="id-save-info">Update my profile with this address</label>
                         <!-- add hidden element here for loyalty once you see how save info button works-->
                         {% else %}
                         <label class="form-check-label" for="id-save-info">
@@ -116,13 +121,13 @@ Order Summary |
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
 
-                <div class="w-100">
-                    <a href="{% url 'view_cart' %}" class="btn btn-outline-success text-green">
+                <div class="d-flex justify-content-center">
+                    <a href="{% url 'view_cart' %}" class="btn btn-outline-success text-green mx-2 my-3">
                         <i class="fas fa-wrench"></i>
                         &nbsp;
                         Edit Order
                     </a>
-                    <button id="submit-button" class="btn btn-outline-success text-green">
+                    <button id="submit-button" class="btn btn-outline-success text-green mx-2 my-3">
                         <i class="far fa-credit-card"></i>
                         &nbsp;
                         Pay
