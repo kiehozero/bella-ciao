@@ -121,7 +121,7 @@
             {{ guestlist }}
 
             <div class="row pt-3 pb-2">
-                <h6 class="text-green">Guestlist</h6>
+                <h6 class="text-green">Guestlist ({{ attendance }} of {{ event.capacity }})</h6>
             </div>
             <!-- "No attendees yet" message if guestlist is empty -->
             <div class="row pt-3 pb-2">
@@ -135,17 +135,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for guest in guestlist %}
-                            <tr>
-                                <td>{{ guest.user }}</td>
-                                <td>{{ guest.username }}</td>
-                                <td>
-                                    <a href="{% url 'delete_attendee' guest.attendee_key %}" class="btn btn-sm btn-outline-danger">
-                                        <i class="far fa-trash-alt fa-sm"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            {% endfor %}
+                            {% if guestlist|length > 0 %}
+                                {% for guest in guestlist %}
+                                <tr>
+                                    <td>{{ guest.user }}</td>
+                                    <td>{{ guest.username }}</td>
+                                    <td>
+                                        <a href="{% url 'delete_attendee' guest.attendee_key %}" class="btn btn-sm btn-outline-danger">
+                                            <i class="far fa-trash-alt fa-sm"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            {% else %}
+                            
                         </tbody>
                     </table>
                 </div>

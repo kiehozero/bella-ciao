@@ -15,3 +15,4 @@ event), add this to join view as an if loop
 - set up Heroku webhook on deployment
 - contact form (use pintbaby)
 - event model needs an image url field?
+- date format for add event form, add a note at the top of the page if you can't edit the form
