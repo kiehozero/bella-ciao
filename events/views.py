@@ -169,8 +169,9 @@ def delete_attendee(request, attendee_key):
         return redirect(reverse('home'))
 
     attendee = EventAttendees.objects.get(pk=attendee_key)
+    event = Event.objects.get(event_name=attendee.event)
     attendee.delete()
     messages.info(
         request, "User removed from event")
 
-    return redirect(reverse('events'))
+    return redirect(reverse('view_event', args=[event.pk]))
