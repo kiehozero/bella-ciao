@@ -71,11 +71,14 @@ to be an admin feature so quickly wrapping the entire row in the request.user.is
 ## Outstanding Issues
 
 1. Search bar results can't be sorted by sort buttons
-2. Cart quantity will sometimes allow a user to submit a quantity outside of the parameters, but sometimes performs as expected.
+2. Cart quantity will sometimes allow a user to submit a quantity outside of the parameters, seems to only occur when there are 
+two versions of an item (i.e., one regular and one large) in the basket, and it only affects the second item - suspect this is to
+do with how quantitySelect.js moves up and down the DOM to return the first item with a given item ID
 3. Loyalty stamps don't seem to add up on certain drinks (noticed this first on the espresso added using the product form)
 4. Cart quantity buttons on smaller devices
 5. Sites database
 6. Event form Description field styling, Date/Time widget UX (date format)
+7. Cart table on super-narrow devices like Galaxy Fold
 
 
 

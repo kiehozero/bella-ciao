@@ -31,8 +31,8 @@ My Cart |
                         <th colspan="1" class="text-red" scope="col">Price</th>
                         <th colspan="1" class="text-red d-none d-md-block" scope="col">Total
                         </th>
-                        <th colspan="1" class="text-red" scope="col">Update</th>
-                        <th colspan="1" class="text-red" scope="col">Remove</th>
+                        <th colspan="1" class="text-red" scope="col">Amend</th>
+                        <th colspan="1" class="text-red" scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -94,13 +94,14 @@ My Cart |
                             €{{ item.product.price | calc_subtotal:item.quantity }}
                         </td>
                         <td colspan="1">
-                            <a class="btn btn-outline-success update-item" aria-label="Update {{ product.name }} quantity">
+                            <a class="btn update-item" aria-label="Update quantity"
+                                id="update_{{ item.item_id }}">
                                 <i class="far fa-check-square fa-sm text-green"></i>
                             </a>
                         </td>
                         <td colspan="1">
-                            <a class="btn btn-outline-danger remove-item" id="remove_{{ item.item_id }}"
-                                data-product_size="{{ item.size }}" aria-label="Remove {{ product.name }} from basket">
+                            <a class="btn remove-item" id="remove_{{ item.item_id }}"
+                                data-product_size="{{ item.size }}" aria-label="Remove from basket">
                                 <i class="far fa-trash-alt fa-sm text-lightred"></i>
                             </a>
                         </td>
@@ -108,19 +109,19 @@ My Cart |
                     {% endfor %}
                     
                     <tr>
-                        <td colspan="8" class="cart-total">Subtotal:</td>
+                        <td colspan="2" class="cart-total">Subtotal:</td>
                         <td colspan="2">€{{ total|floatformat:2 }}</td>
                     </tr>
                     <tr>
-                        <td colspan="8" class="cart-total">Delivery:</td>
+                        <td colspan="2" class="cart-total">Delivery:</td>
                         <td colspan="2">€{{ delivery|floatformat:2 }}</td>
                     </tr>
                     <tr>
-                        <td colspan="8" class="cart-total">Total: </td>
+                        <td colspan="2" class="cart-total">Total: </td>
                         <td colspan="2">€{{ grand_total|floatformat:2 }}</td>
                     </tr>
                     <tr>
-                        <td colspan="9" class="justify-content-center">
+                        <td colspan="8">
                             <i class="fas fa-stamp"></i>&nbsp;&nbsp;You'll earn {{ loyalty_stamps }} {% if loyalty_stamps != 1 %}stamps{% else %}stamp{% endif %} in this
                             transaction.
                         </td>
@@ -129,17 +130,17 @@ My Cart |
             </table>
             </div>
 
-            <div class="row">
+            <div class="row my-4">
                 <div class="col d-flex justify-content-center">
                     <button class="btn btn-outline-success" id="backShopBtn">
                         <i class="fas fa-shopping-cart"></i>&nbsp;
-                        <a href="{% url 'products' %}" class="mobile-font text-green">Back to Store</a>
+                        <a href="{% url 'products' %}" class="text-green">Store</a>
                     </button>
                 </div>
                 <div class="col d-flex justify-content-center">
                     <button class="btn btn-outline-success" id="checkoutBtn">
                         <i class="fas fa-lock"></i>&nbsp;
-                        <a href="{% url 'checkout' %}" class="mobile-font text-green">Checkout</a>
+                        <a href="{% url 'checkout' %}" class="text-green">Checkout</a>
                     </button>
                 </div>
             </div>
@@ -164,7 +165,7 @@ My Cart |
     $('.update-item').click(function (e) {
         var form = $(this).parent().siblings('.form-container').children('.update-form');
         form.submit();
-    })
+    });
 
     $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
@@ -177,6 +178,6 @@ My Cart |
             .done(function () {
                 location.reload();
             });
-    })
+    });
 </script>
 {% endblock %}

@@ -344,6 +344,11 @@ footer {
     width: 100%;
 }
 
+#backToTop {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
 
 /* Crispy-Forms overwrites */
 
@@ -374,6 +379,14 @@ footer {
 }
 
 
+@media (min-width: 769px) and (max-width: 1199px) {
+    #backToTop {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }
+}
+
+
 @media (max-width: 768px) {
     body {
         /* see how these need to be amended for tablet views */
@@ -388,6 +401,11 @@ footer {
     .landing-box img {
         height: 20vh;
         width: 100%;
+    }
+
+    #backToTop {
+        margin-top: 5vh;
+        margin-bottom: 5vh;
     }
     
     /* Alternative navigation element for smaller screens */
@@ -409,5 +427,11 @@ footer {
 
     .mobile-font {
         font-size: 0.75rem;
+    }
+
+    /* Tables */
+
+    table.table thead tr {
+        font-size: 12px;
     }
 }

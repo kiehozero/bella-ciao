@@ -22,7 +22,7 @@ Upcoming Events
 <!-- Default Bootstrap card format -->
 <div class="row index-content">
 {% for event in events %}
-    <div class="col-sm-12 col-md-4">
+    <div class="col-12 col-sm-6 col-md-4">
         <div class="card event-card mx-2 my-3">
             {% if product.image %}
             <a href="{% url 'view_event' event.id %}">

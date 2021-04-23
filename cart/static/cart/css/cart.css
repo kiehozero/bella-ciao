@@ -16,9 +16,8 @@ a.product-name:hover {
 
 .btn-sm.decrease-qty,
 .btn-sm.increase-qty,
-.btn-sm.remove-item,
-.btn-sm.update-item {
-    font-size: 0.75rem;
+.btn.remove-item,
+.btn.update-item {
     height: 2rem;
     line-height: 2rem;
     padding: 0 0 0 0;
@@ -26,15 +25,9 @@ a.product-name:hover {
 }
 
 .btn-sm.decrease-qty:hover,
-.btn-sm.increase-qty:hover,
-.btn-sm.update-item:hover {
+.btn-sm.increase-qty:hover {
     background-color: #f0eee9;
     color: #008763;
-}
-
-.btn-sm.remove-item:hover {
-    background-color: #f0eee9;
-    color: #e64757;
 }
 
 .btn-sm.decrease-qty i,
@@ -47,6 +40,19 @@ a.product-name:hover {
     cursor: pointer;
 }
 
+.update-item {
+    border-color: #008763;
+}
+
+.remove-item {
+    border-color: #e64757;
+}
+
+.table td {
+    border-width: 0px;
+    vertical-align: middle;
+}
+
 .btn-sm.decrease-qty,
 .btn-sm.increase-qty {
     font-size: 0.75rem;
@@ -55,10 +61,26 @@ a.product-name:hover {
     width: 1.5rem;
 }
 
-.qty-select {
-    width: 70%;
-}
-
 .cart-total {
     text-align: right;
+}
+
+
+/* Responsiveness to display table on ultra-thin devices */
+
+@media (max-width: 350px) {
+    .mobile-font {
+        font-size: 10px;
+    }
+
+    .update-item,
+    .remove-item {
+        height: 1rem;
+        line-height: 1rem;
+        width: 1rem;
+    }
+
+    table.table thead tr {
+        font-size: 10px;
+    }
 }
