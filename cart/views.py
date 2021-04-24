@@ -33,7 +33,7 @@ def add_to_cart(request, item_id):
                 # sets item quantity if item/size combination already exists
                 cart[item_id]['items_by_size'][size] += quantity
                 messages.success(
-                    request, f'{size.title()} {product.name} quantity updated')
+                    request, f'{size.title()} {product.name} updated')
             else:
                 # set quantity if item/size combination doesn't exist
                 cart[item_id]['items_by_size'][size] = quantity
@@ -76,23 +76,23 @@ def update_cart(request, item_id):
             # quantity decreases but item still in cart
             cart[item_id]['items_by_size'][size] = quantity
             messages.success(
-                request, f'{size.title()} {product.name} quantity updated')
+                request, f'{size.title()} {product.name} updated')
         else:
             del cart[item_id]['items_by_size'][size]
             if not cart[item_id]['items_by_size']:
                 # quantity goes from 1 to zero
                 cart.pop(item_id)
                 messages.success(
-                    request, f'{size.title()} {product.name} removed from your cart')
+                    request, f'{size.title()} {product.name} removed from cart')
     else:  # for items with no size
         if quantity > 0:
             # quantity decreases but item still in cart
             cart[item_id] = quantity
-            messages.success(request, f'{product.name} quantity updated')
+            messages.success(request, f'{product.name} updated')
         else:
             # quantity goes from 1 to zero
             cart.pop(item_id)
-            messages.success(request, f'{product.name} removed from your cart')
+            messages.success(request, f'{product.name} removed from cart')
 
     request.session['cart'] = cart
 
@@ -115,11 +115,11 @@ def remove_item(request, item_id):
             if not cart[item_id]['items_by_size']:
                 cart.pop(item_id)
                 messages.success(
-                    request, f'{size.title()} {product.name} removed from your cart')
+                    request, f'{size.title()} {product.name} removed from cart')
         else:
             cart.pop(item_id)
             messages.success(
-                request, f'{product.name} removed from your cart')
+                request, f'{product.name} removed from cart')
 
         request.session['cart'] = cart
         return HttpResponse(status=200)
