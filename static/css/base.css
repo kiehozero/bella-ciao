@@ -112,7 +112,7 @@ nav ul a {
     font-size: 2em;
 }
 
-nav ul a#cart-full {
+nav div a#cart-full {
     /* cart-full replaces cart-empty upon items being added to the customer's cart */
     color: #ceca03;
     font-weight: 800;
@@ -407,7 +407,7 @@ footer {
         margin-bottom: 5vh;
     }
 }
-
+ /* change item above and below this to get margin sorted on ipads */
 
 @media (max-width: 768px) {
     body {
@@ -436,7 +436,8 @@ footer {
         display: none;
     }
 
-    .social-icon {
+    .social-icon,
+    .sh-cart-icon {
         font-size: 1.5em;
     }
 

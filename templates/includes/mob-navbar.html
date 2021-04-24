@@ -1,23 +1,23 @@
 <!-- Bootstrap generic navbar customised accordingly -->
 <nav class="navbar fixed-top back-green d-xs-inline d-md-none">
     <a class="navbar-brand" href="{% url 'home' %}"><img src="{{ MEDIA_URL }}cbc-text.png" id="mobile-logo"></a>
+    {% if grand_total %}
+    <div id="cart-container">
+        <a href="{% url 'view_cart' %}" id="cart-full">
+            <i class="fas fa-shopping-cart fa-sm sh-cart-icon"></i>&nbsp;&nbsp;
+            €{{ grand_total|floatformat:2 }}
+        </a>
+    </div>
+    {% else %}
+    
+    {% endif %}
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars text-offwhite"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-
-            <li class="nav-item pt-3 pb-2" id="cart-container">
-                <a href="{% url 'view_cart' %}" id="{% if grand_total %}cart-full{% else %}cart-empty{% endif %}">
-                    <i class="fas fa-shopping-cart sh-cart-icon"></i>&nbsp;&nbsp;
-                    {% if grand_total %}
-                    €{{ grand_total|floatformat:2 }}
-                    {% else %}
-                    €0.00
-                    {% endif %}
-                </a>
-            </li>
 
             <li class="nav-item pt-3 pb-2">
                 <a href="{% url 'products' %}">Online Store</a>
