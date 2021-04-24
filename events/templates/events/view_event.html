@@ -76,12 +76,14 @@
 
                 <form class="form" action="{% url 'join_event' event.id %}" method="POST">
                     {% csrf_token %}
-
-                    <!-- The two buttons plus the two admin buttons need to be w-100 on mobile and vertically stacked -->
                     <div class="row pt-3 pb-2">
                         {% if sold_out == False %}
-                            {% if user_attending == True %}
-                            <!-- blank -->
+                            {% if request.user in guest_names %}
+                            <div class="col check-eject pt-3 pb-2 d-flex justify-content-center"> 
+                                <div class="btn btn-primary back-green text-offwhite" style="cursor: initial;">
+                                    <i class="fas fa-ticket-alt"></i>&nbsp;&nbsp;You've got a ticket!
+                                </div>
+                            </div>
                             {% else %}
                             <div class="col check-eject pt-3 pb-2 d-flex justify-content-center"> 
                                 <input type="submit" value="RSVP" name="RSVP"
@@ -122,8 +124,6 @@
 
             <!-- Guestlist, see bugfix #10 -->
             {% if request.user.is_superuser %}
-
-            {{ guestlist }}
 
             <div class="row pt-3 pb-2 d-flex justify-content-center">
                 <h6 class="text-green">Guestlist ({{ attendance }} of {{ event.capacity }})</h6>

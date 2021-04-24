@@ -47,7 +47,8 @@ def profile(request):
     for event in events_attending:
         events_list.append(event[2])
         event_return = Event.objects.filter(
-            pk=event[2]).values('event_name', 'date', 'location')
+            pk=event[2]).values(
+                'event_name', 'date', 'location')
         events_dict.append({
             'event': event[2],
             'event_name': event_return[0]['event_name'],

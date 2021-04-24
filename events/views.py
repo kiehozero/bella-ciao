@@ -30,7 +30,10 @@ def view_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
     attendees = EventAttendees.objects.filter(
         event=event).values_list().order_by('user')
+    # guestlist is used to return keys and users for admin table, and
+    # guest_names is used to check whether the user is already attending
     guestlist = []
+    guest_names = []
 
     for attendee in attendees:
         # stores event_attendee pk to pass to delete_attendee if required
@@ -40,6 +43,7 @@ def view_event(request, event_id):
             'username': username,
             'attendee_key': attendee[0]
             })
+        guest_names.append(username)
 
     attendance = len(guestlist)
     capacity = event.capacity
@@ -62,12 +66,8 @@ def view_event(request, event_id):
         'attendance': attendance,
         'limited_avail': limited_avail,
         'sold_out': sold_out,
+        'guest_names': guest_names,
     }
-    # access attendees db here to give a countdown of tickets remaining,
-    # will need to return event.capacity, then filter attendees by event_id,
-    # then substract. Also run a percentage remaining sum that turns the text
-    # red when it is closer to selling out (define % threshold in settings.py)
-    # write this function in a profile_tools.py file
     return render(request, template, context)
 
 
@@ -79,18 +79,11 @@ def join_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
     profile = UserProfile.objects.get(user=request.user)
     user = profile.user
-    print(event)
-    print(profile)
-    print(user)
-    # needs to search for user/event combo already being in DB
     EventAttendees.objects.create(user=user, event=event)
     messages.info(
         request, f"You're in! {event.event_name} \
             has been added to your events.")
     return redirect(reverse('view_event', args=[event.id]))
-    # need to redirect back to 'events' if that was the request source
-    # in join_event, if Event Attendees already contains this number of
-    # attendees defined in capacity, users will get a Sold Out message)
 
 
 @login_required
