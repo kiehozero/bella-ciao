@@ -19,17 +19,16 @@ etc.
 
 ## User Experience
 
-### Styling
+### Colour Selection
 
-- A [Balsamiq](https://www.balsamiq.com/) wireframe for this project is included in the repository, with 
-[desktop/tablet](planning/wireframes/desktop.pdf) and [mobile](planning/wireframes/mobile.pdf) versions.
+<img src="media/palette.png">
 
-In colour selection I wanted to portray that the staff at the store have an authentic connection to both Italy, where many
-of the staff trained, and Ireland. To achieve this I used the a uniform palette of hex colours, selected using 
+I wanted to portray that the staff at the store have an authentic connection to both Italy, where many of the staff 
+trained, and Ireland. To achieve this I used the a uniform palette of hex colours, selected using 
 [Pixlr](https://www.pixlr.com/), and all colour selections are stored in their own [CSS file](static/css/palette.css). To
 create a strong theme, the navbar uses these colours in a vertical fade, while the landing page header is of the ornate
-Sarsfield Bridge, familiar to any Limerick resident, stylised using the palette to emphasise the strong connection between the city 
-and this business.
+Sarsfield Bridge, familiar to any Limerick resident, stylised using the palette to emphasise the strong connection between 
+the city and this business.
 
 - #008763 - The natural place to start was the colour green, present on both national flags. Officially called 
 [Golf Green](https://www.pantone.com/color-finder/18-5642-TCX), this green was used on the 
@@ -39,7 +38,8 @@ shade used on smaller device navigation elements;
 - #f0eee9 - officially called [Cloud Dancer](https://www.pantone.com/color-finder/11-4201-TCX), before 2006 this was
 the official colour of the central band of the Italian flag. The [new colour](https://www.pantone.com/color-finder/11-0601-TCX) 
 is much brighter and tended to stand out too much when used as a background, so I defaulted to the older version;
-- #3b0022 - Rather than use the official red, I used Color Hex to identify a red shade that best complemented the greens already selected. This red jumped out as providing a dark contrast against items with a white background, or vice versa;
+- #3b0022 - Rather than use the official red, I used Color Hex to identify a red shade that best complemented the greens 
+already selected. This red jumped out as providing a dark contrast against items with a white background, or vice versa;
 - #e64757 - For a red that needs to indicate danger or warning, I used a tint close to the default Bootstrap colour for such
 elements (including their default 'danger' buttons), but made it slightly paler;
 - #ceca03 - This is a gold that is slightly paler again than Bootstrap's default caution colour, and overrides the btn-warning
@@ -58,10 +58,15 @@ The icons I used within this project are all sourced from [Font Awesome](https:/
 
 ### Responsiveness
 
-<<< In terms of look and feel, the site is similar across all browsers. The tablet and desktop views are almost identical
-but for a few alignment changes, while mobile devices always drop into col-12 formatting. For mobile devices, >>>. I have 
-also tended to use jQuery to change descriptive buttons it icon-based buttons for smaller devices. A full responsiveness
-testing procedure can be found within the [testing log](planning/testing/TESTING.md). >>>
+- A [Balsamiq](https://www.balsamiq.com/) wireframe for this project is included in the repository, with 
+[desktop/tablet](planning/wireframes/desktop.pdf) and [mobile](planning/wireframes/mobile.pdf) versions.
+
+In terms of look and feel, the site is similar across all browsers. The tablet and desktop views are almost identical
+but for a few alignment changes, while mobile devices always drop into col-12 formatting. Google recently added the Galaxy 
+Fold into their . In my last project I probably overused the jQuery html class to replace text in buttons with icons, I've
+pulled back on that a little this time, and I've used Bootstrap responsive classes, which I find takes away a lot of the 
+requirements in writing custom CSS and even some basic jQuery. A full responsiveness testing procedure can be found within 
+the [testing log](planning/testing/TESTING.md).
 
 ### User Stories
 
@@ -70,12 +75,12 @@ Testing for each of the below user stories is included within the [testing log](
 As a user I want to...
 
   1. order an item from the store;
-  3. modify the size, quantity or variety of product I order;
+  3. modify the size or quantity of product I order;
   4. read more information about a product;
   5. filter or sort products by category or a search term of my choice;
   6. create an account;
   9. edit my profile information;
-  10. see my loyalty points;
+  10. see my loyalty points; TO DO
   11. sign up to an in-store event;
   12. view events I have signed up to;
   13. remove an event from my events list;
