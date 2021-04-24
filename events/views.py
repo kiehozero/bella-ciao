@@ -97,6 +97,7 @@ def join_event(request, event_id):
 def add_event(request):
     if not request.user.is_superuser:
         return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = EventForm(request.POST, request.FILES)
         if form.is_valid():

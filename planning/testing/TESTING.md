@@ -90,6 +90,7 @@ do with how quantitySelect.js moves up and down the DOM to return the first item
 6. Event form Description field styling, Date/Time widget UX (date format)
 7. Cart table on super-narrow devices like Galaxy Fold
 8. Rounding issue on products that aren't in pricing multiples of ten (Seabrook's at 1.35)
+9. Sometimes issues rendering tables on ultra-narrow devices like Galaxy Fold
 
 
 
