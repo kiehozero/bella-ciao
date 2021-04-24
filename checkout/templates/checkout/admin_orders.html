@@ -21,11 +21,11 @@ Site Order History |
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>User</th>
-                        <th>Name</th>
-                        <th>Email Address</th>
-                        <th>Total</th>
+                        <th class="mobile-font">Date</th>
+                        <th class="mobile-font">User</th>
+                        <th class="mobile-font">Name</th>
+                        <th class="mobile-font d-none d-md-block">Email Address</th>
+                        <th class="mobile-font">Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,14 +33,14 @@ Site Order History |
                     <tr>
                         <td>
                             <a href="{% url 'order_history' order.order_number %}"
-                                title="{{ order.order_number }}" class="text-green">
+                                title="{{ order.order_number }}" class="text-green mobile-font">
                                 {{ order.date }}
                             </a>
                         </td>
-                        <td>{{ order.user_profile }}</td>
-                        <td>{{ order.full_name }}</td>
-                        <td>{{ order.email }}</td>
-                        <td>{{ order.grand_total }}</td>
+                        <td class="mobile-font">{{ order.user_profile }}</td>
+                        <td class="mobile-font">{{ order.full_name }}</td>
+                        <td class="mobile-font d-none d-md-block">{{ order.email }}</td>
+                        <td class="mobile-font">{{ order.grand_total }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

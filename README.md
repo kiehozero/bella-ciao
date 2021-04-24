@@ -274,23 +274,21 @@ was invaluable as I learnt how to use the framework, this link in particular sho
 URL so I could customise messages based on it;
 - Sometimes it is useful to get a second explanation of a Django process and for this I found the guides at
 [Tutorials Point](https://www.tutorialspoint.com/django/django_models.htm) very comprehensive;
-- [Stripe docs](https://stripe.com/docs/payments/accept-a-payment)
+- The [Stripe documentation](https://stripe.com/docs/payments/accept-a-payment) became helpful when I had some problems with my
+webhooks.
+- [Bootstrap's documentation](https://getbootstrap.com/docs/5.0/utilities/spacing/) is fairly comprehensive and I leant
+particularly on their guides for spacing shortcuts as I wanted to write as little basic CSS as possible as that is where I've
+gotten bogged down on previous projects.
 - As always, W3Schools was invaluable, particularly [this link](https://www.w3schools.com/python/python_dictionaries.asp) 
 on building dictionaries, which helped me build the event list and guest list CRUD functionality.
 
 ### Tutorials
 
 - [Code Institute](https://www.codeinstitute.net/)'s [Boutique Ado](https://github.com/ckz8780/boutique_ado_v1) project 
-gave me a good structure to work from, as well as the foundations for using Django;
+gave me a good structure to work from, as well as the foundations for using Django. Indeed the core of logic for the 
+home, profiles, checkout, cart and product apps is customised from the standard in the Boutique Ado project.
 - Setting up favicons was slightly different in Django then just sticking them in the project root, luckily 
 [this](https://learndjango.com/tutorials/django-favicon-tutorial) made this another painless transition.
-- Thanks to [Igor Basuga](https://github.com/bravoalpha79) for spotting an error in my settings.py file that was causing
-my allauth template inheritance to fail.
-- Thanks to Michael Park at Code Institute for spotting an error in how I was trying to unpack querysets when building
-the feature that allows users to delete their own attendance from an event;
-- [Bootstrap's documentation](https://getbootstrap.com/docs/5.0/utilities/spacing/) is fairly comprehensive and I leant
-particularly on their guides for spacing shortcuts as I wanted to write as little CSS as possible as that is where I've
-gotten bogged down on previous Bootstrap projects.
 
 ### Media
 
@@ -301,5 +299,9 @@ colour scheme of the project. A cropped version of this is used as a placeholder
 
 ### Acknowledgements
 
+- Thanks to [Igor Basuga](https://github.com/bravoalpha79) for spotting an error in my settings.py file that was causing
+my allauth template inheritance to fail.
+- Thanks to Michael Park at Code Institute for spotting an error in how I was trying to unpack querysets when building
+the feature that allows users to delete their own attendance from an event;
 - My partner for letting me eternally bounce ideas of myself and my mentor Precious for helping me structure and prioritise
 my project work.
