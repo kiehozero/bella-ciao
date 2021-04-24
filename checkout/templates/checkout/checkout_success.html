@@ -22,7 +22,7 @@ Order Summary |
 
 <div class="row">
     <!-- Cheers Blurb -->
-    <div class="col-sm-12 col-md-8 offset-md-2 text-center">
+    <div class="col-12 col-md-8 offset-md-2 text-center">
         {% if from_profile %}
         <h5 class="text-green">Order Number: {{ order.order_number }}</h5>
         <p>Placed on {{ order.date|slice:10 }}</p>
@@ -32,8 +32,8 @@ Order Summary |
                 Have a campa-choo-choo on us!
             </a>
         </h5>
-        <p>Thank you for supporting a local business today! Your order number is {{ order.order_number }}.</p>
-        <p>We've sent an order confirmation to {{ order.email }}.</p>
+        <p class="mobile-font">Thank you for supporting a local business today! Your order number is {{ order.order_number }}.</p>
+        <p class="mobile-font">We've sent an order confirmation to {{ order.email }}.</p>
         {% endif %}
     </div>
 </div>
@@ -41,9 +41,9 @@ Order Summary |
 <div class="row justify-content-center">
 
     <!-- Customer Details -->
-    <div class="col-sm-12 col-md-5">
+    <div class="col-12 col-md-5">
         <div class="row">
-            <h6 class="text-green text-xs-center w-100">Your Details</h6>
+            <h6 class="text-green text-xs-center w-100 px-2">Your Details</h6>
         </div>
         <div class="summary-row mt-1">
             <p class="w-100">Name: {{ order.full_name|title }}</p>
@@ -56,15 +56,15 @@ Order Summary |
     </div>
 
     <!-- Order Summary -->
-    <div class="col-sm-12 col-md-7">
+    <div class="col-12 col-md-7">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-12">
                 <div class="row">
-                    <h6 class="text-green">Item Summary</h6>
+                    <h6 class="text-green px-2">Item Summary</h6>
                 </div>
                 <div class="row summary-header">
                     <div class="col-6">Description</div>
-                    <div class="col-2">Quantity</div>
+                    <div class="col-2">Qty</div>
                     <div class="col-2">Subtotal</div>
                 </div>
                 {% for item in order.lineitems.all %}
@@ -91,20 +91,20 @@ Order Summary |
     <!-- Payment Details -->
     <div class="col-12 col-md-5">
         <div class="row">
-            <h6 class="text-green">Payment Details</h6>
+            <h6 class="text-green px-2">Payment Details</h6>
         </div>
         <div class="row summary-row">
-            <p class="w-100">
+            <p class="w-100 px-2">
                 <i class="fas fa-coffee"></i>
                 &nbsp;&nbsp;Subtotal: €{{ order.order_total }}</p>
             {% if order.delivery_cost %}
-            <p class="w-100">
+            <p class="w-100 px-2">
                 <i class="fas fa-truck"></i>
                 &nbsp;&nbsp;Delivery Charge: €{{ order.delivery_cost }}</p>
             {% else %}
-            <p class="w-100">You qualified for free delivery!</p>
+            <p class="w-100 px-2">You qualified for free delivery!</p>
             {% endif %}
-            <p class="w-100">
+            <p class="w-100 px-2">
                 <i class="far fa-credit-card"></i>
                 &nbsp;&nbsp;Total: €{{ order.grand_total }}</p>
         </div>
@@ -112,10 +112,10 @@ Order Summary |
 
     <!-- Delivery Details -->
     <div class="col-12 col-md-7">
-        <div class="row">
+        <div class="row px-2">
             <h6 class="text-green text-xs-center text-md-right">Delivery Details</h6>
         </div>
-        <div class="row summary-row">
+        <div class="row summary-row px-2">
             <p class="w-100">Street Address:</p>
             <p class="w-100">{{ order.street_address1|title }}, {% if order.street_address2 %}{{ order.street_address2|title }}
                 {% endif %}</p>

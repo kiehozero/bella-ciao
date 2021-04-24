@@ -1,7 +1,6 @@
 HOUSEKEEPING
 - make eircode mandatory in checkout form
 - move form CSS for checkout (and any other app that has forms.py) into forms.py using the field.widget.attrs['class'] methods
-- go through CSS files and see where padding and margin settings can be replaced by Bootstrap tags (line 29 base.css)
 - profile models and forms show good examples of how to customise, use of widgets at __str__
 - once code is completed, open all sheets and clean up any items that show up in the problems tab
 - upload final db-schema.png in planning folder

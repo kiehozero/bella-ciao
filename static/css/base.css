@@ -15,7 +15,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    /* only use Arvo where it is necessary */
     font-family: 'Arvo';
 }
 
@@ -28,8 +27,6 @@ ul {
     list-style-type: none;
 }
 
-/* end of project, go through the CSS below and replace any tags below that are just colour options with palette.css
-tags in HTML, and do the same with margins and padding that can be replaced with mx, py, pt, mb, etc. */
 
 /* Navigation */
 
