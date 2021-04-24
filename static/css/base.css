@@ -409,7 +409,7 @@ footer {
 }
  /* change item above and below this to get margin sorted on ipads */
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     body {
         /* see how these need to be amended for tablet views */
         margin-top: 20%;

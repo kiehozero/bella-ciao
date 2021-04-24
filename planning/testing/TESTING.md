@@ -67,6 +67,12 @@ to be an admin feature so quickly wrapping the entire row in the request.user.is
 
 11. WRITE UP EXPLANATION OF ROUNDING ISSUE IN cart/contexts.py delivery items when you can be bothered
 
+12. During responsiveness testing I found that things were generally working as planned but the iPad vertical view (width 768px) had significant whitespace at the top of the screen. I knew that in adding the mobile navbar I had added some margin in so it wouldn't 
+overlap any content by default, but this was still showing up with my vertical navbar for large screens. The problem arises in a 
+conflict between Bootstrap's default breakpoints and how I had defined my media queries. The medium breakpoint is equal to or 
+greater than 768px, and I set my media query for that extra margin to sit behind the mobile navbar as 768px, instead of 767px, 
+which was a simple fix at the bottom of the base.css document.
+
 
 ## Outstanding Issues
 
