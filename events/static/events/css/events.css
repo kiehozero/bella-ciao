@@ -40,10 +40,8 @@
 
 /* Responsiveness */
 
-@media (max-width: 768px) {
-
-    .card.event-card {
-        /* does this work on tablet view? */
-        flex-direction: row;
+@media (max-width: 575px) {
+    .event-card a .product-image {
+        display: none;
     }
 }
