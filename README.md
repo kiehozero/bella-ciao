@@ -3,11 +3,18 @@
 Welcome to my full-stack development milestone project. For this project I chose to create 
 [Bella Ciao](https://cafe-bella-ciao.herokuapp.com/), an online store for a coffee chain based in Limerick, Ireland.
 
-The owners are a commercial kitchen facility that specialises in corporate event catering, but during lockdown decided
+The owners have a commercial kitchen facility that specialises in corporate event catering, but during lockdown decided
 that they wanted to diversify their business towards delivery orders. The business contains a number of highly-trained
 staff who wished to display their own skills beyond the corporate catering environment, so the owners and employees
 collectively decided to convert a vacant storehouse within their premises into an area where they can host a range of
 exclusive events for repeat customers and corporate team-building events once public health restrictions are eased.
+
+I based the project idea on a number of businesses I had heard about in Irish cities during lockdown, who had embraced
+delivery sales by purchasing industrial units purely as a food production site, instead of having a physical shop that 
+customers could visit. I work on an industrial estate in west Dublin and there were ten or eleven units in close 
+proximity to my workplace that had done this, the attraction being that setting up a shop that customers can visit 
+entails a greater investment in things like health and safety, social distancing measures, enchanced fire regulations, 
+etc.
 
 
 ## User Experience
@@ -98,9 +105,18 @@ As an admin, I want to
 
 ### Features to Implement
 
-- Subscription requires separate payment method from Stripe, ran out of time
-- VAT options
-- Delivery/collection for when lockdown ends and the business might want to expand to a retail outlet
+- A number of features came up during the course of the project that would be required to run this as a viable e-commerce business
+in a real-life situation. The first of these would be a VAT calculator, which would actually be quite simple to implement by adding
+a VAT field to the Product model, then calculating the total alongside the subtotal and delivery totals at checkout.
+- The second features that I feel would be a requirement for any same-day food delivery business is a time selector. I experimented 
+with using one of these but I couldn't get sufficient control over the date formatting being created to push it into a database in
+a usable format.
+- One interesting idea I saw recently was Pret A Manger's unlimited coffee offer for a set monthly fee. I wanted to re-create this
+using Stripe's subscription payments system. The [setup process](https://stripe.com/docs/billing/subscriptions/overview) itself 
+doesn't seem overly complex, but for the sake of creating an additional user level, as well as splitting orders based on whether
+the user was a subscriber or not, entailed a lot of work in the timeframe I had.
+- Lockdown is not going to last forever and people will eventually be spending less time at home, so the logical next point for 
+this business would be to set up
 
 ## Technologies Used
 
