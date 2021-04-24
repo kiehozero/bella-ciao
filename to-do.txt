@@ -1,15 +1,15 @@
 HOUSEKEEPING
-- make eircode mandatory in checkout form
 - profile models and forms show good examples of how to customise, use of widgets at __str__
-- once code is completed, open all sheets and clean up any items that show up in the problems tab
 - upload final db-schema.png in planning folder
-- scroll bar in cart table on smaller desktop screens?
 
 NEED TO HAVE:
 - if a user is already attending an event, prevent them from doing so again (search EventAttendees for user, then search for 
 event), add this to join view as an if loop
 - USER STORY: loyalty
 - set up Heroku webhook on deployment
-- contact form (use pintbaby)
 - event model needs an image url field?
+- make eircode mandatory in checkout form
 - date format for add event form, add a note at the top of the page if you can't edit the form
+
+NICE TO HAVE:
+- contact form (use pintbaby)
