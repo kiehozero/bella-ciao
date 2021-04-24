@@ -47,12 +47,6 @@
 
         <div class="col-sm-12 col-md-5 offset-md-2 pt-3 pb-2">
 
-            <!-- {% if user_attending == True %}
-            <h6 class="mobile-font back-green text-offwhite text-center px-3 py-3 w-100">
-                You've got a ticket!
-            </h6>
-            {% endif %}
-             -->
             {% if sold_out == True %}
             <h6 class="mobile-font back-lightred text-offwhite text-center px-3 py-3 w-100">
                 Sold Out!
@@ -128,37 +122,37 @@
             <div class="row pt-3 pb-2 d-flex justify-content-center">
                 <h6 class="text-green">Guestlist ({{ attendance }} of {{ event.capacity }})</h6>
             </div>
-            <!-- "No attendees yet" message if guestlist is empty -->
-            {% if guestlist|length > 0 %}
-            <div class="row pt-3 pb-2 d-flex justify-content-center">
-                <div class="table-responsive table-sm table-hover">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>User</th>
-                                <th>Uninvite</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for guest in guestlist %}
-                            <tr>
-                                <td>{{ guest.user }}</td>
-                                <td>{{ guest.username }}</td>
-                                <td>
-                                    <a href="{% url 'delete_attendee' guest.attendee_key %}" class="btn btn-sm btn-outline-danger">
-                                        <i class="far fa-trash-alt fa-sm"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+
+                {% if guestlist|length > 0 %}
+                <div class="row pt-3 pb-2 d-flex justify-content-center">
+                    <div class="table-responsive table-sm table-hover">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>User</th>
+                                    <th>Uninvite</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for guest in guestlist %}
+                                <tr>
+                                    <td>{{ guest.user }}</td>
+                                    <td>{{ guest.username }}</td>
+                                    <td>
+                                        <a href="{% url 'delete_attendee' guest.attendee_key %}" class="btn btn-sm btn-outline-danger">
+                                            <i class="far fa-trash-alt fa-sm"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            {% else %}
-            <p class="mobile-font d-flex justify-content-center">No guests attending yet!</p>
-            {% endif %}
+                {% else %}
+                <p class="mobile-font d-flex justify-content-center">No guests attending yet!</p>
+                {% endif %}
             {% endif %}
 
         </div>
