@@ -185,6 +185,10 @@ this business would be to set up
     - This tool really helped me visualise my initial idea as a structure to build. I made a couple of changes but it allowed
     me to plan a route towards project completion.
 
+- [Am I Responsive?](http://ami.responsivedesign.is/)
+    - An excellent website for confirming any final responsiveness checks. The default will always be the in-browser developer 
+    tools but AIR is useful for getting a quick comparison on what different displays of a site look like side-by-side.
+
 
 ## Testing
 
@@ -303,5 +307,8 @@ colour scheme of the project. A cropped version of this is used as a placeholder
 my allauth template inheritance to fail.
 - Thanks to Michael Park at Code Institute for spotting an error in how I was trying to unpack querysets when building
 the feature that allows users to delete their own attendance from an event;
+- Thanks again to Michael and also to [Chris Zielinski](https://github.com/ckz8780) who helped me go through some of the code 
+in relation to bugfix 11. I'm proud of myself for picking the error out but Michael and Chris kept me from going down some 
+errant paths that would have wasted a lot of project time.
 - My partner for letting me eternally bounce ideas of myself and my mentor Precious for helping me structure and prioritise
 my project work.

@@ -65,7 +65,11 @@ a much improved user experience.
 10. During testing I noticed that a couple of the dummy accounts I had set up could see the guestlist on events. This was intended 
 to be an admin feature so quickly wrapping the entire row in the request.user.is_superuser statement was a simple fix.
 
-11. WRITE UP EXPLANATION OF ROUNDING ISSUE IN cart/contexts.py delivery items when you can be bothered
+11. Probably the error I'm happiest to have fixed was one where upon submitting an order, the webhook would then duplicate the order,
+at what seemed like random points. Obviously the likelihood of this occurrence actually being random was pretty low, so I had to start
+combing through my code. The cause was eventually identified as a rounding issue I had added into the cart/contexts.py file. Because 
+the delivery threshold is a percentage, it means that any items that were sold in decimal values (e.g. €2.30, €2.70, etc.) created a 
+grand total that was then being rounded up to the nearest ten. Once I removed the rounding function the problem was resolved.
 
 12. During responsiveness testing I found that things were generally working as planned but the iPad vertical view (width 768px) had significant whitespace at the top of the screen. I knew that in adding the mobile navbar I had added some margin in so it wouldn't 
 overlap any content by default, but this was still showing up with my vertical navbar for large screens. The problem arises in a 
@@ -85,9 +89,11 @@ do with how quantitySelect.js moves up and down the DOM to return the first item
 5. Sites database
 6. Event form Description field styling, Date/Time widget UX (date format)
 7. Cart table on super-narrow devices like Galaxy Fold
+8. Rounding issue on products that aren't in pricing multiples of ten (Seabrook's at 1.35)
 
 
 
 ## Rendering
 
 >>> User Lighthouse in Chrome here
+>>> Am I Responsive 

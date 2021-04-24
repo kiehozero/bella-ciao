@@ -1,6 +1,5 @@
 HOUSEKEEPING
 - make eircode mandatory in checkout form
-- move form CSS for checkout (and any other app that has forms.py) into forms.py using the field.widget.attrs['class'] methods
 - profile models and forms show good examples of how to customise, use of widgets at __str__
 - once code is completed, open all sheets and clean up any items that show up in the problems tab
 - upload final db-schema.png in planning folder
@@ -10,7 +9,6 @@ NEED TO HAVE:
 - if a user is already attending an event, prevent them from doing so again (search EventAttendees for user, then search for 
 event), add this to join view as an if loop
 - USER STORY: loyalty
-- rounding issue still showing up on orders containing items that don't end in a zero, write up full bugfix
 - set up Heroku webhook on deployment
 - contact form (use pintbaby)
 - event model needs an image url field?
