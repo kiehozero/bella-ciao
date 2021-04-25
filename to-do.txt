@@ -1,11 +1,14 @@
 HOUSEKEEPING
 - mobile navbar row colouring on select/focus
 - spacing between cats and sorts on products.html
-- error page - test these work in Heroku
-- index tiles
+- error pages - picture not working?
+- index tiles - content on all, Stripe one seems mis-aligned?
+- datepicker for add event form
+- responsiveness testing
+- take small text off of order history on larger devices
 
 NEED TO HAVE:
-- AWS events?
+- AWS events, more products
 - GMail setup
 
 NICE TO HAVE:
