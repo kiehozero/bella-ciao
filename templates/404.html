@@ -10,5 +10,11 @@ Page Not Found |
 {% endblock %}
 
 {% block content %}
-Looks like this works
+<div>
+    <img src="{{ MEDIA_URL }}error-image.png" alt="Spilled Coffee">
+</div>
+
+<div>
+    <p>The page you requested could not be found, click <a href="{% url 'home' %}" class="text-green">here</a> to go back home.</p>
+</div>
 {% endblock %}
