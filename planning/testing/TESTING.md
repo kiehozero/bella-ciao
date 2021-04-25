@@ -82,6 +82,8 @@ plenty of people in Ireland who have no idea what their Eircode is, so I could p
 date when admins add events seemed like a no-brainer. A quick migration resolved these issues, and the built-in field prompts in
 crispy-forms meant that this was easily tested.
 
+14. A typo made me realise that I'd gotten quite far into the project without handling bad URLs.
+
 
 ## Outstanding Issues
 

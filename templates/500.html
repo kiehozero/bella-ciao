@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extratitle %}
+Error |
+{% endblock %}
+
+{% block page_header %}
+{% include 'includes/page-header.html' with h3_title="Server Error" %}
+{% endblock %}
+
+{% block content %}
+Looks like this works
+{% endblock %}
