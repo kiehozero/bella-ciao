@@ -6,10 +6,9 @@ HOUSEKEEPING
 - datepicker for add event form
 - responsiveness testing
 - take small text off of order history on larger devices
+- can DEFAULT_FROM_EMAIL by changed to orders@bellaciao.ie?
 
 NEED TO HAVE:
-- AWS events, more products
-- GMail setup
 
 NICE TO HAVE:
 - contact form (use pintbaby)
