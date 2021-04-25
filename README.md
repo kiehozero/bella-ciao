@@ -190,7 +190,7 @@ repository.
 This project is built on the [Django](https://www.djangoproject.com/) framework. A number of libraries were installed to complete this project:
 
 - [django-allauth](https://pypi.org/project/django-allauth/) is an authentication and account management library;
->>> dj_database_url, gunicorn, stripe, django-crispy-forms
+>>> dj_database_url, gunicorn, stripe, django-crispy-forms, boto3 and django-storages (both AWS),
 
 ## Database Architecture
 
