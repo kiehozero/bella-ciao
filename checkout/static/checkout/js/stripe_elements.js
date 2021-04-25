@@ -51,6 +51,8 @@ form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({'disabled': true});
     $('#submit-button').attr('disabled', true);
+    $('#payment-form').fadeToggle(100);
+    $('#order-progress').fadeToggle(100);
 
     /* variables that can only be added as metadata payment intent and sends it to cache_checkout_data */
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
@@ -99,6 +101,8 @@ form.addEventListener('submit', function(ev) {
                     </span>
                     <span>${result.error.message}</span>`;
                 $(errorDiv).html(errorPrompt);
+                $('#payment-form').fadeToggle(100);
+                $('#order-progress').fadeToggle(100);
                 card.update({'disabled': false});
                 $('#submit-button').attr('disabled', false);
             } else {
