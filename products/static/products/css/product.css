@@ -57,8 +57,7 @@ h6.card-title a:hover {
 /* View Product */
 
 .qty-panel {
-    /* not needed for styling, this is an element that identifies
-    the row for DOM traversal when updating the product quantity */
+    /* element that identifies the row for DOM traversal when updating the product quantity */
     margin-top: 10px;
     margin-bottom: 10px;
 }

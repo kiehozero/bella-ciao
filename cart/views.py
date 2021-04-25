@@ -83,7 +83,8 @@ def update_cart(request, item_id):
                 # quantity goes from 1 to zero
                 cart.pop(item_id)
                 messages.success(
-                    request, f'{size.title()} {product.name} removed from cart')
+                    request, f'{size.title()} {product.name} \
+                        removed from cart')
     else:  # for items with no size
         if quantity > 0:
             # quantity decreases but item still in cart
@@ -115,7 +116,8 @@ def remove_item(request, item_id):
             if not cart[item_id]['items_by_size']:
                 cart.pop(item_id)
                 messages.success(
-                    request, f'{size.title()} {product.name} removed from cart')
+                    request, f'{size.title()} {product.name} \
+                    removed from cart')
         else:
             cart.pop(item_id)
             messages.success(
