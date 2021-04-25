@@ -77,7 +77,10 @@ conflict between Bootstrap's default breakpoints and how I had defined my media 
 greater than 768px, and I set my media query for that extra margin to sit behind the mobile navbar as 768px, instead of 767px, 
 which was a simple fix at the bottom of the base.css document.
 
-13. Admin page testing - could add event with no date and an order with no Eircode
+13. Model testing - I initially set the Eircode on the Order model and the date on the Event model as optional for entry. I've met 
+plenty of people in Ireland who have no idea what their Eircode is, so I could probably have lived with that, but have a mandatory 
+date when admins add events seemed like a no-brainer. A quick migration resolved these issues, and the built-in field prompts in
+crispy-forms meant that this was easily tested.
 
 
 ## Outstanding Issues

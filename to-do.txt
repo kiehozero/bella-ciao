@@ -6,9 +6,6 @@ HOUSEKEEPING
 NEED TO HAVE:
 - USER STORY: loyalty
 - set up Heroku webhook on deployment
-- event model needs an image url field?
-- make eircode mandatory in checkout form
-- make date mandatory in event  form
 - date format for add event form, add a note at the top of the page if you can't edit the form
 
 NICE TO HAVE:

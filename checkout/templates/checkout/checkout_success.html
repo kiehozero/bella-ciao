@@ -24,7 +24,7 @@ Order Summary |
     <!-- Cheers Blurb -->
     <div class="col-12 col-md-8 offset-md-2 text-center">
         {% if from_profile %}
-        <h5 class="text-green">Order Number: {{ order.order_number }}</h5>
+        <h5 class="text-green pt-1 pt-md-3 pb-1 pb-md-2">Order Number: {{ order.order_number }}</h5>
         <p>Placed on {{ order.date|slice:10 }}</p>
         {% else %}
         <h5 class="text-green">
@@ -33,12 +33,18 @@ Order Summary |
             </a>
         </h5>
         <p class="mobile-font">Thank you for supporting a local business today! Your order number is {{ order.order_number }}.</p>
+        <h4 class="text-green pt-1 pt-md-3 pb-1 pb-md-2">
+            <i class="fas fa-hourglass-start"></i>
+        </h4>
+        <p class="mobile-font">
+            Your order will arrive within sixty minutes our delivery driver may contact you on the number below prior to arrival
+        </p>
         <p class="mobile-font">We've sent an order confirmation to {{ order.email }}.</p>
         {% endif %}
     </div>
 </div>
 
-<div class="row justify-content-center">
+<div class="row justify-content-center pt-1 pt-md-3 pb-1 pb-md-2">
 
     <!-- Customer Details -->
     <div class="col-12 col-md-5">

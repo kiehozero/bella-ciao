@@ -18,7 +18,7 @@ class Order(models.Model):
     email = models.EmailField(max_length=100, null=False, blank=False)
     phone_number = models.CharField(max_length=15, null=False, blank=False)
     city = models.CharField(max_length=20, null=True, blank=True)
-    eircode = models.CharField(max_length=7, null=True, blank=True) # change to false
+    eircode = models.CharField(max_length=7, null=False, blank=False)
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)

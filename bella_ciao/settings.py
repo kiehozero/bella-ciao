@@ -47,7 +47,7 @@ INSTALLED_APPS = [
 
     # internal apps
     'home',
-    # 'admin',
+
     'cart',
     'checkout',
     'events',
