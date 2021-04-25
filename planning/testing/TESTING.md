@@ -77,6 +77,8 @@ conflict between Bootstrap's default breakpoints and how I had defined my media 
 greater than 768px, and I set my media query for that extra margin to sit behind the mobile navbar as 768px, instead of 767px, 
 which was a simple fix at the bottom of the base.css document.
 
+13. Admin page testing - could add event with no date and an order with no Eircode
+
 
 ## Outstanding Issues
 

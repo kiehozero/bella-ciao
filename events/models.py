@@ -8,8 +8,8 @@ class Event(models.Model):
     location = models.CharField(max_length=30, null=False, blank=False)
     category = models.CharField(max_length=15, null=False, blank=False)
     description = models.CharField(max_length=500, null=False, blank=False)
-    date = models.DateTimeField(null=True, blank=True)
-    capacity = models.IntegerField(null=False, blank=False, default=0)
+    date = models.DateTimeField(null=True, blank=True) # change to False
+    capacity = models.IntegerField(null=False, blank=False, default=0) # change to zero
     image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
