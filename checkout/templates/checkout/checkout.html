@@ -83,7 +83,6 @@ Order Summary |
                         {% if user.is_authenticated %}
                         <input class="form-check-input" type="checkbox" id="id-save-info" name="save_info">
                         <label class="form-check-label" for="id-save-info">Update my profile with this address</label>
-                        <!-- add hidden element here for loyalty once you see how save info button works-->
                         {% else %}
                         <label class="form-check-label" for="id-save-info">
                             <a href="{% url 'account_signup' %}" class="text-green">Register</a> for express checkout

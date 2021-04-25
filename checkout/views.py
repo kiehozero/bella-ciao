@@ -26,7 +26,6 @@ def cache_checkout_data(request):
         stripe.PaymentIntent.modify(pid, metadata={
             'cart': json.dumps(request.session.get('cart', {})),
             'save_info': request.POST.get('save_info'),
-            # 'loyalty_stamps': request.POST.get('loyalty_stamps'),
             'username': request.user,
         })
         return HttpResponse(status=200)
@@ -88,10 +87,7 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_cart'))
 
-            # ALERT USE THE BELOW METHOD TO STORE LOYALTY
-            # POINTS, HIDE POINTS IN A HIDDEN INPUT?
             request.session['save_info'] = 'save_info' in request.POST
-            # request.session['loyalty_stamps'] = 'loyalty_stamps in request.POST
             return redirect(reverse(
                 'checkout_success', args=[order.order_number]))
         else:
@@ -105,7 +101,6 @@ def checkout(request):
             return redirect(reverse('products'))
 
         current_cart = cart_contents(request)
-        # loyalty_stamps here also?
         total = current_cart['grand_total']
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
@@ -126,7 +121,7 @@ def checkout(request):
                     'city': profile.default_city,
                     'eircode': profile.default_eircode,
                 })
-                # loyalty_stamps to loyalty model here
+
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
         else:
@@ -137,7 +132,6 @@ def checkout(request):
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
-        # loyalty_stamps
     }
     return render(request, template, context)
 
@@ -149,7 +143,6 @@ def checkout_success(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
-        # add loyalty_stamps here in logic similar to if save_info below
         profile = UserProfile.objects.get(user=request.user)
         order.user_profile = profile
         order.save()

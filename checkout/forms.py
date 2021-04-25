@@ -24,7 +24,6 @@ class OrderForm(forms.ModelForm):
             'eircode': 'Eircode',
         }
 
-        self.fields['date'].widget.attrs['placeholder'] = 'yyyy-mm-dd hh:mm:ss'
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:

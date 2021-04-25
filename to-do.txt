@@ -4,7 +4,6 @@ HOUSEKEEPING
 - error page - test these work in Heroku
 
 NEED TO HAVE:
-- USER STORY: loyalty
 - set up Heroku webhook on deployment
 
 NICE TO HAVE:

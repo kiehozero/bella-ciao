@@ -10,11 +10,3 @@
     <i class="far fa-credit-card text-green"></i>&nbsp;&nbsp;Grand Total:
     €{{ grand_total|floatformat:2 }}
 </p>
-<p class="pt-2 px-3 w-100 mobile-font">
-    <i class="fas fa-stamp text-green"></i>&nbsp;&nbsp;Loyalty: {% if user.is_authenticated %}
-    You'll earn {{ loyalty_stamps }} {% if loyalty_stamps != 1 %}stamps{% else %}stamp{% endif %}!
-    {% else %}
-    <a href="{% url 'account_signup' %}" class="mobile-font">Sign up</a> and earn 
-    {{ loyalty_stamps }} {% if loyalty_stamps != 1 %}stamps{% else %}stamp{% endif %}!
-    {% endif %}
-</p>
