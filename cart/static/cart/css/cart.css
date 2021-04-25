@@ -68,6 +68,15 @@ a.product-name:hover {
 
 /* Responsiveness to display table on ultra-thin devices */
 
+/* Responsiveness */
+
+@media (max-width: 315px) {
+    .btn-sm.update-item,
+    .btn-sm.remove-item {
+        padding: 0rem 0rem 0rem 0rem;
+    }
+}
+
 @media (max-width: 350px) {
     .mobile-font {
         font-size: 10px;
