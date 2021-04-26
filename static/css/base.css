@@ -434,3 +434,9 @@ footer {
         font-size: 12px;
     }
 }
+
+@media (max-width: 315px) {
+    .social-icon {
+        font-size: 1em;
+    }
+}

@@ -10,10 +10,12 @@ HOUSEKEEPING
 - Test CRUD functionality for events and products on Heroku, change URL on product to optional?
 - do all restricted links (requiring either authentication or superuser status) have @login_required and redirect to home or 404?
 - as above, does 404 need a view and url when someone has to be redirected there
+- debug false
 
 STUDENT CARE:
-- Ensure that users not logged in are redirected to the login page. 
-- Check that authentication cannot be bypassed by typing the URL into the browser bar - create custom 403/404 pages to deal with this. 
+- DONE ONCE - Ensure that users not logged in are redirected to the login page. 
+- DONE ONCE - Check that authentication cannot be bypassed by typing the URL into the browser bar - create custom 403/404 pages 
+to deal with this. 
 - Make sure you have checked that no links result in an internal server error. 
 - If you have included a user type with higher access privileges, then you can include example login credentials at submission. 
 - Do not display links the user does not have the privileges to access.
