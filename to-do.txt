@@ -1,5 +1,4 @@
 HOUSEKEEPING
-- spacing between cats and sorts on products.html
 - error pages - picture not working?
 - index tiles - content on all, Stripe one seems mis-aligned?
 - change index to series of rows then update wireframes

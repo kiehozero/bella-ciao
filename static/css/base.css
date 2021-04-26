@@ -412,6 +412,10 @@ footer {
         display: none;
     }
 
+    .navbar-brand {
+        margin-right: 0;
+    }
+
     .social-icon,
     .sh-cart-icon {
         font-size: 1.5em;

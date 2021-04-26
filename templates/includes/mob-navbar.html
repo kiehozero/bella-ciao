@@ -4,7 +4,7 @@
     {% if grand_total %}
     <div id="cart-container">
         <a href="{% url 'view_cart' %}" id="cart-full">
-            <i class="fas fa-shopping-cart fa-sm sh-cart-icon"></i>&nbsp;&nbsp;
+            <i class="fas fa-shopping-cart sh-cart-icon"></i>&nbsp;&nbsp;
             €{{ grand_total|floatformat:2 }}
         </a>
     </div>

@@ -93,4 +93,10 @@ h6.card-title a:hover {
         padding-left: 5px;
         padding-right: 5px;
     }
+
+    .sort-button {
+        flex-grow: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 }
