@@ -85,3 +85,11 @@
     margin: 0;
     height: 100%;
 }
+
+
+/* Responsiveness */
+@media (max-width: 767px) {
+    #order-number {
+        font-size: 0.75rem;
+    }
+}

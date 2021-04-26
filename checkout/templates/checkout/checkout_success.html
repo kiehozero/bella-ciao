@@ -22,10 +22,13 @@ Order Summary |
 
 <div class="row">
     <!-- Cheers Blurb -->
-    <div class="col-12 col-md-8 offset-md-2 text-center">
+    <div class="col-12 col-md-8 offset-md-2 justify-content-sm-center">
         {% if from_profile %}
-        <h5 class="text-green pt-1 pt-md-3 pb-1 pb-md-2">Order Number: {{ order.order_number }}</h5>
-        <p>Placed on {{ order.date|slice:10 }}</p>
+        <h6 class="text-green pt-1 pt-md-3 pb-1 pb-md-2 text-sm-center">Order Number:</h6>
+        <div class="text-green pt-1 pt-md-3 pb-1 pb-md-2 text-sm-center" id="order-number">
+            {{ order.order_number }}
+        </div>
+        <p class="text-sm-center">{{ order.date|slice:10 }}</p>
         {% else %}
         <h5 class="text-green">
             <a href="https://www.youtube.com/watch?v=zf7I_FpTWsM" target="_blank" class="text-green" id="choochoo">
@@ -48,10 +51,10 @@ Order Summary |
 
     <!-- Customer Details -->
     <div class="col-12 col-md-5">
-        <div class="row">
-            <h6 class="text-green text-xs-center w-100 px-2">Your Details</h6>
+        <div class="row px-2">
+            <h6 class="text-green w-100">Your Details</h6>
         </div>
-        <div class="summary-row mt-1">
+        <div class="summary-row mt-1 px-2">
             <p class="w-100">Name: {{ order.full_name|title }}</p>
             <p class="w-100">Contact Number: {{ order.phone_number }}</p>
         </div>
@@ -61,16 +64,16 @@ Order Summary |
     <div class="col-12 col-md-7">
         <div class="row">
             <div class="col-12">
-                <div class="row">
-                    <h6 class="text-green px-2">Item Summary</h6>
+                <div class="row px-2">
+                    <h6 class="text-green">Item Summary</h6>
                 </div>
-                <div class="row summary-header">
+                <div class="row summary-header px-2">
                     <div class="col-6">Description</div>
                     <div class="col-2">Qty</div>
                     <div class="col-2">Subtotal</div>
                 </div>
                 {% for item in order.lineitems.all %}
-                <div class="row summary-row">
+                <div class="row summary-row px-2">
                     <div class="col-6">
                         <p class="text-wrap">
                             <a href="{ url 'view_product' product.id %}" class="text-black">
@@ -92,22 +95,22 @@ Order Summary |
 
     <!-- Payment Details -->
     <div class="col-12 col-md-5">
-        <div class="row">
-            <h6 class="text-green px-2">Payment Details</h6>
+        <div class="row px-2">
+            <h6 class="text-green">Payment Details</h6>
         </div>
-        <div class="row summary-row">
-            <p class="w-100 px-2">
-                <i class="fas fa-coffee"></i>
+        <div class="row summary-row px-2">
+            <p class="w-100">
+                <i class="fas fa-coffee text-green"></i>
                 &nbsp;&nbsp;Subtotal: €{{ order.order_total }}</p>
             {% if order.delivery_cost %}
-            <p class="w-100 px-2">
-                <i class="fas fa-truck"></i>
+            <p class="w-100">
+                <i class="fas fa-truck text-green"></i>
                 &nbsp;&nbsp;Delivery Charge: €{{ order.delivery_cost }}</p>
             {% else %}
-            <p class="w-100 px-2">You qualified for free delivery!</p>
+            <p class="w-100">You qualified for free delivery!</p>
             {% endif %}
-            <p class="w-100 px-2">
-                <i class="far fa-credit-card"></i>
+            <p class="w-100">
+                <i class="far fa-credit-card text-green"></i>
                 &nbsp;&nbsp;Total: €{{ order.grand_total }}</p>
         </div>
     </div>
@@ -115,7 +118,7 @@ Order Summary |
     <!-- Delivery Details -->
     <div class="col-12 col-md-7">
         <div class="row px-2">
-            <h6 class="text-green text-xs-center text-md-right">Delivery Details</h6>
+            <h6 class="text-green">Delivery Details</h6>
         </div>
         <div class="row summary-row px-2">
             <p class="w-100">Street Address:</p>
