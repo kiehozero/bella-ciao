@@ -3,12 +3,13 @@ HOUSEKEEPING
 - spacing between cats and sorts on products.html
 - error pages - picture not working?
 - index tiles - content on all, Stripe one seems mis-aligned?
+- change index to series of rows
 - datepicker for add event form
 - responsiveness testing
 - take small text off of order history on larger devices
 - can DEFAULT_FROM_EMAIL by changed to orders@bellaciao.ie?
-
-NEED TO HAVE:
+- Test CRUD functionality for events and products on Heroku, change URL on product to optional?
+- Take order number out of header text, it's too large on the order summary
 
 NICE TO HAVE:
 - contact form (use pintbaby)
