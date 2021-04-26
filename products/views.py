@@ -11,6 +11,7 @@ from .models import Product, Category
 def all_products(request):
     """ Display all items """
     products = Product.objects.all()
+    cat_index = Category.objects.all()
 
     # Bugfix #1: use cat_list to extract category name before it enters
     # QuerySet, then use this to highlight category name upon use as filter
@@ -60,6 +61,7 @@ def all_products(request):
         'current_categories': categories,
         'current_sort': current_sort,
         'cat_list': cat_list,
+        'cat_index': cat_index,
     }
 
     return render(request, template, context)

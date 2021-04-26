@@ -18,7 +18,8 @@ Store |
 <div class="container">
 
     <!-- Preset product filters -->
-    <div class="row d-flex flex-wrap filter-row justify-content-between# pt-1 pt-md-3 pb-1 pb-md-2">
+
+    <div class="row d-flex flex-wrap filter-row justify-content-between pt-1 pt-md-3 pb-1 pb-md-2">
         <div class="col">
             <a class="btn-sm filter-button mobile-font
         {% if current_categories == None %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
@@ -26,56 +27,18 @@ Store |
                 All
             </a>
         </div>
+        
+        {% for cat in cat_index %}
+        <!-- Loops through category model to return filter buttons -->
         <div class="col">
             <!-- Bugfix #1: Category selection highlighting -->
             <a class="btn-sm filter-button mobile-font
-        {% if 'coffee' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-                href="{% url 'products' %}?category=coffee">
-                Coffee
+        {% if '{{ cat.name }}' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
+                href="{% url 'products' %}?category={{ cat.name }}">
+                {{ cat.render_name }}
             </a>
         </div>
-        <div class="col">
-            <a class="btn-sm filter-button mobile-font
-        {% if 'tea' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-                href="{% url 'products' %}?category=tea">
-                Tea
-            </a>
-        </div>
-        <div class="col">
-            <a class="btn-sm filter-button mobile-font
-        {% if 'hot_chocolate' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-                href="{% url 'products' %}?category=hot_chocolate">
-                Specials
-            </a>
-        </div>
-        <div class="col">
-            <a class="btn-sm filter-button mobile-font
-            {% if 'sandwiches' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-                href="{% url 'products' %}?category=sandwiches">
-                Sandwiches
-            </a>
-        </div>
-        <div class="col">
-            <a class="btn-sm filter-button mobile-font
-            {% if 'snacks' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-                href="{% url 'products' %}?category=snacks">
-                Snacks
-            </a>
-        </div>
-        <div class="col">
-            <a class="btn-sm filter-button mobile-font
-        {% if 'desserts' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-                href="{% url 'products' %}?category=desserts">
-                Desserts
-            </a>
-        </div>
-        <div class="col">
-            <a class="btn-sm filter-button mobile-font
-        {% if 'merchandise' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
-                href="{% url 'products' %}?category=merchandise">
-                Merch
-            </a>
-        </div>
+        {% endfor %}
     </div>
 
     <!-- Search box and counter taken from Code Institute task manager tutorial -->
