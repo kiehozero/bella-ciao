@@ -82,24 +82,24 @@ plenty of people in Ireland who have no idea what their Eircode is, so I could p
 date when admins add events seemed like a no-brainer. A quick migration resolved these issues, and the built-in field prompts in
 crispy-forms meant that this was easily tested.
 
-14. A typo made me realise that I'd gotten quite far into the project without handling bad URLs.
+14. A typo made me realise that I'd gotten quite far into the project without handling bad URLs. Fortunaetely setting up error handlers in Django is as simple as creating files called 404.html and 500.html in the root template files.
 
 
 ## Outstanding Issues
 
-1. Search bar results can't be sorted by sort buttons
-2. Cart quantity will sometimes allow a user to submit a quantity outside of the parameters, seems to only occur when there are 
+1. (Known Issue #2) Search bar results can't be sorted by sort buttons
+2. (Known Issue #4) Cart quantity will sometimes allow a user to submit a quantity outside of the parameters, seems to only occur when there are 
 two versions of an item (i.e., one regular and one large) in the basket, and it only affects the second item - suspect this is to
-do with how quantitySelect.js moves up and down the DOM to return the first item with a given item ID
-3. Loyalty stamps don't seem to add up on certain drinks (noticed this first on the espresso added using the product form)
-4. Cart quantity buttons on smaller devices
-5. Sites database
-6. Event form Description field styling, Date/Time widget UX (date format)
-7. Rounding issue on products that aren't in pricing multiples of ten (Seabrook's at 1.35)
-8. Sometimes issues rendering tables on ultra-narrow devices like Galaxy Fold
+do with how quantitySelect.js moves up and down the DOM to return the first item with a given item ID.
+4. (Known Issue #4) Cart quantity buttons on smaller devices not rendering well, when I tried to fix this it fairly well messed up the js that allows
+the buttons to function at all. 
+5. (Known Issue #7) Rounding issue on products that aren't in pricing multiples of ten (Seabrook's at 1.35)
 
 
 ## Rendering
 
+<img src="#">
+
+>>> add image above
+
 >>> User Lighthouse in Chrome here
->>> Am I Responsive 
