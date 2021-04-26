@@ -10,6 +10,8 @@ HOUSEKEEPING
 - can DEFAULT_FROM_EMAIL by changed to orders@bellaciao.ie?
 - Test CRUD functionality for events and products on Heroku, change URL on product to optional?
 - Take order number out of header text, it's too large on the order summary
+- do all restricted links (requiring either authentication or superuser status) have @login_required and redirect to home or 404?
+- as above, does 404 need a view and url when someone has to be redirected there
 
 NICE TO HAVE:
 - contact form (use pintbaby)
