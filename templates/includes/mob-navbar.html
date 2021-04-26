@@ -1,5 +1,5 @@
 <!-- Bootstrap generic navbar customised accordingly -->
-<nav class="navbar fixed-top back-green d-xs-inline d-md-none px-4">
+<nav class="navbar fixed-top back-green d-md-none px-4">
     <a class="navbar-brand" href="{% url 'home' %}"><img src="{{ MEDIA_URL }}cbc-text.png" id="mobile-logo"></a>
     {% if grand_total %}
     <div id="cart-container">
@@ -31,19 +31,19 @@
                 </a>
                 <div class="dropdown-menu back-green" aria-labelledby="navbarDropdownMenuLink">
                     <ul>
-                        <li>
+                        <li class="pt-3 pb-2">
                             <a class="dropdown-item text-offwhite" href="{% url 'profile' %}">
                                 <i class="far fa-user-circle account-icon"></i>&nbsp;&nbsp;View My Profile
                             </a>
                         </li>
                         {% if request.user.is_superuser %}
-                        <li>
+                        <li class="pt-3 pb-2">
                             <a class="dropdown-item text-offwhite" href="{% url 'admin' %}">
                                 <i class="fas fa-tools"></i>&nbsp;&nbsp;Admin
                             </a>
                         </li>
                         {% endif %}
-                        <li>
+                        <li class="pt-3 pb-2">
                             <a class="dropdown-item text-offwhite" href="{% url 'account_logout' %}">
                                 <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Sign Out
                             </a>
@@ -67,7 +67,7 @@
             </li>
             {% endif %}
 
-            <li class="row nav-item social-panel">
+            <li class="row nav-item social-panel pt-3 pb-2">
                 <!-- hover over icons is fine, hover over anchors is weird -->
                 <div class="col">
                     <a href="https://www.facebook.com/" target="_blank">

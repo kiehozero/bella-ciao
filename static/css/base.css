@@ -417,6 +417,14 @@ footer {
         font-size: 1.5em;
     }
 
+    nav ul a:active,
+    nav ul a:focus,
+    nav ul a:hover {
+        background-color: #008763;
+        color: #f0eee9;
+        font-weight: 800;
+    }
+
 
     /* Main */
 

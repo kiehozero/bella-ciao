@@ -1,15 +1,12 @@
 HOUSEKEEPING
-- mobile navbar row colgitouring on select/focus
 - spacing between cats and sorts on products.html
 - error pages - picture not working?
 - index tiles - content on all, Stripe one seems mis-aligned?
-- change index to series of rows
+- change index to series of rows then update wireframes
 - datepicker for add event form
 - responsiveness testing
 - can DEFAULT_FROM_EMAIL be changed to orders@bellaciao.ie?
 - Test CRUD functionality for events and products on Heroku, change URL on product to optional?
-- do all restricted links (requiring either authentication or superuser status) have @login_required and redirect to home or 404?
-- as above, does 404 need a view and url when someone has to be redirected there
 - debug false
 
 STUDENT CARE:
