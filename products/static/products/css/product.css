@@ -16,12 +16,6 @@ h6.card-title a:hover {
     padding: 0px;
 }
 
-.btt-row,
-.filter-row {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 .btn#searchButton,
 .btn#searchReset {
     font-family: 'Montserrat';
@@ -29,8 +23,14 @@ h6.card-title a:hover {
 }
 
 .btn-sm.filter-button {
+    /* Category Descriptions */
     font-family: 'Montserrat';
     font-weight: 600;
+}
+
+.sort-button {
+    /* Sort By buttons */
+    padding: 0 0 0 0;
 }
 
 .btn#searchButton:hover,
@@ -85,5 +85,12 @@ h6.card-title a:hover {
 
     .card.shop-card a img {
         height: 100%;
+    }
+
+    .filter-row .col {
+        flex-grow: 0;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }

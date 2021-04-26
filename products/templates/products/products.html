@@ -18,9 +18,9 @@ Products |
 <div class="container">
 
     <!-- Preset product filters -->
-    <div class="row d-flex flex-wrap filter-row justify-content-center pt-3 pb-2">
+    <div class="row d-flex flex-wrap filter-row justify-content-between pt-1 pt-md-3 pb-1 pb-md-2">
         <div class="col">
-            <a class="btn-sm filter-button
+            <a class="btn-sm filter-button mobile-font
         {% if current_categories == None %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
                 href="{% url 'products' %}">
                 All
@@ -28,49 +28,49 @@ Products |
         </div>
         <div class="col">
             <!-- Bugfix #1: Category selection highlighting -->
-            <a class="btn-sm filter-button
+            <a class="btn-sm filter-button mobile-font
         {% if 'coffee' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
                 href="{% url 'products' %}?category=coffee">
                 Coffee
             </a>
         </div>
         <div class="col">
-            <a class="btn-sm filter-button
+            <a class="btn-sm filter-button mobile-font
         {% if 'tea' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
                 href="{% url 'products' %}?category=tea">
                 Tea
             </a>
         </div>
         <div class="col">
-            <a class="btn-sm filter-button
+            <a class="btn-sm filter-button mobile-font
         {% if 'hot_chocolate' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
                 href="{% url 'products' %}?category=hot_chocolate">
                 Specials
             </a>
         </div>
         <div class="col">
-            <a class="btn-sm filter-button
+            <a class="btn-sm filter-button mobile-font
             {% if 'sandwiches' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
                 href="{% url 'products' %}?category=sandwiches">
                 Sandwiches
             </a>
         </div>
         <div class="col">
-            <a class="btn-sm filter-button
+            <a class="btn-sm filter-button mobile-font
             {% if 'snacks' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
                 href="{% url 'products' %}?category=snacks">
                 Snacks
             </a>
         </div>
         <div class="col">
-            <a class="btn-sm filter-button
+            <a class="btn-sm filter-button mobile-font
         {% if 'desserts' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
                 href="{% url 'products' %}?category=desserts">
                 Desserts
             </a>
         </div>
         <div class="col">
-            <a class="btn-sm filter-button
+            <a class="btn-sm filter-button mobile-font
         {% if 'merchandise' == cat_list %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
                 href="{% url 'products' %}?category=merchandise">
                 Merch
@@ -79,13 +79,13 @@ Products |
     </div>
 
     <!-- Search box and counter taken from Code Institute task manager tutorial -->
-    <div class="row justify-content-center text-red pt-3 pb-2">
-        <div class="col-sm-12 col-md-8">
+    <div class="row justify-content-center text-red">
+        <div class="col-12 col-md-8">
             <form method="GET" action="{% url 'products' %}">
                 <div class="row">
 
                     <!-- Search Box -->
-                    <div class="col-sm-12 col-md-8" aria-labelledby="search">
+                    <div class="col-sm-12 col-md-8 pt-3 pb-2" aria-labelledby="search">
                         <div class="input-group">
                             <!-- Not functioning with sort buttons, does the search item just need adding to if statement
                         in HTML below (see bugfix #2 note)? -->
@@ -109,12 +109,12 @@ Products |
             </form>
         </div>
 
-        <div class="col-sm-12 col-md-4">
-            <div class="row">
-                <div class="col">
+        <div class="col-12 col-md-4">
+            <div class="row d-flex pt-3 pb-2">
+                <div class="col sort-button d-none d-md-block">
                     <div class="text-red">Sort</div>
                 </div>
-                <div class="col">
+                <div class="col sort-button">
                     <!-- Bugfix #2: Category sorting -->
                     <a href="{% if cat_list == None %}
                              {% url 'products' %}?sort=price&direction=asc
@@ -125,7 +125,7 @@ Products |
                         <i class="fas fa-euro-sign"></i>
                     </a>
                 </div>
-                <div class="col">
+                <div class="col sort-button">
                     <a href="{% if cat_list == None %}
                              {% url 'products' %}?sort=name&direction=asc
                          {% else %}
@@ -135,7 +135,7 @@ Products |
                         <i class="fas fa-sort-alpha-down"></i>
                     </a>
                 </div>
-                <div class="col">
+                <div class="col sort-button">
                     <a href="{% if cat_list == None %}
                              {% url 'products' %}?sort=name&direction=desc
                          {% else %}
