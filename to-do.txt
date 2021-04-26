@@ -1,5 +1,5 @@
 HOUSEKEEPING
-- mobile navbar row colouring on select/focus
+- mobile navbar row colgitouring on select/focus
 - spacing between cats and sorts on products.html
 - error pages - picture not working?
 - index tiles - content on all, Stripe one seems mis-aligned?
