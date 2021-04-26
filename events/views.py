@@ -14,6 +14,9 @@ from profiles.models import UserProfile
 @login_required
 def all_events(request):
     """ Display list of events """
+    if not request.user.is_authenticated:
+        return redirect(reverse('home'))
+
     events = Event.objects.all().order_by('date')
     template = 'events/events.html'
     context = {
@@ -27,6 +30,9 @@ def all_events(request):
 def view_event(request, event_id):
     """ Display more information to the user """
     """ Display an admin panel for admins """
+    if not request.user.is_authenticated:
+        return redirect(reverse('home'))
+
     event = get_object_or_404(Event, pk=event_id)
     attendees = EventAttendees.objects.filter(
         event=event).values_list().order_by('user')
@@ -73,6 +79,7 @@ def view_event(request, event_id):
 
 @login_required
 def join_event(request, event_id):
+    """ View to allow user to RSVP to an event """
     if not request.user.is_authenticated:
         return redirect(reverse('home'))
 
@@ -88,6 +95,7 @@ def join_event(request, event_id):
 
 @login_required
 def add_event(request):
+    """ Admin-only feature to add an event """
     if not request.user.is_superuser:
         return redirect(reverse('home'))
 
@@ -116,9 +124,10 @@ def add_event(request):
 @login_required
 def edit_event(request, event_id):
     """ Admin-only view to edit an existing event """
-    event = get_object_or_404(Event, pk=event_id)
     if not request.user.is_superuser:
         return redirect(reverse('home'))
+
+    event = get_object_or_404(Event, pk=event_id)
 
     if request.method == 'POST':
         form = EventForm(request.POST, request.FILES, instance=event)
@@ -145,6 +154,7 @@ def edit_event(request, event_id):
 
 @login_required
 def delete_event(request, event_id):
+    """ Admin-only view to delete an existing event """
     if not request.user.is_superuser:
         return redirect(reverse('home'))
 

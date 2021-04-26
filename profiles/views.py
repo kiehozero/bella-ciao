@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import get_object_or_404, render, redirect, reverse
 
 from .forms import UserProfileForm
 from .models import UserProfile
@@ -14,6 +14,8 @@ import json
 @login_required
 def profile(request):
     """ Show the user's profile """
+    if not request.user.is_authenticated:
+        return redirect(reverse('home'))
 
     # User Information
     time = datetime.datetime.now()
@@ -86,6 +88,9 @@ def order_history(request, order_number):
 
 @login_required
 def admin(request):
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
     template = 'profiles/admin.html'
     return render(request, template)
 
@@ -93,6 +98,9 @@ def admin(request):
 @login_required
 def delete_attendance(request, attendee_key):
     """ user feature to delete event from their profile """
+    if not request.user.is_authenticated:
+        return redirect(reverse('home'))
+
     attendee = EventAttendees.objects.get(pk=attendee_key)
     attendee.delete()
     messages.info(
