@@ -1,3 +1,8 @@
+/* jshint esversion: 6 */
+/* globals $:false */
+/* Comments above tells JSHint what version of JS is being used, and secondly overrides JSHint's assumption that the 
+$ symbol is an undefined variable */
+
 /* Incremental quantity buttons, taken from Boutique Ado project */
 
 /* Disables button at chosen thresholds */

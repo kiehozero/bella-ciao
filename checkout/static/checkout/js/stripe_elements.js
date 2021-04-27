@@ -1,3 +1,8 @@
+/* jshint esversion: 6 */
+/* globals $:false */
+/* Comments above tells JSHint what version of JS is being used, and secondly overrides JSHint's assumption that the 
+$ symbol is an undefined variable */
+
 /* Logic and Code taken from a cominbation of the Stripe
 documentation in the README and the Boutique Ado tutorial */
 

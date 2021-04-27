@@ -1,9 +1,9 @@
-/* jQuery for interactive design */
-
 /* jshint esversion: 6 */
 /* globals $:false */
 /* Comments above tells JSHint what version of JS is being used, and secondly overrides JSHint's assumption that the 
 $ symbol is an undefined variable */
+
+/* jQuery for interactive design */
 
 $(".nav-option").mouseenter(function() {
     $(this).children().css("color", "#008763");
