@@ -46,7 +46,6 @@ class StripeWH_Handler:
         cart = intent.metadata.cart
 
         save_info = intent.metadata.save_info
-        # loyalty_stamps = intent.metadata.loyalty_stamps
 
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
@@ -61,7 +60,6 @@ class StripeWH_Handler:
         profile = None
         username = intent.metadata.username
         if username != 'AnonymousUser':
-            # add loyalty stamps here using similar logic
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
                 profile.default_phone_number = shipping_details.phone

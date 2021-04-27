@@ -7,6 +7,7 @@ HOUSEKEEPING
 - can DEFAULT_FROM_EMAIL be changed to orders@bellaciao.ie?
 - Test CRUD functionality for events and products on Heroku, change URL on product to optional?
 - debug false
+- duplicate events (and users?) into Heroku
 
 STUDENT CARE:
 - DONE ONCE - Ensure that users not logged in are redirected to the login page. 
