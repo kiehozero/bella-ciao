@@ -79,6 +79,7 @@ Store |
                 </div>
                 <div class="col sort-button">
                     <!-- Bugfix #2: Category sorting -->
+                    <!-- elif in anchor to capture search criteria? -->
                     <a href="{% if cat_list == None %}
                              {% url 'products' %}?sort=price&direction=asc
                          {% else %}
@@ -89,6 +90,7 @@ Store |
                     </a>
                 </div>
                 <div class="col sort-button">
+                    <!-- elif in anchor to capture search criteria? -->
                     <a href="{% if cat_list == None %}
                              {% url 'products' %}?sort=name&direction=asc
                          {% else %}
@@ -99,6 +101,7 @@ Store |
                     </a>
                 </div>
                 <div class="col sort-button">
+                    <!-- need to add an elif if below where 'search' is not None? -->
                     <a href="{% if cat_list == None %}
                              {% url 'products' %}?sort=name&direction=desc
                          {% else %}

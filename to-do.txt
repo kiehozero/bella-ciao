@@ -2,7 +2,7 @@ HOUSEKEEPING
 - error pages - picture not working?
 - index tiles - content on all, Stripe one seems mis-aligned?
 - change index to series of rows then update wireframes
-- datepicker for add event form
+- datepicker for add event form - would need to separate into date and time fields for HTML inputs to work?
 - responsiveness testing
 - can DEFAULT_FROM_EMAIL be changed to orders@bellaciao.ie?
 - Test CRUD functionality for events and products on Heroku, change URL on product to optional?
