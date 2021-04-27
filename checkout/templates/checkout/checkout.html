@@ -63,7 +63,7 @@ Order Summary |
         </div>
 
         <!-- Details and Payment -->
-        <div class="col-sm-12 col-md-5">
+        <div class="col-12 col-md-5">
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset>

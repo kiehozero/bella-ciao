@@ -24,8 +24,8 @@ Order Summary |
     <!-- Cheers Blurb -->
     <div class="col-12 col-md-8 offset-md-2 justify-content-sm-center">
         {% if from_profile %}
-        <h6 class="text-green pt-1 pt-md-3 pb-1 pb-md-2 text-sm-center">Order Number:</h6>
-        <div class="text-green pt-1 pt-md-3 pb-1 pb-md-2 text-sm-center" id="order-number">
+        <h6 class="text-green py-1 pt-md-3 pb-md-2 text-sm-center">Order Number:</h6>
+        <div class="text-green py-1 pt-md-3 pb-md-2 text-sm-center" id="order-number">
             {{ order.order_number }}
         </div>
         <p class="text-sm-center">{{ order.date|slice:10 }}</p>
@@ -36,7 +36,7 @@ Order Summary |
             </a>
         </h5>
         <p class="mobile-font">Thank you for supporting a local business today! Your order number is {{ order.order_number }}.</p>
-        <h4 class="text-green text-center pt-1 pt-md-3 pb-1 pb-md-2">
+        <h4 class="text-green text-center py-1 pt-md-3 pb-md-2">
             <i class="fas fa-hourglass-start"></i>
         </h4>
         <p class="mobile-font">
@@ -47,7 +47,7 @@ Order Summary |
     </div>
 </div>
 
-<div class="row justify-content-center pt-1 pt-md-3 pb-1 pb-md-2">
+<div class="row justify-content-center py-1 pt-md-3 pb-md-2">
 
     <!-- Customer Details -->
     <div class="col-12 col-md-5">

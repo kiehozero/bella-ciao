@@ -16,7 +16,7 @@ Add Product |
 {% block content %}
 
 <div class="row">
-    <div class="col-sm-12 col-md-5">
+    <div class="col-12 col-md-5">
         <form action="{% url 'add_product' %}" method="POST" id="add-product-form" class="pt-3 pb-2" encytype="multipart/form-data">
             {% csrf_token %}
             {{ form | crispy }}

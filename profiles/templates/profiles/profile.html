@@ -15,8 +15,8 @@
 
 {% block content %}
 
-<div class="row">
-    <h5 class="text-green pt-3 pb-2">
+<div class="row mx-2 mx-md-0">
+    <h5 class="text-green pt-3 pb-2 text-center text-md-left">
         {% if time.hour > 17 %}
         Good evening
         {% elif time.hour > 11 %}
@@ -31,15 +31,15 @@
         {% endif %}
     </h5>
     <p>
-        <!-- Blurb about profile features -->
+        Welcome to your Cafe Bella Ciao profile! Update your profile, access previous orders, and view and amend your tickets below.
     </p>
 </div>
 
 <div class="row pt-3 pb-2">
-    <div class="col-sm col-md-6 justify-content-xs-center justify-content-md-left">
+    <div class="col col-md-6 justify-content-md-left">
         <h6 class="text-green pt-3 pb-2">My profile information</h6>
         <div class="row">
-            <div class="col-sm-12 col-md-8">
+            <div class="col-12 col-md-8">
                 <form method="POST" action="{% url 'profile' %}" id="profile-update-form" class="text-left">
                     {% csrf_token %}
                     {{ form|crispy }}
@@ -51,11 +51,11 @@
         </div>
     </div>
     
-    <div class="col-xs col-md-6 justify-content-xs-center justify-content-md-left">
+    <div class="col-12 col-md-6 justify-content-md-left">
         <!-- Order history format taken from Boutique Ado -->
         <h6 class="text-green pt-3 pb-2">My order history</h6>
         <div class="row">
-            <div class="col-sm-12 col-md-10">
+            <div class="col-12 col-md-10">
                 <div class="profile-history table-responsive table-hover table-sm">
                     <table class="table">
                         <thead>
@@ -104,7 +104,7 @@
 <div class="row pt-3 pb-2">
     
     <!-- Displays user's upcoming events -->
-    <div class="col-xs col-md-6 justify-content-xs-center justify-content-md-left">
+    <div class="col-12 col-md-6 justify-content-md-left">
         <h6 class="text-green pt-3 pb-2">My events</h6>
         <div class="table-responsive table-sm profile-history">
             <table class="table">

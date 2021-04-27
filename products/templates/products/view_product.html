@@ -34,7 +34,7 @@
 
     <div class="row">
 
-        <div class="col-sm-12 col-md-5">
+        <div class="col-12 col-md-5">
             <!-- logic taken from Boutique Ado project -->
             {% if product.image %}
             <a href="{{ product.image.url }}" target="_blank">
@@ -46,12 +46,12 @@
             {% endif %}
         </div>
 
-        <div class="col-sm-12 col-md-5 offset-md-2 pt-3 pt-md-0">
+        <div class="col-12 col-md-5 offset-md-2 pt-3 pt-md-0">
             <div class="mobile-font">
                 {{ product.description }}
             </div>
 
-            <div class="text-red text-right pt-1 pt-md-3 pb-1 pb-md-2">
+            <div class="text-red text-right py-1 pt-md-3 pb-md-2 px-2">
                 €{{ product.price }}
             </div>
 
@@ -63,7 +63,7 @@
 
                     <!-- Product Customisation -->
                     {% if product.sizable %}
-                    <div class="row pt-1 pt-md-3 pb-1 pb-md-2">
+                    <div class="row py-1 pt-md-3 pb-md-2">
                         <div class="col-12 justify-content-center text-green">
                             <small>Size:</small>
                             <select name="product_size" id="id_product_size" class="text-green w-100">

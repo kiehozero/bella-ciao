@@ -30,7 +30,7 @@ conflict between Bootstrap's default breakpoints and how I had defined my media 
 
 13. Model testing - I initially set the Eircode on the Order model and the date on the Event model as optional for entry. I've met plenty of people in Ireland who have no idea what their Eircode is, so I could probably have lived with that, but have a mandatory date when admins add events seemed like a no-brainer. A quick migration resolved these issues, and the built-in field prompts incrispy-forms meant that this was easily tested.
 
-14. A typo made me realise that I'd gotten quite far into the project without handling bad URLs. Fortunaetely setting up error handlers in Django is as simple as creating files called 404.html and 500.html in the root template files.
+14. A typo made me realise that I'd gotten quite far into the project without handling bad URLs. Fortunately setting up error handlers in Django is as simple as creating files called 404.html and 500.html in the root template files.
 
 15. Sorting search results (Known Issue #2) - I initially could not get returned search results to work with the sort buttons. I hit on the solution of adding an elif to the loop that was already in each sort button anchor on products.html, but was mistakenly trying to pass the query variable, when it had already been set as search_term in the context of the all_products view.
 

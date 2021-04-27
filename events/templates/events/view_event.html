@@ -26,18 +26,17 @@
                 <i class="fas fa-angle-right text-green"></i>
             </li>
             <li class="breadcrumb list-inline-item text-green">
-                    {{ event.event_name }}
+                {{ event.event_name }}
             </li>
         </div>
     </div>
 
     <div class="row">
 
-        <div class="col-sm-12 col-md-5 pt-3 pb-2">
+        <div class="col-12 col-md-5 pt-3 pb-2">
             <!-- logic taken from Boutique Ado project -->
             {% if event.image %}
             <a href="{{ event.image.url }}" target="_blank">
-                <!-- change to modal -->
                 <img src="{{ event.image.url }}" alt="{{ event.name }}" class="event-image">
             </a>
             {% else %}
@@ -45,7 +44,7 @@
             {% endif %}
         </div>
 
-        <div class="col-sm-12 col-md-5 offset-md-2 pt-3 pb-2">
+        <div class="col-12 col-md-5 offset-md-2 pt-3 pb-2">
 
             {% if sold_out == True %}
             <h6 class="mobile-font back-lightred text-offwhite text-center px-3 py-3 w-100">
@@ -74,7 +73,7 @@
                         {% if sold_out == False %}
                             {% if request.user in guest_names %}
                             <div class="col check-eject pt-3 pb-2 d-flex justify-content-center"> 
-                                <div class="btn btn-primary back-green text-offwhite" style="cursor: initial;">
+                                <div class="btn btn-primary back-green text-offwhite">
                                     <i class="fas fa-ticket-alt"></i>&nbsp;&nbsp;You've got a ticket!
                                 </div>
                             </div>

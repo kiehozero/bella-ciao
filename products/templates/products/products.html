@@ -19,7 +19,7 @@ Store |
 
     <!-- Preset product filters -->
 
-    <div class="row d-flex flex-wrap filter-row justify-content-between pt-1 pt-md-3 pb-1 pb-md-2">
+    <div class="row d-flex flex-wrap filter-row justify-content-between py-1 pt-md-3 pb-md-2">
         <div class="col">
             <a class="btn-sm filter-button mobile-font
         {% if current_categories == None %} back-offwhite text-green{% else %} back-green text-offwhite{% endif %}"
@@ -48,10 +48,8 @@ Store |
                 <div class="row d-flex justify-content-between">
 
                     <!-- Search Box -->
-                    <div class="col-sm-12 col-md-8 pt-1 pt-md-3 pb-1 pb-md-2" aria-labelledby="search">
+                    <div class="col-sm-12 col-md-8 py-1 pt-md-3 pb-md-2" aria-labelledby="search">
                         <div class="input-group">
-                            <!-- Not functioning with sort buttons, does the search item just need adding to if statement
-                        in HTML below (see bugfix #2 note)? -->
                             <input name="search" minlength="3" class="form-control" type="text"
                                 placeholder="Search the store" required>
 
@@ -78,14 +76,15 @@ Store |
                     <div class="text-red">Sort</div>
                 </div>
                 <div class="col sort-button">
+                    <!-- Bugfix #15: Sorting search results -->
                     <a href="
-                    {% if cat_list != None %}
-                        {% url 'products' %}?category={{ cat_list }}&sort=price&direction=asc
-                    {% elif search_term != None %}
-                        {% url 'products' %}?search={{ search_term }}&sort=price&direction=asc
-                    {% else %}
-                        {% url 'products' %}?sort=price&direction=asc
-                    {% endif %}"
+                        {% if cat_list != None %}
+                            {% url 'products' %}?category={{ cat_list }}&sort=price&direction=asc
+                        {% elif search_term != None %}
+                            {% url 'products' %}?search={{ search_term }}&sort=price&direction=asc
+                        {% else %}
+                            {% url 'products' %}?sort=price&direction=asc
+                        {% endif %}"
                         class="btn filter-button {% if current_sort == 'price_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
                         <i class="fas fa-euro-sign"></i>
                     </a>
