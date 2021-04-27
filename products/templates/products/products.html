@@ -78,35 +78,40 @@ Store |
                     <div class="text-red">Sort</div>
                 </div>
                 <div class="col sort-button">
-                    <!-- Bugfix #2: Category sorting -->
-                    <!-- elif in anchor to capture search criteria? -->
-                    <a href="{% if cat_list == None %}
-                             {% url 'products' %}?sort=price&direction=asc
-                         {% else %}
-                             {% url 'products' %}?category={{ cat_list }}&sort=price&direction=asc
-                         {% endif %}"
+                    <a href="
+                    {% if cat_list != None %}
+                        {% url 'products' %}?category={{ cat_list }}&sort=price&direction=asc
+                    {% elif search_term != None %}
+                        {% url 'products' %}?search={{ search_term }}&sort=price&direction=asc
+                    {% else %}
+                        {% url 'products' %}?sort=price&direction=asc
+                    {% endif %}"
                         class="btn filter-button {% if current_sort == 'price_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
                         <i class="fas fa-euro-sign"></i>
                     </a>
                 </div>
                 <div class="col sort-button">
-                    <!-- elif in anchor to capture search criteria? -->
-                    <a href="{% if cat_list == None %}
-                             {% url 'products' %}?sort=name&direction=asc
-                         {% else %}
-                             {% url 'products' %}?category={{ cat_list }}&sort=name&direction=asc
-                         {% endif %}"
+                    <a href="
+                        {% if cat_list != None %}
+                            {% url 'products' %}?category={{ cat_list }}&sort=name&direction=asc
+                        {% elif search_term != None %}
+                            {% url 'products' %}?search={{ search_term }}&sort=name&direction=asc
+                        {% else %}
+                            {% url 'products' %}?sort=name&direction=asc
+                        {% endif %}"
                         class="btn filter-button {% if current_sort == 'name_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
                         <i class="fas fa-sort-alpha-down"></i>
                     </a>
                 </div>
                 <div class="col sort-button">
-                    <!-- need to add an elif if below where 'search' is not None? -->
-                    <a href="{% if cat_list == None %}
-                             {% url 'products' %}?sort=name&direction=desc
-                         {% else %}
-                             {% url 'products' %}?category={{ cat_list }}&sort=name&direction=desc
-                         {% endif %}"
+                    <a href="
+                        {% if cat_list != None %}
+                            {% url 'products' %}?category={{ cat_list }}&sort=name&direction=desc
+                        {% elif search_term != None %}
+                            {% url 'products' %}?search={{ search_term }}&sort=name&direction=desc
+                        {% else %}
+                            {% url 'products' %}?sort=name&direction=desc
+                        {% endif %}"
                         class="btn filter-button {% if current_sort == 'name_desc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
                         <i class="fas fa-sort-alpha-up-alt"></i>
                     </a>
@@ -119,7 +124,7 @@ Store |
     <div class="row justify-content-center">
         <span>
             <small>
-                {{products|length }} {% if products|length == 1 %}item{% else %}items{% endif %} found{% if search_term %} for {{ search_term }}{% endif %}
+                {{products|length }} {% if products|length == 1 %}item{% else %}items{% endif %} found{% if search_term %} for '{{ search_term }}'{% endif %}
             </small>
         </span>
     </div>
