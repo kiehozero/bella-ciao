@@ -433,6 +433,7 @@ footer {
     /* Main */
 
     .messages-container {
+        margin-top: 1rem;
         padding-right: 0px;
     }
 
@@ -448,6 +449,9 @@ footer {
 }
 
 @media (max-width: 315px) {
+    .messages-container {
+        margin-top: 1.5rem;
+    }
     .social-icon {
         font-size: 1em;
     }

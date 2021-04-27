@@ -2,7 +2,6 @@ HOUSEKEEPING
 - error pages - picture not working?
 - index tiles - content on all, Stripe one seems mis-aligned?
 - change index to series of rows then update wireframes
-- messages in small screens - to do with CSS that allows text to wrap?
 - datepicker for add event form - would need to separate into date and time fields for HTML inputs to work?
 - responsiveness testing
 = redirect_url at bottom of view_product and view_event
