@@ -180,14 +180,22 @@ repository.
 
 ### Amazon Web Services
 
->>> S3, IAM
+>>> S3 - Quick storage setup for media and static files
+
+>>> IAM - Lock up your S3 bucket by using the IAM console to control access and security
 
 ### Python Libraries
 
-This project is built on the [Django](https://www.djangoproject.com/) framework. A number of libraries were installed to complete this project:
+This project is built on the [Django](https://www.djangoproject.com/) framework. A number of libraries were installed to complete this project, and can be installed simply by using the pip3 install command in the command line interface.
 
 - [django-allauth](https://pypi.org/project/django-allauth/) is an authentication and account management library;
->>> dj_database_url, gunicorn, stripe, django-crispy-forms, boto3 and django-storages (both AWS),
+- [dj_database_url](https://pypi.org/project/dj-database-url/) - quick access to configure a database to your local environment;
+- [gunicorn](https://pypi.org/project/gunicorn/) - a HTTP server dyno to power Heroku apps;
+- [stripe](https://stripe.com/docs/api?lang=python/) - Stripe's official API;
+- [django-crispy-forms](https://github.com/django-crispy-forms/django-crispy-forms) - take the hassle out of form alignment and design with crispy-forms.
+- [boto3](https://pypi.org/project/boto3/) - A Python software development kit for Amazon Web Services
+- [django-storages](https://pypi.org/project/django-storages/) - To quote the PyPI directory, "a project to provide a variety of storage backends in a single library."
+- [pylint-django](https://pypi.org/project/pylint-django/) (if you install it)
 
 ## Database Architecture
 

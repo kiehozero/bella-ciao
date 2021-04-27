@@ -4,11 +4,13 @@ HOUSEKEEPING
 - change index to series of rows then update wireframes
 - datepicker for add event form - would need to separate into date and time fields for HTML inputs to work?
 - responsiveness testing
-= redirect_url at bottom of view_product and view_event
+- Python warning clean up (CI tutorial)
+- redirect_url at bottom of view_product and view_event
 - can DEFAULT_FROM_EMAIL be changed to orders@bellaciao.ie?
 - Test CRUD functionality for events and products on Heroku, change URL on product to optional?
 - debug false
 - duplicate events (and users?) into Heroku, loaddata command?
+- check all sized products again for drop-downs
 
 STUDENT CARE:
 - DONE ONCE - Ensure that users not logged in are redirected to the login page. 
@@ -17,7 +19,6 @@ to deal with this.
 - Make sure you have checked that no links result in an internal server error. 
 - If you have included a user type with higher access privileges, then you can include example login credentials at submission. 
 - DONE ONCE - Do not display links the user does not have the privileges to access.
-
 
 NICE TO HAVE:
 - contact form (use pintbaby)
