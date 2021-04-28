@@ -318,11 +318,6 @@ footer {
     width: 100%;
 }
 
-#backToTop {
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-}
-
 
 /* Breadcrumb - overwriting default Bootstrap parameters on view_product and view_event */
 
@@ -392,14 +387,6 @@ footer {
 }
 
 
-@media (min-width: 768px) and (max-width: 1199px) {
-    #backToTop {
-        margin-top: 5vh;
-        margin-bottom: 5vh;
-    }
-}
-
-
 @media (max-width: 767px) {
     body {
         /* see how these need to be amended for tablet views */
@@ -414,11 +401,6 @@ footer {
     .landing-box img {
         height: 20vh;
         width: 100%;
-    }
-
-    #backToTop {
-        margin-top: 5vh;
-        margin-bottom: 5vh;
     }
     
     /* Alternative navigation element for smaller screens */
