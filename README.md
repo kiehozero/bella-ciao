@@ -41,18 +41,25 @@ Testing for each of the below user stories is included within the [testing log](
 
 As a user I want to...
 
-  1. order an item from the store;
-  3. modify the size or quantity of product I order;
-  4. read more information about a product;
-  5. filter or sort products by category or a search term of my choice;
-  6. create an account;
-  7. edit my profile information;
-  8. sign up to an in-store event;
-  9. view events I have signed up to;
-  10. remove an event from my events list;
-  11. view my current shopping cart;
-  12. view my order history;
-  13. save my address for future use;
+  1. ... view the products available in the shop;
+  2. ... read more information about a product;
+  3. ... order an item from the store;
+  4. ... modify the size or quantity of product I order;
+  5. ... view my current cart;
+  6. ... edit or delete an item in my cart;
+  7. ... checkout my order;
+  8. ... create an account;
+  9. ... sign in to my account;
+  10. ... reset my password;
+  11. ... edit my profile information;
+  12. ... view upcoming events.
+  13. ... sign up to an in-store event;
+  14. ... view events I have signed up to;
+  15. ... remove an event from my events list;
+  16. ... view my order history;
+  17. ... view a particular previous order;
+  18. ... save my address for future use;
+  19. ... sign out of my account;
 
 As an admin, I want to
   1. add a new product;
@@ -73,6 +80,7 @@ As an admin, I want to
 - View order history
 - Events for logged in users
 - Admin panel for products and events
+- Allauth
 
 ### Features to Implement
 

@@ -6,10 +6,12 @@ HOUSEKEEPING
 - Python warning clean up (CI tutorial)
 - Test CRUD functionality for events and products on Heroku, change URL on product to optional?
 - debug false
+- delete account view? no cascading to orders
+- spreadsheet of image credits list (column A, product/event, column B website, column C link)
 - duplicate events (and users?) into Heroku, loaddata command?
-- more products and events
+- more products and events (28 products (10 coffee, 5 specials, 3 tea, 2 desserts, 2 snacks, 4 merch), 10 events)
 - check all sized products again for drop-downs
-- returns policy and FAQ
+- why is the quantity select on view_product working but not in cart?
 - VALIDATION add product price can be zero (way to fix this on Pintbaby)
 - SC DONE ONCE - Ensure that users not logged in are redirected to the login page. 
 - SC DONE ONCE - Check that authentication cannot be bypassed by typing the URL into the browser bar - create custom 403/404 pages 

@@ -4,30 +4,44 @@
 
 As a user I want to...
 
-  1. order an item from the store;
-  - 
-  3. modify the size or quantity of product I order;
-  - 
-  4. read more information about a product;
-  - 
-  5. filter or sort products by category or a search term of my choice;
-  - 
-  6. create an account;
-  - 
-  7. edit my profile information;
-  - 
-  8. sign up to an in-store event;
-  - 
-  9. view events I have signed up to;
-  - 
-  10. remove an event from my events list;
-  - 
-  11. view my current shopping cart;
-  - 
-  12. view my order history;
-  - 
-  13. save my address for future use;
-  - 
+  1. ... view the products available in the shop.
+  - On larger devices, navigate to the 'Store' button on the left of the screen to display a list of all products in the shop. On mobile devices, click the three bar icon at the top of the screen and then click the Store button.
+  2. ... read more information about a product.
+  - Navigate to the Store page to return a list of all products in the shop. Click on the desired product to display a description.
+  3. ... order an item from the store.
+  - As above, select the product in the products page, and then click the Add to Cart button.
+  4. ... modify the size or quantity of product I order.
+  - As above, navigate to the specific product's page, a quantity selector appears where the user can use the buttons or type in their required amount. If the product comes in multiple sizes, a drop-down menu where this can be chosen will appear above the quantity selector.
+  5. ... view my current cart.
+  - Upon adding an item to the cart, a message bar at the top of the screen will display at the top of the page confirming this action, along with a link to the current cart in gold. From anywhere else on the site, the cart can be accessed by navigating to the gold cart icon with the current cart total next to it. This is on the left of the screen for large devices and at the top of the screen for smaller devices.
+  6. ... edit or delete an item in my cart.
+  - Access the cart as above, and each item within the cart will have a quantity selector similar to the one found in each Product page. To edit the quantity required, use the plus and minus buttons or type the value manually, then click the green Update button. To delete an item, simply press the red trash can icon.
+  7. ... checkout my order.
+  - Once the user has finalised their required products, click the 'Checkout' button. An item and order summary will be displayed, and any first-time users, whether checking out anonymously or using an account, will need to fill in the form to the right (on larger devices) or bottom (on smaller devices) of the screen. All fields except the Street Address 2 field are mandatory, and a valid credit or debit card number, expiry date and CVC number must be filled out. Upon clicking the 'Pay' button, the user will be taken to a confirmation screen, as well as receiving this information via e-mail.
+  8. ... create an account.
+  - Navigate to the 'Register' link on the left (large screens) or top (small screens) of the page. All elements of the Sign Up form are manadatory, the user will need to state and confirm their e-mail address, provide a username, and state and confirm a password that meets minimum security requirements.
+  9. ... sign in to my account.
+  - Navigate to the 'Sign In' link on the left (large screens) or top (small screens) of the page. Providing either the username or e-mail address given at sign-up, along with the correct password, will result in authentication.
+  10. ... reset my password.
+  - As above, navigate to the 'Sign in' link and click on the 'Forgot Your Password?' button. Enter your e-mail address and click 'Reset My Password' and an e-mail with further instructions will be sent to the e-mail address provided if it is associated with an account.
+  11. ... edit my profile information.
+  - Upon signing in on a larger device, navigate to the button containing the user's screen name on the left. All of the information underneath the 'My Profile Information can be edited. On mobile screens, open the menu at the top of the screen and select the button containing the user's username, then select the 'My Profile' button to get to the My Profile Information.
+  12. ... view upcoming events.
+  - Account holders can access the Events pages by navigating to the 'Event' link on the left (on larger screens) or top (on smaller screens) of the screen, to display a list of all upcoming events, as well as their date and time.
+  13. ... sign up to an in-store event.
+  - As above, navigate to the 'Events' link to return a list of all events. Click the 'Get Your Seat' button to bring up that event's specific page. Click the 'RSVP' button to reserve a ticket. If a red bar at the top displays 'Limited Availabiliy', under 10% of tickets remain. If the bar displays 'Sold Out', then no tickets remain and an RSVP button will not appear. If the RSVP button is replaced by a 'You've Got a Ticket!' message, the user has already signed up to this event.
+  14. ... view events I have signed up to.
+  - Navigate to the user's profile and a list of events will appear underneath the 'My Events' heading at the bottom of the page.
+  15. ... remove an event from my events list.
+  - As above, navigate to the user's profile to see a list of events underneath the 'My Events' heading. Click the trash can icon to remove the ticket from your events and make the ticket available to other users.
+  16. ... view my order history.
+  - Navigate to the user's profile and a list of all previous orders will appear to the right (on larger screens) or underneath (on smaller screens) the My Profile Information section, with the heading My Order History.
+  17. ... view a particular previous order.
+  - As above, navigate to the My Order History section of the user's profile, then click on the date of the required order. This will contain all of the information submitted by the user at the time of the order, even if they have subsequently updated their profile.
+  18. ... save my address for future use.
+  - There are two ways to do this. The user can manually update their information within their profile, or if they are completing the checkout form they can tick the box between the address form and the payment details.
+  19. ... sign out of my account.
+  - Navigate to the 'Sign Out' link at the right (larger screens) or top (smaller screens, via the menu and username) of the screen to be taken to a sign out confirmation screen.
 
 As an admin, I want to
   1. add a new product;
@@ -87,7 +101,7 @@ conflict between Bootstrap's default breakpoints and how I had defined my media 
 
 ## Outstanding Issues
 
-1. (Known Issue #4) Cart quantity will sometimes allow a user to submit a quantity outside of the parameters, seems to only occur when there are two versions of an item (i.e., one regular and one large) in the basket, and it only affects the second item - suspect this is to
+1. (Known Issue #4) Cart quantity will sometimes allow a user to submit a quantity outside of the parameters. This only occurs when there is more than one size of a product in the basket, and it only affects the second of those sizes. For these items a customer can select a product quantity below zero. If the customer clicks the Update button their cart will remove the product, but if they do not do this before checkout they will see the quantity of this item as 1 in the checkout screen. seems to only occur when there are two versions of an item (i.e., one regular and one large) in the basket, and it only affects the second item - suspect this is to
 do with how quantitySelect.js moves up and down the DOM to return the first item with a given item ID.
 2. (Known Issue #4) Cart quantity buttons on smaller devices not rendering well, when I tried to fix this it fairly well messed up the js that allows the buttons to function at all. 
 3. (Known Issue #7) Rounding issue on products that aren't in pricing multiples of ten (Seabrook's at 1.35)
