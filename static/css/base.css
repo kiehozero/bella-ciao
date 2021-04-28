@@ -57,16 +57,8 @@ nav ul a:hover {
 li.nav-option {
     font-weight: 600;
     line-height: 1.25em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
     text-transform: uppercase;
     width: 100%;
-}
-
-li.nav-option.text-link {
-    padding-left: 1em;
 }
 
 li.nav-option:hover,

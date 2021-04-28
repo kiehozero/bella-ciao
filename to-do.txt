@@ -4,7 +4,6 @@ HOUSEKEEPING
 - index tiles - content on all, Stripe one seems mis-aligned?
 - change index to series of rows then update wireframes
 - Python warning clean up (CI tutorial)
-- can DEFAULT_FROM_EMAIL be changed to orders@bellaciao.ie?
 - Test CRUD functionality for events and products on Heroku, change URL on product to optional?
 - debug false
 - duplicate events (and users?) into Heroku, loaddata command?

@@ -9,7 +9,7 @@
             </li>
 
             <!-- Shopping cart logic taken from Code Institute Boutique Ado project -->
-            <li class="nav-option text-link" id="cart-container">
+            <li class="nav-option py-2 py-lg-3 ml-3" id="cart-container">
                 <a href="{% url 'view_cart' %}" id="{% if grand_total %}cart-full{% else %}cart-empty{% endif %}">
                     <i class="fas fa-shopping-cart sh-cart-icon"></i>&nbsp;&nbsp;
                     {% if grand_total %}
@@ -20,13 +20,13 @@
                 </a>
             </li>
 
-            <li class="nav-option text-link">
+            <li class="nav-option py-2 py-lg-3 ml-3">
                 <a href="{% url 'products' %}">Online Store
                 </a>
             </li>
 
             <!-- User Profile -->
-            <li class="nav-option text-link">
+            <li class="nav-option py-2 py-lg-3 ml-3">
                 <!-- Redirects to user profile if logged in, login page if not -->
                 {% if request.user.is_authenticated %}
                 <a href="{% url 'profile' %}">
@@ -42,26 +42,32 @@
             <!-- User-Conditional Nav Elements -->
             {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-            <li class="nav-option text-link">
+            <li class="nav-option py-2 py-lg-3 ml-3">
                 <a href="{% url 'admin' %}">
                     <i class="fas fa-tools"></i>&nbsp;&nbsp;Admin
                 </a>
             </li>
             {% endif %}
-            <li class="nav-option text-link">
+            <li class="nav-option py-2 py-lg-3 ml-3">
                 <a href="{% url 'events' %}">
                     <i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Events</a>
             </li>
-            <li class="nav-option text-link">
+            <li class="nav-option py-2 py-lg-3 ml-3">
                 <a href="{% url 'account_logout' %}">
                     <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Sign Out
                 </a>
             </li>
             {% else %}
-            <li class="nav-option text-link">
+            <li class="nav-option py-2 py-lg-3 ml-3">
                 <a href="{% url 'account_signup' %}">Register</a>
             </li>
             {% endif %}
+
+            <li class="nav-option py-2 py-lg-3 ml-3">
+                <a href="{% url 'faq' %}">
+                    <i class="far fa-question-circle"></i>&nbsp;&nbsp;FAQs
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
