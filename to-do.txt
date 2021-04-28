@@ -1,6 +1,6 @@
-HOUSEKEEPING
 - error pages - picture not working?
-- README, SETUP, TESTING write ups, test all links inside, check MS3 readme content
+- README (features, admin user stories), SETUP (Dj, AWS, Stripe, Heroku), TESTING (Outstanding Issues, Validation, Rendering chart), 
+test all links inside, check MS3 readme content
 - index tiles - content on all, Stripe one seems mis-aligned?
 - change index to series of rows then update wireframes
 - Python warning clean up (CI tutorial)
@@ -9,7 +9,7 @@ HOUSEKEEPING
 - delete account view? no cascading to orders
 - spreadsheet of image credits list (column A, product/event, column B website, column C link)
 - duplicate events (and users?) into Heroku, loaddata command?
-- more products and events (28 products (10 coffee, 5 specials, 3 tea, 2 desserts, 2 snacks, 4 merch), 10 events)
+- more products and events (see credits sheet)
 - check all sized products again for drop-downs
 - why is the quantity select on view_product working but not in cart?
 - VALIDATION add product price can be zero (way to fix this on Pintbaby)
@@ -17,6 +17,7 @@ HOUSEKEEPING
 - SC DONE ONCE - Check that authentication cannot be bypassed by typing the URL into the browser bar - create custom 403/404 pages 
 to deal with this. 
 - SC Check that no links result in an internal server error. 
-- SC TO CREATE If you have included a user type with higher access privileges, then you can include example login credentials at submission. 
+- SC TO CREATE If you have included a user type with higher access privileges, then you can include example login credentials at 
+submission. 
 - SC DONE ONCE - Do not display links the user does not have the privileges to access.
 - NICE TO HAVE contact form (use pintbaby)

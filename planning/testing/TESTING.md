@@ -105,14 +105,35 @@ conflict between Bootstrap's default breakpoints and how I had defined my media 
 do with how quantitySelect.js moves up and down the DOM to return the first item with a given item ID.
 2. (Known Issue #4) Cart quantity buttons on smaller devices not rendering well, when I tried to fix this it fairly well messed up the js that allows the buttons to function at all. 
 3. (Known Issue #7) Rounding issue on products that aren't in pricing multiples of ten (Seabrook's at 1.35)
+4. (Known Issue #17) Can enter product price as 0 in Add_Product, tried regex, try again, try MinValueValidator
 
 
 ## Rendering
 
-<img src="#">
+<img src="#"> this one for rendering
 
->>> add image above
-
->>> User Lighthouse in Chrome here
+<img src="#"> this one for fixes
 
 ## Validation
+
+### HTML
+Each page was directly inputted into the [W3C HTML Validator](https://validator.w3.org/) to check that the markup used passed W3C standards. A number of validation issues arose as expected given the use of Django's templating and injection methods, especially since the validator recognises the curly bracket as an illegal URL character. Nevertheless running the validator is always a worthwhile task in catching any typos that may allow silent failures during development or are literally inconsequential but semantically confusing.
+
+EXAMPLE SCREENSHOT HERE
+
+### CSS
+- There are 7 CSS scripts in this project, and they were validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+
+SCREENSHOTS HERE
+
+### JS/jQuery
+- There are 3 Javascript files in this project, they were validating using [JSHint](https://jshint.com/).
+
+SCREENSHOTS HERE
+
+### Python PEP8
+- All Python scripts in this project were validated using the service at [PEP8 Online](http://pep8online.com/)
+
+SCREENSHOTS HERE
+
+### Lighthouse

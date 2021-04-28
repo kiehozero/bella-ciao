@@ -29,11 +29,11 @@ I wanted to portray that the staff at the store have an authentic connection to 
 
 The icons I used within this project are all sourced from [Font Awesome](https://fontawesome.com/)'s free package.
 
-### Responsiveness
+### Wireframes and Responsive Design
 
-- A [Balsamiq](https://www.balsamiq.com/) wireframe for this project is included in the repository, with [desktop/tablet](planning/wireframes/desktop.pdf) and [mobile](planning/wireframes/mobile.pdf) versions.
+- A [Balsamiq](https://www.balsamiq.com/) wireframe for this project is included in the repository, with [desktop/tablet](planning/wireframes/desktop-index.pdf) and [mobile](planning/wireframes/mobile-index.pdf) versions.
 
-In terms of look and feel, the site is similar across all browsers. The tablet and desktop views are almost identical but for a few alignment changes, while mobile devices always drop into col-12 formatting. Google recently added the Galaxy Fold into their . In my last project I probably overused the jQuery html class to replace text in buttons with icons, I've pulled back on that a little this time, and I've used Bootstrap responsive classes, which I find takes away a lot of the requirements in writing custom CSS and even some basic jQuery. A full responsiveness testing procedure can be found within the [testing log](planning/testing/TESTING.md).
+In terms of look and feel, the site is similar across all browsers. The tablet and desktop views are almost identical but for a few alignment changes, while mobile devices always drop into col-12 formatting. Google recently added the Galaxy Fold into their dev tools responsiveness tests which presented some challenges as this device has a very narrow 280px screen, but Bootstrap has done the bulk of the work here, and I've added some media queries where neceassary. In my last project I overused the jQuery html class to replace text in buttons with icons, I've pulled back on that a little this time, and I've used Bootstrap responsive classes, which takes away a lot of the requirements in writing custom CSS and even some basic jQuery. A full responsiveness testing procedure can be found within the [testing log](planning/testing/TESTING.md).
 
 ### User Stories
 
@@ -85,10 +85,10 @@ As an admin, I want to
 ### Features to Implement
 
 - A number of features came up during the course of the project that would be required to run this as a viable e-commerce business in a real-life situation. The first of these would be a VAT calculator, which would actually be quite simple to implement by adding a VAT field to the Product model, then calculating the total alongside the subtotal and delivery totals at checkout.
-- The second features that I feel would be a requirement for any same-day food delivery business is a time selector. I experimented with using one of these but I couldn't get sufficient control over the date formatting being created to push it into a database in a usable format.
+- The second feature that I feel would be a requirement for any same-day food delivery business is a time selector. I experimented with using one of these but I couldn't get sufficient control over the date and time formatting being created to push it into a database in a usable format.
 - One interesting idea I saw recently was Pret A Manger's unlimited coffee offer for a set monthly fee. I wanted to re-create this using Stripe's subscription payments system. The [setup process](https://stripe.com/docs/billing/subscriptions/overview) itself doesn't seem overly complex, but for the sake of creating an additional user level, as well as splitting orders based on whether the user was a subscriber or not, entailed a lot of work in the timeframe I had.
 - Lockdown is not going to last forever and people will eventually be spending less time at home, so the logical next point for this business would be to set up a selection box in the checkout that indicates whether the user wishes to collect their order, removing the cost of delivery.
-- One of my original ideas was to build a loyalty model, so customers could redeem points after repeated purchases. I got as far as calculating the points based on product eligibility, but I couldn't get points to carry through during the checkout process. I'm determined to implement this feature as part of my ongoing development after this project is submitted, so I've left the field in the Product model for now. This item will show up in the admin-only Add Product form, but I have cleared any sign of this from any non-admin features. 
+- One of my original ideas was to build a loyalty model, so customers could redeem points after repeated purchases. I got as far as calculating the points based on product eligibility, but I couldn't get points to carry through during the checkout process. I'm determined to implement this feature as part of my ongoing development after this project is submitted, so I've left the field in the Product and Order models for now. This item will show up in the admin-only Add Product form, but I have cleared any sign of this from any non-admin features. 
 
 
 ## Technologies Used
@@ -192,6 +192,8 @@ I used [GitHub](https://www.github.com/) as the code host for this project, and 
 - The image used in the index page header is taken from [Tourism Europe](https://www.tourlane.com/europe/ireland/limerick/). The [original](https://images.ctfassets.net/bth3mlrehms2/2CKgqB27vGnVOVRbDEtkll/b1d0d5183538f02650dea4450e08fbbd/Limerick__Ireland.jpg) is used as that page's background element; I styled this significantly using [Pixlr](https://www.pixlr.com/) to match the colour scheme of the project. A cropped version of this is used as a placeholder for events without an image.
 
 - The image for the error pages is from [Townsquare Media](https://townsquare.media/site/158/files/2017/01/spilled-coffee.jpg), a website which doesn't look to be working at the moment but it's content is still showing up in Google searches.
+
+- For brevity, I have created a spreadsheet
 
 ### Acknowledgements
 
