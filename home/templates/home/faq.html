@@ -2,15 +2,36 @@
 {% load static %}
 
 {% block extratitle %}
-Home |
+Frequently Asked Questions |
 {% endblock %}
 
 {% block page_header %}
-{% include 'includes/landing-header.html' %}
+{% include 'includes/page-header.html' with h3_title="Frequently Asked Questions" %}
 {% endblock %}
 
 {% block content %}
 
-<
+<div class="row">
+    <div class="col-12 pt-3 pb-2">
+        <h6 class="text-green">Question</h6>
+        <p>Answer</p>
+    </div>
+    <div class="col-12 pt-3 pb-2">
+        <h6 class="text-green">History</h6>
+        <p>Answer</p>
+    </div>
+    <div class="col-12 pt-3 pb-2">
+        <h6 class="text-green">Why should I sign up?</h6>
+        <p>Answer Quick Checkout, Events, Loyalty</p>
+    </div>
+    <div class="col-12 pt-3 pb-2">
+        <h6 class="text-green">Security</h6>
+        <p>Payments handled by Stripe, we do not store and have no access to your credit card details at any point in the transaction.</p>
+    </div>
+    <div class="col-12 pt-3 pb-2">
+        <h6 class="text-green">Returns</h6>
+        <p>Answer</p>
+    </div>
+</div>
 
 {% endblock %}

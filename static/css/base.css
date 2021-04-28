@@ -54,6 +54,11 @@ nav ul a:hover {
     padding-left: 0;
 }
 
+#site-logo {
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+}
+
 li.nav-option {
     font-weight: 600;
     line-height: 1.25em;
@@ -95,10 +100,6 @@ nav ul a {
 
 .account-icon {
     font-size: 1em;
-}
-
-.sh-cart-icon {
-    font-size: 2em;
 }
 
 nav div a#cart-full {
