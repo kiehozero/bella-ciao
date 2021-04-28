@@ -1,8 +1,6 @@
 - error pages - picture not working?
 - README (features, admin user stories), SETUP (Dj, AWS, Stripe, Heroku), TESTING (Outstanding Issues, Validation, Rendering chart), 
-test all links inside, check MS3 readme content
-- index tiles - content on all, Stripe one seems mis-aligned?
-- change index to series of rows then update wireframes
+test all links
 - Python warning clean up (CI tutorial)
 - Test CRUD functionality for events and products on Heroku, change URL on product to optional?
 - debug false

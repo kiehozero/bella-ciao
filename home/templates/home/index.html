@@ -20,10 +20,10 @@ Home |
         <div class="card index-card">
             <img src="{{ MEDIA_URL }}coffee-take.png" class="card-image-top" alt="A cup of coffee">
             <div class="card-body back-offwhite text-black">
-                <h4 class="card-title">Cead mile fáilte!</h4>
-                <p class="card-text">Barista coffee poured in the heart of Limerick city.</p>
+                <h4 class="card-title">Ciao!</h4>
+                <p class="card-text">Delicious coffee prepared by award-winning baristas, delivered to your door.</p>
                 <div class="d-flex justify-content-center">
-                    <a href="{% url 'account_signup' %}" class="btn btn-outline-success" role="button">CHANGE</a>
+                    <a href="{url 'products' %}?category=coffee" class="btn btn-outline-success" role="button">Coffee</a>
                 </div>
             </div>
         </div>
@@ -31,13 +31,13 @@ Home |
 
     <div class="col-12 col-md-4">
         <div class="card index-card">
-            <img src="{{ MEDIA_URL }}coffee-order.png" class="card-image-top" alt="Ordering coffee online">
+            <img src="{{ MEDIA_URL }}vfr.png" class="card-image-top" alt="Ordering coffee online">
             <div class="card-body back-offwhite text-black">
-                <h4 class="card-title">Order Online</h4>
-                <p class="card-text">Delicious coffee prepared by our award-winning baristas, delivered to you door.
+                <h4 class="card-title">Treat Yourself</h4>
+                <p class="card-text">Hand-prepared sandwiches, using the best fresh Irish ingredients.
                 </p>
                 <div class="d-flex justify-content-center">
-                    <a href="{% url 'products' %}" class="btn btn-outline-success" role="button">Order Now</a>
+                    <a href="url 'products' %}?category=sandwiches" class="btn btn-outline-success" role="button">Order Now</a>
                 </div>
             </div>
         </div>
@@ -49,10 +49,9 @@ Home |
             <div class="card-body back-offwhite text-black">
                 <h4 class="card-title">Events@CBC</h4>
                 {% if request.user.is_authenticated %}
-                <p class="card-text">View upcoming events at our city centre Roasthouse, including tasting sessions,
-                    live music and masterclasses.</p>
+                <p class="card-text">Coming up at the Roasthouse: tasting sessions, live music and masterclasses.</p>
                 <div class="d-flex justify-content-center">
-                    <a href="{% url 'events' %}" class="btn btn-outline-success" role="button">Classes</a>
+                    <a href="{% url 'events' %}" class="btn btn-outline-success" role="button">Events</a>
                 </div>
                 {% else %}
                 <p class="card-text">Subscribe today for free access to monthly tasting sessions and masterclasses.</p>
@@ -66,16 +65,16 @@ Home |
 
     <div class="col-12 col-md-4">
         <div class="card index-card">
-            <img src="{{ MEDIA_URL }}coffee-loyalty.png" class="card-image-top" alt="A cofee loyalty card">
+            <img src="{{ MEDIA_URL }}coffee-lots.png" class="card-image-top" alt="Six cups of coffee">
             <div class="card-body back-offwhite text-black">
-                <h4 class="card-title">Get Rewards</h4>
+                <h4 class="card-title">Members</h4>
                 {% if request.user.is_authenticated %}
-                <p class="card-text">View or update your profile information.</p>
+                <p class="card-text">View or update your profile information, see event tickets and order history.</p>
                 <div class="d-flex justify-content-center">
                     <a href="{% url 'profile' %}" class="btn btn-outline-success" role="button">Update</a>
                 </div>
                 {% else %}
-                <p class="card-text">Create an account to get every tenth coffee free from any of our stores.</p>
+                <p class="card-text">Create an account for express checkout and access to exclusive events.</p>
                 <div class="d-flex justify-content-center">
                     <a href="{% url 'account_signup' %}" class="btn btn-outline-success" role="button">Register</a>
                 </div>
@@ -89,7 +88,7 @@ Home |
             <img src="{{ MEDIA_URL }}coffee-bike.png" class="card-image-top" alt="A delivery bicycle">
             <div class="card-body back-offwhite text-black">
                 <h4 class="card-title">Delivery</h4>
-                <p class="card-text">Order now for delivery within 60 minutes.</p>
+                <p class="card-text">Order now for delivery within 60 minutes from our city centre Roasthouse.</p>
                 <div class="d-flex justify-content-center">
                     <a href="{% url 'products' %}" class="btn btn-outline-success" role="button">Delivery</a>
                 </div>
@@ -102,24 +101,10 @@ Home |
             <img src="{{ MEDIA_URL }}coffee-lots.png" class="card-image-top" alt="Six cups of coffee">
             <div class="card-body back-offwhite text-black">
                 <h4 class="card-title">Go Unlimited</h4>
-                <p class="card-text">Launching soon, unlimited in-store coffee for a flat monthly fee.
+                <p class="card-text">Launching soon, unlimited coffee collected in-store for a flat monthly fee.
                 </p>
                 <div class="d-flex justify-content-center">
                     <a href="#" class="btn btn-outline-success" role="button">Coming soon!</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 col-md-4">
-        <div class="card index-card mx-2 my-3">
-            <img src="{{ MEDIA_URL }}coffee-lots.png" class="card-image-top" alt="Six cups of coffee">
-            <div class="card-body back-offwhite text-black">
-                <h4 class="card-title">Stripe</h4>
-                <p class="card-text">Guaranteed easy and secure payment system from fellow Munster entrepreneurs Stripe.
-                </p>
-                <div class="d-flex justify-content-center">
-                    <a href="{% url 'products' %}" class="btn btn-outline-success" role="button">Order Now</a>
                 </div>
             </div>
         </div>
