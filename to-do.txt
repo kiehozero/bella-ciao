@@ -1,5 +1,9 @@
 HOUSEKEEPING
 - error pages - picture not working?
+- check HTML indentation
+- split setup info into separate files
+- test markdown file links
+- check compatability and validation info to testing file
 - index tiles - content on all, Stripe one seems mis-aligned?
 - change index to series of rows then update wireframes
 - datepicker for add event form - would need to separate into date and time fields for HTML inputs to work?
@@ -9,8 +13,18 @@ HOUSEKEEPING
 - Test CRUD functionality for events and products on Heroku, change URL on product to optional?
 - debug false
 - duplicate events (and users?) into Heroku, loaddata command?
+- more products and events
 - check all sized products again for drop-downs
 - sort joined events by date?
+- returns policy and FAQ
+- whitespace around back to top
+- heading for update/delete buttons
+
+
+VALIDATION
+- regex add event form capacity 0, add product price can be zero (way to fix this on Pintbaby)
+- phone number can have letters (change field?), name can have numbers?
+
 
 STUDENT CARE:
 - DONE ONCE - Ensure that users not logged in are redirected to the login page. 
