@@ -324,7 +324,7 @@ footer {
 }
 
 
-/* Breadcrumb - overwriting default Bootstrap parameters */
+/* Breadcrumb - overwriting default Bootstrap parameters on view_product and view_event */
 
 .breadcrumb {
     background-color: transparent;
@@ -371,6 +371,23 @@ footer {
     .container {
         /* taken from CI Boutique Ado, overrides default Bootstrap class on large screen sizes */
         max-width: 85%;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    /* Overwrites default Bootstrap parameters */
+    .breadcrumb {
+        margin-top: 1vh;
+    }
+}
+
+
+@media (min-width: 577px) and (max-width: 1199px) {
+    /* Overwrites default Bootstrap parameters */
+    .breadcrumb {
+        margin-top: 1vh;
     }
 }
 

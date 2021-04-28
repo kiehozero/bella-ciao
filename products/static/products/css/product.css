@@ -72,13 +72,8 @@ h6.card-title a:hover {
 
 /* Responsiveness */
 
+
 @media (max-width: 576px) {
-
-    /* Overwrites default Bootstrap parameters */
-    .breadcrumb {
-        margin-top: 5vh;
-    }
-
     .card.shop-card {
         flex-direction: row;
     }
