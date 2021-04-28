@@ -33,7 +33,7 @@
                     <ul>
                         <li class="pt-3 pb-2">
                             <a class="dropdown-item text-offwhite" href="{% url 'profile' %}">
-                                <i class="far fa-user-circle account-icon"></i>&nbsp;&nbsp; My Profile
+                                <i class="far fa-user-circle account-icon"></i>&nbsp;&nbsp;My Profile
                             </a>
                         </li>
                         {% if request.user.is_superuser %}
@@ -54,21 +54,26 @@
 
             <li class="nav-item pt-3 pb-2">
                 <a href="{% url 'events' %}">
-                    <i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Events</a>
+                    <i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Events
+                </a>
             </li>
             {% else %}
             <li class="nav-item pt-3 pb-2">
                 <a href="{% url 'account_login' %}">
-                    Sign In
+                    <i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;Sign In
                 </a>
             </li>
             <li class="nav-item pt-3 pb-2">
-                <a href="{% url 'account_signup' %}">Register</a>
+                <a href="{% url 'account_signup' %}">
+                    <i class="fas fa-user-plus"></i>&nbsp;&nbsp;Register
+                </a>
             </li>
             {% endif %}
 
             <li class="nav-item pt-3 pb-2">
-                <a href="{% url 'faq' %}">FAQs</a>
+                <a href="{% url 'faq' %}">
+                    <i class="far fa-question-circle"></i>&nbsp;&nbsp;FAQs
+                </a>
             </li>
 
             <li class="row nav-item social-panel pt-3 pb-2">
