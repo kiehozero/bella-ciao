@@ -1,5 +1,53 @@
 <img src="#">
 
+## User Stories
+
+As a user I want to...
+
+  1. order an item from the store;
+  - 
+  3. modify the size or quantity of product I order;
+  - 
+  4. read more information about a product;
+  - 
+  5. filter or sort products by category or a search term of my choice;
+  - 
+  6. create an account;
+  - 
+  7. edit my profile information;
+  - 
+  8. sign up to an in-store event;
+  - 
+  9. view events I have signed up to;
+  - 
+  10. remove an event from my events list;
+  - 
+  11. view my current shopping cart;
+  - 
+  12. view my order history;
+  - 
+  13. save my address for future use;
+  - 
+
+As an admin, I want to
+  1. add a new product;
+  - 
+  2. update a product;
+  - 
+  3. delete a product;
+  - 
+  6. view all orders;
+  - 
+  9. add an event;
+  - 
+  10. edit an event;
+  - 
+  11. delete an event;
+  - 
+  12. delete a user from an event;
+  - 
+
+
 ## Bugs
 
 1. Highlight filtered category on selection: highlighting the sort options was pretty simple because the items are not added to a query. On the other hand, the category names are added to a QuerySet. For this portion of the project I was following a template from the Boutique Ado project so was wary of untangling something and breaking the whole operation, so after some painful attempts at extracting the items from the QuerySet I realised that I could capture them before they were added. These are created as lists so affixing [0] to the list name and setting as a new variable cat_list provided the solution seen in the [View Product](products/templates/view_product.html) page, namely '{% if 'snacks' == cat_list %}' in the category anchor tags.
