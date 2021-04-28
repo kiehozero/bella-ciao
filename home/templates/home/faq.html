@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extratitle %}
-Frequently Asked Questions |
+FAQs |
 {% endblock %}
 
 {% block page_header %}
@@ -13,25 +13,69 @@ Frequently Asked Questions |
 
 <div class="row">
     <div class="col-12 pt-3 pb-2">
-        <h6 class="text-green">Question</h6>
-        <p>Answer</p>
-    </div>
-    <div class="col-12 pt-3 pb-2">
         <h6 class="text-green">History</h6>
-        <p>Answer</p>
+        <p class="mobile-font">Cafe Bella Ciao was founded in 2006 by Irish-Italian couple Aoife and Marco. After
+            meeting in London,
+            they moved to Limerick to work in food catering, and CBC was formed to cater mainly for corporate events and
+            weddings.
+            With the onset of the pandemic, Cafe Bella Ciao has adjusted their commercial kitchen to cater for home
+            deliveries.
+        </p>
     </div>
     <div class="col-12 pt-3 pb-2">
-        <h6 class="text-green">Why should I sign up?</h6>
-        <p>Answer Quick Checkout, Events, Loyalty</p>
+        <h6 class="text-green">Why should I sign up for an account?</h6>
+        <p class="mobile-font">Having an account means that you only ever have to fill out your delivery details once.
+            We also
+            offer a number of member-only events to our customers throughout the year, please visit the <a
+                href="{% url 'events' %}" class="text-green">events page</a> for more information. We are also currently
+            building an online loyalty card scheme that will allow you to gain points for all drinks orders, and redeem
+            these against future orders.</p>
     </div>
     <div class="col-12 pt-3 pb-2">
-        <h6 class="text-green">Security</h6>
-        <p>Payments handled by Stripe, we do not store and have no access to your credit card details at any point in the transaction.</p>
+        <h6 class="text-green">Why should I trust your website with my credit card details?</h6>
+        <p class="mobile-font">All payments are handled by Stripe, an online payments processor formed by two brothers
+            in Tipperary and one of the world's highest-valued companies. Because of their payments system, we have no
+            need to store any of your credit or debit card details, indeed we never have access to them at any point in
+            the transaction.
+        </p>
     </div>
     <div class="col-12 pt-3 pb-2">
-        <h6 class="text-green">Returns</h6>
-        <p>Answer</p>
+        <h6 class="text-green">Why aren't you on Just Eat?</h6>
+        <p class="mobile-font">Unlike many other food businesses, we don't use delivery apps such as Just Eat or
+            Deliveroo
+            as they charge large fees for their service, meaning that we have to significantly increase prices to cover
+            their costs. We can pass
+            this saving back to our customers as well as paying our delivery riders a fair wage on a permanent contract.
+            Having
+            our own website also means that we can offer our customers additional services such as events and our
+            soon-to-be-launched
+            loyalty offers.
+        </p>
+    </div>
+    <div class="col-12 pt-3 pb-2">
+        <h6 class="text-green">What training do your baristas have?</h6>
+        <p class="mobile-font">
+            All of our baristas are trained either in Ireland (with the <a href="https://dublinbaristaschool.ie/"
+                target="_blank" class="text-green">Dublin Barista School</a>) or in Italy (with the <a
+                href="http://www.italianbaristaschool.com/" target="_blank" class="text-green">Italian Barista
+                School</a> in Milan). All staff are also trained in HACCP, customer care and Covid-19 infection control
+            procedures, we even have a few that are also trained mixologists, but of course their true passion is
+            coffee!
+        </p>
+    </div>
+    <div class="col-12 pt-3 pb-2">
+        <h6 class="text-green">I'm unhappy with a product or the service I received, what should I do?</h6>
+        <p class="mobile-font">
+            If for any reason you are unhappy with our products or the service you reason, please contact us via
+            <a href="mailto:orders@bellaciao.ie" class="text-green">e-mail</a>, calling us on 061 999 112, or using any
+            of our social
+            media accounts, all we need is your name and order date or number. We are happy to provide a full refund to
+            any unhappy
+            customer.
+        </p>
     </div>
 </div>
+
+{% include 'includes/back-to-top.html' %}
 
 {% endblock %}
