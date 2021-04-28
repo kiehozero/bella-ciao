@@ -82,6 +82,8 @@ conflict between Bootstrap's default breakpoints and how I had defined my media 
 
 15. Sorting search results (Known Issue #2) - I initially could not get returned search results to work with the sort buttons. I hit on the solution of adding an elif to the loop that was already in each sort button anchor on products.html, but was mistakenly trying to pass the query variable, when it had already been set as search_term in the context of the all_products view.
 
+16. Regular expressions for form validation - My mentor pushed me to have better form validation in this project as I was marked down for it on MS3. I'm far from comfortable with the actual expressions themselves but Django's RegexValidator class helped once I had the actual patterns I needed. I used this to force a capacity greater than zero on all new events, and then used the widget attributes to make the phone number on the checkout form a number-only field.
+
 
 ## Outstanding Issues
 

@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.admin import widgets
+from django.core.validators import RegexValidator
 
 from .models import Event, EventAttendees
 
@@ -19,6 +20,9 @@ class EventForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['date'].widget.attrs['placeholder'] = 'yyyy-mm-dd hh:mm:ss'
         self.fields['event_name'].widget.attrs['autofocus'] = True
+        self.fields['capacity'].widget.attrs['pattern'] = '^[1-9][0-9]*$'
+        self.fields['capacity'].validators = [RegexValidator(
+            '^[1-9][0-9]*$', 'Capacity must be greater than zero')]
 
 
 class JoinEventForm(forms.ModelForm):

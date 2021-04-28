@@ -1,4 +1,5 @@
 from django import forms
+from django.core.validators import RegexValidator
 
 from .models import Order
 
@@ -25,6 +26,7 @@ class OrderForm(forms.ModelForm):
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields['phone_number'].widget.attrs['pattern'] = '\d+'
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'

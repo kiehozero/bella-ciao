@@ -208,6 +208,7 @@ This project is built on the [Django](https://www.djangoproject.com/) framework.
 - [Time and date welcome message](https://tecadmin.net/get-current-date-time-python/)
 - The excellent [Noise and Gradient](https://www.noiseandgradient.com/) helped me get some nice colour gradients really quickly for logo backgrounds, and ultimately helped confirm the colour selection for the whole site.
 - This very short [RIP Tutorial](https://riptutorial.com/django/example/32472/use-of----extends---------include----and----blocks---) lesson was very valuable as it showed me how to define variables inside Django template tags, I subsequently came to rely in equal parts on this site and the Django documentation (see below) in learning Django's core concepts.
+- [This thread](https://stackoverflow.com/questions/9038522/regular-expression-for-any-number-greater-than-0) on Stack Overflow provided a regular expression for use in the event addition forms and checkout forms, while Django's [RegexValidator](https://docs.djangoproject.com/en/3.2/ref/validators/#regexvalidator) class helped implement this pattern on the event form itself. Another useful tool for experiment with regex was [regexr](https://regexr.com/).
 
 ### Documentation
 
@@ -236,4 +237,5 @@ This project is built on the [Django](https://www.djangoproject.com/) framework.
 - Thanks again to Michael and also to [Chris Zielinski](https://github.com/ckz8780) who helped me go through some of the code in relation to bugfix 11. I'm proud of myself for picking the error out but Michael and Chris kept me from going down some errant paths that would have wasted a lot of project time.
 - Thanks to my brother for doing some purchasing testing on this, he sent me a ton of screenshots of each of his purchases and event 
 subscriptions, and in the process accidentally uncovered a recurrence of bug 11 in my deployed site, a pretty important one!
+- Thanks to Aine O Neill and Ben Kavanagh, two Code Institute students who responded when I submitted my initial project draft on the CI Slack channel, and both suggesting some helpful CSS shortcuts.
 - My partner for letting me eternally bounce ideas of myself and my mentor Precious for helping me structure and prioritise my project work.
