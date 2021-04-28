@@ -1,9 +1,6 @@
 HOUSEKEEPING
 - error pages - picture not working?
-- check HTML indentation
-- split setup info into separate files
-- test markdown file links
-- check compatability and validation info to testing file
+- README, SETUP, TESTING write ups, test all links inside, check MS3 readme content
 - index tiles - content on all, Stripe one seems mis-aligned?
 - change index to series of rows then update wireframes
 - Python warning clean up (CI tutorial)
@@ -14,13 +11,11 @@ HOUSEKEEPING
 - more products and events
 - check all sized products again for drop-downs
 - returns policy and FAQ
-- add product price can be zero (way to fix this on Pintbaby)
+- VALIDATION add product price can be zero (way to fix this on Pintbaby)
 - SC DONE ONCE - Ensure that users not logged in are redirected to the login page. 
 - SC DONE ONCE - Check that authentication cannot be bypassed by typing the URL into the browser bar - create custom 403/404 pages 
 to deal with this. 
-- SC Make sure you have checked that no links result in an internal server error. 
-- SC If you have included a user type with higher access privileges, then you can include example login credentials at submission. 
+- SC Check that no links result in an internal server error. 
+- SC TO CREATE If you have included a user type with higher access privileges, then you can include example login credentials at submission. 
 - SC DONE ONCE - Do not display links the user does not have the privileges to access.
-
-NICE TO HAVE:
-- contact form (use pintbaby)
+- NICE TO HAVE contact form (use pintbaby)

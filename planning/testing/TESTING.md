@@ -100,3 +100,5 @@ do with how quantitySelect.js moves up and down the DOM to return the first item
 >>> add image above
 
 >>> User Lighthouse in Chrome here
+
+## Validation
