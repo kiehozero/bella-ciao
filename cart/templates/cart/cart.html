@@ -30,7 +30,7 @@ My Cart |
                         <th colspan="1" class="text-red" scope="col">Price</th>
                         <th colspan="1" class="text-red d-none d-md-block" scope="col">Total
                         </th>
-                        <th colspan="1" class="text-red" scope="col">Amend</th>
+                        <th colspan="1" class="text-red" scope="col">Update</th>
                         <th colspan="1" class="text-red" scope="col"></th>
                     </tr>
                 </thead>
@@ -68,9 +68,8 @@ My Cart |
                                             aria-label="Decrease quantity for {{ product.name }}">
                                             <i class="fas fa-minus fa-sm mobile-font"></i>
                                         </button>
-                                        <!-- needs validation message if user types number out of range -->
                                         <input class="qty-select mobile-font" type="number" name="quantity"
-                                            value="{{ item.quantity }}" min="1" max="49"
+                                            value="{{ item.quantity }}" min="1" max="49" pattern="\b([1-9]|[12][0-9]|3[0-2])\b"
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
 
                                         <button class="btn btn-sm text-offwhite back-green increase-qty"
@@ -93,7 +92,7 @@ My Cart |
                         </td>
                         <td colspan="1">
                             <a class="btn update-item" aria-label="Update quantity" id="update_{{ item.item_id }}">
-                                <i class="far fa-check-square fa-sm text-green"></i>
+                                <i class="fas fa-edit fa-sm text-green"></i>
                             </a>
                         </td>
                         <td colspan="1">
