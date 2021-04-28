@@ -20,13 +20,10 @@
     <div class="row text-uppercase">
         <div class="col list-inline">
             <li class="breadcrumb list-inline-item">
-                <a href="{% url 'events' %}" class="text-green">All Events</a>
-            </li>
-            <li class="breadcrumb list-inline-item">
-                <i class="fas fa-angle-right text-green"></i>
-            </li>
-            <li class="breadcrumb list-inline-item text-green">
-                {{ event.event_name }}
+                <a href="{% url 'events' %}" class="text-green">
+                    <i class="fas fa-chevron-left"></i>
+                    &nbsp;Back to Events
+                </a>
             </li>
         </div>
     </div>
