@@ -28,7 +28,6 @@ Store |
         </div>
         
         {% for cat in cat_index %}
-        <!-- Loops through category model to return filter buttons -->
         <div class="col">
             <!-- Bugfix #1: Category selection highlighting -->
             <a class="btn-sm filter-button mobile-font
@@ -148,12 +147,12 @@ Store |
                 {% endif %}
                 <div class="card-body">
                     <h6 class="card-title">
-                        <a href="{% url 'view_product' product.id %}" class="text-red">{{ product.name }}</a>
+                        <a href="{% url 'view_product' product.id %}" class="text-red mb-1">{{ product.name }}</a>
                     </h6>
-                    <br>
-
                     <div class="row">
                         <div class="col text-green text-right">
+                            <i class="fas fa-tag"></i>
+                            &nbsp;
                             €{{ product.price }}
                         </div>
                     </div>

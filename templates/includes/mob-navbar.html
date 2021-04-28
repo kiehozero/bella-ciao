@@ -1,6 +1,6 @@
 <!-- Bootstrap generic navbar customised accordingly -->
 <nav class="navbar fixed-top back-green d-md-none px-4">
-    <a class="navbar-brand" href="{% url 'home' %}"><img src="{{ MEDIA_URL }}cbc-text.png" id="mobile-logo"></a>
+    <a class="navbar-brand" href="{% url 'home' %}"><img src="{{ MEDIA_URL }}cbc-text.png" id="mobile-logo" alt="Cafe Bella Ciao logo"></a>
     {% if grand_total %}
     <div id="cart-container">
         <a href="{% url 'view_cart' %}" id="cart-full">

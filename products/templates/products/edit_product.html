@@ -17,12 +17,11 @@ Edit Product |
 
 <div class="row">
     <div class="col-12 col-md-5">
-        <form
-            action="{% url 'edit_product' product.id %}" id="add-product-form"
+        <form action="{% url 'edit_product' product.id %}" id="add-product-form"
             method="POST" class="pt-3 pb-2" encytype="multipart/form-data">
             {% csrf_token %}
-                <legend class="fieldset-label text-green pt-3 pb-2">Edit Product</legend>
-                {{ form | crispy }}
+            <legend class="fieldset-label text-green pt-3 pb-2">Edit Product</legend>
+            {{ form | crispy }}
 
             <div class="w-100">
                 <a class="btn btn-outline-success" href="{% url 'products' %}">

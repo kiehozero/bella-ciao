@@ -37,7 +37,8 @@ Upcoming Events
                 <h4 class="card-title text-red">{{ event.event_name}}</h4>
                 <p class="text-black">{{ event.date }}</p>
                 <div class="d-flex justify-content-center">
-                    <a href="{% url 'view_event' event.id %}" class="btn btn-primary back-green text-offwhite mx-2 mobile-font text-center" role="button">
+                    <a href="{% url 'view_event' event.id %}" role="button"
+                        class="btn btn-primary back-green text-offwhite mx-2 mobile-font text-center">
                         <i class="fas fa-info-circle"></i> Get Your Seat</a>
                 </div>
             </div>

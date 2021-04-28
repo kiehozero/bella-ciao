@@ -21,8 +21,7 @@ Edit Event |
             action="{% url 'edit_event' event.id %}" method="POST"
             id="add-event-form" class="pt-3 pb-2" encytype="multipart/form-data">
             {% csrf_token %}
-                <legend class="fieldset-label text-green pt-3 pb-2">Edit Event</legend>
-                {{ form | crispy }}
+            {{ form | crispy }}
 
             <div class="w-100">
                 <a class="btn btn-outline-success" href="{% url 'events' %}">

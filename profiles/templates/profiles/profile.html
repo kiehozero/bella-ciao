@@ -31,7 +31,8 @@
         {% endif %}
     </h5>
     <p>
-        Welcome to your Cafe Bella Ciao profile! Update your profile, access previous orders, and view and amend your tickets below.
+        Welcome to your Cafe Bella Ciao profile! Update your profile, access previous orders, and view and amend your
+        tickets below.
     </p>
 </div>
 
@@ -50,7 +51,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="col-12 col-md-6 justify-content-md-left">
         <!-- Order history format taken from Boutique Ado -->
         <h6 class="text-green pt-3 pb-2">My order history</h6>
@@ -79,8 +80,11 @@
                                         {% for item in order.lineitems.all %}
                                         <li class="small">
                                             {% if item.product.sizable %}
-                                            {{ item.quantity }} x {{ item.product_size }}{% else %}{{ item.quantity }}
-                                            x{% endif %} {{ item.product.name }}
+                                            {{ item.quantity }}&nbsp;&times;&nbsp;{{ item.product_size }}
+                                            {% else %}
+                                            {{ item.quantity }}&nbsp;&times;
+                                            {% endif %}
+                                            &nbsp;{{ item.product.name }}
                                         </li>
                                         {% endfor %}
                                     </ul>
@@ -98,11 +102,11 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 
 <div class="row pt-3 pb-2">
-    
+
     <!-- Displays user's upcoming events -->
     <div class="col-12 justify-content-md-left">
         <h6 class="text-green pt-3 pb-2">My events</h6>
@@ -131,7 +135,8 @@
                             {{ event.location }}
                         </td>
                         <td>
-                            <a href="{% url 'delete_attendance' event.attendee_key %}" class="btn btn-sm btn-outline-danger">
+                            <a href="{% url 'delete_attendance' event.attendee_key %}"
+                                class="btn btn-sm btn-outline-danger">
                                 <i class="far fa-trash-alt fa-sm"></i>
                             </a>
                         </td>

@@ -27,7 +27,8 @@
             </li>
             <li class="breadcrumb list-inline-item">
                 <a href="{% url 'products' %}?category={{ product.category }}" class="text-green">
-                    {{ product.category.render_name }}</a>
+                    {{ product.category.render_name }}
+                </a>
             </li>
         </div>
     </div>
@@ -46,11 +47,13 @@
         </div>
 
         <div class="col-12 col-md-5 offset-md-2 pt-3 pt-md-0">
-            <div class="mobile-font">
+            <div class="mobile-font mb-2 mb-md-3">
                 {{ product.description }}
             </div>
 
             <div class="text-red text-right py-1 pt-md-3 pb-md-2 px-2">
+                <i class="fas fa-tag"></i>
+                &nbsp;
                 €{{ product.price }}
             </div>
 
@@ -132,7 +135,7 @@
                     </div>
                     {% endif %}
 
-                    <!-- sends the current URL to the next page so we can redirect reverse from there -->
+                    <!-- sends current URL to cart to allow redirect reverse from there -->
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
             

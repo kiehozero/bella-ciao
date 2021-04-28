@@ -21,7 +21,7 @@ Order Summary |
 {% block content %}
 
 <div class="row">
-    <!-- Cheers Blurb -->
+    <!-- Thank You Message -->
     <div class="col-12 col-md-8 offset-md-2 justify-content-sm-center">
         {% if from_profile %}
         <h6 class="text-green py-1 pt-md-3 pb-md-2 text-sm-center">Order Number:</h6>
@@ -35,12 +35,15 @@ Order Summary |
                 Have a campa-choo-choo on us!
             </a>
         </h5>
-        <p class="mobile-font">Thank you for supporting a local business today! Your order number is {{ order.order_number }}.</p>
+        <p class="mobile-font">
+            Thank you for supporting a local business today! Your order number is {{ order.order_number }}.
+        </p>
         <h4 class="text-green text-center py-1 pt-md-3 pb-md-2">
             <i class="fas fa-hourglass-start"></i>
         </h4>
         <p class="mobile-font">
-            Your order will arrive within sixty minutes. Our delivery driver may contact you on the number below prior to arrival.
+            Your order will arrive within sixty minutes. Our delivery driver may contact you on the number below prior
+            to arrival.
         </p>
         <p class="mobile-font">We've sent an order confirmation to {{ order.email }}.</p>
         {% endif %}
@@ -101,17 +104,22 @@ Order Summary |
         <div class="row summary-row px-2">
             <p class="w-100">
                 <i class="fas fa-coffee text-green"></i>
-                &nbsp;&nbsp;Subtotal: €{{ order.order_total }}</p>
+                &nbsp;&nbsp;Subtotal: €{{ order.order_total }}
+            </p>
             {% if order.delivery_cost %}
             <p class="w-100">
                 <i class="fas fa-truck text-green"></i>
-                &nbsp;&nbsp;Delivery Charge: €{{ order.delivery_cost }}</p>
+                &nbsp;&nbsp;Delivery Charge: €{{ order.delivery_cost }}
+            </p>
             {% else %}
-            <p class="w-100">You qualified for free delivery!</p>
+            <p class="w-100">
+                You qualified for free delivery!
+            </p>
             {% endif %}
             <p class="w-100">
                 <i class="far fa-credit-card text-green"></i>
-                &nbsp;&nbsp;Total: €{{ order.grand_total }}</p>
+                &nbsp;&nbsp;Total: €{{ order.grand_total }}
+            </p>
         </div>
     </div>
 
@@ -122,7 +130,7 @@ Order Summary |
         </div>
         <div class="row summary-row px-2">
             <p class="w-100">Street Address:</p>
-            <p class="w-100">{{ order.street_address1|title }}, {% if order.street_address2 %}{{ order.street_address2|title }}
+            <p class="w-100">{{ order.street_address1|title }}, {% if order.street_address2 %}{{order.street_address2|title }}
                 {% endif %}</p>
             <p class="w-100">City: {{ order.city|title }}</p>
             <p class="w-100">Eircode: {{ order.eircode|upper }}</p>

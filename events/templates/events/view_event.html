@@ -57,14 +57,14 @@
             {% endif %}
 
             <div class="mobile-font my-3">
-                <i class="far fa-calendar-alt text-green"></i>&nbsp;&nbsp;{{ event.date }}
+                <i class="far fa-calendar-alt text-green"></i>
+                &nbsp;&nbsp;{{ event.date }}
             </div>
 
             <div class="mobile-font">
                 {{ event.description }}
             </div>
 
-            <!-- Idea for customisable item dropdowns taken from Boutique Ado project -->
             <div class="row justify-content-center">
 
                 <form class="form" action="{% url 'join_event' event.id %}" method="POST">
@@ -100,7 +100,8 @@
                             </a>
                         </div>
                         <div class="col-12 col-sm-6 check-eject pt-3 pb-2">
-                            <button type="button" class="btn btn-outline-danger w-100" id="delEventButton" aria-label="Delete event">
+                            <button type="button" class="btn btn-outline-danger w-100"
+                                id="delEventButton" aria-label="Delete event">
                                 <i class="far fa-trash-alt"></i>
                                 Delete
                             </button>
@@ -117,7 +118,6 @@
             <div class="row pt-3 pb-2 d-flex justify-content-center">
                 <h6 class="text-green">Guestlist ({{ attendance }} of {{ event.capacity }})</h6>
             </div>
-
                 {% if guestlist|length > 0 %}
                 <div class="row pt-3 pb-2 d-flex justify-content-center">
                     <div class="table-responsive table-sm table-hover">
@@ -135,7 +135,8 @@
                                     <td>{{ guest.user }}</td>
                                     <td>{{ guest.username }}</td>
                                     <td>
-                                        <a href="{% url 'delete_attendee' guest.attendee_key %}" class="btn btn-sm btn-outline-danger">
+                                        <a href="{% url 'delete_attendee' guest.attendee_key %}"
+                                            class="btn btn-sm btn-outline-danger">
                                             <i class="far fa-trash-alt fa-sm"></i>
                                         </a>
                                     </td>
@@ -149,7 +150,6 @@
                 <p class="mobile-font d-flex justify-content-center">No guests attending yet!</p>
                 {% endif %}
             {% endif %}
-
         </div>
 
     </div>
