@@ -3,7 +3,6 @@ HOUSEKEEPING
 - index tiles - content on all, Stripe one seems mis-aligned?
 - change index to series of rows then update wireframes
 - datepicker for add event form - would need to separate into date and time fields for HTML inputs to work?
-- responsiveness testing
 - Python warning clean up (CI tutorial)
 - redirect_url at bottom of view_product and view_event
 - can DEFAULT_FROM_EMAIL be changed to orders@bellaciao.ie?
@@ -11,6 +10,7 @@ HOUSEKEEPING
 - debug false
 - duplicate events (and users?) into Heroku, loaddata command?
 - check all sized products again for drop-downs
+- sort joined events by date?
 
 STUDENT CARE:
 - DONE ONCE - Ensure that users not logged in are redirected to the login page. 

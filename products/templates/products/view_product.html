@@ -38,7 +38,6 @@
             <!-- logic taken from Boutique Ado project -->
             {% if product.image %}
             <a href="{{ product.image.url }}" target="_blank">
-                <!-- change to modal -->
                 <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
             </a>
             {% else %}
@@ -76,7 +75,7 @@
 
                     <!-- Quantity selector -->
                     <!-- Same code as the cart, this is taken from the Boutique Ado project -->
-                    <div class="row d-flex justify-content-center qty-panel pt-1 pt-md-3 pb-1 pb-md-2">
+                    <div class="row d-flex justify-content-center qty-panel py-1 pt-md-3 pb-md-2">
 
                         <div class="col">
                             <button class="btn btn-sm btn-outline-success decrease-qty w-100"
@@ -99,7 +98,7 @@
 
                     </div>
 
-                    <div class="row justify-content-center pt-1 pt-md-3 pb-1 pb-md-2">
+                    <div class="row justify-content-center py-1 pt-md-3 pb-md-2">
                         <div class="col check-eject">
                             <a href="{% url 'products' %}" class="btn btn-outline-success text-green w-100">
                                 Go Back
@@ -111,7 +110,7 @@
                     </div>
 
                     {% if request.user.is_superuser %}
-                    <div class="row justify-content-center pt-1 pt-md-3 pb-1 pb-md-2">
+                    <div class="row justify-content-center py-1 pt-md-3 pb-md-2">
                         <div class="col">
                             <h6 class="text-green">Admin Controls</h6>
                         </div>
