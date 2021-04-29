@@ -119,6 +119,19 @@ I have graded all of the rendering options into four categories. Excellent marks
 
 <img src="../known-issues.png">
 
+### Lighthouse
+
+I ran a quick check on the three main pages of the project, index.html, products.html and events.html, using the [Lighthouse](https://developers.google.com/web/tools/lighthouse/) feature of Google Chrome's developer tools, which assesses performance, accessibility, best practices and SEO. All of the pages seemed to score less well on performance due to the number of external resources being used, but I made changes to aria-labels, css tags and formatting where possible.
+
+- index.html
+<img src="../certs/lh-index.png">
+
+- products.html
+<img src="../certs/lh-products.png">
+
+- events.html
+<img src="../certs/lh-events.png">
+
 ## Validation
 
 ### HTML
@@ -177,4 +190,3 @@ All Python scripts in this project were validated using the service at [PEP8 Onl
 
 SCREENSHOTS HERE
 
-### Lighthouse
