@@ -24,7 +24,7 @@ Upcoming Events
 {% for event in events %}
     <div class="col-12 col-sm-6 col-md-4">
         <div class="card event-card mx-2 my-3">
-            {% if product.image %}
+            {% if event.image %}
             <a href="{% url 'view_event' event.id %}">
                 <img src="{{ event.image.url }}" alt="{{ event.event_name }}" class="product-image card-img-top">
             </a>
