@@ -419,6 +419,11 @@ footer {
         font-weight: 800;
     }
 
+    ul {
+        /* Known-Issue #13: dropdown items skewing right on smallest screens */
+        padding-left: 1vh;
+    }
+
 
     /* Main */
 
