@@ -12,11 +12,9 @@ Page Not Found |
 {% block content %}
 
 <div>
-    <img src="{{ MEDIA_URL }}error-image.png" alt="Spilled Coffee" style="max-width: 80vw;">
-</div>
-
-<div>
     <p>The page you requested could not be found, click <a href="{% url 'home' %}" class="text-green">here</a> to go back home.</p>
 </div>
+
+{% include 'includes/post-purchase.html' %}
 
 {% endblock %}
