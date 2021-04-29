@@ -23,7 +23,7 @@ Home |
                 <h4 class="card-title">Ciao!</h4>
                 <p class="card-text">Delicious coffee prepared by award-winning baristas, delivered to your door.</p>
                 <div class="d-flex justify-content-center">
-                    <a href="{url 'products' %}?category=coffee" class="btn btn-outline-success" role="button">Coffee</a>
+                    <a href="{url 'products' %}?category=coffee" class="btn btn-outline-success" role="button">Browse Coffee</a>
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@ Home |
                 <p class="card-text">Hand-prepared sandwiches, using the best fresh Irish ingredients.
                 </p>
                 <div class="d-flex justify-content-center">
-                    <a href="url 'products' %}?category=sandwiches" class="btn btn-outline-success" role="button">Order Now</a>
+                    <a href="url 'products' %}?category=sandwiches" class="btn btn-outline-success" role="button">Browse Food</a>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@ Home |
                 {% if request.user.is_authenticated %}
                 <p class="card-text">View or update your profile information, see event tickets and order history.</p>
                 <div class="d-flex justify-content-center">
-                    <a href="{% url 'profile' %}" class="btn btn-outline-success" role="button">Update</a>
+                    <a href="{% url 'profile' %}" class="btn btn-outline-success" role="button">View Profile</a>
                 </div>
                 {% else %}
                 <p class="card-text">Create an account for express checkout and access to exclusive events.</p>
