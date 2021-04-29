@@ -115,10 +115,9 @@ conflict between Bootstrap's default breakpoints and how I had defined my media 
 
 I have graded all of the rendering options into four categories. Excellent marks something that is displaying as planned; Good is something which displays all functionality but not in the best way visually; average indicated that something is displaying incorrectly, such as a table scrolling or a header being skewed. The areas of concern I have are around the cart, I put it quite a lot of CSS and some jQuery to ensure this display everything, but I don't discount the idea that on other devices they may still display incorrectly. The other issue is the way that the Surface displays the landing header, and I couldn't seem to write enough CSS to fix this without ruining another device somewhere else. I also had some difficulties styling for the Galaxy Fold, which is only 280px wide.
 
-<img src="./planning/certs/responsiveness.png">
+<img src="../responsiveness.png">
 
-<img src="../planning/certs/known-issues.png">
-
+<img src="../known-issues.png">
 
 ## Validation
 
@@ -133,25 +132,25 @@ EXAMPLE SCREENSHOT HERE
 There are 7 CSS scripts in this project, one for each app except the bella_ciao and home apps, plus a base.css and a palette file just for colour selection. Where possible I've tried to re-use as much code as possible, so the base file is significantly longer than the rest, which are just used for tweaks within each app. These were validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). All files passed for errors, and a handful of warning were displayed relating to unknown vendor extensions (for webkit transitions) and some Bootstrap override classes.
 
 - base.css
-<img src="planning/certs/jig-base.png">
+<img src="../certs/jig-base.png">
 
 - cart.css
-<img src="planning/certs/jig-cart.png">
+<img src="../certs/jig-cart.png">
 
 - checkout.css
-<img src="planning/certs/jig-checkout.png">
+<img src="../certs/jig-checkout.png">
 
 - events.css
-<img src="planning/certs/jig-events.png">
+<img src="../certs/jig-events.png">
 
 - palette.css
-<img src="planning/certs/jig-palette.png">
+<img src="../certs/jig-palette.png">
 
 - product.css
-<img src="planning/certs/jig-product.png">
+<img src="../certs/jig-product.png">
 
 - profile.css
-<img src="planning/certs/jig-profile.png">
+<img src="../certs/jig-profile.png">
 
 
 SCREENSHOTS HERE
@@ -161,16 +160,16 @@ SCREENSHOTS HERE
 There are 4 Javascript files in this project, they were validating using [JSHint](https://jshint.com/).
 
 - cart.js
-<img src="planning/certs/jshint-cart.png">
+<img src="../certs/jshint-cart.png">
 
 - quantitySelect.js
-<img src="planning/certs/jshint-quantitySelect.png">
+<img src="../certs/jshint-quantitySelect.png">
 
 - script.js
-<img src="planning/certs/jshint-script.png">
+<img src="../certs/jshint-script.png">
 
 - stripe_elements.js
-<img src="planning/certs/jshint-stripe_elements.png">
+<img src="../certs/jshint-stripe_elements.png">
 
 ### Python PEP8
 
