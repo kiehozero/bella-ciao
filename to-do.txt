@@ -1,22 +1,20 @@
 - error pages - picture not working?
-- README (features, admin user stories), SETUP (Dj, AWS, Stripe, Heroku), TESTING (Outstanding Issues, Validation, Rendering chart), 
-test all links
+- README features, SETUP (Dj, AWS, Stripe, Heroku), TESTING (Outstanding Issues, Validation, Rendering chart), test all  markdown links
 - Python warning clean up (CI tutorial)
 - Test CRUD functionality for events and products on Heroku, change URL on product to optional?
 - delete account view? no cascading to orders
 - spreadsheet of image credits list (column A, product/event, column B website, column C link)
 - duplicate events (and users?) into Heroku, loaddata command?
 - more products and events (see credits sheet)
-- why is the quantity select on view_product working but not in cart?
-- VALIDATION add product price can be zero (way to fix this on Pintbaby)
 - NICE TO HAVE contact form (use pintbaby)
+- product SKU needs to be mandatory
 
-- FINAL - check all sized products again for drop-downs
-- FINAL - Ensure that users not logged in are redirected to the login page. 
-- FINAL - Check that authentication cannot be bypassed by typing the URL into the browser bar - create custom 403/404 pages 
+- FINAL check all sized products again for drop-downs
+- FINAL Ensure that users not logged in are redirected to the login page. 
+- FINAL Check that authentication cannot be bypassed by typing the URL into the browser bar - create custom 403/404 pages 
 to deal with this. 
-- FINAL -  Check that no links result in an internal server error. 
+- FINAL Check that no links result in an internal server error. 
 - FINAL If you have included a user type with higher access privileges, then you can include example login credentials at 
 submission. 
-- FINAL - Do not display links the user does not have the privileges to access.
-- FINAL - debug false
+- FINAL Do not display links the user does not have the privileges to access.
+- FINAL debug false in Gitpod

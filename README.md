@@ -65,11 +65,12 @@ As an admin, I want to
   1. add a new product;
   2. update a product;
   3. delete a product;
-  6. view all orders;
-  9. add an event;
-  10. edit an event;
-  11. delete an event;
-  12. delete a user from an event;
+  4. view all orders;
+  5. view a specific order;
+  6. add an event;
+  7. edit an event;
+  8. delete an event;
+  9. delete a user from an event;
 
 
 ## Features

@@ -43,22 +43,24 @@ As a user I want to...
   19. ... sign out of my account.
   - Navigate to the 'Sign Out' link at the right (larger screens) or top (smaller screens, via the menu and username) of the screen to be taken to a sign out confirmation screen.
 
-As an admin, I want to
-  1. add a new product;
+As an admin, I want to...
+  1. ... add a new product.
+  - Navigate to the 'Admin' link on the left (larger screens) or via the menu at the top (smaller screens) of the screen to be taken to the administration panel. Click on the 'Add a Product' link to display a form; all fields on this form are mandatory except for the image fields.
+  2. ... update a product.
   - 
-  2. update a product;
+  3. ... delete a product.
   - 
-  3. delete a product;
+  4. ... view all orders.
+  - Navigate to the 'Admin' link on the left (larger screens) or via the menu at the top (smaller screens) of the screen to be taken to the administration panel. Click on the 'View All Orders' link to display all orders, sorted by the most recent order first.
+  5. ... view a specific order.
+  - As above, navigate to the 'Admin' link and click on the 'View All Orders' button. To display the details that were sent to the customer's e-mail at the time of purchase, click on the date of the required order.
+  6. ... add an event.
+  - Navigate to the 'Admin' link on the left (larger screens) or via the menu at the top (smaller screens) of the screen to be taken to the administration panel. Click on the 'Add an Event' button to display a form; all fields on this form are mandatory except for the image fields.
+  7. ... edit an event.
   - 
-  6. view all orders;
+  8. ... delete an event.
   - 
-  9. add an event;
-  - 
-  10. edit an event;
-  - 
-  11. delete an event;
-  - 
-  12. delete a user from an event;
+  9. ... delete a user from an event.
   - 
 
 
@@ -98,14 +100,14 @@ conflict between Bootstrap's default breakpoints and how I had defined my media 
 
 16. Regular expressions for form validation - My mentor pushed me to have better form validation in this project as I was marked down for it on MS3. I'm far from comfortable with the actual expressions themselves but Django's RegexValidator class helped once I had the actual patterns I needed. I used this to force a capacity greater than zero on all new events, and then used the widget attributes to make the phone number on the checkout form a number-only field.
 
+17. A bug related to bug #11 re-emerged when prices were set to decimals not divisible by ten (e.g. €1.35), but this was resolved by using the widget attributes in products/form.py to set a minimum value of 0.10 (to prevent zero pricing similar to the dates in bug #16) and a step of 0.10. Ideally prices could be of any value but this at least prevents rounding errors from emerging once the webhook handler checks the database for orders.
+
 
 ## Outstanding Issues
 
 1. (Known Issue #4) Cart quantity will sometimes allow a user to submit a quantity outside of the parameters. This only occurs when there is more than one size of a product in the basket, and it only affects the second of those sizes. For these items a customer can select a product quantity below zero. If the customer clicks the Update button their cart will remove the product, but if they do not do this before checkout they will see the quantity of this item as 1 in the checkout screen. seems to only occur when there are two versions of an item (i.e., one regular and one large) in the basket, and it only affects the second item - suspect this is to
 do with how quantitySelect.js moves up and down the DOM to return the first item with a given item ID.
 2. (Known Issue #4) Cart quantity buttons on smaller devices not rendering well, when I tried to fix this it fairly well messed up the js that allows the buttons to function at all. 
-3. (Known Issue #7) Rounding issue on products that aren't in pricing multiples of ten (Seabrook's at 1.35)
-4. (Known Issue #17) Can enter product price as 0 in Add_Product, tried regex, try again, try MinValueValidator
 
 
 ## Rendering
@@ -113,6 +115,7 @@ do with how quantitySelect.js moves up and down the DOM to return the first item
 <img src="#"> this one for rendering
 
 <img src="#"> this one for fixes
+
 
 ## Validation
 
