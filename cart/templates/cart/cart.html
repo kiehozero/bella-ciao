@@ -30,7 +30,6 @@ My Cart |
                         <th colspan="1" class="text-red" scope="col">Price</th>
                         <th colspan="1" class="text-red d-none d-md-block" scope="col">Total</th>
                         <th colspan="1" class="text-red" scope="col">Update</th>
-                        <th colspan="1" class="text-red" scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,8 +49,8 @@ My Cart |
                             {% endif %}
                         </td>
                         <td colspan="2">
-                            <a href="{% url 'view_product' item.product.id %}" class="product-name">
-                                {{ item.product.name }}
+                            <a href="{% url 'view_product' item.product.id %}" class="text-green mobile-font">
+                                {% if item.size %}{{ item.size|title|slice:3 }}.{% endif %}&nbsp;{{ item.product.name }}
                             </a>
                         </td>
 
@@ -85,7 +84,7 @@ My Cart |
                             </form>
                         </td>
                         <td colspan="1" class="justify-content-center">
-                            €{{ item.product.price }}
+                            <div class="mobile-font">€{{ item.product.price }}</div>
                         </td>
                         <td colspan="1" class="justify-content-between d-none d-md-table-cell">
                             €{{ item.product.price | calc_subtotal:item.quantity }}
@@ -94,8 +93,6 @@ My Cart |
                             <a class="btn update-item" aria-label="Update quantity" id="update_{{ item.item_id }}">
                                 <i class="fas fa-edit fa-sm text-green"></i>
                             </a>
-                        </td>
-                        <td colspan="1">
                             <a class="btn remove-item" id="remove_{{ item.item_id }}"
                                 data-product_size="{{ item.size }}" aria-label="Remove from basket">
                                 <i class="far fa-trash-alt fa-sm text-lightred"></i>

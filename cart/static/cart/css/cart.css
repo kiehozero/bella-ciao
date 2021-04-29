@@ -2,10 +2,6 @@ input.qty-select {
     text-align: center;
 }
 
-.product-name {
-    color: #008763;
-}
-
 a.product-name:hover {
     color: #008763;
     font-weight: 600;
@@ -68,12 +64,19 @@ a.product-name:hover {
 
 /* Responsiveness to display table on ultra-thin devices */
 
-/* Responsiveness */
+@media (max-width: 767px) {
+    .btn.update-item,
+    .btn.remove-item {
+        border-width: 0px;
+        display: inline;
+        padding-right: 0.25rem
+    }
+}
 
-@media (max-width: 315px) {
+@media (max-width: 320px) {
     .btn-sm.update-item,
     .btn-sm.remove-item {
-        padding: 0rem 0rem 0rem 0rem;
+        padding: 0rem 0rem;
     }
 }
 
@@ -86,6 +89,12 @@ a.product-name:hover {
     .remove-item {
         height: 1rem;
         line-height: 1rem;
+        width: 1rem;
+    }
+
+    .btn-sm.decrease-qty,
+    .btn-sm.increase-qty {
+        height: 1rem;
         width: 1rem;
     }
 

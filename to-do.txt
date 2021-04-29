@@ -1,6 +1,6 @@
 - error pages - picture not working?
 - README features (check Keep Rolling)
-- SETUP (Dj, AWS, Stripe, Heroku)
+- SETUP (Dj, AWS, Stripe, Heroku, GMail)
 - TESTING (Validation, Rendering)
 - test markdown links
 - Python warning clean up (CI tutorial)
