@@ -19,7 +19,7 @@ Edit Event |
     <div class="col-sm-12 col-md-5">
         <form
             action="{% url 'edit_event' event.id %}" method="POST"
-            id="add-event-form" class="pt-3 pb-2" encytype="multipart/form-data">
+            id="add-event-form" class="pt-3 pb-2" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form | crispy }}
 

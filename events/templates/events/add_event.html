@@ -20,7 +20,7 @@ Add Event |
 <div class="row">
     <div class="col-12 col-md-8 col-lg-5">
         <form action="{% url 'add_event' %}" class="pt-3 pb-2" method="POST"
-            id="add-events-form" encytype="multipart/form-data">
+            id="add-events-form" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form | crispy }}
 

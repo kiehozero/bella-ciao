@@ -102,6 +102,8 @@ conflict between Bootstrap's default breakpoints and how I had defined my media 
 
 17. A bug related to bug #11 re-emerged when prices were set to decimals not divisible by ten (e.g. €1.35), but this was resolved by using the widget attributes in products/form.py to set a minimum value of 0.10 (to prevent zero pricing similar to the dates in bug #16) and a step of 0.10. Ideally prices could be of any value but this at least prevents rounding errors from emerging once the webhook handler checks the database for orders.
 
+18. When it came time to load new products into the store, I realised that everything was working fine apart from image uploads. I could still do this in the Django admin page so I knew there was a problem in my code. I went back through the Boutique Ado tutorial repository and found that I had set the form attribute 'enctype' as 'encytype'. Sometimes you real do have to use a fine-tooth comb to find those silent errors.
+
 
 ## Outstanding Issues
 
