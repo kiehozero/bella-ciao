@@ -47,9 +47,9 @@ As an admin, I want to...
   1. ... add a new product.
   - Navigate to the 'Admin' link on the left (larger screens) or via the menu at the top (smaller screens) of the screen to be taken to the administration panel. Click on the 'Add a Product' link to display a form; all fields on this form are mandatory except for the image fields.
   2. ... update a product.
-  - 
+  - Navigate to the 'Store' link on the left (larger screens) or via the menu at the top (smaller screens) of the screen to see a list of all products. Click on the required product and select the 'Edit' link underneath the 'Admin Controls' header. All fields on this form are mandatory except for the image fields.
   3. ... delete a product.
-  - 
+  - As above, navigate to the 'Store' link to see a list of all products. Click on the required product and select the 'Delete' link underneath the 'Admin Controls' header. The user will be prompted by a message before confirming deletion.
   4. ... view all orders.
   - Navigate to the 'Admin' link on the left (larger screens) or via the menu at the top (smaller screens) of the screen to be taken to the administration panel. Click on the 'View All Orders' link to display all orders, sorted by the most recent order first.
   5. ... view a specific order.
@@ -57,11 +57,13 @@ As an admin, I want to...
   6. ... add an event.
   - Navigate to the 'Admin' link on the left (larger screens) or via the menu at the top (smaller screens) of the screen to be taken to the administration panel. Click on the 'Add an Event' button to display a form; all fields on this form are mandatory except for the image fields.
   7. ... edit an event.
-  - 
+  - Navigate to the 'Events' link on the left (larger screens) or via the menu at the top (smaller screens) of the screen to see a list of all products. Click on the required event and select the 'Edit' link underneath the 'Admin Controls' header. All fields on this form are mandatory except for the image fields.
   8. ... delete an event.
-  - 
-  9. ... delete a user from an event.
-  - 
+  - As above, navigate to the 'Events' link to see a list of all products. Click on the required event and select the 'Delete' link underneath the 'Admin Controls' header. The user will be prompted by a message before confirming deletion.
+  9. ... see a list of event attendees.
+  - As above, navigate to the 'Events' link to see a list of all products. Click on the required event and a list of all attendees will be displayed beneath the Guestlist header, along with the event capacity and the number of places claimed by users.
+  10. ... delete a user from an event.
+  - As above, navigate to the 'Events' link to see a list of all products. Click on the required event and navigate to the Guestlist section. Select the trash can icon, and the user will be prompted by a message before confirming deletion.
 
 
 ## Bug Fixes

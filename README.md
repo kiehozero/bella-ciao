@@ -61,16 +61,17 @@ As a user I want to...
   18. ... save my address for future use;
   19. ... sign out of my account;
 
-As an admin, I want to
-  1. add a new product;
-  2. update a product;
-  3. delete a product;
-  4. view all orders;
-  5. view a specific order;
-  6. add an event;
-  7. edit an event;
-  8. delete an event;
-  9. delete a user from an event;
+As an admin, I want to...
+  1. ... add a new product;
+  2. ... update a product;
+  3. ... delete a product;
+  4. ... view all orders;
+  5. ... view a specific order;
+  6. ... add an event;
+  7. ... edit an event;
+  8. ... delete an event;
+  9. ... see a list of event attendees;
+  10. ... delete a user from an event;
 
 
 ## Features
