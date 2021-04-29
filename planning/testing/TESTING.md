@@ -107,37 +107,52 @@ conflict between Bootstrap's default breakpoints and how I had defined my media 
 
 ## Outstanding Issues
 
-1. (Known Issue #4) Cart quantity will sometimes allow a user to submit a quantity outside of the parameters. This only occurs when there is more than one size of a product in the basket, and it only affects the second of those sizes. For these items a customer can select a product quantity below zero. If the customer clicks the Update button their cart will remove the product, but if they do not do this before checkout they will see the quantity of this item as 1 in the checkout screen. seems to only occur when there are two versions of an item (i.e., one regular and one large) in the basket, and it only affects the second item - suspect this is to
-do with how quantitySelect.js moves up and down the DOM to return the first item with a given item ID.
-2. (Known Issue #4) Cart quantity buttons on smaller devices not rendering well, when I tried to fix this it fairly well messed up the js that allows the buttons to function at all. 
+1. (Known Issue #4) Cart quantity will sometimes allow a user to submit a quantity outside of the parameters. This only occurs when there is more than one size of the same product in the basket, and it only affects the second of those sizes. For these items a customer can select a product quantity below zero. If the customer clicks the Update button at zero quantity, their cart will remove the product, but if they do not do this before checkout they will see the quantity of this item as 1 in the checkout screen. I tried and tried to fix this but ultimately left it too late to do anything about it, ultimately I'm paying the price for trying to use Materialize at the start of the project and then converting over to Bootstrap, when I should have been smart enough to use Bootstrap from the start.
+2. (Known Issue #4) The cart quantity buttons on smaller devices do not render well, when I tried to fix this it fairly well messed up the js that allows the buttons to function at all. Again this is a consequence of trying to build my own version rather than simply following the tutorial on a core piece of logic. These two bugs will ultimately teach me that if I had my time again I will likely completely rebuild the cart from scratch.
 
 
 ## Rendering
 
-<img src="#"> this one for rendering
+I have graded all of the rendering options into four categories. Excellent marks something that is displaying as planned; Good is something which displays all functionality but not in the best way visually; average indicated that something is displaying incorrectly, such as a table scrolling or a header being skewed. The areas of concern I have are around the cart, I put it quite a lot of CSS and some jQuery to ensure this display everything, but I don't discount the idea that on other devices they may still display incorrectly. The other issue is the way that the Surface displays the landing header, and I couldn't seem to write enough CSS to fix this without ruining another device somewhere else. I also had some difficulties styling for the Galaxy Fold, which is only 280px wide.
 
-<img src="#"> this one for fixes
+<img src="planning/certs/responsiveness.png">
+
+<img src="planning/certs/known-issues.png">
 
 
 ## Validation
 
 ### HTML
+
 Each page was directly inputted into the [W3C HTML Validator](https://validator.w3.org/) to check that the markup used passed W3C standards. A number of validation issues arose as expected given the use of Django's templating and injection methods, especially since the validator recognises the curly bracket as an illegal URL character. Nevertheless running the validator is always a worthwhile task in catching any typos that may allow silent failures during development or are literally inconsequential but semantically confusing.
 
 EXAMPLE SCREENSHOT HERE
 
 ### CSS
-- There are 7 CSS scripts in this project, and they were validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+
+There are 7 CSS scripts in this project, and they were validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
 
 SCREENSHOTS HERE
 
 ### JS/jQuery
-- There are 3 Javascript files in this project, they were validating using [JSHint](https://jshint.com/).
 
-SCREENSHOTS HERE
+There are 4 Javascript files in this project, they were validating using [JSHint](https://jshint.com/).
+
+- cart.js
+<img src="planning/certs/jshint-cart.png">
+
+- quantitySelect.js
+<img src="planning/certs/jshint-quantitySelect.png">
+
+- script.js
+<img src="planning/certs/jshint-script.png">
+
+- stripe_elements.js
+<img src="planning/certs/jshint-stripe_elements.png">
 
 ### Python PEP8
-- All Python scripts in this project were validated using the service at [PEP8 Online](http://pep8online.com/)
+
+All Python scripts in this project were validated using the service at [PEP8 Online](http://pep8online.com/)
 
 SCREENSHOTS HERE
 

@@ -26,9 +26,9 @@ $("#checkoutBtn").mouseleave(function() {
 
 if ($(window).width() < 768) {
     $(".cart-total").attr("colspan","5");
-};
+}
 
 if ($(window).width() < 350) {
     $("a.update-item").addClass("btn-sm").removeClass("btn");
     $("a.remove-item").addClass("btn-sm").removeClass("btn");
-};
+}

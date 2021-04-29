@@ -22,8 +22,8 @@ $(".nav-option#cart-container").mouseleave(function() {
 });
 
 $(".close-message").click(function () {
-    $(".message-row").css("display", "none")
-})
+    $(".message-row").css("display", "none");
+});
 
 /* Confirmation Modal */
 
@@ -68,4 +68,4 @@ if ($(window).width() < 1280) {
     $("#searchButton").html("<i class='fas fa-search' aria-label='Search Products'></i>");
     $("#searchReset").html("<i class='fas fa-power-off' aria-label='Reset Search Criteria'></i>");
     $(".cart-total").attr("colspan","3");
-};
+}
