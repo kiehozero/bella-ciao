@@ -48,7 +48,7 @@ This project is built on the [Django](https://www.djangoproject.com/) framework.
 - [django-allauth](https://pypi.org/project/django-allauth/) is an authentication and account management library;
 - [dj_database_url](https://pypi.org/project/dj-database-url/) - quick access to configure a database to your local environment;
 - [gunicorn](https://pypi.org/project/gunicorn/) - a HTTP server dyno to power Heroku apps;
-- [stripe](https://stripe.com/docs/api?lang=python/) - Stripe's official API;
+- [stripe](https://pypi.org/project/stripe/) - Stripe's official API;
 - [django-crispy-forms](https://github.com/django-crispy-forms/django-crispy-forms) - take the hassle out of form alignment and design with crispy-forms;
 - [boto3](https://pypi.org/project/boto3/) - A Python software development kit for Amazon Web Services;
 - [django-storages](https://pypi.org/project/django-storages/) - To quote the PyPI directory, "a project to provide a variety of storage backends in a single library";

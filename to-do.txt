@@ -1,7 +1,7 @@
 - error pages - picture not working?
 - README features (check Keep Rolling)
 - SETUP (Dj, AWS, Stripe, Heroku, GMail)
-- TESTING (Validation HTML CSS PY, Rendering)
+- TESTING (Validation HTML PY)
 - test markdown links
 - Python warning clean up (CI tutorial)
 - delete account view? no cascading to orders

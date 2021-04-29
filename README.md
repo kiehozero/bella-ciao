@@ -17,7 +17,7 @@ I wanted to portray that the staff at the store have an authentic connection to 
 
 - #008763 - The natural place to start was the colour green, present on both national flags. Officially called [Golf Green](https://www.pantone.com/color-finder/18-5642-TCX), this green was used on the [flag of Italy](https://en.wikipedia.org/wiki/Flag_of_Italy#Description) before a constitutional change in 2006. This is the first shade used in the background of the navigation element on larger devices, and the only shade used on smaller device navigation elements;
 - #f0eee9 - officially called [Cloud Dancer](https://www.pantone.com/color-finder/11-4201-TCX), before 2006 this was the official colour of the central band of the Italian flag. The [new colour](https://www.pantone.com/color-finder/11-0601-TCX) is much brighter and tended to stand out too much when used as a background, so I defaulted to the older version;
-- #3b0022 - Rather than use the official red, I used Color Hex to identify a red shade that best complemented the greens already selected. This red jumped out as providing a dark contrast against items with a white background, or vice versa;
+- #3b0022 - Rather than use the official red, I used [Color Hex](https://www.color-hex.com/) to identify a red shade that best complemented the greens already selected. This red jumped out as providing a dark contrast against items with a white background, or vice versa;
 - #e64757 - For a red that needs to indicate danger or warning, I used a tint close to the default Bootstrap colour for such elements (including their default 'danger' buttons), but made it slightly paler;
 - #ceca03 - This is a gold that is slightly paler again than Bootstrap's default caution colour, and overrides the btn-warning elements accordingly. It is also used to highlight the cart total once an item is placed there;
 - #100f10 - Lastly this is the default colour of any text on the site that is not within a header element or a button tag.
@@ -25,7 +25,7 @@ I wanted to portray that the staff at the store have an authentic connection to 
 ### Fonts and Icons
 
 - [Arvo](https://fonts.google.com/specimen/Arvo) - I wanted a blocky font that would not look out of place on a screen-printed or stamped design, and Arvo fulfils that requirement, especially in upper case.
-- [Montserrat](https://fonts.google.com/specimen/Montserrat) - luckily Google Fonts contains a handy tool which shows commonly-selected fonts against each other, so once I had selected Arvo I decided to pick out Montserrat as a lightweight font to display non-header elements or larger blocks of text.
+- [Montserrat](https://fonts.google.com/specimen/Montserrat) - luckily [Google Fonts](https://fonts.google.com/) contains a handy tool which shows commonly-selected fonts against each other, so once I had selected Arvo I decided to pick out Montserrat as a lightweight font to display non-header elements or larger blocks of text.
 
 The icons I used within this project are all sourced from [Font Awesome](https://fontawesome.com/)'s free package.
 
@@ -82,7 +82,7 @@ As an admin, I want to...
 
 - All users can edit and delete products from their account ahead of checking out by using the quantity selection buttons and the Update and Delete buttons in the cart page. At checkout, account holders can save their information for future orders by completing the form and ticking the box at the bottom. Anonymous users can still register at this point without clearing their cart, but any orders confirmed before they register will not show up in their account.
 
-- The payments system for this project is [stripe](https://stripe.com/docs/api?lang=python/), no credit or debit card details are stored anywhere within the repository or hosting platforms of the project. Stripe's webhooks are used as a failsafe to ensure that any orders that do not reach the order database before the user closes the window or due to another error still show up within the database.
+- The payments system for this project is [stripe](https://stripe.com/), no credit or debit card details are stored anywhere within the repository or hosting platforms of the project. Stripe's webhooks are used as a failsafe to ensure that any orders that do not reach the order database before the user closes the window or due to another error still show up within the database.
 
 - All users receive an e-mail confirmation order of their e-mail at the point of purchase. This contains the same content as is displayed at the Order Confirmation screen.
 
@@ -184,13 +184,13 @@ I used [GitHub](https://www.github.com/) as the code host for this project, and 
 
 ## Database Architecture
 
-<img src="media/db-schema.png">
+<img src="planning/db-schema.png">
 
 ## Credits
 
 ### Content
 
-- [Time and date welcome message](https://tecadmin.net/get-current-date-time-python/)
+- [This simple trick](https://tecadmin.net/get-current-date-time-python/) enabled the greeting message on the Profile page.
 - The excellent [Noise and Gradient](https://www.noiseandgradient.com/) helped me get some nice colour gradients really quickly for logo backgrounds, and ultimately helped confirm the colour selection for the whole site.
 - This very short [RIP Tutorial](https://riptutorial.com/django/example/32472/use-of----extends---------include----and----blocks---) lesson was very valuable as it showed me how to define variables inside Django template tags, I subsequently came to rely in equal parts on this site and the Django documentation (see below) in learning Django's core concepts.
 - [This thread](https://stackoverflow.com/questions/9038522/regular-expression-for-any-number-greater-than-0) on Stack Overflow provided a regular expression for use in the event addition forms and checkout forms, while Django's [RegexValidator](https://docs.djangoproject.com/en/3.2/ref/validators/#regexvalidator) class helped implement this pattern on the event form itself. Another useful tool for experiment with regex was [regexr](https://regexr.com/).
@@ -213,11 +213,9 @@ I used [GitHub](https://www.github.com/) as the code host for this project, and 
 
 - The image used in the index page header is taken from [Tourism Europe](https://www.tourlane.com/europe/ireland/limerick/). The [original](https://images.ctfassets.net/bth3mlrehms2/2CKgqB27vGnVOVRbDEtkll/b1d0d5183538f02650dea4450e08fbbd/Limerick__Ireland.jpg) is used as that page's background element; I styled this significantly using [Pixlr](https://www.pixlr.com/) to match the colour scheme of the project. A cropped version of this is used as a placeholder for events without an image.
 
-- The image for the error pages is from [Townsquare Media](https://townsquare.media/site/158/files/2017/01/spilled-coffee.jpg), a website which doesn't look to be working at the moment but it's content is still showing up in Google searches.
-
 - For brevity, I have created a spreadsheet below containing all of the credits for images used:
 
-<img src="media/content-credits.png">
+<img src="planning/content-credits.png">
 
 ### Acknowledgements
 
@@ -227,4 +225,6 @@ I used [GitHub](https://www.github.com/) as the code host for this project, and 
 - Thanks to my brother for doing some purchasing testing on this, he sent me a ton of screenshots of each of his purchases and event 
 subscriptions, and in the process accidentally uncovered a recurrence of bug 11 in my deployed site, a pretty important one!
 - Thanks to Aine O Neill and Ben Kavanagh, two Code Institute students who responded when I submitted my initial project draft on the CI Slack channel, and both suggesting some helpful CSS shortcuts.
-- My partner for letting me eternally bounce ideas of myself and my mentor Precious for helping me structure and prioritise my project work.
+- My partner for letting me eternally bounce ideas of myself and pretty much sorting my life out during the 12 months I've been working and studying full time. 
+- My mentor Precious for helping me structure and prioritise my project work. Precious is not easily impressed but he's calm and is great at structuring big ideas, pretty much the perfect combination of qualities for a mentor.
+- The management team at my job, Mark Ryan, Lee O'Connor and Fiona Matthews for supporting me all the way through this course. A particular thanks to Alan Sheedy for supporting me as well, but also pushing me to work out what I wanted the next step of my career to be.
