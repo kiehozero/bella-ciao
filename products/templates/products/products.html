@@ -83,7 +83,8 @@ Store |
                         {% else %}
                             {% url 'products' %}?sort=price&direction=asc
                         {% endif %}"
-                        class="btn filter-button {% if current_sort == 'price_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
+                        class="btn filter-button {% if current_sort == 'price_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}"
+                        aria-label="sort by price ascending">
                         <i class="fas fa-euro-sign"></i>
                     </a>
                 </div>
@@ -96,7 +97,8 @@ Store |
                         {% else %}
                             {% url 'products' %}?sort=name&direction=asc
                         {% endif %}"
-                        class="btn filter-button {% if current_sort == 'name_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
+                        class="btn filter-button {% if current_sort == 'name_asc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}"
+                        aria-label="sort by name ascending">
                         <i class="fas fa-sort-alpha-down"></i>
                     </a>
                 </div>
@@ -109,7 +111,8 @@ Store |
                         {% else %}
                             {% url 'products' %}?sort=name&direction=desc
                         {% endif %}"
-                        class="btn filter-button {% if current_sort == 'name_desc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}">
+                        class="btn filter-button {% if current_sort == 'name_desc' %}back-offwhite text-green{% else %}back-green text-offwhite{% endif %}"
+                        aria-label="sort by name descending">
                         <i class="fas fa-sort-alpha-up-alt"></i>
                     </a>
                 </div>
