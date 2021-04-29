@@ -225,6 +225,6 @@ I used [GitHub](https://www.github.com/) as the code host for this project, and 
 - Thanks to my brother for doing some purchasing testing on this, he sent me a ton of screenshots of each of his purchases and event 
 subscriptions, and in the process accidentally uncovered a recurrence of bug 11 in my deployed site, a pretty important one!
 - Thanks to Aine O Neill and Ben Kavanagh, two Code Institute students who responded when I submitted my initial project draft on the CI Slack channel, and both suggesting some helpful CSS shortcuts.
-- My partner for letting me eternally bounce ideas of myself and pretty much sorting my life out during the 12 months I've been working and studying full time. 
+- My partner for letting me eternally bounce ideas of her, putting up with an awful lot of talk about building projects and pretty much sorting my life out during the year I've been working and studying full time. She's a health worker too so she's made some big sacrifices
 - My mentor Precious for helping me structure and prioritise my project work. Precious is not easily impressed but he's calm and is great at structuring big ideas, pretty much the perfect combination of qualities for a mentor.
 - The management team at my job, Mark Ryan, Lee O'Connor and Fiona Matthews for supporting me all the way through this course. A particular thanks to Alan Sheedy for supporting me as well, but also pushing me to work out what I wanted the next step of my career to be.

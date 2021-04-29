@@ -115,9 +115,9 @@ conflict between Bootstrap's default breakpoints and how I had defined my media 
 
 I have graded all of the rendering options into four categories. Excellent marks something that is displaying as planned; Good is something which displays all functionality but not in the best way visually; average indicated that something is displaying incorrectly, such as a table scrolling or a header being skewed. The areas of concern I have are around the cart, I put it quite a lot of CSS and some jQuery to ensure this display everything, but I don't discount the idea that on other devices they may still display incorrectly. The other issue is the way that the Surface displays the landing header, and I couldn't seem to write enough CSS to fix this without ruining another device somewhere else. I also had some difficulties styling for the Galaxy Fold, which is only 280px wide.
 
-<img src="planning/certs/responsiveness.png">
+<img src="./planning/certs/responsiveness.png">
 
-<img src="planning/certs/known-issues.png">
+<img src="../planning/certs/known-issues.png">
 
 
 ## Validation
