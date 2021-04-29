@@ -10,6 +10,7 @@ Page Not Found |
 {% endblock %}
 
 {% block content %}
+
 <div>
     <img src="{{ MEDIA_URL }}error-image.png" alt="Spilled Coffee" style="max-width: 80vw;">
 </div>
@@ -17,4 +18,5 @@ Page Not Found |
 <div>
     <p>The page you requested could not be found, click <a href="{% url 'home' %}" class="text-green">here</a> to go back home.</p>
 </div>
+
 {% endblock %}

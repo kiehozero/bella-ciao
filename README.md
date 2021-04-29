@@ -213,7 +213,9 @@ I used [GitHub](https://www.github.com/) as the code host for this project, and 
 
 - The image for the error pages is from [Townsquare Media](https://townsquare.media/site/158/files/2017/01/spilled-coffee.jpg), a website which doesn't look to be working at the moment but it's content is still showing up in Google searches.
 
-- For brevity, I have created a spreadsheet
+- For brevity, I have created a spreadsheet below containing all of the credits for images used:
+
+<img src="media/content-credits.png">
 
 ### Acknowledgements
 
