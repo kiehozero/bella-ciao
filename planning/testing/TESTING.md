@@ -130,7 +130,29 @@ EXAMPLE SCREENSHOT HERE
 
 ### CSS
 
-There are 7 CSS scripts in this project, and they were validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).
+There are 7 CSS scripts in this project, one for each app except the bella_ciao and home apps, plus a base.css and a palette file just for colour selection. Where possible I've tried to re-use as much code as possible, so the base file is significantly longer than the rest, which are just used for tweaks within each app. These were validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). All files passed for errors, and a handful of warning were displayed relating to unknown vendor extensions (for webkit transitions) and some Bootstrap override classes.
+
+- base.css
+<img src="planning/certs/jig-base.png">
+
+- cart.css
+<img src="planning/certs/jig-cart.png">
+
+- checkout.css
+<img src="planning/certs/jig-checkout.png">
+
+- events.css
+<img src="planning/certs/jig-events.png">
+
+- palette.css
+<img src="planning/certs/jig-palette.png">
+
+- product.css
+<img src="planning/certs/jig-product.png">
+
+- profile.css
+<img src="planning/certs/jig-profile.png">
+
 
 SCREENSHOTS HERE
 
