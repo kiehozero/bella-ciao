@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.admin import widgets
+
 from django.core.validators import RegexValidator
 
 from .models import Event, EventAttendees
@@ -10,9 +10,6 @@ class EventForm(forms.ModelForm):
     class Meta:
         model = Event
         fields = '__all__'
-    # need to make the description field bigger
-    # need date field widget to be input type date or have a placeholder,
-    # see products form for customisation options
 
     def __init__(self, *args, **kwargs):
         """ Adds some user-friendly placeholders and form styling,

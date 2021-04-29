@@ -1,12 +1,10 @@
 - error pages - picture not working?
-- README features (check Keep Rolling), SETUP (Dj, AWS, Stripe, Heroku), TESTING (Out. Issues, Validation, Rendering), test markdown links
+- README features (check Keep Rolling), SETUP (Dj, AWS, Stripe, Heroku), TESTING (Validation, Rendering), test markdown links
 - Python warning clean up (CI tutorial)
-- Test CRUD functionality for events and products on Heroku, change URL on product to optional?
+- Test CRUD functionality for events and products on Heroku
 - delete account view? no cascading to orders
-- spreadsheet of image credits list (column A, product/event, column B website, column C link)
-- more products and events (see credits sheet)
+- more products (see credits sheet)
 - NICE TO HAVE contact form (use pintbaby)
-- product SKU needs to be mandatory
 
 - FINAL check all sized products again for drop-downs
 - FINAL Ensure that users not logged in are redirected to the login page. 
