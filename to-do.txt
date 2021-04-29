@@ -1,5 +1,5 @@
 - error pages - picture not working?
-- README features, SETUP (Dj, AWS, Stripe, Heroku), TESTING (Outstanding Issues, Validation, Rendering chart), test all  markdown links
+- README features (check Keep Rolling), SETUP (Dj, AWS, Stripe, Heroku), TESTING (Outstanding Issues, Validation, Rendering chart), test all  markdown links
 - Python warning clean up (CI tutorial)
 - Test CRUD functionality for events and products on Heroku, change URL on product to optional?
 - delete account view? no cascading to orders

@@ -38,7 +38,7 @@ repository.
 
 ## Python Libraries
 
-This project is built on the [Django](https://www.djangoproject.com/) framework. A number of libraries were installed to complete this project, and can be installed simply by using the pip3 install command in the command line interface.
+This project is built on the [Django](https://www.djangoproject.com/) framework. A number of libraries were installed to complete this project, and can be installed simply by using the pip3 install command in the command line interface. All libraries except pylint-django are operational requirements for this project, although alternative storage and hosting methods are available.
 
 - [django-allauth](https://pypi.org/project/django-allauth/) is an authentication and account management library;
 - [dj_database_url](https://pypi.org/project/dj-database-url/) - quick access to configure a database to your local environment;

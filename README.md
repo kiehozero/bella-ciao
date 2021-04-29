@@ -1,6 +1,6 @@
 <img src="media/banner-text.png">
 
-Welcome to my full-stack development milestone project. For this project I chose to create [Bella Ciao](https://cafe-bella-ciao.herokuapp.com/), an online store for a coffee chain based in Limerick, Ireland.
+Welcome to my full-stack development milestone project. For this project I chose to create [Bella Ciao](https://cafe-bella-ciao.herokuapp.com/), an online store for a barista based in Limerick, Ireland.
 
 The owners have a commercial kitchen facility that specialises in corporate event catering, but during lockdown decided that they wanted to diversify their business towards delivery orders. The business contains a number of highly-trained staff who wished to display their own skills beyond the corporate catering environment, so the owners and employees collectively decided to convert a vacant storehouse within their premises into an area where they can host a range of exclusive events for repeat customers and corporate team-building events once public health restrictions are eased. 
 
@@ -78,11 +78,29 @@ As an admin, I want to...
 
 ### Existing Features
 
-- Purchase items
-- View order history
-- Events for logged in users
-- Admin panel for products and events
-- Allauth
+- All users can access the Store page and make a purchase for delivery. Users with an account can store their delivery information for re-use. All products within the Store are available to all users, and a number of products contain size variations.
+
+- All users can edit and delete products from their account ahead of checking out by using the quantity selection buttons and the Update and Delete buttons in the cart page. At checkout, account holders can save their information for future orders by completing the form and ticking the box at the bottom. Anonymous users can still register at this point without clearing their cart, but any orders confirmed before they register will not show up in their account.
+
+- The payments system for this project is [stripe](https://stripe.com/docs/api?lang=python/), no credit or debit card details are stored anywhere within the repository or hosting platforms of the project. Stripe's webhooks are used as a failsafe to ensure that any orders that do not reach the order database before the user closes the window or due to another error still show up within the database.
+
+- All account registration, sign in/out and password retrieval processes are handled by the [django-allauth](https://pypi.org/project/django-allauth/) library. Delivery information is stored separately to this but the two tables are linked via a OneToOneField in the UserProfile table.
+
+- Upon registering, users can see their order history and their saved delivery information in their profile (indicated by their username on the navbar). The orders are sorted in date descending order, and clicking the date will display the information that was e-mailed to the user at the time of purchase.
+
+- Upon registering, account holders also gain access to member-only events in the Events page. Members can join these events by clicking the RSVP button within each Event's page, and can 'un-attend' these events by opening their profile and selecting the delete button underneath the My Events page. Deleting the attending from their profile subsequently releases their reserved place back to the available places for that event.
+
+- Users can only get one ticket per event, a user who is already in the guestlist will not see the RSVP button, but instead a message that they already have a ticket. If an event is over 90% capacity, a 'Limited Availability' message will display at the top of that event's page. If an event is at 100% capacity, a 'Sold Out' message will replace it, and the RSVP button will not display.
+
+- Account holders can also view all of their previous orders by navigating to their Profile page. This will give an overview of the date and products purchased, and the value of the order. Clicking the date will display more information about this order.
+
+- Designated admin users have full CRUD functionality on all events and products. To add a new product or event, select the relevant button with the Admin page. All fields are mandatory on both the product and event forms apart the image fields. Product pricing and event capacity must be greater than zero, and the former can only be in increments of €0.10. The maximum event capacity is 150, and event dates must be in the format specified by the field placeholder. The loyalty field on the Product form is currently unused, please see the 'Features to Implement' section below for more information.
+
+- Admin users can edit or delete any event or product by going to that event's page and selecting the edit or delete buttons. The Edit button will display a page identical to the 'Add Product' and 'Add Event' pages, but will be pre-filled with information from the required item's page. To delete an item, simply click the Delete button on the product page, and a confirmation prompt will display.
+
+- Admins can also see a list of all orders that are displayed in date descending order by clicking the View All Orders link in the Admin page. Clicking the date on any 
+
+- A Frequently Asked Questions page gives some background into the history of the business, as well as some details about how to make a complaint, the security of each customer's payment information and the benefits of signing up for an account.
 
 ### Features to Implement
 
