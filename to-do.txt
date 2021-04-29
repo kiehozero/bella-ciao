@@ -1,9 +1,10 @@
 - error pages - picture not working?
-- README features (check Keep Rolling), SETUP (Dj, AWS, Stripe, Heroku), TESTING (Validation, Rendering), test markdown links
+- README features (check Keep Rolling)
+- SETUP (Dj, AWS, Stripe, Heroku)
+- TESTING (Validation, Rendering)
+- test markdown links
 - Python warning clean up (CI tutorial)
-- Test CRUD functionality for events and products on Heroku
 - delete account view? no cascading to orders
-- more products (see credits sheet)
 - NICE TO HAVE contact form (use pintbaby)
 
 - FINAL check all sized products again for drop-downs
