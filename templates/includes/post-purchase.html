@@ -32,6 +32,12 @@
         </div>
         {% else %}
         <div class="mx-1 my-1">
+            <a href="{% url 'products' %}" class="btn btn-outline-success mobile-font">
+                <i class="fas fa-coffee"></i>
+                &nbsp;&nbsp;Order Online
+            </a>
+        </div>
+        <div class="mx-1 my-1">
             <a href="{% url 'account_signup' %}" class="btn btn-outline-success mobile-font">
                 <i class="fas fa-clipboard-check"></i>
                 &nbsp;&nbsp;Register

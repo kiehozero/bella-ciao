@@ -84,6 +84,8 @@ As an admin, I want to...
 
 - The payments system for this project is [stripe](https://stripe.com/docs/api?lang=python/), no credit or debit card details are stored anywhere within the repository or hosting platforms of the project. Stripe's webhooks are used as a failsafe to ensure that any orders that do not reach the order database before the user closes the window or due to another error still show up within the database.
 
+- All users receive an e-mail confirmation order of their e-mail at the point of purchase. This contains the same content as is displayed at the Order Confirmation screen.
+
 - All account registration, sign in/out and password retrieval processes are handled by the [django-allauth](https://pypi.org/project/django-allauth/) library. Delivery information is stored separately to this but the two tables are linked via a OneToOneField in the UserProfile table.
 
 - Upon registering, users can see their order history and their saved delivery information in their profile (indicated by their username on the navbar). The orders are sorted in date descending order, and clicking the date will display the information that was e-mailed to the user at the time of purchase.

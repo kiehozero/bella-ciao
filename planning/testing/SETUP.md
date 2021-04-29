@@ -10,8 +10,10 @@ Assuming you already have Git [installed](https://git-scm.com/download/), anybod
 
 For an in-depth guide to cloning repositories, click [here](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/), from which the steps above were taken.
 
+
 ## Django
 >>> Installation information, creation of databases, runserver, makemigrations, etc.
+
 
 ## Heroku
 
@@ -25,8 +27,10 @@ repository.
 5. Once the connection is confirmed, scroll down to the bottom and click the Enable Automatic Deployment button.
 6. After a couple of minutes select the Open App button, and you will now have a hosted URL for the project. Unlike Gitpod or any other IDE, this app will only update when you push changes to your repository.
 
+
 ## Stripe
 - library, connection to Heroku, webhooks
+
 
 ## Amazon Web Services
 
@@ -35,6 +39,7 @@ repository.
 >>> IAM - Lock up your S3 bucket by using the IAM console to control access and security
 
 >>> Connection to Heroku
+
 
 ## Python Libraries
 
@@ -48,3 +53,6 @@ This project is built on the [Django](https://www.djangoproject.com/) framework.
 - [boto3](https://pypi.org/project/boto3/) - A Python software development kit for Amazon Web Services;
 - [django-storages](https://pypi.org/project/django-storages/) - To quote the PyPI directory, "a project to provide a variety of storage backends in a single library";
 - [pylint-django](https://pypi.org/project/pylint-django/) - A linter specifically designed for use with Django.
+
+
+# GMail SMTP
