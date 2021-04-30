@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Montserrat&display=swap');
 
-
 /* Project-level Preferences */
 html {
     min-height: 100%;
@@ -172,7 +171,6 @@ main {
     margin-bottom: 20px;
     margin-top: 20px;
 }
-
 
 .page-header {
     height: 12vh;
