@@ -1,6 +1,4 @@
 - SETUP (Dj, AWS, Stripe, Heroku, GMail)
-- TESTING (Validation HTML PY)
-- Python warning clean up (CI tutorial)
 
 - FINAL Ensure that users not logged in are redirected to the login page. 
 - FINAL Check that authentication cannot be bypassed by typing the URL into the browser bar - create custom 403/404 pages 

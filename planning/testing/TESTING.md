@@ -106,7 +106,7 @@ conflict between Bootstrap's default breakpoints and how I had defined my media 
 
 18. When it came time to load new products into the store, I realised that everything was working fine apart from image uploads. I could still do this in the Django admin page so I knew there was a problem in my code. I went back through the Boutique Ado tutorial repository and found that I had set the form attribute 'enctype' as 'encytype'. Sometimes you real do have to use a fine-tooth comb to find those silent errors.
 
-19. Exactly 10 hours before submission I noticed that the products and events I had ordered that day did not have matching primary keys, so I had to delete them all and re-enter them. This was only 9 items on each DB, but it taught me a brutal lesson about using the loaddata on your commands.
+19. Exactly 10 hours before submission I noticed that the products and events I had ordered that day did not have matching primary keys, so I had to delete them all and re-enter them. This was only 9 items on each DB, but it taught me a brutal lesson about using the loaddata on your commands. I put a webhook back into the the test environment just to check that the same order line items were dropping into both databases and breathed an enormous sign of relief when they did.
 
 
 ## Outstanding Issues
@@ -136,11 +136,12 @@ I ran a quick check on the three main pages of the project, index.html, products
 - events.html
 <img src="../certs/lh-events.png">
 
+
 ## Validation
 
 ### HTML
 
-Each page was directly inputted into the [W3C HTML Validator](https://validator.w3.org/) to check that the markup used passed W3C standards. A number of validation issues arose as expected given the use of Django's templating and injection methods, especially since the validator recognises the curly bracket as an illegal URL character. Nevertheless running the validator is always a worthwhile task in catching any typos that may allow silent failures during development or are literally inconsequential but semantically confusing.
+Each page was directly inputted into the [W3C HTML Validator](https://validator.w3.org/) to check that the markup used passed W3C standards. A number of validation issues arose as expected given the use of Django's templating and injection methods, especially since the validator recognises the curly bracket as an illegal URL character and also errors out any file that doesn't declare the doctype on line 1. Nevertheless running the validator is always a worthwhile task in catching any typos that may allow silent failures during development or are literally inconsequential but semantically confusing.
 
 EXAMPLE SCREENSHOT HERE
 
@@ -193,7 +194,28 @@ There are 5 Javascript files in this project, they were validating using [JSHint
 
 ### Python PEP8
 
-All Python scripts in this project were validated using the service at [PEP8 Online](http://pep8online.com/)
+All Python scripts in this project were validated using the service at [PEP8 Online](http://pep8online.com/), as well as the Flake8 linter installed within Gitpod. In Flake the majority of problems came from Django-specific errors like the objects having no members, or warnings to avoid null=True on certain fields I had determined within a model. Beyond that there were a few remaining queries like lines being slightly too long that threw other errors in the linter when I tried to separate them out using parentheses (see product/views.py and checkout/views.py results below). I've included a selection of the larger files output in PEP8online below, and I've omitted any of the Django-generated files that aren't customised that much. 
 
-SCREENSHOTS HERE
+- cart/contexts.py
+<img src="../certs/pep-cart-context.png">
 
+- checkout/models.py
+<img src="../certs/pep-checkout-models.png">
+
+- checkout/views.py
+<img src="../certs/pep-checkout-views.png">
+
+- events/models.py
+<img src="../certs/pep-event-models.png">
+
+- events/views.py
+<img src="../certs/pep-event-views.png">
+
+- products/views.py
+<img src="../certs/pep-product-views.png">
+
+- profile/models.py
+<img src="../certs/pep-profile-models.png">
+
+- profiles/views.py
+<img src="../certs/pep-profile-views.png">
