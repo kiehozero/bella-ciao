@@ -112,7 +112,8 @@ As an admin, I want to...
 - The second feature that I feel would be a requirement for any same-day food delivery business is a time selector. I experimented with using one of these but I couldn't get sufficient control over the date and time formatting being created to push it into a database in a usable format.
 - One interesting idea I saw recently was Pret A Manger's unlimited coffee offer for a set monthly fee. I wanted to re-create this using Stripe's subscription payments system. The [setup process](https://stripe.com/docs/billing/subscriptions/overview) itself doesn't seem overly complex, but for the sake of creating an additional user level, as well as splitting orders based on whether the user was a subscriber or not, entailed a lot of work in the timeframe I had.
 - Lockdown is not going to last forever and people will eventually be spending less time at home, so the logical next point for this business would be to set up a selection box in the checkout that indicates whether the user wishes to collect their order, removing the cost of delivery.
-- One of my original ideas was to build a loyalty model, so customers could redeem points after repeated purchases. I got as far as calculating the points based on product eligibility, but I couldn't get points to carry through during the checkout process. I'm determined to implement this feature as part of my ongoing development after this project is submitted, so I've left the field in the Product and Order models for now. This item will show up in the admin-only Add Product form, but I have cleared any sign of this from any non-admin features. 
+- One of my original ideas was to build a loyalty model, so customers could redeem points after repeated purchases. I got as far as calculating the points based on product eligibility, but I couldn't get points to carry through during the checkout process. I'm determined to implement this feature as part of my ongoing development after this project is submitted, so I've left the field in the Product and Order models for now. This item will show up in the admin-only Add Product form, but I have cleared any sign of this from any non-admin features.
+- The contact form was something of an afterthought that my mentor rightfully pushed me to include. If I had more time I was have made this an app of its own to track e-mails within the site.
 
 
 ## Technologies Used
@@ -165,6 +166,9 @@ As an admin, I want to...
 - [Color Hex](https://www.color-hex.com/)
     - This was a fantastic tool which takes an existing colour and recommends complementary colours. Another piece of software that I wish I had discovered a long time ago.
 
+- [EmailJS](https://www.emailjs.com/)
+    - Client-side Javascript software that I used to create the this project's contact form.
+
 - [Favicon.io](https://favicon.io/)
     - A quick and easy tool to create favicons for display in the address bar.
 
@@ -187,6 +191,15 @@ I used [GitHub](https://www.github.com/) as the code host for this project, and 
 ## Database Architecture
 
 <img src="planning/db-schema.png">
+
+This project is built upon seven apps: the default app named bella_ciao, cart, checkout, events, home, products and profiles.
+
+The bella_ciao contains the project's default settings and connections, while the home app contains the index page and an EmailJS contact form.
+
+The Products app is used to populate the Cart, which creates a Stripe payment intent once it is pushed to the Checkout;s OrderLineItem model. If a user is an account holder, the Checkout app's Order model then populates their payment information using the Profile app's UserProfile model, storing or updating this information if the user requests. Upon payment confirmation from Stripe, the Order is displayed in the user's profile page.
+
+The Events app contains two models, Events and EventAttendees, the former stores event information while the second uses foreign key links to the UserProfile and Event models to provide admins with a guestlist of each event, and users with a list of their upcoming events.
+
 
 ## Credits
 
