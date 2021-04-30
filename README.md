@@ -100,9 +100,11 @@ As an admin, I want to...
 
 - Admin users can edit or delete any event or product by going to that event's page and selecting the edit or delete buttons. The Edit button will display a page identical to the 'Add Product' and 'Add Event' pages, but will be pre-filled with information from the required item's page. To delete an item, simply click the Delete button on the product page, and a confirmation prompt will display.
 
-- Admins can also see a list of all orders that are displayed in date descending order by clicking the View All Orders link in the Admin page. Clicking the date on any 
+- Admins can also see a list of all orders that are displayed in date descending order by clicking the View All Orders link in the Admin page. Clicking the date on any order will display that information that was e-mailed to the customer at the point of purchase.
 
 - A Frequently Asked Questions page gives some background into the history of the business, as well as some details about how to make a complaint, the security of each customer's payment information and the benefits of signing up for an account.
+
+- The footer link contains some dummy links to social media accounts, but the mail icon displays a modal that can be used to contact the site owners directly.
 
 ### Features to Implement
 

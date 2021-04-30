@@ -1,15 +1,9 @@
-- README features (check Keep Rolling)
 - SETUP (Dj, AWS, Stripe, Heroku, GMail)
 - TESTING (Validation HTML PY)
 - Python warning clean up (CI tutorial)
-- NICE TO HAVE contact form (use pintbaby)
 
-- FINAL check all sized products again for drop-downs
 - FINAL Ensure that users not logged in are redirected to the login page. 
 - FINAL Check that authentication cannot be bypassed by typing the URL into the browser bar - create custom 403/404 pages 
 to deal with this. 
 - FINAL Check that no links result in an internal server error.
-- FINAL If you have included a user type with higher access privileges, then you can include example login credentials at 
-submission. 
-- FINAL Do not display links the user does not have the privileges to access.
 - FINAL debug false in Gitpod
