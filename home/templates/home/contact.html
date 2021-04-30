@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extratitle %}
+Contact Us |
+{% endblock %}
+
+{% block page_header %}
+{% include 'includes/page-header.html' with h3_title="Contact Us" %}
+{% endblock %}
+
+{% block extrajs %}
+<!-- Contact form initialisation -->
+<script
+    src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+</script>
+<script>
+    (function() {
+        emailjs.init("user_W4dj8lHY3F2fCc19kl6tw");
+    })();
+</script>
+{% endblock %}
+
+{% block content %}
+            
+<div class="row justify-content-center">
+    <p class="text-green text-center">Got feedback for us?</p>
+</div>
+
+<div class="row">
+    <div class="col">
+        <form onsubmit="return sendMail(this);">
+
+            <!-- Name -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-5 py-1 py-md-3">
+                    <input
+                        type="text" name="name" id="full_name" class="w-100"
+                        minlength="5" maxlength="20" placeholder="Name" required>
+                </div>
+            </div>
+
+            <!-- E-mail Address -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-5 py-1 py-md-3">
+                    <input
+                        type="email" name="email" id="email_address"
+                        placeholder="E-mail Address" class="w-100" required>
+                </div>
+            </div>
+
+            <!-- Feedback -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-5 py-1 py-md-3">
+                    <textarea
+                        rows="5" name="feedback" id="feedback" class="w-100"
+                        minlength="5" placeholder="Feedback" required>
+                        </textarea>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-5 py-1 py-md-3">
+                    <button class="btn btn-outline-success w-100" type="submit" name="action" id="sendButton">
+                        <i class="far fa-paper-plane"></i>
+                        &nbsp
+                        Send
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'js/contact.js' %}"></script>
+{% endblock %}
