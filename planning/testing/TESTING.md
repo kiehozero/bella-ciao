@@ -1,3 +1,5 @@
+<img src="../testing-banner.png">
+
 ## User Stories
 
 As a user I want to...
@@ -170,10 +172,13 @@ SCREENSHOTS HERE
 
 ### JS/jQuery
 
-There are 4 Javascript files in this project, they were validating using [JSHint](https://jshint.com/).
+There are 5 Javascript files in this project, they were validating using [JSHint](https://jshint.com/). The only problems that were emerged were unused variables in the stripe_element and contact files, which are used by external documents anyway, other than that it merely highlighted some rogue or missing semi-colons that needed fixing.
 
 - cart.js
 <img src="../certs/jshint-cart.png">
+
+-contact.js
+<img src="../certs/jshint-contact.png">
 
 - quantitySelect.js
 <img src="../certs/jshint-quantitySelect.png">

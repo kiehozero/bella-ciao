@@ -1,11 +1,13 @@
+<img src="../setup-banner.png">
+
 ## Cloning the GitHub repository
 
 Assuming you already have Git [installed](https://git-scm.com/download/), anybody can clone this repository by following these steps:
 
 1. Open the command prompt/terminal on your machine;
 2. Type the command 'cd' followed by the directory you wish to store the repository in;
-3. Go to the top of the [GitHub repository](https://github.com/kiehozero/pintbaby/) and click the green 'Code' drop-down button;
-4. Copy the [link provided](https://github.com/kiehozero/pintbaby.git);
+3. Go to the top of the [GitHub repository](https://github.com/kiehozero/bella-ciao/) and click the green 'Code' drop-down button;
+4. Copy the [link provided](https://github.com/kiehozero/bella-ciao.git);
 5. Return to the Command Prompt and type 'git clone' followed by the copied address.
 
 For an in-depth guide to cloning repositories, click [here](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/), from which the steps above were taken.
