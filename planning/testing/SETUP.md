@@ -70,8 +70,15 @@ Head back to Group area and click Manage My Group, Attach Policy and then add th
 
 Heading back to the CLI, install boto3 and dhango-storages using pip, then freeze these to your requirements.txt file in the root directory, as well as adding storages to your installed apps list.
 
+The settings below need to be customised and added to settings.py, and anything with the now-familiar os.environ.get method will need to be added to Heroku's config vars using the name inside the method. The information contained in the CSV file generated when the user was created will need to be added to AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY in Heroku.
+
 <img src="../aws-reqs.png">
 
+You will notice that the file storage variables point to a file called custom_storages and this will need to be created in the root directory of your project, and will look exactly like below unless you edited variable names above.
+
+<img src="../aws-cust-storage.png">
+
+Once you've saved all this and commit-pushed to Github. You can remove the DISABLE_COLLECTSTATIC variable from Heroku. Heroku will now act as a messenger for static and media files, collecting them when it is building your deployment and sending this files to Amazon's hosting service.
 
 ## Python Libraries
 
