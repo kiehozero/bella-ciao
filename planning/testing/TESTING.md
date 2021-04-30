@@ -106,6 +106,8 @@ conflict between Bootstrap's default breakpoints and how I had defined my media 
 
 18. When it came time to load new products into the store, I realised that everything was working fine apart from image uploads. I could still do this in the Django admin page so I knew there was a problem in my code. I went back through the Boutique Ado tutorial repository and found that I had set the form attribute 'enctype' as 'encytype'. Sometimes you real do have to use a fine-tooth comb to find those silent errors.
 
+19. Exactly 10 hours before submission I noticed that the products and events I had ordered that day did not have matching primary keys, so I had to delete them all and re-enter them. This was only 9 items on each DB, but it taught me a brutal lesson about using the loaddata on your commands.
+
 
 ## Outstanding Issues
 
