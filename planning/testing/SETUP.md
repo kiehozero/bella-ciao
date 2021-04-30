@@ -58,3 +58,10 @@ This project is built on the [Django](https://www.djangoproject.com/) framework.
 
 
 # GMail SMTP
+
+Google Mail actually has a relatively simple process to set up e-mail services from Heroku. Navigate to the Security section of a Google account and enable two-factor authentication. From here you can generate a unique 16-character code to be added to Heroku's config vars as EMAIL_HOST_PASSWORD. Also needed will be EMAIL_HOST_USER and DEFAULT_FROM_EMAIL (both the GMail address being used). Use the os.environ.get method to call these securely from Heroku, then state the following items in settings.py:
+
+ - EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+ - EMAIL_USE_TLS = True
+ - EMAIL_PORT = 587
+ - EMAIL_HOST = 'smtp.gmail.com'
