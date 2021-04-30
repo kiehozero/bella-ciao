@@ -143,8 +143,6 @@ I ran a quick check on the three main pages of the project, index.html, products
 
 Each page was directly inputted into the [W3C HTML Validator](https://validator.w3.org/) to check that the markup used passed W3C standards. A number of validation issues arose as expected given the use of Django's templating and injection methods, especially since the validator recognises the curly bracket as an illegal URL character and also errors out any file that doesn't declare the doctype on line 1. Nevertheless running the validator is always a worthwhile task in catching any typos that may allow silent failures during development or are literally inconsequential but semantically confusing.
 
-EXAMPLE SCREENSHOT HERE
-
 ### CSS
 
 There are 7 CSS scripts in this project, one for each app except the bella_ciao and home apps, plus a base.css and a palette file just for colour selection. Where possible I've tried to re-use as much code as possible, so the base file is significantly longer than the rest, which are just used for tweaks within each app. These were validated using the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). All files passed for errors, and a handful of warning were displayed relating to unknown vendor extensions (for webkit transitions) and some Bootstrap override classes.
@@ -169,9 +167,6 @@ There are 7 CSS scripts in this project, one for each app except the bella_ciao 
 
 - profile.css
 <img src="../certs/jig-profile.png">
-
-
-SCREENSHOTS HERE
 
 ### JS/jQuery
 
